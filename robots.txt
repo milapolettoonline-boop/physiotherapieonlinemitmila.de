@@ -1,0 +1,16 @@
+############################################################
+# ROBOTS.TXT
+# Physiotherapie online mit Mila
+# https://nacken-physio-online.de
+############################################################
+
+User-agent: *
+
+Allow: /
+
+# Sitemap
+Sitemap: https://nacken-physio-online.de/sitemap.xml
+
+############################################################
+# END
+############################################################
