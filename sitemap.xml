@@ -1,38 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<urlset
-xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-<url>
+  <url>
+    <loc>https://milaphysio.de/</loc>
+    <lastmod>2026-07-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
 
-<loc>https://nacken-physio-online.de/</loc>
+  <url>
+    <loc>https://milaphysio.de/kontakt.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 
-<lastmod>2026-07-14</lastmod>
+  <url>
+    <loc>https://milaphysio.de/impressum.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
 
-<changefreq>weekly</changefreq>
+  <url>
+    <loc>https://milaphysio.de/datenschutz.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
 
-<priority>1.0</priority>
-
-</url>
-
-<url>
-
-<loc>https://nacken-physio-online.de/impressum.html</loc>
-
-<changefreq>yearly</changefreq>
-
-<priority>0.3</priority>
-
-</url>
-
-<url>
-
-<loc>https://nacken-physio-online.de/datenschutz.html</loc>
-
-<changefreq>yearly</changefreq>
-
-<priority>0.3</priority>
-
-</url>
+  <url>
+    <loc>https://milaphysio.de/danke.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.2</priority>
+  </url>
 
 </urlset>

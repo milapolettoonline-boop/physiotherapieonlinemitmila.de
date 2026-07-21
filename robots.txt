@@ -1,7 +1,7 @@
 ############################################################
 # ROBOTS.TXT
-# Physiotherapie online mit Mila
-# https://nacken-physio-online.de
+# Physiotherapie Online mit Mila
+# https://milaphysio.de
 ############################################################
 
 User-agent: *
@@ -9,7 +9,7 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://nacken-physio-online.de/sitemap.xml
+Sitemap: https://milaphysio.de/sitemap.xml
 
 ############################################################
 # END
