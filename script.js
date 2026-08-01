@@ -1,20 +1,21 @@
 /*=========================================================
   SCRIPT.JS
-  Physiotherapie online mit Mila
-=========================================================*/
-
-
-/*=========================================================
-  FAQ ACCORDION
+  Physiotherapie Online mit Mila
 =========================================================*/
 
 document.addEventListener("DOMContentLoaded", () => {
+
+    /*=========================================================
+      FAQ ACCORDION
+    =========================================================*/
 
     const faqItems = document.querySelectorAll(".faq-item");
 
     faqItems.forEach(item => {
 
         const button = item.querySelector(".faq-question");
+
+        if (!button) return;
 
         button.addEventListener("click", () => {
 
@@ -30,205 +31,217 @@ document.addEventListener("DOMContentLoaded", () => {
 
     });
 
-});
 
+    /*=========================================================
+      BACK TO TOP
+    =========================================================*/
 
-/*=========================================================
-  BACK TO TOP
-=========================================================*/
+    const backToTop = document.getElementById("backToTop");
 
-const backToTop = document.getElementById("backToTop");
+    if (backToTop) {
 
-window.addEventListener("scroll", () => {
+        window.addEventListener("scroll", () => {
 
-    if (window.scrollY > 400) {
+            if (window.scrollY > 400) {
+                backToTop.classList.add("show");
+            } else {
+                backToTop.classList.remove("show");
+            }
 
-        backToTop.classList.add("show");
+        });
 
-    } else {
+        backToTop.addEventListener("click", () => {
 
-        backToTop.classList.remove("show");
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+
+        });
 
     }
 
-});
 
-backToTop.addEventListener("click", () => {
+    /*=========================================================
+      SMOOTH SCROLL
+    =========================================================*/
 
-    window.scrollTo({
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
-        top:0,
+        anchor.addEventListener("click", function (e) {
 
-        behavior:"smooth"
+            const target = document.querySelector(this.getAttribute("href"));
+
+            if (target) {
+
+                e.preventDefault();
+
+                target.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start"
+                });
+
+            }
+
+        });
 
     });
 
-});
+
+    /*=========================================================
+      HEADER SHADOW
+    =========================================================*/
+
+    const header = document.querySelector("header");
+
+    if (header) {
+
+        window.addEventListener("scroll", () => {
+
+            if (window.scrollY > 80) {
+
+                header.style.boxShadow = "0 12px 30px rgba(0,0,0,.10)";
+
+            } else {
+
+                header.style.boxShadow = "0 5px 25px rgba(0,0,0,.05)";
+
+            }
+
+        });
+
+    }
 
 
-/*=========================================================
-  SMOOTH SCROLL
-=========================================================*/
+    /*=========================================================
+      ACTIVE MENU
+    =========================================================*/
 
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    const sections = document.querySelectorAll("section");
+    const navLinks = document.querySelectorAll("nav ul li a");
 
-    anchor.addEventListener("click", function(e){
+    if (sections.length && navLinks.length) {
 
-        const target = document.querySelector(this.getAttribute("href"));
+        window.addEventListener("scroll", () => {
 
-        if(target){
+            let current = "";
 
-            e.preventDefault();
+            sections.forEach(section => {
 
-            target.scrollIntoView({
+                const sectionTop = section.offsetTop - 180;
 
-                behavior:"smooth",
-
-                block:"start"
+                if (window.scrollY >= sectionTop) {
+                    current = section.getAttribute("id");
+                }
 
             });
 
-        }
+            navLinks.forEach(link => {
 
-    });
+                link.classList.remove("active");
 
-});
+                if (link.getAttribute("href") === "#" + current) {
+                    link.classList.add("active");
+                }
 
+            });
 
-/*=========================================================
-  HEADER SHADOW
-=========================================================*/
-
-const header = document.querySelector("header");
-
-window.addEventListener("scroll", () => {
-
-    if(window.scrollY > 80){
-
-        header.style.boxShadow = "0 12px 30px rgba(0,0,0,.10)";
-
-    }else{
-
-        header.style.boxShadow = "0 5px 25px rgba(0,0,0,.05)";
+        });
 
     }
 
-});
+
+    /*=========================================================
+      IMAGE FADE-IN
+    =========================================================*/
+
+    const images = document.querySelectorAll("img");
+
+    if (images.length) {
+
+        const imageObserver = new IntersectionObserver((entries, observer) => {
+
+            entries.forEach(entry => {
+
+                if (entry.isIntersecting) {
+
+                    entry.target.style.opacity = "1";
+                    entry.target.style.transform = "translateY(0)";
+
+                    observer.unobserve(entry.target);
+
+                }
+
+            });
+
+        }, {
+            threshold: 0.15
+        });
+
+        images.forEach(image => {
+
+            image.style.opacity = "0";
+            image.style.transform = "translateY(30px)";
+            image.style.transition = ".8s";
+
+            imageObserver.observe(image);
+
+        });
+
+    }
 
 
-/*=========================================================
-  ACTIVE MENU
-=========================================================*/
+    /*=========================================================
+      SECTION FADE-IN
+    =========================================================*/
 
-const sections = document.querySelectorAll("section");
+    const elements = document.querySelectorAll(
+        ".card, .pricing-card, .contact-card, .about-content, .exercise-text, .faq-item"
+    );
 
-const navLinks = document.querySelectorAll("nav ul li a");
+    if (elements.length) {
 
-window.addEventListener("scroll", () => {
+        const observer = new IntersectionObserver((entries, observer) => {
 
-    let current = "";
+            entries.forEach(entry => {
 
-    sections.forEach(section => {
+                if (entry.isIntersecting) {
 
-        const sectionTop = section.offsetTop - 180;
+                    entry.target.style.opacity = "1";
+                    entry.target.style.transform = "translateY(0)";
 
-        if(window.scrollY >= sectionTop){
+                    observer.unobserve(entry.target);
 
-            current = section.getAttribute("id");
+                }
 
-        }
+            });
 
-    });
+        }, {
+            threshold: 0.15
+        });
 
-    navLinks.forEach(link => {
+        elements.forEach(el => {
 
-        link.classList.remove("active");
+            el.style.opacity = "0";
+            el.style.transform = "translateY(35px)";
+            el.style.transition = ".8s";
 
-        if(link.getAttribute("href") === "#" + current){
+            observer.observe(el);
 
-            link.classList.add("active");
+        });
 
-        }
-
-    });
-
-});
-
-
-/*=========================================================
-  IMAGE FADE-IN
-=========================================================*/
-
-const images = document.querySelectorAll("img");
-
-const imageObserver = new IntersectionObserver((entries)=>{
-
-    entries.forEach(entry=>{
-
-        if(entry.isIntersecting){
-
-            entry.target.style.opacity="1";
-
-            entry.target.style.transform="translateY(0)";
-
-        }
-
-    });
-
-},{
-    threshold:0.15
-});
-
-images.forEach(image=>{
-
-    image.style.opacity="0";
-
-    image.style.transform="translateY(30px)";
-
-    image.style.transition=".8s";
-
-    imageObserver.observe(image);
-
-});
+    }
 
 
-/*=========================================================
-  SECTION FADE-IN
-=========================================================*/
+    /*=========================================================
+      CURRENT YEAR
+    =========================================================*/
 
-const elements = document.querySelectorAll(
+    const year = document.getElementById("currentYear");
 
-".card, .pricing-card, .contact-card, .about-content, .exercise-text, .faq-item"
-
-);
-
-const observer = new IntersectionObserver((entries)=>{
-
-entries.forEach(entry=>{
-
-if(entry.isIntersecting){
-
-entry.target.style.opacity="1";
-
-entry.target.style.transform="translateY(0)";
-
-}
-
-});
-
-},{
-threshold:0.15
-});
-
-elements.forEach(el=>{
-
-el.style.opacity="0";
-
-el.style.transform="translateY(35px)";
-
-el.style.transition=".8s";
-
-observer.observe(el);
+    if (year) {
+        year.textContent = new Date().getFullYear();
+    }
 
 });
 
@@ -237,24 +250,11 @@ observer.observe(el);
   PAGE LOADED
 =========================================================*/
 
-window.addEventListener("load",()=>{
+window.addEventListener("load", () => {
 
-document.body.classList.add("loaded");
+    document.body.classList.add("loaded");
 
 });
-
-
-/*=========================================================
-  CURRENT YEAR
-=========================================================*/
-
-const year = document.getElementById("currentYear");
-
-if(year){
-
-year.textContent = new Date().getFullYear();
-
-}
 
 
 /*=========================================================
