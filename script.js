@@ -72,16 +72,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
             const target = document.querySelector(this.getAttribute("href"));
 
-            if (target) {
+            if (!target) return;
 
-                e.preventDefault();
+            e.preventDefault();
 
-                target.scrollIntoView({
-                    behavior: "smooth",
-                    block: "start"
-                });
+            const headerHeight = document.querySelector("header")?.offsetHeight || 90;
 
-            }
+            window.scrollTo({
+                top: target.offsetTop - headerHeight,
+                behavior: "smooth"
+            });
 
         });
 
@@ -118,9 +118,9 @@ document.addEventListener("DOMContentLoaded", () => {
     =========================================================*/
 
     const sections = document.querySelectorAll("section");
-    const navLinks = document.querySelectorAll("nav ul li a");
+    const menuLinks = document.querySelectorAll(".nav-links a");
 
-    if (sections.length && navLinks.length) {
+    if (sections.length && menuLinks.length) {
 
         window.addEventListener("scroll", () => {
 
@@ -136,7 +136,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             });
 
-            navLinks.forEach(link => {
+            menuLinks.forEach(link => {
 
                 link.classList.remove("active");
 
@@ -149,6 +149,49 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
     }
+
+
+   /*=========================================================
+  MOBILE MENU
+=========================================================*/
+
+const mobileButton = document.querySelector(".mobile-menu");
+const mobileNav = document.querySelector(".nav-links");
+
+if (mobileButton && mobileNav) {
+
+    mobileButton.addEventListener("click", () => {
+
+        mobileNav.classList.toggle("active");
+
+        if (mobileNav.classList.contains("active")) {
+
+            mobileButton.innerHTML = "✕";
+            mobileButton.setAttribute("aria-expanded", "true");
+
+        } else {
+
+            mobileButton.innerHTML = "☰";
+            mobileButton.setAttribute("aria-expanded", "false");
+
+        }
+
+    });
+
+    mobileNav.querySelectorAll("a").forEach(link => {
+
+        link.addEventListener("click", () => {
+
+            mobileNav.classList.remove("active");
+
+            mobileButton.innerHTML = "☰";
+            mobileButton.setAttribute("aria-expanded", "false");
+
+        });
+
+    });
+
+}
 
 
     /*=========================================================
