@@ -8,7 +8,6 @@ User-agent: *
 
 Allow: /
 
-# Sitemap
 Sitemap: https://milaphysio.de/sitemap.xml
 
 ############################################################

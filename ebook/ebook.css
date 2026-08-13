@@ -1,0 +1,1543 @@
+/* =========================================================
+   MILAPHYSIO
+   E-BOOK — NACKENSCHMERZEN VERSTEHEN
+
+   FORMAT: 1080 × 1920 px
+   RATIO: 9:16
+   ========================================================= */
+
+
+/* =========================================================
+   RESET
+   ========================================================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+html,
+body {
+
+    margin: 0;
+    padding: 0;
+
+    background: #d8d5ce;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    color: #222222;
+}
+
+
+/* =========================================================
+   E-BOOK
+   ========================================================= */
+
+.ebook {
+
+    width: 100%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+}
+
+
+/* =========================================================
+   ALL PAGES
+   ========================================================= */
+
+.page {
+
+    width: 1080px;
+
+    height: 1920px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    margin: 30px auto;
+
+    page-break-after: always;
+}
+
+
+/* =========================================================
+   ==================== SEITE 1 =============================
+   ========================================================= */
+
+
+/* COVER */
+
+.cover {
+
+    background:
+        linear-gradient(
+            145deg,
+            #faf5ed 0%,
+            #f7f0e6 55%,
+            #f0e5d6 100%
+        );
+
+    overflow: hidden;
+}
+
+
+/* TOP LINE */
+
+.top-line {
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 330px;
+    height: 7px;
+
+    background: #c9a04a;
+}
+
+
+/* LOGO */
+
+.cover-header {
+
+    position: absolute;
+
+    top: 65px;
+    right: 70px;
+
+    z-index: 30;
+}
+
+
+.logo {
+
+    width: 205px;
+
+    height: auto;
+
+    display: block;
+}
+
+
+/* COVER CONTENT */
+
+.cover-content {
+
+    position: absolute;
+
+    left: 105px;
+    top: 285px;
+
+    width: 760px;
+
+    z-index: 20;
+}
+
+
+/* EYEBROW */
+
+.eyebrow {
+
+    font-size: 19px;
+
+    letter-spacing: 5px;
+
+    color: #9a7838;
+
+    font-weight: 700;
+
+    margin-bottom: 36px;
+}
+
+
+/* TITLE */
+
+.cover-content h1 {
+
+    width: 760px;
+
+    font-size: 75px;
+
+    line-height: 0.98;
+
+    letter-spacing: -1px;
+
+    color: #123f36;
+
+    font-weight: 800;
+}
+
+
+.cover-content h1 span {
+
+    display: block;
+
+    color: #c9a04a;
+
+    margin-top: 5px;
+}
+
+
+/* GOLD LINE */
+
+.gold-line {
+
+    width: 185px;
+
+    height: 7px;
+
+    background: #c9a04a;
+
+    margin-top: 43px;
+
+    margin-bottom: 38px;
+}
+
+
+/* SUBTITLE */
+
+.cover-content h2 {
+
+    width: 640px;
+
+    font-size: 32px;
+
+    line-height: 1.38;
+
+    color: #242424;
+
+    font-weight: 600;
+}
+
+
+/* INTRO */
+
+.intro {
+
+    width: 610px;
+
+    margin-top: 28px;
+
+    font-size: 21px;
+
+    line-height: 1.55;
+
+    color: #444444;
+}
+
+
+/* MILA IMAGE */
+
+.mila-photo {
+
+    position: absolute;
+
+    right: 0;
+
+    top: 775px;
+
+    width: 555px;
+
+    height: 800px;
+
+    overflow: hidden;
+
+    border-radius:
+        290px
+        0
+        0
+        0;
+
+    z-index: 5;
+}
+
+
+.mila-photo::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    border:
+        2px solid
+        rgba(201, 160, 74, 0.55);
+
+    border-right: none;
+
+    border-bottom: none;
+
+    border-radius:
+        290px
+        0
+        0
+        0;
+
+    pointer-events: none;
+}
+
+
+.mila-photo img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    object-position: center top;
+
+    display: block;
+}
+
+
+/* BENEFITS */
+
+.benefits {
+
+    position: absolute;
+
+    left: 95px;
+
+    top: 1120px;
+
+    width: 520px;
+
+    background: #123f36;
+
+    border-radius: 35px;
+
+    padding: 25px 35px;
+
+    z-index: 15;
+
+    box-shadow:
+        0 18px 40px
+        rgba(18, 63, 54, 0.15);
+}
+
+
+.benefit {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+
+    padding: 18px 0;
+
+    color: white;
+}
+
+
+.benefit + .benefit {
+
+    border-top:
+        1px solid
+        rgba(201, 160, 74, 0.65);
+}
+
+
+.benefit-number {
+
+    width: 58px;
+
+    height: 58px;
+
+    min-width: 58px;
+
+    border-radius: 50%;
+
+    background: #c9a04a;
+
+    color: #123f36;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 17px;
+
+    font-weight: 800;
+}
+
+
+.benefit strong {
+
+    display: block;
+
+    font-size: 23px;
+
+    line-height: 1.2;
+}
+
+
+.benefit span {
+
+    display: block;
+
+    margin-top: 4px;
+
+    font-size: 18px;
+
+    color:
+        rgba(255,255,255,0.9);
+}
+
+
+/* COVER FOOTER */
+
+.cover-footer {
+
+    position: absolute;
+
+    left: 0;
+    bottom: 0;
+
+    width: 100%;
+
+    height: 205px;
+
+    background: #123f36;
+
+    padding:
+        38px
+        105px;
+
+    color: white;
+
+    z-index: 20;
+}
+
+
+.footer-line {
+
+    width: 95px;
+
+    height: 5px;
+
+    background: #c9a04a;
+
+    margin-bottom: 18px;
+}
+
+
+.cover-footer p {
+
+    font-size: 29px;
+
+    line-height: 1.25;
+
+    color: #c9a04a;
+
+    font-weight: 400;
+}
+
+
+.cover-footer p strong {
+
+    font-weight: 700;
+}
+
+
+.cover-footer span {
+
+    display: block;
+
+    margin-top: 15px;
+
+    font-size: 16px;
+
+    letter-spacing: 1.8px;
+
+    color: white;
+}
+
+
+.gold-decoration {
+
+    position: absolute;
+
+    right: -80px;
+
+    bottom: 215px;
+
+    width: 340px;
+
+    height: 18px;
+
+    background: #c9a04a;
+
+    transform: rotate(-7deg);
+
+    z-index: 25;
+}
+
+
+/* =========================================================
+   ==================== SEITE 2 =============================
+   ========================================================= */
+
+
+/* PAGE BACKGROUND */
+
+.introduction {
+
+    background: #f7f0e6;
+
+    overflow: hidden;
+}
+
+
+/* TOP GOLD LINE */
+
+.intro-top-line {
+
+    position: absolute;
+
+    top: 0;
+
+    left: 0;
+
+    width: 280px;
+
+    height: 7px;
+
+    background: #c9a04a;
+}
+
+
+/* LOGO */
+
+.intro-header {
+
+    position: absolute;
+
+    top: 65px;
+
+    right: 70px;
+
+    z-index: 20;
+}
+
+
+.intro-logo {
+
+    width: 170px;
+
+    height: auto;
+
+    display: block;
+}
+
+
+/* SECTION LABEL */
+
+.section-label {
+
+    position: absolute;
+
+    top: 250px;
+
+    left: 100px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    color: #9a7838;
+
+    font-size: 19px;
+
+    font-weight: 700;
+
+    letter-spacing: 4px;
+}
+
+
+.section-label span {
+
+    width: 48px;
+
+    height: 48px;
+
+    border-radius: 50%;
+
+    background: #c9a04a;
+
+    color: #123f36;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 16px;
+
+    letter-spacing: 0;
+}
+
+
+/* MAIN HEADING */
+
+.intro-heading {
+
+    position: absolute;
+
+    left: 100px;
+
+    top: 345px;
+
+    width: 700px;
+
+    z-index: 10;
+}
+
+
+.intro-heading h2 {
+
+    font-size: 66px;
+
+    line-height: 1.0;
+
+    color: #123f36;
+
+    font-weight: 800;
+
+    letter-spacing: -1px;
+
+    white-space: nowrap;
+}
+
+
+.intro-heading h3 {
+
+    margin-top: 8px;
+
+    font-size: 66px;
+
+    line-height: 1.0;
+
+    color: #c9a04a;
+
+    font-weight: 800;
+
+    letter-spacing: -1px;
+
+    white-space: nowrap;
+}
+
+
+.intro-heading-line {
+
+    width: 150px;
+
+    height: 6px;
+
+    background: #c9a04a;
+
+    margin-top: 38px;
+}
+
+
+/* TEXT */
+
+.intro-text {
+
+    position: absolute;
+
+    left: 100px;
+
+    top: 650px;
+
+    width: 485px;
+
+    z-index: 10;
+}
+
+
+.intro-text p {
+
+    font-size: 22px;
+
+    line-height: 1.55;
+
+    color: #3e3e3e;
+
+    margin-bottom: 28px;
+}
+
+
+.intro-text .intro-lead {
+
+    font-size: 25px;
+
+    line-height: 1.45;
+
+    color: #222222;
+
+    font-weight: 700;
+}
+
+
+/* IMAGE */
+
+.intro-image {
+
+    position: absolute;
+
+    right: 0;
+
+    top: 650px;
+
+    width: 470px;
+
+    height: 720px;
+
+    overflow: hidden;
+
+    border-radius:
+        235px
+        0
+        0
+        0;
+
+    z-index: 5;
+}
+
+
+.intro-image::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    border:
+        2px solid
+        rgba(201,160,74,0.5);
+
+    border-right: none;
+
+    border-bottom: none;
+
+    border-radius:
+        235px
+        0
+        0
+        0;
+
+    pointer-events: none;
+}
+
+
+.intro-image img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    object-position: center center;
+
+    display: block;
+}
+
+
+/* HIGHLIGHT */
+
+.intro-highlight {
+
+    position: absolute;
+
+    left: 100px;
+
+    top: 1325px;
+
+    width: 470px;
+
+    min-height: 145px;
+
+    background: #123f36;
+
+    border-radius: 30px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 25px;
+
+    padding: 25px 30px;
+
+    z-index: 15;
+
+    box-shadow:
+        0 15px 35px
+        rgba(18,63,54,0.13);
+}
+
+
+.highlight-icon {
+
+    width: 62px;
+
+    height: 62px;
+
+    min-width: 62px;
+
+    border-radius: 50%;
+
+    background: #c9a04a;
+
+    color: #123f36;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 27px;
+}
+
+
+.intro-highlight strong {
+
+    display: block;
+
+    color: white;
+
+    font-size: 25px;
+
+    line-height: 1.25;
+}
+
+
+.intro-highlight span {
+
+    display: block;
+
+    margin-top: 5px;
+
+    color: #c9a04a;
+
+    font-size: 25px;
+
+    font-weight: 700;
+}
+
+
+/* BOTTOM QUOTE */
+
+.intro-bottom {
+
+    position: absolute;
+
+    left: 100px;
+
+    bottom: 120px;
+
+    z-index: 10;
+}
+
+
+.intro-bottom-line {
+
+    width: 100px;
+
+    height: 5px;
+
+    background: #c9a04a;
+
+    margin-bottom: 22px;
+}
+
+
+.intro-bottom p {
+
+    font-size: 28px;
+
+    line-height: 1.3;
+
+    color: #123f36;
+
+    font-weight: 700;
+}
+
+
+.intro-bottom p:last-child {
+
+    color: #c9a04a;
+
+    font-weight: 600;
+}
+
+
+/* DECORATIVE GOLD CURVE */
+
+.intro-gold-curve {
+
+    position: absolute;
+
+    right: -100px;
+
+    bottom: 55px;
+
+    width: 420px;
+
+    height: 18px;
+
+    background: #c9a04a;
+
+    transform: rotate(-8deg);
+
+    z-index: 20;
+}
+
+
+/* =========================================================
+   RESPONSIVE PREVIEW
+   ========================================================= */
+
+@media screen and (min-width: 1301px) {
+
+    .page {
+
+        transform: none;
+
+        box-shadow:
+            0 15px 50px
+            rgba(0,0,0,0.18);
+    }
+}
+
+
+@media screen and (max-width: 1300px) {
+
+    .page {
+
+        transform:
+            scale(0.65);
+
+        transform-origin:
+            top center;
+
+        margin-top: 20px;
+
+        margin-bottom: -650px;
+    }
+}
+
+
+@media screen and (max-width: 900px) {
+
+    .page {
+
+        transform:
+            scale(0.50);
+
+        transform-origin:
+            top center;
+
+        margin-top: 15px;
+
+        margin-bottom: -950px;
+    }
+}
+
+
+@media screen and (max-width: 700px) {
+
+    .page {
+
+        transform:
+            scale(0.45);
+
+        transform-origin:
+            top center;
+
+        margin-top: 10px;
+
+        margin-bottom: -1050px;
+    }
+}
+
+
+@media screen and (max-width: 500px) {
+
+    .page {
+
+        transform:
+            scale(0.40);
+
+        transform-origin:
+            top center;
+
+        margin-top: 5px;
+
+        margin-bottom: -1130px;
+    }
+}
+
+
+/* =========================================================
+   PRINT / PDF
+   ========================================================= */
+
+@page {
+
+    size: 1080px 1920px;
+
+    margin: 0;
+}
+
+
+@media print {
+
+    html,
+    body {
+
+        background: white;
+
+        margin: 0;
+
+        padding: 0;
+    }
+
+
+    .ebook {
+
+        display: block;
+
+        width: 1080px;
+    }
+
+
+    .page {
+
+        width: 1080px;
+
+        height: 1920px;
+
+        margin: 0;
+
+        transform: none;
+
+        box-shadow: none;
+
+        page-break-after: always;
+    }
+}
+
+/* =========================================================
+   SEITE 3 — INHALTSVERZEICHNIS
+   PREMIUM VERSION
+   9:16
+========================================================= */
+
+.contents-page {
+    position: relative;
+
+    width: 1080px;
+    height: 1920px;
+
+    min-height: 1920px;
+    max-height: 1920px;
+
+    box-sizing: border-box;
+
+    overflow: hidden;
+
+    padding: 85px 75px 65px;
+
+    background: #f7f0e6;
+
+    color: #173f38;
+}
+
+
+/* ---------- GOLD TOP LINE ---------- */
+
+.contents-top-line {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 205px;
+    height: 8px;
+
+    background: #cda347;
+}
+
+
+/* ---------- HEADER ---------- */
+
+.contents-header {
+    position: relative;
+
+    width: 100%;
+    height: 120px;
+
+    display: flex;
+
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+
+.contents-label {
+    margin-top: 20px;
+
+    padding: 12px 25px;
+
+    border-radius: 0 18px 18px 0;
+
+    background: #104f45;
+
+    color: #ffffff;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 18px;
+    font-weight: 700;
+
+    letter-spacing: 2px;
+}
+
+
+.contents-header .contents-logo {
+    display: block !important;
+
+    width: 155px !important;
+    height: auto !important;
+
+    max-width: 155px !important;
+    max-height: 105px !important;
+
+    object-fit: contain;
+
+    margin: 0 !important;
+}
+
+
+/* ---------- TITLE ---------- */
+
+.contents-title {
+    position: relative;
+
+    width: 650px;
+
+    margin-top: 30px;
+}
+
+
+.contents-title h2,
+.contents-title h3 {
+    margin: 0;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-weight: 800;
+
+    line-height: 0.92;
+
+    letter-spacing: -2px;
+}
+
+
+.contents-title h2 {
+    font-size: 72px;
+
+    color: #104f45;
+}
+
+
+.contents-title h3 {
+    font-size: 72px;
+
+    color: #cda347;
+}
+
+
+.contents-title-line {
+    width: 200px;
+    height: 5px;
+
+    margin-top: 30px;
+
+    background: #cda347;
+}
+
+
+.contents-title p {
+    width: 600px;
+
+    margin: 28px 0 0;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 24px;
+
+    line-height: 1.4;
+
+    font-weight: 500;
+
+    color: #303a37;
+}
+
+
+/* ---------- LAYOUT ---------- */
+
+.contents-layout {
+    position: relative;
+
+    display: grid;
+
+    grid-template-columns: 570px 355px;
+
+    column-gap: 35px;
+
+    align-items: start;
+
+    margin-top: 55px;
+}
+
+
+/* ---------- LIST ---------- */
+
+.contents-list {
+    width: 570px;
+}
+
+
+.contents-item {
+    display: grid;
+
+    grid-template-columns: 62px 45px 1fr;
+
+    align-items: center;
+
+    min-height: 82px;
+
+    padding: 8px 0;
+
+    border-bottom: 1px solid rgba(205, 163, 71, 0.65);
+}
+
+
+.contents-item:last-child {
+    border-bottom: none;
+}
+
+
+/* ---------- NUMBERS ---------- */
+
+.contents-number {
+    width: 53px;
+    height: 53px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #cda347;
+
+    color: #ffffff;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 17px;
+
+    font-weight: 800;
+}
+
+
+/* ---------- ICONS ---------- */
+
+.contents-icon {
+    color: #104f45;
+
+    font-size: 24px;
+
+    text-align: center;
+}
+
+
+/* ---------- TEXT ---------- */
+
+.contents-text {
+    padding-left: 8px;
+}
+
+
+.contents-text strong {
+    display: block;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 23px;
+
+    line-height: 1.2;
+
+    font-weight: 700;
+
+    color: #104f45;
+}
+
+
+/* ---------- PHOTO ---------- */
+
+.contents-photo {
+    width: 355px;
+    height: 620px;
+
+    overflow: hidden;
+
+    border-radius: 180px 180px 0 0;
+
+    border: 3px solid #cda347;
+
+    box-sizing: border-box;
+
+    background: #e9dfd2;
+}
+
+
+.contents-photo img {
+    display: block !important;
+
+    width: 100% !important;
+    height: 100% !important;
+
+    max-width: none !important;
+    max-height: none !important;
+
+    margin: 0 !important;
+
+    object-fit: cover;
+
+    object-position: center;
+}
+
+
+/* ---------- PRAXIS TIPP ---------- */
+
+.contents-tip {
+    position: absolute;
+
+    left: 75px;
+    bottom: 185px;
+
+    width: 680px;
+    min-height: 150px;
+
+    box-sizing: border-box;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 25px;
+
+    padding: 28px 35px;
+
+    border-radius: 30px;
+
+    background: #104f45;
+
+    color: #ffffff;
+
+    box-shadow:
+        0 12px 30px rgba(0, 0, 0, 0.10);
+}
+
+
+.tip-icon {
+    width: 58px;
+    height: 58px;
+
+    flex: 0 0 58px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #cda347;
+
+    font-size: 27px;
+}
+
+
+.contents-tip strong {
+    display: block;
+
+    margin-bottom: 7px;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 18px;
+
+    letter-spacing: 2px;
+
+    color: #cda347;
+}
+
+
+.contents-tip p {
+    margin: 0;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 20px;
+
+    line-height: 1.35;
+
+    color: #ffffff;
+}
+
+
+/* ---------- FOOTER ---------- */
+
+.contents-footer {
+    position: absolute;
+
+    left: 75px;
+    right: 75px;
+
+    bottom: 55px;
+
+    display: flex;
+
+    align-items: flex-end;
+
+    justify-content: space-between;
+}
+
+
+.contents-footer-line {
+    position: absolute;
+
+    top: -25px;
+    left: 0;
+
+    width: 200px;
+    height: 4px;
+
+    background: #cda347;
+}
+
+
+.contents-footer-person strong {
+    display: block;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 17px;
+
+    letter-spacing: 2px;
+
+    color: #104f45;
+}
+
+
+.contents-footer-person span {
+    display: block;
+
+    margin-top: 5px;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 14px;
+
+    letter-spacing: 1px;
+
+    color: #77706a;
+}
+
+
+.contents-footer-right {
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 18px;
+
+    font-weight: 700;
+
+    color: #104f45;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media screen and (max-width: 700px) {
+
+    .contents-page {
+        width: 100%;
+
+        height: auto;
+
+        min-height: 0;
+        max-height: none;
+
+        aspect-ratio: 9 / 16;
+
+        padding: 7%;
+
+        overflow: hidden;
+    }
+
+}
+
+
+/* =========================================================
+   PRINT / PDF
+========================================================= */
+
+@media print {
+
+    .contents-page {
+
+        width: 1080px;
+        height: 1920px;
+
+        min-height: 1920px;
+        max-height: 1920px;
+
+        page-break-after: always;
+
+        break-after: page;
+
+        overflow: hidden;
+    }
+
+}

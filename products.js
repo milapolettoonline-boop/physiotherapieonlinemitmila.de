@@ -84,20 +84,19 @@ const products = [
             "NOVAFON kann je nach Indikation eine interessante Ergänzung in der physiotherapeutischen Behandlung sein."
     },
 
-    {
-        id: 7,
-        name: "Wenoker Wasser-Rudergerät",
-        category: "Fitness & Training",
-        image: "images/rudern.webp",
-        page: "wenoker-rudergeraet.html",
-        amazon: "https://amzn.to/4hW7UZR",
-        price: "424,00 €",
-        shortDescription:
-            "Wasser-Rudergerät für das Training zu Hause mit 22-Liter-Wassertank, LED-Display und Bluetooth-App.",
-        recommendation:
-            "Rudern kann ein vielseitiges Ganzkörpertraining sein und eignet sich für Menschen, die ihr Training zu Hause abwechslungsreich gestalten möchten."
-    },
-
+   {
+    id: 7,
+    name: "Concept2 RowErg Modell D",
+    category: "Fitness & Training",
+    image: "images/rudern.webp",
+    page: "concept2-rowerg.html",
+    amazon: "https://amzn.to/4hW7UZR",
+    price: "1.184,99 €",
+    shortDescription:
+        "Concept2 RowErg Modell D mit Luftwiderstand, PM5 Performance Monitor, Bluetooth und ANT+ für effektives Ganzkörper- und Ausdauertraining zu Hause.",
+    recommendation:
+        "Rudern kann ein vielseitiges Ganzkörpertraining sein und eignet sich für Menschen, die ihr Ausdauer-, Kraft- und Bewegungstraining zu Hause abwechslungsreich gestalten möchten."
+},
   {
     id: 8,
 

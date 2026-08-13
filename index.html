@@ -1,3246 +1,2888 @@
+<!DOCTYPE html>
+<html lang="de">
+
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <!-- Mobile First -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 
-    <!-- SEO -->
-  <title>Nackenschmerzen lindern | Übungen & Nacken-Ratgeber | Mila Physio</title>
+    <meta name="theme-color" content="#185F63">
+<title>
+    Physiotherapie online bei Rückenschmerzen, Nackenschmerzen & Schulterschmerzen | Mila
+</title>
 
-    <meta name="description"
-    content="Nackenschmerzen lindern: Übungen, Tipps und Informationen zu Nackenkissen und Nackenstützkissen. Physiotherapeutischer Ratgeber von Mila Physio."> 
-    <meta name="keywords"
-        content="Physiotherapie online, Orthopädie, Rückenschmerzen, Nackenschmerzen, Arthrose, Knie, Hüfte, Rehabilitation, Deutschland">
+<meta name="description"
+    content="Physiotherapie online bei Rückenschmerzen, Nackenschmerzen und Schulterschmerzen. Individuelle physiotherapeutische Betreuung für Erwachsene in ganz Deutschland.">
 
-    <meta name="author" content="Camila Poletto Weiler">
-    <meta name="robots" content="index, follow">
-    <meta name="language" content="de">
-    <meta name="theme-color" content="#b68d40">
+<meta name="author"
+    content="Camila Poletto">
 
-    <link rel="canonical" href="https://milaphysio.de/">
+<meta name="robots"
+    content="index,follow,max-image-preview:large">
 
-    <!-- Performance -->
-    <link rel="preload" as="image" href="images/mila.webp">
+<link
+    rel="canonical"
+    href="https://milaphysio.de/">
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="style.css">
+    <!-- FAVICON -->
+    <link rel="icon" href="favicon/favicon.ico">
 
-    <!-- Google Fonts -->
+    <!-- GOOGLE FONTS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
         rel="stylesheet">
 
-    <!-- Font Awesome -->
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-
-    <!-- Open Graph -->
+    <!-- OPEN GRAPH -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://milaphysio.de/">
-    <meta property="og:title" content="Physiotherapie Online mit Mila">
-    <meta property="og:description" content="Online Physiotherapie in ganz Deutschland.">
-    <meta property="og:image" content="https://milaphysio.de/images/mila.webp">
     <meta property="og:locale" content="de_DE">
-    <meta property="og:site_name" content="Physiotherapie Online mit Mila">
+    <meta property="og:site_name"
+        content="Physio Online mit Mila">
 
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Physiotherapie Online mit Mila">
-    <meta name="twitter:description" content="Online Physiotherapie in Deutschland">
-    <meta name="twitter:image" content="https://milaphysio.de/images/mila.webp">
+    <meta property="og:title"
+        content="Physio Online mit Mila | Online Physiotherapie">
 
-    <!-- Favicon -->
-    <link rel="icon" href="favicon.ico">
-    <link rel="apple-touch-icon" href="favicon-192.png">
-    <link rel="manifest" href="manifest.json">
+    <meta property="og:description"
+        content="Evidenzbasierte Online-Physiotherapie mit persönlicher Betreuung – individuell auf Ihre Beschwerden, Ihre Ziele und Ihren Alltag abgestimmt.">
 
-    <!-- Schema.org – MedicalBusiness -->
-    <script type="application/ld+json">
-{
-  "@context":"https://schema.org",
-  "@type":"MedicalBusiness",
-  "name":"Physiotherapie Online mit Mila",
-  "url":"https://milaphysio.de",
-  "logo":"https://milaphysio.de/logo/Mila-Logo.webp",
-  "image":"https://milaphysio.de/images/mila.webp",
-  "description":"Online Physiotherapie für Orthopädie und Rehabilitation.",
-  "email":"mailto:milapoletto.online@gmail.com",
-  "telephone":"+49 174 2585160",
-  "areaServed":"DE",
-  "sameAs":[
-    "https://www.instagram.com/therapie.online_mit.mila/"
-  ],
-  "founder":{
-    "@type":"Person",
-    "name":"Camila Poletto",
-    "jobTitle":"Physiotherapeutin"
-  }
+    <meta property="og:url"
+        content="https://milaphysio.de/">
+
+    <meta property="og:image"
+        content="https://milaphysio.de/images/mila-physio.webp">
+
+    <meta property="og:image:alt"
+        content="Camila Poletto – Physio Online mit Mila">
+
+    <!-- TWITTER / X -->
+    <meta name="twitter:card"
+        content="summary_large_image">
+
+    <meta name="twitter:title"
+        content="Physio Online mit Mila | Online Physiotherapie">
+
+    <meta name="twitter:description"
+        content="Evidenzbasierte Online-Physiotherapie mit persönlicher Betreuung in ganz Deutschland.">
+
+    <meta name="twitter:image"
+        content="https://milaphysio.de/images/mila-physio.webp">
+
+
+    <!-- =========================================================
+         HOMEPAGE CSS
+    ========================================================== -->
+
+    <style>
+
+        :root {
+            --teal: #185F63;
+            --teal-dark: #10494D;
+            --teal-soft: #246D71;
+
+            --gold: #B98935;
+            --gold-light: #D2A95A;
+
+            --cream: #F7F3EB;
+            --cream-dark: #EFE9DE;
+
+            --white: #FFFFFF;
+
+            --text: #4E6470;
+            --text-dark: #164D52;
+
+            --border: #D8E1E2;
+
+            --radius: 28px;
+
+            --shadow:
+                0 20px 50px rgba(20, 67, 70, 0.08);
+        }
+
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+
+        body {
+            font-family: "DM Sans", sans-serif;
+            background: var(--white);
+            color: var(--text);
+            line-height: 1.65;
+            overflow-x: hidden;
+        }
+
+
+        img {
+            display: block;
+            max-width: 100%;
+        }
+
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+
+        button {
+            font: inherit;
+        }
+
+
+        /* =====================================================
+           GLOBAL
+        ====================================================== */
+
+        .home-page {
+            width: 100%;
+        }
+
+
+        .home-container {
+            width: min(1180px, calc(100% - 40px));
+            margin: 0 auto;
+        }
+
+
+        .eyebrow {
+            display: inline-block;
+
+            font-size: 0.78rem;
+            font-weight: 700;
+
+            letter-spacing: 0.20em;
+            text-transform: uppercase;
+
+            color: var(--gold);
+
+            margin-bottom: 18px;
+        }
+
+
+        .section-title {
+            color: var(--teal-dark);
+
+            font-family:
+                "Playfair Display",
+                Georgia,
+                serif;
+
+            font-size:
+                clamp(2.3rem, 6vw, 4.4rem);
+
+            line-height: 1.05;
+
+            letter-spacing: -0.035em;
+
+            margin-bottom: 24px;
+        }
+
+
+        .section-text {
+            font-size: 1.15rem;
+            color: var(--text);
+            max-width: 760px;
+        }
+
+
+        .button {
+            display: inline-flex;
+
+            align-items: center;
+            justify-content: center;
+
+            min-height: 54px;
+
+            padding: 0 28px;
+
+            border-radius: 999px;
+
+            font-weight: 700;
+
+            transition:
+                transform 0.2s ease,
+                box-shadow 0.2s ease,
+                background 0.2s ease;
+        }
+
+
+        .button:hover {
+            transform: translateY(-2px);
+        }
+
+
+        .button-primary {
+            color: white;
+            background: var(--teal);
+
+            box-shadow:
+                0 14px 30px
+                rgba(24, 95, 99, 0.20);
+        }
+
+
+        .button-primary:hover {
+            background: var(--teal-dark);
+        }
+
+
+        .button-secondary {
+            color: var(--teal);
+
+            background: transparent;
+
+            border: 1.5px solid var(--teal);
+        }
+
+
+        .button-secondary:hover {
+            background: rgba(24, 95, 99, 0.05);
+        }
+
+
+        /* =====================================================
+           HEADER
+        ====================================================== */
+
+        .home-header {
+            position: absolute;
+
+            top: 0;
+            left: 0;
+            right: 0;
+
+            z-index: 100;
+
+            padding: 22px 0;
+        }
+
+
+        .header-inner {
+            display: flex;
+
+            align-items: center;
+            justify-content: space-between;
+
+            gap: 20px;
+        }
+
+
+        .brand {
+            display: inline-flex;
+            align-items: center;
+        }
+
+
+        .brand img {
+            width: 190px;
+            height: auto;
+        }
+
+
+        .desktop-navigation {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+        }
+
+
+        .desktop-navigation a {
+            color: var(--teal-dark);
+
+            font-size: 0.92rem;
+            font-weight: 600;
+
+            transition: color 0.2s ease;
+        }
+
+
+        .desktop-navigation a:hover {
+            color: var(--gold);
+        }
+
+
+        .menu-button {
+            display: none;
+
+            width: 46px;
+            height: 46px;
+
+            border: 0;
+            border-radius: 50%;
+
+            background: transparent;
+
+            cursor: pointer;
+        }
+
+
+        .menu-button span {
+            display: block;
+
+            width: 24px;
+            height: 2px;
+
+            margin: 5px auto;
+
+            background: var(--teal-dark);
+        }
+
+
+        .mobile-navigation {
+            display: none;
+        }
+
+
+        /* =====================================================
+           HERO
+        ====================================================== */
+
+        .hero {
+            position: relative;
+
+            min-height: 100svh;
+
+            padding:
+                150px 0
+                80px;
+
+            background:
+                linear-gradient(
+                    180deg,
+                    #F8F5EE 0%,
+                    #F7F3EB 72%,
+                    #FFFFFF 100%
+                );
+
+            overflow: hidden;
+        }
+
+
+        .hero-grid {
+            display: grid;
+
+            grid-template-columns:
+                minmax(0, 1.05fr)
+                minmax(320px, 0.95fr);
+
+            align-items: center;
+
+            gap: 70px;
+
+            min-height: calc(100svh - 180px);
+        }
+
+
+        .hero-kicker {
+            color: var(--gold);
+
+            font-size: 0.85rem;
+            font-weight: 700;
+
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+
+            margin-bottom: 20px;
+        }
+
+
+        .hero-title {
+            max-width: 760px;
+
+            color: var(--teal-dark);
+
+            font-family:
+                "Playfair Display",
+                Georgia,
+                serif;
+
+            font-size:
+                clamp(3.2rem, 7vw, 6.7rem);
+
+            line-height: 0.96;
+
+            letter-spacing: -0.055em;
+
+            margin-bottom: 30px;
+        }
+
+
+        .hero-title span {
+            color: var(--gold);
+        }
+
+
+        .hero-description {
+            max-width: 720px;
+
+            font-size:
+                clamp(1.05rem, 2vw, 1.35rem);
+
+            color: var(--text);
+
+            margin-bottom: 34px;
+        }
+
+
+        .hero-buttons {
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 14px;
+
+            margin-bottom: 38px;
+        }
+
+
+        .hero-trust {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, minmax(0, 1fr));
+
+            gap: 20px;
+        }
+
+
+        .trust-item {
+            display: flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+            font-size: 0.94rem;
+            font-weight: 600;
+
+            color: var(--teal-dark);
+        }
+
+
+        .trust-icon {
+            flex: 0 0 30px;
+
+            width: 30px;
+            height: 30px;
+
+            display: grid;
+            place-items: center;
+
+            border-radius: 50%;
+
+            background: var(--teal);
+            color: white;
+
+            font-size: 0.82rem;
+            font-weight: 700;
+        }
+
+
+        .hero-image-wrap {
+            position: relative;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+        }
+
+
+        .hero-image {
+            width: min(100%, 540px);
+
+            aspect-ratio: 0.82;
+
+            object-fit: cover;
+
+            object-position: center top;
+
+            border-radius:
+                46% 46% 32px 32px;
+
+            box-shadow: var(--shadow);
+        }
+
+
+        .hero-card {
+            position: absolute;
+
+            left: -35px;
+            bottom: 35px;
+
+            width: min(320px, 80%);
+
+            padding: 25px;
+
+            background:
+                rgba(255, 255, 255, 0.94);
+
+            border-radius: 24px;
+
+            box-shadow:
+                0 18px 45px
+                rgba(18, 67, 70, 0.13);
+        }
+
+
+        .hero-card-label {
+            color: var(--gold);
+
+            font-size: 0.75rem;
+            font-weight: 700;
+
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+
+            margin-bottom: 7px;
+        }
+
+
+        .hero-card strong {
+            display: block;
+
+            color: var(--teal-dark);
+
+            font-size: 1.25rem;
+
+            margin-bottom: 6px;
+        }
+
+
+        .hero-card p {
+            font-size: 0.96rem;
+        }
+
+
+        /* =====================================================
+           BENEFITS
+        ====================================================== */
+
+        .benefits {
+            background: var(--teal);
+
+            color: white;
+        }
+
+
+        .benefits-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+        }
+
+
+        .benefit {
+            padding:
+                48px 34px;
+
+            min-height: 180px;
+
+            border-right:
+                1px solid rgba(255,255,255,0.16);
+        }
+
+
+        .benefit:last-child {
+            border-right: 0;
+        }
+
+
+        .benefit h3 {
+            color: white;
+
+            font-size: 1.25rem;
+
+            margin-bottom: 8px;
+        }
+
+
+        .benefit p {
+            color:
+                rgba(255,255,255,0.78);
+
+            font-size: 0.98rem;
+        }
+
+
+        /* =====================================================
+           PHYSIOTHERAPIE NEU GEDACHT
+        ====================================================== */
+
+        .approach {
+            padding:
+                110px 0;
+
+            background: white;
+        }
+
+
+        .approach-header {
+            max-width: 900px;
+
+            margin-bottom: 55px;
+        }
+
+
+        .approach-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 24px;
+        }
+
+
+        .approach-card {
+            padding: 42px;
+
+            min-height: 230px;
+
+            background: white;
+
+            border:
+                1px solid var(--border);
+
+            border-radius: var(--radius);
+
+            box-shadow:
+                0 14px 40px
+                rgba(20, 67, 70, 0.045);
+        }
+
+
+        .approach-number {
+            color: var(--gold);
+
+            font-weight: 700;
+
+            letter-spacing: 0.12em;
+
+            margin-bottom: 38px;
+        }
+
+
+        .approach-card h3 {
+            color: var(--teal-dark);
+
+            font-size: 1.5rem;
+
+            margin-bottom: 10px;
+        }
+
+
+        .approach-card p {
+            max-width: 600px;
+        }
+
+
+        /* =====================================================
+           LEISTUNGEN
+        ====================================================== */
+
+        .services {
+            padding:
+                110px 0;
+
+            background: var(--cream);
+        }
+
+
+        .services-header {
+            max-width: 900px;
+
+            margin-bottom: 50px;
+        }
+
+
+        .services-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 22px;
+        }
+
+
+        .service-card {
+            position: relative;
+
+            padding: 38px;
+
+            min-height: 250px;
+
+            background: white;
+
+            border-radius: 30px;
+
+            border:
+                1px solid rgba(216,225,226,0.8);
+        }
+
+
+        .service-card h3 {
+            color: var(--teal-dark);
+
+            font-size: 1.45rem;
+
+            margin-bottom: 14px;
+        }
+
+
+        .service-card p {
+            max-width: 650px;
+        }
+
+
+        .service-link {
+            display: inline-flex;
+
+            margin-top: 28px;
+
+            color: var(--gold);
+
+            font-weight: 700;
+        }
+
+
+        /* =====================================================
+           RATGEBER
+        ====================================================== */
+
+        .guide {
+            padding:
+                105px 0;
+
+            background: white;
+        }
+
+
+        .guide-box {
+            display: grid;
+
+            grid-template-columns:
+                1.2fr 0.8fr;
+
+            align-items: center;
+
+            gap: 60px;
+
+            padding: 60px;
+
+            border-radius: 34px;
+
+            background: var(--cream);
+        }
+
+
+        .guide-box h2 {
+            color: var(--teal-dark);
+
+            font-family:
+                "Playfair Display",
+                Georgia,
+                serif;
+
+            font-size:
+                clamp(2.3rem, 5vw, 4rem);
+
+            line-height: 1.05;
+
+            margin-bottom: 22px;
+        }
+
+
+        .guide-box p {
+            max-width: 700px;
+
+            margin-bottom: 28px;
+        }
+
+
+        .guide-side {
+            display: grid;
+
+            place-items: center;
+
+            min-height: 230px;
+
+            padding: 30px;
+
+            background: var(--teal);
+
+            border-radius: 28px;
+
+            color: white;
+
+            text-align: center;
+        }
+
+
+        .guide-side strong {
+            display: block;
+
+            font-size: 1.4rem;
+
+            margin-bottom: 8px;
+        }
+
+
+        .guide-side span {
+            color:
+                rgba(255,255,255,0.75);
+        }
+
+
+        /* =====================================================
+           ÜBER MICH
+        ====================================================== */
+
+        .about {
+            padding:
+                110px 0;
+
+            background: var(--white);
+        }
+
+
+        .about-grid {
+            display: grid;
+
+            grid-template-columns:
+                minmax(300px, 0.8fr)
+                minmax(0, 1.2fr);
+
+            align-items: center;
+
+            gap: 70px;
+        }
+
+
+        .about-image {
+            width: 100%;
+
+            aspect-ratio: 0.82;
+
+            object-fit: cover;
+
+            object-position: center top;
+
+            border-radius:
+                40px;
+        }
+
+
+        .about-content p {
+            font-size: 1.08rem;
+
+            margin-bottom: 20px;
+        }
+
+
+        .about-signature {
+            color: var(--teal-dark);
+
+            font-family:
+                "Playfair Display",
+                Georgia,
+                serif;
+
+            font-size: 1.6rem;
+
+            margin-top: 25px;
+        }
+
+
+        /* =====================================================
+           PREISE
+        ====================================================== */
+
+        .pricing {
+            padding:
+                110px 0;
+
+            background: var(--cream);
+        }
+
+
+        .pricing-header {
+            max-width: 900px;
+
+            margin-bottom: 50px;
+        }
+
+
+        .pricing-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 22px;
+        }
+
+
+        .price-card {
+            padding: 38px;
+
+            background: white;
+
+            border:
+                1px solid var(--border);
+
+            border-radius: 30px;
+
+            display: flex;
+
+            flex-direction: column;
+        }
+
+
+        .price-card.featured {
+            border:
+                2px solid var(--gold);
+        }
+
+
+        .price-label {
+            color: var(--gold);
+
+            font-size: 0.76rem;
+            font-weight: 700;
+
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+
+            margin-bottom: 12px;
+        }
+
+
+        .price-card h3 {
+            color: var(--teal-dark);
+
+            font-size: 1.45rem;
+
+            margin-bottom: 15px;
+        }
+
+
+        .price {
+            color: var(--teal-dark);
+
+            font-size: 3.3rem;
+
+            font-weight: 700;
+
+            line-height: 1;
+
+            margin-bottom: 8px;
+        }
+
+
+        .duration {
+            margin-bottom: 25px;
+        }
+
+
+        .price-list {
+            list-style: none;
+
+            margin-bottom: 32px;
+        }
+
+
+        .price-list li {
+            padding:
+                8px 0;
+
+            color: var(--text);
+        }
+
+
+        .price-list li::before {
+            content: "✓";
+
+            color: var(--gold);
+
+            font-weight: 700;
+
+            margin-right: 10px;
+        }
+
+
+        .price-card .button {
+            width: 100%;
+
+            margin-top: auto;
+        }
+
+
+        /* =====================================================
+           CONTACT CTA
+        ====================================================== */
+
+        .contact-cta {
+            padding:
+                100px 0;
+
+            background: var(--teal);
+
+            color: white;
+
+            text-align: center;
+        }
+
+
+        .contact-cta .eyebrow {
+            color: var(--gold-light);
+        }
+
+
+        .contact-cta h2 {
+            max-width: 850px;
+
+            margin:
+                0 auto 22px;
+
+            color: white;
+
+            font-family:
+                "Playfair Display",
+                Georgia,
+                serif;
+
+            font-size:
+                clamp(2.5rem, 6vw, 4.8rem);
+
+            line-height: 1.05;
+        }
+
+
+        .contact-cta p {
+            max-width: 720px;
+
+            margin:
+                0 auto 32px;
+
+            color:
+                rgba(255,255,255,0.78);
+
+            font-size: 1.12rem;
+        }
+
+
+        .contact-cta .button {
+            background: white;
+
+            color: var(--teal);
+        }
+
+
+        /* =====================================================
+           FOOTER
+        ====================================================== */
+
+        .home-footer {
+            padding:
+                70px 0 0;
+
+            background:
+                #103F42;
+
+            color:
+                rgba(255,255,255,0.78);
+        }
+
+
+        .footer-grid {
+            display: grid;
+
+            grid-template-columns:
+                1.3fr 1fr 1fr;
+
+            gap: 60px;
+
+            padding-bottom: 60px;
+        }
+
+
+        .footer-logo {
+            width: 190px;
+
+            margin-bottom: 22px;
+        }
+
+
+        .footer-description {
+            max-width: 400px;
+        }
+
+
+        .footer-column h3 {
+            color: white;
+
+            font-size: 1.1rem;
+
+            margin-bottom: 18px;
+        }
+
+
+        .footer-column a {
+            display: block;
+
+            margin:
+                8px 0;
+
+            transition:
+                color 0.2s ease;
+        }
+
+
+        .footer-column a:hover {
+            color: var(--gold-light);
+        }
+
+
+        .footer-bottom {
+            padding:
+                22px 0;
+
+            border-top:
+                1px solid
+                rgba(255,255,255,0.12);
+
+            font-size: 0.9rem;
+        }
+
+
+        /* =====================================================
+           RESPONSIVE
+        ====================================================== */
+
+        @media (max-width: 900px) {
+
+            .desktop-navigation {
+                display: none;
+            }
+
+
+            .menu-button {
+                display: block;
+            }
+
+
+            .mobile-navigation {
+                position: absolute;
+
+                top: 82px;
+                left: 20px;
+                right: 20px;
+
+                padding: 20px;
+
+                background: white;
+
+                border-radius: 22px;
+
+                box-shadow:
+                    0 20px 50px
+                    rgba(0,0,0,0.12);
+
+                z-index: 200;
+            }
+
+
+            .mobile-navigation.active {
+                display: block;
+            }
+
+
+            .mobile-navigation a {
+                display: block;
+
+                padding: 12px;
+
+                color: var(--teal-dark);
+
+                font-weight: 600;
+            }
+
+
+            .hero-grid {
+                grid-template-columns: 1fr;
+
+                gap: 45px;
+            }
+
+
+            .hero-content {
+                text-align: center;
+            }
+
+
+            .hero-description {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+
+            .hero-trust {
+                text-align: left;
+            }
+
+
+            .hero-image-wrap {
+                max-width: 580px;
+
+                margin: 0 auto;
+            }
+
+
+          .benefits-grid {
+    grid-template-columns:
+        repeat(2, 1fr);
 }
-    </script>
 
-    <!-- Schema.org – Article -->
+.services-grid,
+.approach-grid {
+    grid-template-columns: 1fr;
+}
+
+.benefit:nth-child(2) {
+    border-right: 0;
+}
+
+
+            .benefit:nth-child(-n+2) {
+                border-bottom:
+                    1px solid
+                    rgba(255,255,255,0.16);
+            }
+
+
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+
+
+            .footer-grid {
+                grid-template-columns:
+                    1fr 1fr;
+            }
+
+
+            .guide-box {
+                grid-template-columns: 1fr;
+            }
+
+
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+
+            .about-image {
+                max-width: 550px;
+
+                margin: 0 auto;
+            }
+
+        }
+
+
+        @media (max-width: 650px) {
+
+            .home-container {
+                width:
+                    min(
+                        100% - 28px,
+                        1180px
+                    );
+            }
+
+
+            .home-header {
+                padding: 16px 0;
+            }
+
+
+            .brand img {
+                width: 150px;
+            }
+
+
+            .hero {
+                padding:
+                    125px 0
+                    55px;
+            }
+
+
+            .hero-grid {
+                min-height: auto;
+            }
+
+
+            .hero-title {
+                font-size:
+                    clamp(
+                        3rem,
+                        14vw,
+                        4.5rem
+                    );
+            }
+
+
+            .hero-description {
+                font-size: 1rem;
+            }
+
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+
+            .hero-buttons .button {
+                width: 100%;
+            }
+
+
+            .hero-trust {
+                grid-template-columns: 1fr;
+
+                gap: 12px;
+
+                text-align: left;
+            }
+
+
+            .hero-image {
+                aspect-ratio: 0.78;
+            }
+
+
+            .hero-card {
+                left: 12px;
+                bottom: 18px;
+
+                width:
+                    calc(100% - 24px);
+            }
+
+
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+
+
+            .benefit,
+            .benefit:nth-child(2),
+            .benefit:nth-child(-n+2) {
+                border-right: 0;
+                border-bottom:
+                    1px solid
+                    rgba(255,255,255,0.16);
+            }
+
+
+            .benefit:last-child {
+                border-bottom: 0;
+            }
+
+
+            .approach,
+            .services,
+            .guide,
+            .about,
+            .pricing {
+                padding:
+                    75px 0;
+            }
+
+
+            .approach-grid,
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+
+            .approach-card,
+            .service-card {
+                padding: 30px;
+            }
+
+
+            .guide-box {
+                padding: 30px;
+            }
+
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+
+                gap: 35px;
+            }
+
+
+            .footer-logo {
+                width: 160px;
+            }
+
+        }
+
+    </style>
+
+
+    <!-- =========================================================
+         SCHEMA.ORG
+    ========================================================== -->
+
     <script type="application/ld+json">
-{
-  "@context":"https://schema.org",
-  "@type":"Article",
-  "headline":"Physiotherapie Online mit Mila",
-  "description":"Online Physiotherapie für Orthopädie und Rehabilitation.",
-  "author":{
-    "@type":"Person",
-    "name":"Camila Poletto"
-  },
-  "publisher":{
-    "@type":"Organization",
-    "name":"Physiotherapie Online mit Mila",
-    "logo":{
-      "@type":"ImageObject",
-      "url":"https://milaphysio.de/logo/Mila-Logo.webp"
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+
+            {
+                "@type": "MedicalBusiness",
+                "@id": "https://milaphysio.de/#business",
+                "name": "Physio Online mit Mila",
+                "alternateName": "Physiotherapie Online mit Mila",
+                "url": "https://milaphysio.de/",
+                "logo": "https://milaphysio.de/logo/Mila-Logo.webp",
+                "image": "https://milaphysio.de/images/mila-physio.webp",
+                "description": "Evidenzbasierte Online-Physiotherapie für Erwachsene in ganz Deutschland mit individueller Betreuung.",
+                "telephone": "+49 174 2585160",
+                "email": "milapoletto.online@gmail.com",
+                "areaServed": {
+                    "@type": "Country",
+                    "name": "Deutschland"
+                },
+                "availableLanguage": [
+                    "de",
+                    "pt"
+                ],
+                "founder": {
+                    "@id": "https://milaphysio.de/#person"
+                },
+                "sameAs": [
+                    "https://www.instagram.com/therapie.online_mit.mila/"
+                ]
+            },
+
+            {
+                "@type": "Person",
+                "@id": "https://milaphysio.de/#person",
+                "name": "Camila Poletto",
+                "jobTitle": "Physiotherapeutin",
+                "url": "https://milaphysio.de/",
+                "image": "https://milaphysio.de/images/mila-physio.webp",
+                "worksFor": {
+                    "@id": "https://milaphysio.de/#business"
+                }
+            },
+
+            {
+                "@type": "WebSite",
+                "@id": "https://milaphysio.de/#website",
+                "url": "https://milaphysio.de/",
+                "name": "Physo Online mit Mila",
+                "publisher": {
+                    "@id": "https://milaphysio.de/#business"
+                },
+                "inLanguage": "de-DE"
+            },
+
+            {
+                "@type": "WebPage",
+                "@id": "https://milaphysio.de/#homepage",
+                "url": "https://milaphysio.de/",
+                "name": "Physio Online mit Mila | Online Physiotherapie",
+                "isPartOf": {
+                    "@id": "https://milaphysio.de/#website"
+                },
+                "about": {
+                    "@id": "https://milaphysio.de/#business"
+                },
+                "inLanguage": "de-DE"
+            }
+
+        ]
     }
-  },
-  "mainEntityOfPage":"https://milaphysio.de/"
-}
-    </script>
-
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MCE6NQPKFB"></script>
-
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-
-        gtag('config', 'G-MCE6NQPKFB');
     </script>
 
 </head>
+
+
 <body>
 
-<!-- ========================================================= -->
-<!-- Ende HEAD -->
-<!-- PARTE 1 FINALIZADA -->
-<!-- Aguarde PARTE 2 -->
-<!-- ========================================================= -->
- <!-- ========================================================= -->
-<!-- INDEX.HTML - PARTE 2 DE 12 -->
-<!-- HEADER + NAVIGATION + HERO -->
-<!-- COLAR ABAIXO DA PARTE 1 -->
-<!-- ========================================================= -->
+<div class="home-page">
 
-<!-- ================= HEADER ================= -->
 
-<header>
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
 
-    <div class="container">
+    <header class="home-header">
 
-        <nav>
+        <div class="home-container header-inner">
 
-            <!-- LOGO -->
-            <a href="#home" class="logo" aria-label="Physiotherapie Online mit Mila">
+            <a
+                href="index.html"
+                class="brand"
+                aria-label="Physio Online mit Mila – Startseite">
 
                 <img
                     src="logo/Mila-Logo.webp"
-                    alt="Physiotherapie Online mit Mila"
-                    class="logo-image"
-                    width="200"
-                    height="60">
+                    alt="Mila Physio"
+                    width="190"
+                    height="70"
+                    fetchpriority="high">
 
             </a>
-<!-- NAVIGATION -->
-<ul class="nav-links">
 
-    <li><a href="#home">Home</a></li>
-    <li><a href="#mila">Über Mila</a></li>
-    <li><a href="#ursachen">Ursachen</a></li>
-    <li><a href="#uebungen">Übungen</a></li>
-    <li><a href="#faq">FAQ</a></li>
-    <li><a href="#preise">Preise</a></li>
-    <li><a href="#kontakt">Kontakt</a></li>
 
-    <li>
-        <a href="recommendations.html">
-            Empfehlungen
-        </a>
-    </li>
+            <nav
+                class="desktop-navigation"
+                aria-label="Hauptnavigation">
 
-    <li class="brand-name">
-        Physiotherapie Online mit Mila
-    </li>
+                <a href="#leistungen">
+                    Leistungen
+                </a>
 
-</ul>
+                <a href="#beschwerden">
+                    Beschwerden
+                </a>
 
-            <!-- BUTTON -->
-            <div class="header-buttons">
+                <a href="#ueber-mich">
+                    Über mich
+                </a>
 
-                <a href="https://calendly.com/milapoletto-online"
-                   target="_blank"
-                   class="btn-primary">
+                <a href="#preise">
+                    Preise
+                </a>
 
-                    Terminbuchung öffnet Ende September 2026.
+                <a href="nackenschmerzen-ratgeber.html">
+                    Nacken-Ratgeber
+                </a>
+
+                <a href="recommendations.html">
+                    Empfehlungen
+                </a>
+
+                <a href="kontakt.html"
+                   class="button button-primary">
+                    Kontakt
+                </a>
+
+            </nav>
+
+
+            <button
+                class="menu-button"
+                id="menuButton"
+                type="button"
+                aria-label="Menü öffnen"
+                aria-expanded="false">
+
+                <span></span>
+                <span></span>
+                <span></span>
+
+            </button>
+
+        </div>
+
+
+        <nav
+            class="mobile-navigation"
+            id="mobileNavigation"
+            aria-label="Mobile Navigation">
+
+            <a href="#leistungen">
+                Leistungen
+            </a>
+
+            <a href="#beschwerden">
+                Beschwerden
+            </a>
+
+            <a href="#ueber-mich">
+                Über mich
+            </a>
+
+            <a href="#preise">
+                Preise
+            </a>
+
+            <a href="nackenschmerzen-ratgeber.html">
+                Nacken-Ratgeber
+            </a>
+
+            <a href="recommendations.html">
+                Empfehlungen
+            </a>
+
+            <a href="kontakt.html">
+                Kontakt
+            </a>
+
+        </nav>
+
+    </header>
+
+
+    <main>
+
+
+      <!-- =================================================
+     HERO
+================================================== -->
+
+<section
+    class="hero"
+    id="start">
+
+    <div class="home-container hero-grid">
+
+
+        <div class="hero-content">
+
+            <p class="hero-kicker">
+                Online-Physiotherapie · Deutschlandweit
+            </p>
+
+
+            <h1 class="hero-title">
+
+                Online-Physiotherapie
+                <br>
+                bei <span>Rücken-, Nacken- und Schulterschmerzen.</span>
+
+            </h1>
+
+
+            <p class="hero-description">
+
+                Physiotherapeutische Betreuung bei
+                Rücken-, Nacken- und Schulterbeschwerden –
+                individuell auf Ihre Situation und Ihren
+                Alltag abgestimmt.
+
+            </p>
+
+
+            <div class="hero-buttons">
+
+                <a
+                    href="kontakt.html"
+                    class="button button-primary">
+
+                    Erstgespräch anfragen
+
+                </a>
+
+
+                <a
+                    href="#leistungen"
+                    class="button button-secondary">
+
+                    Leistungen entdecken
 
                 </a>
 
             </div>
 
-            <!-- MOBILE MENU -->
-            <button
-                class="mobile-menu"
-                aria-label="Menü öffnen"
-                aria-expanded="false"
-                type="button">
 
-                ☰
+            <div class="hero-trust">
 
-            </button>
 
-        </nav>
+                <div class="trust-item">
 
-    </div>
+                    <span class="trust-icon">
+                        ✓
+                    </span>
 
-</header>
+                    Online in ganz Deutschland
 
-<!-- ================= HERO ================= -->
+                </div>
 
-<section id="home" class="hero">
 
-  <div class="container hero-grid">
+                <div class="trust-item">
 
-    <!-- TEXTO -->
-    <div class="hero-text">
+                    <span class="trust-icon">
+                        ✓
+                    </span>
 
-      <span class="badge">
-        Physiotherapie • Online • Deutschland
-      </span>
+                    Individuelle Betreuung
 
-      <h1>
-    Nackenschmerzen lindern mit Bewegung und gezielten Übungen
-</h1>
+                </div>
 
-    <p class="lead">
-    Wer täglich im Büro arbeitet, kennt das Problem:
-    Verspannungen und Nackenschmerzen können durch langes
-    Sitzen und einseitige Belastungen entstehen.
-    Mit gezielter Bewegung, passenden Übungen und einem
-    ergonomischen Arbeitsplatz können Sie aktiv etwas für
-    Ihren Nacken tun.
-</p>
-      <div class="hero-buttons">
-        <a href="https://calendly.com/milapoletto-online"
-           target="_blank"
-           class="btn-primary">
 
-           <!--Jetzt Online -->
-           
-         Termine ab Oktober 2026 verfügbar.
-        </a>
+                <div class="trust-item">
 
-        <a href="#uebungen" class="btn-secondary">
-          Kostenlose Übungen
-        </a>
-      </div>
+                    <span class="trust-icon">
+                        ✓
+                    </span>
 
-      <div class="hero-info">
+                    Für Erwachsene
 
-        <div>
-          <h3>✔ Online Beratung</h3>
-          <p>Bequem von zu Hause.</p>
-        </div>
+                </div>
 
-        <div>
-          <h3>✔ Individuelle Übungen</h3>
-          <p>Einfach umzusetzen.</p>
-        </div>
-
-        <div>
-          <h3>✔ Prävention</h3>
-          <p>Nachhaltige Schmerzlinderung.</p>
-        </div>
-
-      </div>
-
-    </div>
-
-    <!-- IMAGEM -->
-    <div class="hero-image">
-      <img
-        src="images/mila-physio.webp"
-        alt="Mila Physiotherapeutin"
-        loading="eager">
-    </div>
-
-  </div>
-
-</section>
-
-<!-- ================= QUICK INFO ================= -->
-
-<section class="quick-info">
-
-<div class="container">
-
-<div class="info-card">
-
-<h3>
-
-Über 80 %
-
-</h3>
-
-<p>
-
-aller Büroangestellten entwickeln im Laufe ihres Berufslebens
-Nackenschmerzen oder Verspannungen.
-
-</p>
-
-</div>
-
-<div class="info-card">
-
-<h3>
-
-Die gute Nachricht
-
-</h3>
-
-<p>
-
-Regelmäßige Bewegung, ergonomisches Arbeiten und gezielte Übungen
-können Beschwerden deutlich reduzieren.
-
-</p>
-
-</div>
-
-<div class="info-card">
-
-<h3>
-
-Früh handeln
-
-</h3>
-
-<p>
-
-Je früher muskuläre Dysbalancen behandelt werden,
-desto geringer ist das Risiko chronischer Schmerzen.
-
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- ========================================================= -->
-<!-- ENDE PARTE 2 -->
-<!-- PARTE 3 = ÜBER MILA -->
-<!-- ========================================================= -->
- <!-- ========================================================= -->
-<!-- INDEX.HTML - PARTE 3 DE 12 -->
-<!-- ÜBER MILA -->
-<!-- COLAR ABAIXO DA PARTE 2 -->
-<!-- ========================================================= -->
-
-<section id="mila" class="about">
-
-    <div class="container">
-
-        <div class="section-title">
-
-            <span>Ihre Online Physiotherapeutin</span>
-
-            <h2>
-                Lernen Sie Mila kennen
-            </h2>
-
-            <p>
-    Physiotherapie ohne lange Wartezeiten und ohne unnötigen Stress. Sie werden
-    persönlich von einer erfahrenen Physiotherapeutin begleitet und erhalten einen
-    individuellen Trainingsplan mit wissenschaftlich fundierten Übungen – genau
-    abgestimmt auf Ihre Beschwerden. Mit einer modernen Trainings-App können Sie
-    Ihre Übungen bequem zu Hause durchführen. Jede Woche wird Ihr Programm an Ihre
-    Fortschritte angepasst, damit Sie Schritt für Schritt stärker, beweglicher und
-    schmerzfreier werden. Denn jeder Mensch ist einzigartig – und genauso sollte
-    auch seine Therapie sein.
-</p>
-        </div>
-
-        <div class="about-grid">
-
-            <!-- FOTO -->
-
-            <div class="about-image">
-
-                <img src="images/camila-portrait3.webp"
-                     alt="Camila Poletto Physiotherapeutin"
-                     loading="lazy">
 
             </div>
 
-            <!-- TEXTO -->
+        </div>
 
-            <div class="about-content">
+
+        <div class="hero-image-wrap">
+
+            <img
+                class="hero-image"
+                src="images/mila-physio.webp"
+                alt="Camila Poletto, Physiotherapeutin für Online-Physiotherapie"
+                width="700"
+                height="850"
+                fetchpriority="high">
+
+
+            <div class="hero-card">
+
+                <p class="hero-card-label">
+                    Persönlich begleitet
+                </p>
+
+                <strong>
+                    Physio Online mit Mila
+                </strong>
+
+                <p>
+                    Für Erwachsene in ganz Deutschland.
+                </p>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+        <!-- =================================================
+             BENEFITS
+        ================================================== -->
+
+        <section class="benefits">
+
+            <div class="home-container benefits-grid">
+
+
+                <article class="benefit">
+
+                    <h3>
+                        Individuell
+                    </h3>
+
+                    <p>
+                        Auf Ihre Beschwerden,
+                        Ziele und Ihren Alltag abgestimmt.
+                    </p>
+
+                </article>
+
+
+                <article class="benefit">
+
+                    <h3>
+                        Aktiv
+                    </h3>
+
+                    <p>
+                        Bewegung und aktive Strategien
+                        statt passiver Standardlösungen.
+                    </p>
+
+                </article>
+
+
+                <article class="benefit">
+
+                    <h3>
+                        Persönlich
+                    </h3>
+
+                    <p>
+                        Direkte Betreuung durch
+                        Camila Poletto.
+                    </p>
+
+                </article>
+
+
+                <article class="benefit">
+
+                    <h3>
+                        Online
+                    </h3>
+
+                    <p>
+                        Bequem von zu Hause –
+                        deutschlandweit.
+                    </p>
+
+                </article>
+
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             ANSATZ
+        ================================================== -->
+
+        <section class="approach">
+
+            <div class="home-container">
+
+                <div class="approach-header">
+
+                    <span class="eyebrow">
+                        Physiotherapie neu gedacht
+                    </span>
+
+                    <h2 class="section-title">
+                        Mehr als nur Übungen.
+                        Eine Therapie, die zu Ihnen passt.
+                    </h2>
+
+                    <p class="section-text">
+                        Moderne Physiotherapie verbindet
+                        fachliche Expertise, aktive Bewegung
+                        und verständliche Beratung.
+                    </p>
+
+                </div>
+
+
+                <div class="approach-grid">
+
+
+                    <article class="approach-card">
+
+                        <p class="approach-number">
+                            01
+                        </p>
+
+                        <h3>
+                            Beschwerden verstehen
+                        </h3>
+
+                        <p>
+                            Gemeinsam betrachten wir Ihre
+                            Beschwerden, Ihre Bewegungen und
+                            die Anforderungen Ihres Alltags.
+                        </p>
+
+                    </article>
+
+
+                    <article class="approach-card">
+
+                        <p class="approach-number">
+                            02
+                        </p>
+
+                        <h3>
+                            Mehr Bewegung
+                        </h3>
+
+                        <p>
+                            Gezielte Übungen unterstützen
+                            Beweglichkeit, Kraft und
+                            Belastbarkeit – passend zu Ihnen.
+                        </p>
+
+                    </article>
+
+
+                    <article class="approach-card">
+
+                        <p class="approach-number">
+                            03
+                        </p>
+
+                        <h3>
+                            Selbstständigkeit
+                        </h3>
+
+                        <p>
+                            Sie lernen Ihren Körper besser
+                            zu verstehen und erhalten
+                            praktische Strategien für Ihren Alltag.
+                        </p>
+
+                    </article>
+
+
+                    <article class="approach-card">
+
+                        <p class="approach-number">
+                            04
+                        </p>
+
+                        <h3>
+                            Evidenzbasiert
+                        </h3>
+
+                        <p>
+                            Die physiotherapeutische Begleitung
+                            orientiert sich an aktuellen
+                            wissenschaftlichen Erkenntnissen
+                            und Ihren persönlichen Zielen.
+                        </p>
+
+                    </article>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+<!-- =================================================
+     LEISTUNGEN
+================================================== -->
+
+<section
+    class="services"
+    id="leistungen">
+
+    <div class="home-container">
+
+
+        <div class="services-header">
+
+            <span class="eyebrow">
+                Leistungen
+            </span>
+
+            <h2 class="section-title">
+                Online-Physiotherapie bei
+                Rücken-, Nacken- und
+                Schulterbeschwerden
+            </h2>
+
+            <p class="section-text">
+                Sie erhalten eine individuelle physiotherapeutische
+                Betreuung, abgestimmt auf Ihre Beschwerden,
+                Ihre Ziele und Ihren Alltag.
+            </p>
+
+        </div>
+
+
+        <div
+            class="services-grid"
+            id="beschwerden">
+
+
+            <!-- =========================================
+                 RÜCKENSCHMERZEN
+            ========================================== -->
+
+            <article class="service-card">
 
                 <h3>
-
-                    Hallo,
-
-                    ich bin <span class="gold">Camila Poletto</span>,
-
-                    Physiotherapeutin und Gründerin von
-
-                    <strong>Physiotherapie online mit Mila.</strong>
-
+                    Rückenschmerzen
                 </h3>
 
                 <p>
-    Mein Ziel ist es, Ihnen dabei zu helfen, Ihre Schmerzen nachhaltig zu reduzieren
-    – ohne allgemeine Standardübungen, die oft nicht zu Ihrem individuellen
-    Beschwerdebild passen. Als Physiotherapeutin mit Schwerpunkt Orthopädie,
-    Chirurgie und Wirbelsäulentherapie erhalten Sie einen persönlichen,
-    wissenschaftlich fundierten Therapieplan, der exakt auf Ihre Beschwerden,
-    Ihre Ziele und Ihren Alltag abgestimmt ist. Denn die beste Therapie ist
-    diejenige, die zu Ihrem Körper passt.
-</p>
-
-                <p>
-
-                    Viele Schmerzen entstehen nicht durch eine schwere Erkrankung,
-                    sondern durch langes Sitzen, Bewegungsmangel,
-                    Stress oder eine ungünstige Körperhaltung.
-
+                    Physiotherapeutische Unterstützung bei
+                    Rückenschmerzen und Bewegungseinschränkungen
+                    mit individuell angepassten Übungen und
+                    Strategien für den Alltag.
                 </p>
 
+            </article>
+
+
+            <!-- =========================================
+                 NACKENSCHMERZEN
+            ========================================== -->
+
+            <article class="service-card">
+
+                <h3>
+                    Nackenschmerzen
+                </h3>
+
                 <p>
-
-                    Bereits kleine Veränderungen im Alltag können häufig eine
-                    deutliche Verbesserung bewirken.
-
+                    Unterstützung bei Nackenschmerzen,
+                    Nackenverspannungen, HWS-Beschwerden
+                    und Beschwerden durch lange Sitzzeiten.
                 </p>
 
+                <a
+                    href="nackenschmerzen-ratgeber.html"
+                    class="service-link">
+
+                    Nacken-Ratgeber →
+
+                </a>
+
+            </article>
+
+
+            <!-- =========================================
+                 SCHULTERSCHMERZEN
+            ========================================== -->
+
+            <article class="service-card">
+
+                <h3>
+                    Schulterschmerzen
+                </h3>
+
                 <p>
-
-                    In meinen Online-Beratungen erhalten Sie verständliche
-                    Erklärungen, individuelle Übungen und praktische Tipps,
-                    die Sie sofort zu Hause oder im Büro umsetzen können.
-
+                    Individuelle physiotherapeutische Betreuung
+                    bei Schulterschmerzen, eingeschränkter
+                    Beweglichkeit und Belastungsproblemen.
                 </p>
 
-                <div class="experience">
+            </article>
 
-                    <div>
 
-                        <h4>✔ Online Beratung</h4>
+            <!-- =========================================
+                 BANDSCHEIBE
+            ========================================== -->
 
-                        <p>Deutschlandweit.</p>
+            <article class="service-card">
 
-                    </div>
+                <h3>
+                    Bandscheibenbeschwerden
+                </h3>
 
-                    <div>
+                <p>
+                    Individuelle Begleitung bei Beschwerden
+                    im Zusammenhang mit der Bandscheibe und
+                    schrittweiser Rückkehr zu mehr Bewegung
+                    und Belastbarkeit.
+                </p>
 
-                        <h4>✔ Individuelle Therapie</h4>
+            </article>
 
-                        <p>Auf Ihre Beschwerden abgestimmt.</p>
 
-                    </div>
+            <!-- =========================================
+                 ARTHROSE
+            ========================================== -->
 
-                    <div>
+            <article class="service-card">
 
-                        <h4>✔ Evidenzbasierte Physiotherapie</h4>
+                <h3>
+                    Arthrose
+                </h3>
 
-                        <p>Nach aktuellen wissenschaftlichen Erkenntnissen.</p>
+                <p>
+                    Bewegungsstrategien und individuell
+                    angepasstes Training, um Beweglichkeit
+                    und Aktivität im Alltag zu unterstützen.
+                </p>
 
-                    </div>
+            </article>
 
-                </div>
 
-            </div>
+            <!-- =========================================
+                 REHABILITATION
+            ========================================== -->
+
+            <article class="service-card">
+
+                <h3>
+                    Rehabilitation nach OP
+                </h3>
+
+                <p>
+                    Individuelle physiotherapeutische Begleitung
+                    nach orthopädischen und chirurgischen
+                    Eingriffen – abgestimmt auf Ihre persönliche
+                    Situation und Belastbarkeit.
+                </p>
+
+            </article>
+
 
         </div>
 
     </div>
 
 </section>
+    <!-- =================================================
+     RATGEBER
+================================================== -->
 
-<!-- =============================== -->
+<section class="guide">
 
-<section class="why">
+    <div class="home-container">
 
-<div class="container">
+        <div class="guide-box">
 
-<div class="section-title">
 
-<span>Warum Patienten sich für mich entscheiden</span>
+            <div>
 
-<h2>
-
-Ihre Gesundheit steht im Mittelpunkt
-
-</h2>
-
-</div>
-
-<div class="cards">
-
-<div class="card">
-
-<div class="icon">
-
-🧠
-
-</div>
-
-<h3>
-
-Ganzheitlicher Ansatz
-
-</h3>
-
-<p>
-
-Nicht nur Symptome behandeln,
-sondern die Ursachen verstehen.
-
-</p>
-
-</div>
-
-<div class="card">
-
-<div class="icon">
-
-💻
-
-</div>
-
-<h3>
-
-Online Therapie
-
-</h3>
-
-<p>
-
-Flexible Termine –
-egal ob zu Hause,
-im Büro oder unterwegs.
-
-</p>
-
-</div>
-
-<div class="card">
-
-<div class="icon">
-
-🏃
-
-</div>
-
-<h3>
-
-Aktive Übungen
-
-</h3>
-
-<p>
-
-Praktische Übungen,
-die leicht in den Alltag integriert werden können.
-
-</p>
-
-</div>
-
-<div class="card">
-
-<div class="icon">
-
-❤️
-
-</div>
-
-<h3>
-
-Persönliche Betreuung
-
-</h3>
-
-<p>
-
-Individuelle Begleitung
-mit Zeit für Ihre Fragen.
-
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- =============================== -->
-
-<section class="quote">
-
-<div class="container">
-
-<blockquote>
-
-"Bewegung ist oft die beste Medizin.
-
-Schon wenige Minuten bewusster Bewegung
-pro Stunde können helfen,
-Verspannungen zu lösen,
-die Durchblutung zu verbessern
-und Schmerzen vorzubeugen."
-
-</blockquote>
-
-<p>
-
-— Camila Poletto
-
-</p>
-
-</div>
-
-</section>
-
-<!-- ========================================================= -->
-<!-- ENDE PARTE 3 -->
-<!-- PARTE 4 = NACKENSCHMERZEN -->
-<!-- ========================================================= -->
- <!-- ========================================================= -->
-<!-- INDEX.HTML - PARTE 4 DE 12 -->
-<!-- NACKENSCHMERZEN -->
-<!-- COLAR ABAIXO DA PARTE 3 -->
-<!-- ========================================================= -->
-
-<section id="ursachen" class="content-section">
-
-  <div class="container">
-
-    <div class="section-title">
-      <span>Nackenschmerzen verstehen</span>
-      <h2>Warum entstehen Nackenschmerzen bei Büroarbeit?</h2>
-
-     <p>
-    Wer täglich mehr als acht Stunden am Computer arbeitet, belastet seine
-    Halswirbelsäule erheblich. Ab etwa dem <strong>35. Lebensjahr</strong> steigt das
-    Risiko für Nackenbeschwerden, da der Körper sich langsam verändert:
-    Die Muskulatur verliert ohne regelmäßiges Training an Kraft, Gelenke werden
-    weniger beweglich und die tiefen stabilisierenden Muskeln der Wirbelsäule
-    arbeiten nicht mehr so effizient. Gleichzeitig führen langes Sitzen,
-    Bewegungsmangel und beruflicher Stress zu einer dauerhaft erhöhten
-    Muskelspannung. Die Folge sind häufig Verspannungen, Schmerzen sowie
-    Bewegungseinschränkungen im Bereich von Nacken, Schultern und oberem Rücken.
-</p>
-<h2>Warum treten Nackenschmerzen ab 35 häufiger auf?</h2>
-
-<ul>
-    <li><strong>Weniger Muskelkraft:</strong> Ohne regelmäßiges Krafttraining nimmt die Muskelmasse langsam ab. Dadurch fehlt der Halswirbelsäule wichtige Stabilität.</li>
-
-    <li><strong>Steifere Gelenke:</strong> Bewegungsmangel reduziert die Gelenkbeweglichkeit und erhöht die Belastung der Muskulatur.</li>
-
-    <li><strong>Schlechtere Durchblutung:</strong> Langes Sitzen verringert die Sauerstoffversorgung der Muskeln. Sie ermüden schneller und verspannen leichter.</li>
-
-    <li><strong>Mehr Stress:</strong> Dauerhafter Stress erhöht die Muskelspannung – besonders im Nacken- und Schulterbereich.</li>
-
-    <li><strong>Geringere Regenerationsfähigkeit:</strong> Der Körper kann Fehlhaltungen nicht mehr so gut ausgleichen wie in jungen Jahren. Kleine Belastungen führen daher schneller zu anhaltenden Beschwerden.</li>
-</ul>
-
-    <div class="content-grid">
-
-      <!-- FOTO CORRIGIDA -->
-      <div class="blog-image">
-        <img src="images/nackenschmerzen-buero.webp"
-             alt="Nackenschmerzen durch Büroarbeit"
-             loading="lazy">
-      </div>
-
-      <div>
-        <p>
-          Unser Körper wurde für Bewegung entwickelt – nicht für stundenlanges
-          Sitzen.
-        </p>
-
-        <p>
-          Während der Bildschirmarbeit wird der Kopf häufig mehrere Zentimeter
-          nach vorne geschoben. Dadurch erhöht sich die Belastung auf die
-          Halswirbelsäule erheblich.
-        </p>
-
-        <p>
-          Bereits eine leichte Vorneigung des Kopfes kann die Belastung der
-          Nackenmuskulatur deutlich erhöhen. Die Folge sind:
-        </p>
-
-        <ul>
-          <li>✔ verspannte Nackenmuskulatur</li>
-          <li>✔ Schulterverspannungen</li>
-          <li>✔ eingeschränkte Beweglichkeit</li>
-          <li>✔ Spannungskopfschmerzen</li>
-          <li>✔ Schwindelgefühl</li>
-          <li>✔ Augenermüdung</li>
-          <li>✔ Schmerzen zwischen den Schulterblättern</li>
-        </ul>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-<!-- ======================================= -->
-
-<section class="facts">
-
-<div class="container">
-
-<div class="section-title">
-
-<span>Wussten Sie schon?</span>
-
-<h2>
-
-Schon kleine Veränderungen können Großes bewirken.
-
-</h2>
-
-</div>
-
-<div class="cards">
-
-<div class="card">
-
-<h3>
-
-<h3>💧 Ausreichend trinken</h3>
-
-<p>
-    Eine ausreichende Flüssigkeitszufuhr unterstützt den Stoffwechsel und die
-    Versorgung von Muskeln, Bandscheiben und anderem Gewebe. Wer regelmäßig
-    trinkt, kann die normale Muskelfunktion unterstützen und Verspannungen
-    vorbeugen.
-</p>
-
-<p>
-    Trinken Sie möglichst <strong>über den ganzen Tag verteilt</strong> – zum
-    Beispiel jede Stunde ein Glas Wasser. So fällt es leichter, den täglichen
-    Flüssigkeitsbedarf zu erreichen, als wenn Sie erst trinken, wenn bereits
-    Durst aufkommt.
-</p>
-
-<p>
-    Praktisch sind Trinkflaschen mit einer Zeitskala. Sie erinnern daran,
-    regelmäßig zu trinken und helfen dabei, den eigenen Wasserkonsum im Blick
-    zu behalten.
-</p>
-S
-<p>
-    Als einfache Faustregel gilt: <strong>Etwa 35 ml Wasser pro Kilogramm
-    Körpergewicht pro Tag.</strong> Eine Person mit 70 kg benötigt also ungefähr
-    2,5 Liter Flüssigkeit täglich. Bei Hitze, Sport oder körperlicher Arbeit
-    kann der Bedarf entsprechend höher sein.
-</p>
-
-</div>
-
-<div class="card">
-
-<h3>
-
-🚶 Bewegung
-
-<h3>🚶 Bewegung</h3>
-
-<p>
-    Stehen Sie mindestens einmal pro Stunde auf. Ideal sind etwa
-    <strong>5 bis 10 Minuten Bewegung</strong>, bevor Sie sich wieder hinsetzen.
-    Gehen Sie ein paar Schritte, strecken Sie den Körper oder bewegen Sie
-    Schultern und Nacken bewusst. Jede Form von Bewegung hilft, die Muskulatur
-    zu aktivieren und die Wirbelsäule zu entlasten.
-</p>
-
-<p>
-    Ebenso wichtig ist der regelmäßige Wechsel der Sitzposition. Vermeiden Sie
-    es, über Stunden in derselben Haltung zu bleiben. Wechseln Sie zwischen
-    verschiedenen Sitzmöglichkeiten, zum Beispiel einem ergonomischen Bürostuhl,
-    einem <strong>Pezziball</strong> oder einem <strong>Sitzkissen
-    (Balance- oder Luftkissen)</strong>. Diese kleinen Veränderungen fördern
-    natürliche Ausgleichsbewegungen und verhindern, dass die Muskulatur dauerhaft
-    einseitig belastet wird.
-</p>
-
-</div>
-
-<div class="card">
-
-<h3>
-
-<h3>🖥 Ergonomie</h3>
-
-<p>
-    Eine ergonomische Sitzposition bildet die Grundlage: Der Monitor sollte sich
-    auf Augenhöhe befinden, die Füße stehen flach auf dem Boden, die Schultern
-    bleiben entspannt und die Unterarme liegen locker auf dem Schreibtisch.
-</p>
-
-<p>
-    Noch wichtiger als die perfekte Haltung ist jedoch, sie regelmäßig zu
-    verändern. Unser Körper ist für Bewegung gemacht – nicht für stundenlanges
-    Sitzen in derselben Position. Stehen Sie mehrmals täglich auf, strecken Sie
-    die Arme über den Kopf, bewegen Sie die Schultern, drehen Sie den Kopf
-    langsam nach rechts und links und gehen Sie einige Schritte. Schon wenige
-    Minuten Bewegung pro Stunde können Nacken und Rücken deutlich entlasten.
-</p>
-
-<p>
-    Höhenverstellbare Schreibtische sind eine hervorragende Möglichkeit, zwischen
-    Sitzen und Stehen zu wechseln. Auch das zeitweise Sitzen auf einem
-    <strong>Pezziball</strong> kann kleine Ausgleichsbewegungen fördern und langes
-    statisches Sitzen reduzieren. Wichtig ist jedoch, regelmäßig zwischen den
-    verschiedenen Positionen zu wechseln.
-</p>
-
-<p>
-    Ein Gymnastikball eignet sich außerdem hervorragend für sanfte
-    Mobilisationsübungen. In Rückenlage oder Bauchlage auf dem Ball lässt sich
-    die Wirbelsäule schonend entlasten. Kreisende Bewegungen des Beckens fördern
-    die Beweglichkeit von Becken und Hüfte und unterstützen die natürliche
-    Gelenkbewegung – eine wohltuende Abwechslung nach vielen Stunden am
-    Schreibtisch.
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- ======================================= -->
-
-<section class="forward-head">
-
-<div class="container">
-
-<div class="section-title">
-
-<span>Forward Head Posture</span>
-
-<h2>
-
-Die häufigste Ursache moderner Nackenschmerzen
-
-</h2>
-
-</div>
-
-<p>
-
-Viele Büroangestellte entwickeln im Laufe der Jahre
-eine sogenannte
-
-<strong>Forward Head Posture</strong>.
-
-Dabei befindet sich der Kopf dauerhaft vor der
-Körperachse.
-
-Dadurch müssen die Muskeln im Nacken
-ständig gegen das Gewicht des Kopfes arbeiten.
-
-</p>
-
-<p>
-
-Langfristig können entstehen:
-
-</p>
-
-<ul>
-
-<li>Verspannungen</li>
-
-<li>Kopfschmerzen</li>
-
-<li>Schmerzen zwischen den Schulterblättern</li>
-
-<li>eingeschränkte Beweglichkeit</li>
-
-<li>Augenbeschwerden</li>
-
-<li>Schwindel</li>
-
-</ul>
-
-<div class="gold-box">
-
-<h3>
-
-Merke
-
-</h3>
-
-<p>
-
-Nicht die Halswirbelsäule ist meistens das Problem,
-sondern die dauerhaft ungünstige Haltung.
-
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- ======================================= -->
-
-<section class="cta-small">
-
-<div class="container">
-
-<h2>
-
-Je früher Sie Ihre Haltung verbessern,
-desto einfacher lassen sich Beschwerden vermeiden.
-
-</h2>
-
-<a href="https://calendly.com/milapoletto-online"
-
-target="_blank"
-
-class="btn-primary">
-
-Online Termin buchen
-
-</a>
-
-</div>
-
-</section>
-
-<!-- ========================================================= -->
-<!-- ENDE PARTE 4 -->
-<!-- PARTE 5 = ÜBUNGEN GEGEN NACKENSCHMERZEN -->
-<!-- ========================================================= -->
- <!-- ========================================================= -->
-<!-- INDEX.HTML - PARTE 5 DE 12 -->
-<!-- ÜBUNGEN GEGEN NACKENSCHMERZEN -->
-<!-- COLAR ABAIXO DA PARTE 4 -->
-<!-- ========================================================= -->
-
-<section id="uebungen" class="exercise-section">
-
-<div class="container">
-
-<div class="section-title">
-
-<span>Aktiv gegen Schmerzen</span>
-
-<h2>
-
-Die besten Übungen gegen Nackenschmerzen im Büro
-
-</h2>
-
-<p>
-
-Bereits wenige Minuten Bewegung pro Stunde können helfen,
-Verspannungen zu lösen, die Durchblutung zu fördern
-und Schmerzen nachhaltig vorzubeugen.
-
-</p>
-
-</div>
-
-<!-- ================================================= -->
-                      doppelkinn
-
-
-<div class="exercise-text">
-<section class="exercise">
-
-    <div class="exercise-image">
-        <img src="images/doppelkinn.webp"
-             alt="Doppelkinn-Übung (Chin Tuck) zur Verbesserung der Haltung bei Nackenschmerzen">
-    </div>
-
-    <div class="exercise-content">
-        <h3>1. Doppelkinn (Chin Tuck)</h3>
-
-        <p>
-            Die Doppelkinn-Übung gehört zu den wirksamsten Übungen bei
-            Nackenschmerzen, die durch langes Sitzen und Bildschirmarbeit
-            entstehen. Sie aktiviert die tiefe Halsmuskulatur und hilft dabei,
-            den Kopf wieder über der Wirbelsäule auszurichten. Dadurch werden
-            die Muskulatur entlastet und die Belastung der Halswirbelsäule
-            reduziert.
-        </p>
-    </div>
-
-</section>
-<p>
-
-Dadurch werden Muskeln,
-Bänder,
-Bandscheiben und Nervenstrukturen
-entlastet.
-
-</p>
-
-<h4>Ausführung</h4>
-
-<ul>
-
-<li>Kopf gerade halten.</li>
-
-<li>Kinn langsam nach hinten ziehen.</li>
-
-<li>Keine Bewegung nach unten.</li>
-
-<li>5 Sekunden halten.</li>
-
-<li>10 bis 15 Wiederholungen.</li>
-
-</ul>
-
-<div class="tip-box">
-
-<strong>Tipp:</strong>
-
-Führen Sie diese Übung mehrmals täglich durch,
-insbesondere nach längeren Sitzphasen.
-
-</div>
-
-</div>
-
-</div>
-
-<!-- ================================================= -->
-
-<section class="exercise">
-
-    <div class="exercise-image">
-        <img src="images/Schulterkreisen.webp"
-             alt="Schulterkreisen zur Lockerung der Schulter- und Nackenmuskulatur">
-    </div>
-
-    <div class="exercise-content">
-        <h3>2. Schulterkreisen</h3>
-
-        <p>
-            Verspannte Schultern gehören zu den häufigsten Ursachen für
-            Nackenschmerzen – besonders bei Menschen, die viele Stunden am
-            Computer arbeiten. Regelmäßiges Schulterkreisen fördert die
-            Durchblutung, lockert die Muskulatur und verbessert die
-            Beweglichkeit des Schultergürtels. Schon 10 bis 15 langsame
-            Kreisbewegungen nach hinten, mehrmals täglich, können Verspannungen
-            lösen und den Nacken spürbar entlasten.
-        </p>
-    </div>
-
-</section>
-
-<!-- ================================================= -->
-
-<div class="exercise">
-
-<div class="exercise-image">
-
-<img src="images/trinken.webp"
-alt="Wasser trinken"
-loading="lazy">
-
-</div>
-
-<div class="exercise-text">
-
-
-<h3>3. Genug Wasser trinken</h3>
-
-<p>
-    Eine ausreichende Flüssigkeitszufuhr unterstützt Muskeln, Faszien und
-    Bandscheiben. Trinken Sie regelmäßig über den Tag verteilt – idealerweise
-    jede Stunde ein Glas Wasser. Trinkflaschen mit Zeitskala können dabei
-    helfen, das tägliche Trinkziel zu erreichen.
-</p>
-
-<p>
-    Als einfache Faustregel gelten etwa
-    <strong>35 ml Wasser pro Kilogramm Körpergewicht und Tag.</strong>
-    Bei 70 kg entspricht das ungefähr 2,5 Litern. Bei Hitze oder körperlicher
-    Aktivität kann der Bedarf höher sein.
-</p>
-
-<div class="gold-box">
-
-💧 Empfehlung:
-
-Trinken Sie regelmäßig über den Tag verteilt – etwa 35 ml Wasser pro Kilogramm Körpergewicht. Bei 70 kg entspricht das ungefähr 2,5 Litern.
-
-</div>
-
-</div>
-
-</div>
-
-<!-- ================================================= -->
-
-<div class="exercise reverse">
-
-<div class="exercise-text">
-
-<h3>
-
-4. Arme über den Kopf strecken
-
-</h3>
-
-<p>
-
-Nach jeder Stunde Sitzen
-heben Sie beide Arme
-etwa 20 Mal langsam über den Kopf.
-
-</p>
-
-<ul>
-
-<li>Brustkorb öffnet sich.</li>
-
-<li>Schultergelenke werden mobilisiert.</li>
-
-<li>Die Brustmuskulatur wird gedehnt.</li>
-
-<li>Die Wirbelsäule richtet sich auf.</li>
-
-</ul>
-
-</div>
-
-<div class="exercise-image">
-
-<img src="images/stehen.webp"
-alt="Arme heben"
-loading="lazy">
-
-</div>
-
-</div>
-
-<!-- ================================================= -->
-
-<div class="exercise">
-
-<div class="exercise-image">
-
-<img src="images/augen.webp"
-alt="Augenübungen"
-loading="lazy">
-
-</div>
-
-<div class="exercise-text">
-
-<h3>
-
-5. Augen entspannen
-
-</h3>
-
-<p>
-
-Langes Arbeiten am Bildschirm
-belastet nicht nur die Augen,
-sondern erhöht auch
-die Muskelspannung im Nacken.
-
-</p>
-
-<p>
-
-Schauen Sie alle 20 Minuten
-für etwa 20 Sekunden
-in die Ferne.
-
-</p>
-
-<p>
-
-Blinzeln Sie bewusst häufiger
-und schließen Sie zwischendurch
-für einige Sekunden die Augen.
-
-</p>
-
-</div>
-
-</div>
-
-<!-- ================================================= -->
-
-<div class="exercise reverse">
-
-<div class="exercise-text">
-
-<h3>
-
-6. Alle 60 Minuten aufstehen
-
-</h3>
-
-<p>
-
-Unser Körper liebt Bewegung.
-
-Stehen Sie spätestens nach einer Stunde
-für mindestens 10 Minuten auf.
-
-</p>
-
-<ul>
-
-<li>Gehen Sie einige Schritte.</li>
-
-<li>Bewegen Sie die Schultern.</li>
-
-<li>Trinken Sie Wasser.</li>
-
-<li>Atmen Sie tief durch.</li>
-
-</ul>
-
-<p>
-
-Wer einen höhenverstellbaren Schreibtisch besitzt,
-sollte regelmäßig zwischen Sitzen und Stehen wechseln.
-
-</p>
-
-</div>
-
-<div class="exercise-image">
-
-<img src="images/aufstehen.webp"
-alt="Steharbeitsplatz"
-loading="lazy">
-
-</div>
-
-</div>
-
-<!-- ================================================= -->
-
-<div class="exercise">
-
-<div class="exercise-image">
-
-<img src="images/akupressur.webp"
-alt="Akupressurkissen"
-loading="lazy">
-
-</div>
-
-<div class="exercise-text">
-
-<h3>
-
-7. Akupressurkissen
-
-</h3>
-
-<p>
-
-Ein Akupressurkissen kann
-die lokale Durchblutung fördern
-und verspannte Muskulatur entspannen.
-
-</p>
-
-<p>
-
-Viele Menschen empfinden
-10 bis 20 Minuten täglich
-als angenehm.
-
-</p>
-
-<p>
-
-Es ersetzt keine Physiotherapie,
-kann aber eine sinnvolle Ergänzung sein.
-
-</p>
-
-</div>
-
-</div>
-
-<!-- ================================================= -->
-
-<div class="exercise reverse">
-
-<div class="exercise-text">
-
-<h3>
-
-8. Beine auf einem Stuhl lagern
-
-</h3>
-
-<p>
-
-Legen Sie sich auf den Boden
-und platzieren Sie beide Unterschenkel
-auf einer stabilen Sitzfläche.
-
-</p>
-
-<p>
-
-Diese Position kann
-die Lendenwirbelsäule entlasten,
-die Rückenmuskulatur entspannen
-und den Druck auf die Bandscheiben reduzieren.
-
-</p>
-
-</div>
-
-<div class="exercise-image">
-
-<img src="images/entlastung.webp"
-alt="Entspannung Rücken"
-loading="lazy">
-
-</div>
-
-</div>
-
-<!-- ================================================= -->
-
-<div class="tip-large">
-
-<h2>
-
-Mein persönlicher Tipp
-
-</h2>
-
-<p>
-
-Stellen Sie Ihre Wasserflasche,
-den Drucker oder andere häufig benötigte Gegenstände
-bewusst weiter entfernt.
-
-So stehen Sie automatisch häufiger auf
-und bringen mehr Bewegung in Ihren Arbeitstag.
-
-Diese kleinen Unterbrechungen sind oft wirkungsvoller,
-als mehrere Stunden regungslos zu sitzen.
-
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- ========================================================= -->
-<!-- ENDE PARTE 5 -->
-<!-- PARTE 6 = ERGONOMIE + BÜRO -->
-<!-- ========================================================= -->
- <!-- ========================================================= -->
-<!-- INDEX.HTML - PARTE 6 DE 12 -->
-<!-- ERGONOMIE IM BÜRO -->
-<!-- COLAR ABAIXO DA PARTE 5 -->
-<!-- ========================================================= -->
-
-<section id="ergonomie" class="ergonomie-section">
-
-<div class="container">
-
-<div class="section-title">
-
-<span>Ergonomie am Arbeitsplatz</span>
-
-<h2>
-
-Ein ergonomischer Arbeitsplatz schützt Ihren Nacken
-
-</h2>
-
-<p>
-
-Die meisten Nackenschmerzen entstehen nicht plötzlich.
-Sie entwickeln sich langsam über Monate oder Jahre
-durch ungünstige Körperhaltungen und fehlende Bewegung.
-
-</p>
-
-</div>
-
-<div class="two-columns">
-
-<div>
-
-<h3>🖥️ Der Monitor</h3>
-
-<p>
-
-Der obere Bildschirmrand sollte sich ungefähr auf Augenhöhe befinden.
-
-Dadurch vermeiden Sie,
-den Kopf dauerhaft nach vorne oder unten zu neigen.
-
-</p>
-
-</div>
-
-<div>
-
-<h3>🪑 Der Stuhl</h3>
-
-<p>
-
-Ihre Füße stehen vollständig auf dem Boden.
-
-Knie und Hüfte bilden ungefähr einen 90° Winkel.
-
-Die Rückenlehne unterstützt die natürliche Haltung.
-
-</p>
-
-</div>
-
-<div>
-
-<h3>⌨️ Tastatur und Maus</h3>
-
-<p>
-
-Die Unterarme liegen locker auf dem Schreibtisch.
-
-Die Schultern bleiben entspannt.
-
-Vermeiden Sie dauerhaft hochgezogene Schultern.
-
-</p>
-
-</div>
-
-<div>
-
-<h3>💡 Beleuchtung</h3>
-
-<p>
-
-Blendungen auf dem Bildschirm führen häufig dazu,
-dass Menschen den Kopf nach vorne schieben.
-
-Nutzen Sie möglichst indirektes Licht.
-
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- ======================================== -->
-
-<section class="gold-section">
-
-<div class="container">
-
-<h2>
-
-Die 60-Minuten-Regel
-
-</h2>
-
-<p>
-
-Nach spätestens einer Stunde Sitzen
-sollten Sie Ihre Sitzposition verlassen.
-
-Bewegen Sie sich mindestens zehn Minuten.
-
-</p>
-
-<div class="timeline">
-
-<div>
-
-<h3>08:00</h3>
-
-<p>Arbeitsbeginn</p>
-
-</div>
-
-<div>
-
-<h3>09:00</h3>
-
-<p>Aufstehen • Wasser trinken • Schultern bewegen</p>
-
-</div>
-
-<div>
-
-<h3>10:00</h3>
-
-<p>Kurz spazieren • Arme strecken</p>
-
-</div>
-
-<div>
-
-<h3>11:00</h3>
-
-<p>Neue Sitzposition einnehmen</p>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- ======================================== -->
-
-<section class="office-tips">
-
-<div class="container">
-
-<div class="section-title">
-
-<span>Praktische Alltagstipps</span>
-
-<h2>
-
-Mehr Bewegung ohne zusätzliches Training
-
-</h2>
-
-</div>
-
-<div class="cards">
-
-<div class="card">
-
-<h3>
-
-🚶 Drucker weiter weg
-
-</h3>
-
-<p>
-
-Stellen Sie Drucker,
-Papier oder Ordner bewusst einige Meter entfernt.
-
-Jeder zusätzliche Gang bringt Bewegung
-und verbessert die Durchblutung.
-
-</p>
-
-</div>
-
-<div class="card">
-
-<h3>
-
-💧 Wasserflasche
-
-</h3>
-
-<p>
-
-Lassen Sie Ihre Trinkflasche nicht direkt neben sich stehen.
-
-Nutzen Sie jede Gelegenheit,
-um aufzustehen und Wasser nachzufüllen.
-
-</p>
-
-</div>
-
-<div class="card">
-
-<h3>
-
-📞 Telefonieren im Stehen
-
-</h3>
-
-<p>
-
-Führen Sie Telefonate möglichst im Stehen
-oder gehen Sie währenddessen langsam umher.
-
-</p>
-
-</div>
-
-<div class="card">
-
-<h3>
-
-🪜 Treppe statt Aufzug
-
-</h3>
-
-<p>
-
-Jede zusätzliche Bewegung unterstützt
-Muskulatur,
-Herz-Kreislauf-System
-und Stoffwechsel.
-
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- ======================================== -->
-
-<section class="desk-section">
-
-<div class="container">
-
-<div class="desk-grid">
-
-<div>
-
-<img src="images/aufstehen3.webp"
-
-alt="Ergonomischer Arbeitsplatz"
-
-loading="lazy">
-
-</div>
-
-<div>
-
-<h2>
-
-Höhenverstellbarer Schreibtisch
-
-</h2>
-
-<p>
-
-Ein höhenverstellbarer Schreibtisch ermöglicht
-den regelmäßigen Wechsel
-zwischen Sitzen und Stehen.
-
-</p>
-
-<p>
-
-Bereits zwei bis drei Stehphasen
-pro Arbeitstag
-können den Rücken entlasten
-und die Muskelaktivität verbessern.
-
-</p>
-
-<ul>
-
-<li>✔ bessere Haltung</li>
-
-<li>✔ mehr Bewegung</li>
-
-<li>✔ weniger Verspannungen</li>
-
-<li>✔ bessere Konzentration</li>
-
-<li>✔ höhere Leistungsfähigkeit</li>
-
-</ul>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- ======================================== -->
-
-<section class="warning-box">
-
-<div class="container">
-
-<h2>
-
-Wichtig
-
-</h2>
-
-<p>
-
-Die beste Sitzhaltung gibt es nicht.
-
-Die beste Haltung ist immer
-
-<strong>die nächste Haltung.</strong>
-
-</p>
-
-<p>
-
-Verändern Sie regelmäßig Ihre Position,
-stehen Sie auf,
-gehen Sie einige Schritte
-und bringen Sie Bewegung in Ihren Arbeitsalltag.
-
-</p>
-
-</div>
-
-</section>
-
-<!-- ======================================== -->
-
-<section class="mini-cta">
-
-<div class="container">
-
-<h2>
-
-Haben Sie regelmäßig Nackenschmerzen?
-
-</h2>
-
-<p>
-
-Gemeinsam finden wir die Ursache
-und entwickeln einen individuellen Plan
-für Ihren Alltag.
-
-</p>
-
-<a
-
-href="https://calendly.com/milapoletto-online"
-
-target="_blank"
-
-class="btn-primary">
-
-Online-Termine ab Oktober 2026 verfügbar.
-
-</a>
-
-</div>
-
-</section>
-
-<!-- ========================================================= -->
-<!-- ENDE PARTE 6 -->
-<!-- PARTE 7 = KOPFSCHMERZEN • SCHWINDEL • AUGEN -->
-<!-- ========================================================= -->
- <!-- ========================================================= -->
-<!-- INDEX.HTML - PARTE 7 DE 12 -->
-<!-- KOPFSCHMERZEN • SCHWINDEL • AUGEN -->
-<!-- COLAR ABAIXO DA PARTE 6 -->
-<!-- ========================================================= -->
-
-<section id="symptome" class="symptom-section">
-
-<div class="container">
-
-<div class="section-title">
-
-<span>Begleiterscheinungen</span>
-
-<h2>
-
-Nackenschmerzen kommen selten allein
-
-</h2>
-
-<p>
-
-Verspannte Muskeln im Bereich der Halswirbelsäule können nicht nur lokale
-Schmerzen verursachen. Viele Betroffene berichten zusätzlich über
-Kopfschmerzen, Schwindel, müde Augen oder Konzentrationsprobleme.
-
-</p>
-
-</div>
-
-<div class="cards">
-
-<div class="card">
-
-<h3>🤕 Spannungskopfschmerzen</h3>
-
-<p>
-
-Verspannte Muskeln im Nacken können bis zum Hinterkopf ausstrahlen.
-Oft entsteht ein dumpfer, drückender Schmerz.
-
-</p>
-
-</div>
-
-<div class="card">
-
-<h3>😵 Schwindel</h3>
-
-<p>
-
-Eine eingeschränkte Beweglichkeit der Halswirbelsäule kann das
-Gleichgewichtsgefühl beeinflussen und Schwindel verstärken.
-
-</p>
-
-</div>
-
-<div class="card">
-
-<h3>👀 Augenbeschwerden</h3>
-
-<p>
-
-Langes Arbeiten am Bildschirm führt häufig zu trockenen Augen,
-Übermüdung und erhöhter Muskelspannung im Nacken.
-
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- ========================================= -->
-
-<section class="exercise-section">
-
-<div class="container">
-
-<div class="section-title">
-
-<span>Augen entspannen</span>
-
-<h2>
-
-Die 20-20-20-Regel
-
-</h2>
-
-</div>
-
-<div class="exercise">
-
-<div class="exercise-image">
-
-<img
-
-src="images/augen.webp"
-
-alt="Augen entspannen"
-
-loading="lazy">
-
-</div>
-
-<div class="exercise-text">
-
-<p>
-
-Alle 20 Minuten sollten Sie Ihren Blick für mindestens
-20 Sekunden auf einen Punkt richten,
-der etwa 20 Fuß (ca. 6 Meter) entfernt ist.
-
-</p>
-
-<p>
-
-Diese einfache Regel entlastet die Augen,
-verbessert die Konzentration
-und reduziert unbewusst die Spannung
-im Nackenbereich.
-
-</p>
-
-<ul>
-
-<li>✔ häufiger blinzeln</li>
-
-<li>✔ regelmäßig in die Ferne schauen</li>
-
-<li>✔ Schultern locker lassen</li>
-
-<li>✔ tief durchatmen</li>
-
-</ul>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- ========================================= -->
-
-<section class="gold-section">
-
-<div class="container">
-
-<h2>
-
-Mini-Pausen wirken besser als stundenlanges Durcharbeiten
-
-</h2>
-
-<p>
-
-Unser Gehirn arbeitet effizienter,
-wenn wir regelmäßig kurze Bewegungspausen einlegen.
-
-Bereits zwei bis drei Minuten können ausreichen,
-um die Muskulatur zu entspannen,
-die Durchblutung zu verbessern
-und neue Energie zu gewinnen.
-
-</p>
-
-</div>
-
-</section>
-
-<!-- ========================================= -->
-
-<section class="checklist">
-
-<div class="container">
-
-<div class="section-title">
-
-<span>Checkliste</span>
-
-<h2>
-
-Diese Gewohnheiten helfen Ihrem Nacken
-
-</h2>
-
-</div>
-
-<div class="check-grid">
-
-<div>
-
-<h3>Jeden Tag</h3>
-
-<ul>
-
-<li>☑ genug Wasser trinken</li>
-
-<li>☑ mindestens einmal pro Stunde aufstehen</li>
-
-<li>☑ 20 Armhebungen durchführen</li>
-
-<li>☑ Schultern kreisen</li>
-
-<li>☑ Doppelkinn-Übung</li>
-
-<li>☑ tief durchatmen</li>
-
-</ul>
-
-</div>
-
-<div>
-
-<h3>Im Büro</h3>
-
-<ul>
-
-<li>☑ Monitor auf Augenhöhe</li>
-
-<li>☑ ergonomischer Stuhl</li>
-
-<li>☑ Schultern entspannen</li>
-
-<li>☑ Drucker weiter entfernt platzieren</li>
-
-<li>☑ Telefonate im Stehen führen</li>
-
-<li>☑ höhenverstellbaren Tisch nutzen</li>
-
-</ul>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- ========================================= -->
-
-<section class="medical-warning">
-
-<div class="container">
-
-<h2>
-
-Wann sollten Sie ärztliche Hilfe suchen?
-
-</h2>
-
-<p>
-
-Die meisten Nackenschmerzen sind harmlos und bessern sich mit Bewegung
-und gezielten Übungen.
-
-Es gibt jedoch Situationen,
-in denen eine ärztliche Untersuchung wichtig ist.
-
-</p>
-
-<div class="warning-list">
-
-<ul>
-
-<li>❗ starke Schmerzen nach einem Unfall</li>
-
-<li>❗ Lähmungserscheinungen</li>
-
-<li>❗ Taubheitsgefühle in Armen oder Händen</li>
-
-<li>❗ anhaltender Schwindel</li>
-
-<li>❗ Fieber oder starke allgemeine Krankheitszeichen</li>
-
-<li>❗ plötzliche Sehstörungen</li>
-
-<li>❗ starke, ungewohnte Kopfschmerzen</li>
-
-</ul>
-
-</div>
-
-<div class="gold-box">
-
-<p>
-
-Diese Informationen ersetzen keine ärztliche Untersuchung.
-
-Bei Unsicherheit oder starken Beschwerden wenden Sie sich bitte an
-eine Ärztin oder einen Arzt.
-
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- ========================================= -->
-
-<p>
-    Sie möchten Ihre Beschwerden endlich verstehen?
-    In einer Online-Beratung analysieren wir gemeinsam Ihre Haltung,
-    Ihre Beschwerden und entwickeln einen individuellen Übungsplan
-    für Ihren Alltag.
-</p>
-
-<div class="cta-buttons">
-
-    <a href="https://calendly.com/milapoletto-online"
-       target="_blank"
-       class="btn-primary">
-        Termin online buchen
-    </a>
-
-    <a href="https://wa.me/491742585160"
-       target="_blank"
-       class="btn-secondary">
-        Per WhatsApp kontaktieren
-    </a>
-
-</div>
-
-<!-- ========================================================= -->
-<!-- ENDE PARTE 7 -->
-<!-- PARTE 8 = FAQ + SEO -->
-<!-- ========================================================= -->
-<!-- ========================================================= -->
-<!-- FAQ SEO PREMIUM -->
-<!-- ========================================================= -->
-
-<section id="faq" class="faq-section">
-
-<div class="container">
-
-<div class="section-title">
-
-<span>Häufig gestellte Fragen</span>
-
-<h2>
-
-30 Fragen rund um Nackenschmerzen
-
-</h2>
-
-<p>
-
-Hier finden Sie Antworten auf die häufigsten Fragen rund um
-Nackenschmerzen, Büroarbeit und Physiotherapie.
-
-</p>
-
-</div>
-
-<div class="faq-container">
-
-<div class="faq-item">
-<button class="faq-question">1. Warum entstehen Nackenschmerzen bei Büroarbeit?</button>
-<div class="faq-answer">
-<p>Langes Sitzen, wenig Bewegung, Stress und eine ungünstige Kopfhaltung können die Muskulatur im Nacken überlasten und Beschwerden verursachen.</p>
-</div>
-</div>
-
-<div class="faq-item">
-<button class="faq-question">2. Warum habe ich morgens Nackenschmerzen?</button>
-<div class="faq-answer">
-<p>Eine ungünstige Schlafposition, ein ungeeignetes Kissen oder verspannte Muskeln können morgendliche Beschwerden begünstigen.</p>
-</div>
-</div>
-
-<div class="faq-item">
-<button class="faq-question">3. Warum werden Nackenschmerzen nachts schlimmer?</button>
-<div class="faq-answer">
-<p>Nachts können verspannte Muskeln oder eine ungewohnte Schlafhaltung Beschwerden stärker wahrnehmen lassen.</p>
-</div>
-</div>
-
-<div class="faq-item">
-<button class="faq-question">4. Können Nackenschmerzen Kopfschmerzen verursachen?</button>
-<div class="faq-answer">
-<p>Ja. Verspannte Muskeln im Bereich der Halswirbelsäule können Spannungskopfschmerzen begünstigen.</p>
-</div>
-</div>
-
-<div class="faq-item">
-<button class="faq-question">5. Können Nackenschmerzen Schwindel auslösen?</button>
-<div class="faq-answer">
-<p>Manche Menschen berichten über Schwindel im Zusammenhang mit Nackenbeschwerden. Da Schwindel viele Ursachen haben kann, sollte er bei anhaltenden oder starken Beschwerden ärztlich abgeklärt werden.</p>
-</div>
-</div>
-
-<div class="faq-item">
-<button class="faq-question">6. Hilft die Doppelkinn-Übung?</button>
-<div class="faq-answer">
-<p>Sie kann helfen, die tiefen Halsmuskeln zu aktivieren und die Kopfhaltung zu verbessern. Sie sollte regelmäßig und korrekt durchgeführt werden.</p>
-</div>
-</div>
-
-<div class="faq-item">
-<button class="faq-question">7. Wie oft sollte ich die Übung durchführen?</button>
-<div class="faq-answer">
-<p>Mehrmals täglich mit 10 bis 15 Wiederholungen, sofern sie schmerzfrei möglich ist.</p>
-</div>
-</div>
-
-<div class="faq-item">
-<button class="faq-question">8. Wie oft sollte ich im Büro aufstehen?</button>
-<div class="faq-answer">
-<p>Idealerweise mindestens einmal pro Stunde. Kurze Bewegungspausen können Verspannungen vorbeugen.</p>
-</div>
-</div>
-
-<div class="faq-item">
-<button class="faq-question">9. Ist Sitzen oder Stehen besser?</button>
-<div class="faq-answer">
-<p>Ein regelmäßiger Wechsel zwischen Sitzen, Stehen und Gehen ist meist günstiger als eine einzige Position über längere Zeit.</p>
-</div>
-</div>
-
-<div class="faq-item">
-<button class="faq-question">10. Wie sollte mein Monitor stehen?</button>
-<div class="faq-answer">
-<p>Der obere Bildschirmrand sollte sich ungefähr auf Augenhöhe befinden, damit der Kopf möglichst neutral gehalten wird.</p>
-</div>
-</div>
-
-<div class="faq-item">
-<button class="faq-question">11. Wie hoch sollte mein Schreibtisch sein?</button>
-<div class="faq-answer">
-<p>Die Unterarme sollten entspannt aufliegen und Ellenbogen etwa einen 90°-Winkel bilden.</p>
-</div>
-</div>
-
-<div class="faq-item">
-<button class="faq-question">12. Hilft ein höhenverstellbarer Schreibtisch?</button>
-<div class="faq-answer">
-<p>Ja, wenn er genutzt wird, um regelmäßig zwischen Sitzen und Stehen zu wechseln.</p>
-</div>
-</div>
-
-<div class="faq-item">
-<button class="faq-question">13. Welche Übungen helfen sofort?</button>
-<div class="faq-answer">
-<p>Schulterkreisen, sanfte Mobilisation der Halswirbelsäule, Chin Tuck und kurze Gehpausen können häufig als angenehm empfunden werden.</p>
-</div>
-</div>
-
-<div class="faq-item">
-<button class="faq-question">14. Kann Stress Nackenschmerzen verursachen?</button>
-<div class="faq-answer">
-<p>Ja. Stress kann die Muskelspannung erhöhen und Beschwerden verstärken.</p>
-</div>
-</div>
-
-<div class="faq-item">
-<button class="faq-question">15. Hilft Wärme?</button>
-<div class="faq-answer">
-<p>Bei muskulären Verspannungen empfinden viele Menschen Wärme als angenehm.</p>
-</div>
-</div>
-
-<div class="faq-item">
-<button class="faq-question">16. Hilft Kälte?</button>
-<div class="faq-answer">
-<p>Kälte wird eher bei akuten Verletzungen eingesetzt. Welche Maßnahme sinnvoll ist, hängt von der Ursache der Beschwerden ab.</p>
-</div>
-</div>
-
-<div class="faq-item">
-<button class="faq-question">17. Hilft Massage?</button>
-<div class="faq-answer">
-<p>Massagen können verspannte Muskeln lockern. Langfristig sind Bewegung und aktive Übungen oft ein wichtiger Bestandteil der Behandlung.</p>
-</div>
-</div>
-
-<div class="faq-item">
-<button class="faq-question">18. Hilft ein Akupressurkissen?</button>
-<div class="faq-answer">
-<p>Viele Menschen empfinden die Anwendung als angenehm. Es kann eine ergänzende Maßnahme sein, ersetzt jedoch keine individuelle Therapie.</p>
-</div>
-</div>
-
-<div class="faq-item">
-<button class="faq-question">19. Welches Kissen ist am besten?</button>
-<div class="faq-answer">
-<p>Ein Kissen sollte Kopf und Hals in einer möglichst neutralen Position unterstützen. Die ideale Wahl hängt unter anderem von der Schlafposition ab.</p>
-</div>
-</div>
-
-<div class="faq-item">
-<button class="faq-question">20. Welche Schlafposition ist empfehlenswert?</button>
-<div class="faq-answer">
-<p>Viele Menschen schlafen bequem in Rücken- oder Seitenlage. Wichtig ist, dass die Halswirbelsäule möglichst neutral gelagert wird.</p>
-</div>
-</div>
-
-<div class="faq-item">
-<button class="faq-question">21. Kann Sport helfen?</button>
-<div class="faq-answer">
-<p>Regelmäßige körperliche Aktivität unterstützt die Muskulatur und kann helfen, Beschwerden vorzubeugen.</p>
-</div>
-</div>
-
-<div class="faq-item">
-<button class="faq-question">22. Ist Schwimmen gut?</button>
-<div class="faq-answer">
-<p>Viele Menschen empfinden Schwimmen als angenehm. Entscheidend ist, welche Technik gut vertragen wird.</p>
-</div>
-</div>
-
-<div class="faq-item">
-<button class="faq-question">23. Hilft Yoga?</button>
-<div class="faq-answer">
-<p>Yoga kann Beweglichkeit, Körperwahrnehmung und Entspannung fördern.</p>
-</div>
-</div>
-
-<div class="faq-item">
-<button class="faq-question">24. Hilft Pilates?</button>
-<div class="faq-answer">
-<p>Pilates stärkt die Rumpfmuskulatur und verbessert die Körperhaltung.</p>
-</div>
-</div>
-
-<div class="faq-item">
-<button class="faq-question">25. Kann ausreichend Trinken helfen?</button>
-<div class="faq-answer">
-<p>Eine ausreichende Flüssigkeitszufuhr unterstützt die normalen Körperfunktionen und gehört zu einem gesunden Lebensstil.</p>
-</div>
-</div>
-
-<div class="faq-item">
-<button class="faq-question">26. Wann sollte ich zur Physiotherapie gehen?</button>
-<div class="faq-answer">
-<p>Wenn Beschwerden länger anhalten, wiederkehren oder Ihren Alltag einschränken, kann eine physiotherapeutische Untersuchung sinnvoll sein.</p>
-</div>
-</div>
-
-<div class="faq-item">
-<button class="faq-question">27. Wann sollte ich zum Arzt?</button>
-<div class="faq-answer">
-<p>Bei starken Schmerzen nach einem Unfall, Lähmungen, Taubheitsgefühlen, Fieber oder anderen Warnzeichen sollten Sie ärztliche Hilfe in Anspruch nehmen.</p>
-</div>
-</div>
-
-<div class="faq-item">
-<button class="faq-question">28. Wie lange dauern Nackenschmerzen?</button>
-<div class="faq-answer">
-<p>Das ist unterschiedlich und hängt von der Ursache ab. Viele Beschwerden bessern sich innerhalb weniger Wochen.</p>
-</div>
-</div>
-
-<div class="faq-item">
-<button class="faq-question">29. Kann ich Nackenschmerzen vorbeugen?</button>
-<div class="faq-answer">
-<p>Ja. Bewegung, ergonomisches Arbeiten, regelmäßige Pausen und gezielte Übungen können helfen, Beschwerden vorzubeugen.</p>
-</div>
-</div>
-
-<div class="faq-item">
-<button class="faq-question">30. Kann Online-Physiotherapie helfen?</button>
-<div class="faq-answer">
-<p>Je nach Beschwerdebild kann eine Online-Beratung dabei helfen, Haltung zu analysieren, Übungen anzuleiten und den Alltag ergonomischer zu gestalten.</p>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</section>
-<!-- ========================================================= -->
-<!-- PREISE -->
-<!-- ========================================================= -->
-
-<section id="preise" class="pricing-section">
-
-<div class="container">
-
-<div class="section-title">
-
-<span>Leistungen & Preise</span>
-
-<h2>Wählen Sie das passende Paket für Ihre Behandlung</h2>
-
-<p>
-Alle Pakete beinhalten eine individuelle Betreuung, einen persönlichen
-Übungsplan sowie Online-Termine bequem von zu Hause.
-</p>
-
-</div>
-
-<div class="pricing-grid">
-
-<!-- STARTER -->
-
-<div class="pricing-card">
-
-<h3>Starter</h3>
-
-<div class="price">
-339 €
-<span>einmalig</span>
-</div>
-
-<ul>
-<li>✅ Erstanalyse (60–75 Min.)</li>
-<li>✅ 3 Online-Termine à 40 Min.</li>
-<li>✅ Individueller Therapieplan</li>
-<li>✅ Persönlicher Übungsplan</li>
-<li>✅ PDF + Videoübungen</li>
-</ul>
-
-<a href="https://calendly.com/milapoletto-online"
-target="_blank"
-class="btn-primary">
-Starter buchen
-</a>
-
-</div>
-
-<!-- BESTSELLER -->
-
-<div class="pricing-card featured">
-
-<div class="pricing-badge">
-Beliebteste Wahl
-</div>
-
-<h3>Bestseller</h3>
-
-<div class="price">
-469 €
-<span>einmalig</span>
-</div>
-
-<ul>
-<li>✅ Erstanalyse (60–75 Min.)</li>
-<li>✅ 5 Online-Termine à 40 Min.</li>
-<li>✅ Individueller Therapieplan</li>
-<li>✅ Regelmäßige Anpassungen</li>
-<li>✅ PDF + Videoübungen</li>
-<li>✅ WhatsApp-Support</li>
-</ul>
-
-<a href="https://calendly.com/milapoletto-online"
-target="_blank"
-class="btn-primary">
-Bestseller buchen
-</a>
-
-</div>
-
-<!-- PREMIUM -->
-
-<div class="pricing-card">
-
-<h3>Premium</h3>
-
-<div class="price">
-669 €
-<span>einmalig</span>
-</div>
-
-<ul>
-<li>✅ Erstanalyse (60–75 Min.)</li>
-<li>✅ 8 Online-Termine à 40 Min.</li>
-<li>✅ Laufende Betreuung</li>
-<li>✅ Individueller Therapieplan</li>
-<li>✅ PDF + Videoübungen</li>
-<li>✅ WhatsApp-Support</li>
-<li>✅ Abschlussanalyse</li>
-</ul>
-
-<a href="https://calendly.com/milapoletto-online"
-target="_blank"
-class="btn-primary">
-Premium buchen
-</a>
-
-</div>
-
-<!-- MILA CARE -->
-
-<div class="pricing-card">
-
-<h3>Mila Care</h3>
-
-<div class="price">
-149 €
-<span>pro Monat</span>
-</div>
-
-<ul>
-<li>✅ 2 Online-Termine pro Monat</li>
-<li>✅ 40 Minuten pro Termin</li>
-<li>✅ Anpassung des Trainingsplans</li>
-<li>✅ WhatsApp-Betreuung</li>
-<li>✅ Für ehemalige Patienten</li>
-</ul>
-
-<a href="https://calendly.com/milapoletto-online"
-target="_blank"
-class="btn-primary">
-Mila Care starten
-</a>
-
-</div>
-
-</div>
-
-<p class="small-text">
-Mit der Terminbuchung stimmen Sie den
-<a href="agb.html">AGB</a> zu.
-</p>
-
-<p class="pricing-note">
-Die Terminvereinbarung und Bezahlung erfolgen bequem und sicher über Calendly.
-Online-Termine sind ab Oktober 2026 verfügbar.
-</p>
-
-</div>
-
-</section>
-<!-- ========================================================= -->
-<!-- INDEX.HTML - PARTE 9 DE 12 -->
-<!-- ÜBER MICH + KONTAKT + CTA -->
-<!-- ========================================================= -->
-<section id="ueber-mich" class="about-section">
-
-    <div class="container">
-
-        <div class="about-grid">
-
-            <div class="about-image">
-                <img
-                    src="images/mila.webp"
-                    alt="Camila Poletto - Physiotherapeutin"
-                    loading="lazy">
-            </div>
-
-            <div class="about-content">
-
-                <span class="subtitle">
-                    Ihre Physiotherapeutin
+                <span class="eyebrow">
+                    Nackenschmerzen & Alltag
                 </span>
 
+
                 <h2>
-                    Physiotherapie online mit Mila
+                    Nackenschmerzen verstehen
+                    und im Alltag besser damit umgehen.
                 </h2>
 
-                <div class="about-list">
-                    <div>✔ Individuelle Online-Beratung</div>
-                    <div>✔ Analyse Ihrer Körperhaltung</div>
-                    <div>✔ Persönlicher Übungsplan</div>
-                    <div>✔ Betreuung bequem von zu Hause</div>
+
+                <p>
+                    Im Nacken-Ratgeber finden Sie verständliche
+                    Informationen zu Nackenschmerzen,
+                    Nackenverspannungen und HWS-Beschwerden
+                    sowie praktische Übungen und Tipps
+                    für den Büroalltag.
+                </p>
+
+
+                <a
+                    href="nackenschmerzen-ratgeber.html"
+                    class="button button-primary">
+
+                    Nacken-Ratgeber öffnen
+
+                </a>
+
+            </div>
+
+
+            <div class="guide-side">
+
+                <div>
+
+                    <strong>
+                        Nackenschmerzen
+                    </strong>
+
+                    <span>
+                        Ursachen · Übungen · Büroalltag
+                    </span>
+
                 </div>
 
             </div>
+
 
         </div>
 
     </div>
 
-</section>
+</section>  
+
+<!-- =================================================
+     ÜBER MICH
+================================================== -->
+
+<section
+    class="about"
+    id="ueber-mich">
+
+    <div class="home-container about-grid">
 
 
-<!-- ========================================================= -->
+        <div>
 
-<section class="contact-section" id="kontakt">
+            <img
+                class="about-image"
+                src="images/camila-portrait3.webp"
+                alt="Camila Poletto – staatlich anerkannte Physiotherapeutin"
+                width="700"
+                height="850"
+                loading="lazy">
 
-<div class="container">
+        </div>
 
-<div class="section-title">
 
-<span>Kontakt</span>
+        <div class="about-content">
 
-<h2>
+            <span class="eyebrow">
+                Über mich
+            </span>
 
-<!--Vereinbaren Sie jetzt Ihren Online  -->
 
-Online-Termine ab Oktober 2026 verfügbar.
+            <h2 class="section-title">
+                Persönliche Physiotherapie
+                mit Blick auf den Menschen
+                hinter den Beschwerden.
+            </h2>
 
-</h2>
 
-<p>
+            <p>
+                Ich bin Camila Poletto,
+                staatlich anerkannte Physiotherapeutin.
+            </p>
 
-Sie haben Fragen oder möchten einen Termin buchen?
 
-Ich freue mich auf Ihre Nachricht.
+            <p>
+                In meiner physiotherapeutischen Arbeit
+                beschäftige ich mich unter anderem mit
+                Beschwerden des Bewegungsapparates,
+                wie Rücken-, Nacken- und
+                Schulterbeschwerden.
+            </p>
 
-</p>
 
-</div>
+            <p>
+                Mein Ansatz verbindet
+                physiotherapeutische Fachkenntnisse
+                mit aktiver Bewegung und einer
+                verständlichen Begleitung im Alltag.
+            </p>
 
-<div class="contact-grid">
 
-<div class="contact-card">
+            <p>
+                Online bedeutet für mich nicht weniger
+                persönlich. Im Mittelpunkt stehen Sie,
+                Ihre Beschwerden, Ihre Ziele und die Frage,
+                welche Strategien zu Ihrem Alltag passen.
+            </p>
 
-<h3>
 
-Online Termin
+            <p class="about-signature">
+                Camila Poletto
+            </p>
 
-</h3>
+        </div>
 
-<p>
 
-Buchen Sie Ihren Wunschtermin bequem online.
-
-</p>
-
-<a
-href="https://calendly.com/milapoletto-online"
-target="_blank"
-class="btn-primary">
-
-Termin buchen
-
-</a>
-
-</div>
-
-<div class="contact-card">
-
-<h3>
-
-WhatsApp
-
-</h3>
-
-<p>
-
-Schnelle Kontaktaufnahme für Fragen.
-
-</p>
-
-<a
-href="https://wa.me/491742585160"
-target="_blank"
-class="btn-secondary">
-
-WhatsApp öffnen
-
-</a>
-
-</div>
-
-<div class="contact-card">
-
-<h3>
-
-E-Mail
-
-</h3>
-
-<p>
-
-milapoletto.online@gmail.com
-
-</p>
-
-<a
-href="mailto:milapoletto.online@gmail.com"
-class="btn-secondary">
-
-E-Mail senden
-
-</a>
-
-</div>
-
-</div>
-
-</div>
+    </div>
 
 </section>
+<!-- =================================================
+     PREISE
+================================================== -->
 
-<!-- ========================================================= -->
+<section
+    class="pricing"
+    id="preise">
 
-<section class="cta-final">
+    <div class="home-container">
 
-<div class="container">
 
-<h2>
+        <div class="pricing-header">
 
-Warten Sie nicht,
-bis die Schmerzen Ihren Alltag bestimmen.
+            <span class="eyebrow">
+                Online-Physiotherapie · Preise
+            </span>
 
-</h2>
+            <h2 class="section-title">
+                Online-Physiotherapie,
+                transparent und passend zu
+                Ihrer Betreuung.
+            </h2>
 
-<p>
+            <p class="section-text">
+                Wählen Sie das Paket, das zu Ihrem
+                aktuellen Bedarf und Ihrem gewünschten
+                Betreuungsumfang passt.
+            </p>
 
-Bereits kleine Veränderungen im Alltag,
-regelmäßige Bewegung
-und individuell angepasste Übungen
-können einen großen Unterschied machen.
+        </div>
 
-</p>
 
-<p>
+        <div class="pricing-grid">
 
-Ich begleite Sie gerne auf Ihrem Weg
-zu mehr Beweglichkeit
-und weniger Schmerzen.
 
-</p>
+            <!-- ================================
+                 STARTER
+            ================================= -->
 
-<a
-href="https://calendly.com/milapoletto-online"
-target="_blank"
-class="btn-primary btn-large">
+            <article class="price-card">
 
-<!-- Online-Beratung vereinbaren    -->
- 
- Online-Termine ab Oktober 2026 verfügbar.
+                <p class="price-label">
+                    Einstieg
+                </p>
 
-</a>
+                <h3>
+                    Starter
+                </h3>
 
-</div>
+                <p class="price">
+                    339 €
+                </p>
+
+                <p class="duration">
+                    einmalig
+                </p>
+
+                <ul class="price-list">
+
+                    <li>
+                        Erstanalyse (60–75 Min.)
+                    </li>
+
+                    <li>
+                        3 Online-Termine à 40 Min.
+                    </li>
+
+                    <li>
+                        Individueller Therapieplan
+                    </li>
+
+                    <li>
+                        Persönlicher Übungsplan
+                    </li>
+
+                    <li>
+                        PDF + Videoübungen
+                    </li>
+
+                </ul>
+
+                <a
+                    href="https://calendly.com/milapoletto-online"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="button button-secondary">
+
+                    Starter buchen
+
+                </a>
+
+            </article>
+
+
+            <!-- ================================
+                 BESTSELLER
+            ================================= -->
+
+            <article
+                class="price-card featured">
+
+                <p class="price-label">
+                    Beliebteste Wahl
+                </p>
+
+                <h3>
+                    Bestseller
+                </h3>
+
+                <p class="price">
+                    469 €
+                </p>
+
+                <p class="duration">
+                    einmalig
+                </p>
+
+                <ul class="price-list">
+
+                    <li>
+                        Erstanalyse (60–75 Min.)
+                    </li>
+
+                    <li>
+                        5 Online-Termine à 40 Min.
+                    </li>
+
+                    <li>
+                        Individueller Therapieplan
+                    </li>
+
+                    <li>
+                        Regelmäßige Anpassungen
+                    </li>
+
+                    <li>
+                        PDF + Videoübungen
+                    </li>
+
+                    <li>
+                        WhatsApp-Support
+                    </li>
+
+                </ul>
+
+                <a
+                    href="https://calendly.com/milapoletto-online"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="button button-primary">
+
+                    Bestseller buchen
+
+                </a>
+
+            </article>
+
+
+            <!-- ================================
+                 PREMIUM
+            ================================= -->
+
+            <article class="price-card">
+
+                <p class="price-label">
+                    Intensive Betreuung
+                </p>
+
+                <h3>
+                    Premium
+                </h3>
+
+                <p class="price">
+                    669 €
+                </p>
+
+                <p class="duration">
+                    einmalig
+                </p>
+
+                <ul class="price-list">
+
+                    <li>
+                        Erstanalyse (60–75 Min.)
+                    </li>
+
+                    <li>
+                        8 Online-Termine à 40 Min.
+                    </li>
+
+                    <li>
+                        Laufende Betreuung
+                    </li>
+
+                    <li>
+                        Individueller Therapieplan
+                    </li>
+
+                    <li>
+                        PDF + Videoübungen
+                    </li>
+
+                    <li>
+                        WhatsApp-Support
+                    </li>
+
+                    <li>
+                        Abschlussanalyse
+                    </li>
+
+                </ul>
+
+                <a
+                    href="https://calendly.com/milapoletto-online"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="button button-secondary">
+
+                    Premium buchen
+
+                </a>
+
+            </article>
+
+
+            <!-- ================================
+                 MILA CARE
+            ================================= -->
+
+            <article class="price-card">
+
+                <p class="price-label">
+                    Für ehemalige Patienten
+                </p>
+
+                <h3>
+                    Mila Care
+                </h3>
+
+                <p class="price">
+                    149 €
+                </p>
+
+                <p class="duration">
+                    pro Monat
+                </p>
+
+                <ul class="price-list">
+
+                    <li>
+                        2 Online-Termine pro Monat
+                    </li>
+
+                    <li>
+                        40 Minuten pro Termin
+                    </li>
+
+                    <li>
+                        Anpassung des Trainingsplans
+                    </li>
+
+                    <li>
+                        WhatsApp-Betreuung
+                    </li>
+
+                    <li>
+                        Für ehemalige Patienten
+                    </li>
+
+                </ul>
+
+                <a
+                    href="https://calendly.com/milapoletto-online"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="button button-secondary">
+
+                    Mila Care starten
+
+                </a>
+
+            </article>
+
+
+        </div>
+
+
+        <p class="pricing-note">
+
+            Die Terminvereinbarung und Bezahlung erfolgen
+            bequem und sicher über Calendly.
+
+        </p>
+
+
+        <p class="pricing-note">
+
+            Online-Termine sind ab Oktober 2026 verfügbar.
+
+        </p>
+
+
+    </div>
 
 </section>
 
-<!-- ========================================================= -->
+    <!-- =================================================
+     CONTACT CTA
+================================================== -->
 
-<section class="newsletter-section">
+<section
+    class="contact-cta"
+    id="kontakt-cta">
 
-<div class="container">
+    <div class="home-container">
 
-<h2>
+        <span class="eyebrow">
+            Ihr nächster Schritt
+        </span>
 
-Neue Gesundheitstipps
 
-</h2>
+        <h2>
+            Sie möchten wissen,
+            ob Online-Physiotherapie
+            zu Ihnen passt?
+        </h2>
 
-<p>
 
-Auf diesem Blog erscheinen regelmäßig neue Artikel
-zu Themen wie
+        <p>
+            Sie haben Rücken-, Nacken- oder
+            Schulterschmerzen und möchten Ihre
+            Beschwerden persönlich besprechen?
+            Kontaktieren Sie mich und wir besprechen
+            gemeinsam den nächsten Schritt.
+        </p>
 
-<strong>Nackenschmerzen</strong>,
-<strong>Rückenschmerzen</strong>,
-<strong>Schulterbeschwerden</strong>,
-<strong>Homeoffice</strong>
-und
-<strong>Ergonomie</strong>.
 
-Schauen Sie gerne regelmäßig vorbei.
+        <a
+            href="kontakt.html"
+            class="button">
 
-</p>
+            Kontakt aufnehmen
 
-</div>
+        </a>
+
+    </div>
 
 </section>
 
-<!-- ========================================================= -->
-<!-- ENDE PARTE 9 -->
-<!-- PARTE 10 = FOOTER -->
-<!-- ========================================================= -->
- <!-- ========================================================= -->
-<!-- INDEX.HTML - PARTE 10 DE 12 -->
-<!-- FOOTER -->
-<!-- ========================================================= -->
+<!-- =====================================================
+     FOOTER
+====================================================== -->
 
-<footer class="footer">
+<footer class="home-footer">
 
-<div class="container">
+    <div class="home-container footer-grid">
 
-<div class="footer-grid">
 
-<!-- ================= -->
+        <!-- =========================================
+             MARKE
+        ========================================== -->
 
-<div>
+        <div>
 
-<h3>
+            <img
+                class="footer-logo"
+                src="logo/Mila-Logo.webp"
+                alt="Mila Physio"
+                width="190"
+                height="70"
+                loading="lazy">
 
-Physiotherapie online mit Mila
+            <p class="footer-description">
 
-</h3>
+                Evidenzbasierte Online-Physiotherapie
+                für Erwachsene in ganz Deutschland.
 
-<p>
+            </p>
 
-Moderne Online-Physiotherapie für Menschen mit
-Nacken-, Rücken- und Haltungsschmerzen.
+        </div>
 
-</p>
 
-<p>
+        <!-- =========================================
+             NAVIGATION
+        ========================================== -->
 
-Camila Poletto
+        <div class="footer-column">
 
-<br>
+            <h3>
+                Navigation
+            </h3>
 
-Physiotherapeutin
+            <a href="#leistungen">
+                Leistungen
+            </a>
 
-</p>
+            <a href="#beschwerden">
+                Beschwerden
+            </a>
 
-</div>
+            <a href="#ueber-mich">
+                Über mich
+            </a>
 
-<!-- ================= -->
+            <a href="#preise">
+                Preise
+            </a>
 
-<div>
+            <a href="nackenschmerzen-ratgeber.html">
+                Nacken-Ratgeber
+            </a>
 
-<h3>
+            <a href="recommendations.html">
+                Empfehlungen
+            </a>
 
-Navigation
+            <a href="kontakt.html">
+                Kontakt
+            </a>
 
-</h3>
+        </div>
 
-<ul>
 
-<li><a href="#home">Home</a></li>
+        <!-- =========================================
+             RECHTLICHES
+        ========================================== -->
 
-<li><a href="#mila">Über Mila</a></li>
+        <div class="footer-column">
 
-<li><a href="#ursachen">Nackenschmerzen</a></li>
+            <h3>
+                Rechtliches
+            </h3>
 
-<li><a href="#uebungen">Übungen</a></li>
+            <a href="impressum.html">
+                Impressum
+            </a>
 
-<li><a href="#faq">FAQ</a></li>
+            <a href="datenschutz.html">
+                Datenschutz
+            </a>
 
-<li><a href="#kontakt">Kontakt</a></li>
+            <a href="agb.html">
+                AGB
+            </a>
 
-</ul>
+        </div>
 
-</div>
-<!-- ==========================================================
-     KONTAKT
+
+        <!-- =========================================
+             KONTAKT
+        ========================================== -->
+
+        <div class="footer-column">
+
+            <h3>
+                Kontakt
+            </h3>
+
+            <a href="tel:+491742585160">
+                +49 174 2585160
+            </a>
+
+            <a href="mailto:milapoletto.online@gmail.com">
+                milapoletto.online@gmail.com
+            </a>
+
+            <a
+                href="https://wa.me/491742585160"
+                target="_blank"
+                rel="noopener noreferrer">
+
+                WhatsApp
+
+            </a>
+
+            <a
+                href="https://www.instagram.com/therapie.online_mit.mila/"
+                target="_blank"
+                rel="noopener noreferrer">
+
+                Instagram
+
+            </a>
+
+            <a
+                href="https://www.linkedin.com/in/camila-poletto-a4628974/"
+                target="_blank"
+                rel="noopener noreferrer">
+
+                LinkedIn
+
+            </a>
+
+            <a
+                href="https://calendly.com/milapoletto-online"
+                target="_blank"
+                rel="noopener noreferrer">
+
+                Termin über Calendly
+
+            </a>
+
+            <a
+                href="https://zoom.us/j/3442459436"
+                target="_blank"
+                rel="noopener noreferrer">
+
+                Zoom
+
+            </a>
+
+            <a
+                href="https://form.jotform.com/261683557544063"
+                target="_blank"
+                rel="noopener noreferrer">
+
+                Anamnesebogen
+
+            </a>
+
+        </div>
+
+
+    </div>
+
+
+    <!-- =========================================
+         FOOTER BOTTOM
+    ========================================== -->
+
+    <div class="footer-bottom">
+
+        <div class="home-container">
+
+            <p>
+                © <span id="currentYear">2026</span>
+                Physio Online mit Mila ·
+                Alle Rechte vorbehalten.
+            </p>
+
+        </div>
+
+    </div>
+
+
+</footer>
+<!-- =========================================================
+     MOBILE MENU
 ========================================================== -->
-<div class="footer-contact">
 
-    <h3>Kontakt</h3>
+<script>
 
-    <p>
-        <i class="fa-solid fa-envelope"></i>
-        <a href="mailto:milapoletto.online@gmail.com">
-            milapoletto.online@gmail.com
-        </a>
-    </p>
+    const menuButton =
+        document.getElementById("menuButton");
 
-    <p>
-        <i class="fa-solid fa-phone"></i>
-        <a href="tel:+491742585160">
-            +49 174 2585160
-        </a>
-    </p>
-
-    <p>
-        <i class="fa-brands fa-whatsapp"></i>
-        <a href="https://wa.me/491742585160" target="_blank" rel="noopener">
-            WhatsApp
-        </a>
-    </p>
-
-    <p>
-        <i class="fa-solid fa-video"></i>
-        <a href="https://zoom.us/j/3442459436" target="_blank" rel="noopener">
-            Zoom
-        </a>
-    </p>
-
-    <p>
-        <i class="fa-solid fa-calendar-check"></i>
-        <a href="https://calendly.com/milapoletto-online" target="_blank" rel="noopener">
-            Termin buchen
-        </a>
-    </p>
-
-    <p>
-        <i class="fa-solid fa-file-medical"></i>
-        <a href="https://form.jotform.com/261683557544063" target="_blank" rel="noopener">
-            Anamnesebogen
-        </a>
-    </p>
-
-    <p>
-        <i class="fa-brands fa-instagram"></i>
-        <a href="https://www.instagram.com/therapie.online_mit.mila/" target="_blank" rel="noopener">
-            Instagram
-        </a>
-    </p>
-
-    <p>
-        <i class="fa-brands fa-linkedin"></i>
-        <a href="https://www.linkedin.com/in/camila-poletto-a4628974/" target="_blank" rel="noopener">
-            LinkedIn
-        </a>
-    </p>
-
-</div>
-
-<!-- ==========================================================
-     RECHTLICHES
-========================================================== -->
-<div class="footer-legal">
-
-    <h3>Rechtliches</h3>
-
-<ul>
-    <li><a href="impressum.html">Impressum</a></li>
-    <li><a href="datenschutz.html">Datenschutzerklärung</a></li>
-    <li><a href="kontakt.html">Kontakt</a></li>
-    <li><a href="agb.html">AGB</a></li>
-</ul>
-
-<!-- ==========================================================
-     FOOTER BOTTOM
-========================================================== -->
-<div class="footer-bottom">
-
-    <p>
-        © <span id="currentYear"></span> Physiotherapie online mit Mila |
-        Alle Rechte vorbehalten.
-    </p>
-
-    <p>
-        Made with ❤️ in Deutschland
-    </p>
-
-</div>
-
-<!-- ========================================================= -->
-<!-- BACK TO TOP -->
-<!-- ========================================================= -->
-
-<button id="backToTop"
-
-title="Nach oben">
-
-↑
-
-</button>
-
-<!-- ========================================================= -->
-<!-- WHATSAPP FLOAT -->
-<!-- ========================================================= -->
-
-<a
-
-href="https://wa.me/491742585160"
-
-target="_blank"
-
-class="whatsapp-float"
-
-aria-label="WhatsApp">
+    const mobileNavigation =
+        document.getElementById("mobileNavigation");
 
 
+    menuButton.addEventListener("click", function () {
 
-</a>
+        const isOpen =
+            mobileNavigation.classList.toggle("active");
 
-<!-- ========================================================= -->
-<!-- ENDE PARTE 10 -->
-<!-- PARTE 11 = SCHEMA -->
-<!-- ========================================================= -->
- <!-- ========================================================= -->
-<!-- INDEX.HTML - PARTE 11 DE 12 -->
-<!-- SCHEMA.ORG JSON-LD -->
-<!-- ========================================================= -->
+        menuButton.setAttribute(
+            "aria-expanded",
+            isOpen
+        );
 
-<!-- ORGANIZATION -->
+    });
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "MedicalBusiness",
 
-  "name": "Physiotherapie online mit Mila",
-  "alternateName": "Camila Poletto",
+    document
+        .querySelectorAll(".mobile-navigation a")
+        .forEach(function (link) {
 
-  "url": "https://milaphysio.de",
+            link.addEventListener("click", function () {
 
-  "logo": "https://milaphysio.de/logo/Mila-Logo.webp",
+                mobileNavigation.classList.remove("active");
 
-  "image": "https://milaphysio.de/images/mila.webp"
-}
-</script>
+                menuButton.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
 
-"description":"Online Physiotherapie für Nackenschmerzen, Rückenschmerzen und ergonomische Beratung.",
+            });
 
-"email":"milapoletto.online@gmail.com",
+        });
 
-"telephone":"+491742585160",
 
-"areaServed":"Deutschland",
-
-"priceRange":"€€",
-
-"sameAs":[
-
-"https://www.instagram.com/therapie.online_mit.mila/"
-
-]
-
-}
+    document.getElementById("currentYear").textContent =
+        new Date().getFullYear();
 
 </script>
 
-<!-- ========================================================= -->
-
-<!-- PERSON -->
-
-<script type="application/ld+json">
-
-{
-
-"@context":"https://schema.org",
-
-"@type":"Person",
-
-"name":"Camila Poletto",
-
-"jobTitle":"Physiotherapeutin",
-
-"worksFor":{
-
-"@type":"MedicalBusiness",
-
-"name":"Physiotherapie online mit Mila"
-
-},
-
-"url":"https://milaphysio.de",
-
-"image":"https://milaphysio.de/images/mila.webp"
-
-}
-
-</script>
-
-<!-- ========================================================= -->
-
-<!-- ARTICLE -->
-
-<script type="application/ld+json">
-
-{
-
-"@context":"https://schema.org",
-
-"@type":"Article",
-
-"headline":"Nackenschmerzen im Büro – Ursachen, Übungen und Tipps",
-
-"description":"Umfassender Ratgeber über Nackenschmerzen durch Büroarbeit.",
-
-"author":{
-
-"@type":"Person",
-
-"name":"Camila Poletto"
-
-},
-
-"publisher":{
-
-"@type":"MedicalBusiness",
-
-"name":"Physiotherapie online mit Mila"
-
-},
-
-"datePublished":"2026-07-14",
-
-"dateModified":"2026-07-14",
-
-"mainEntityOfPage":{
-
-"@type":"WebPage",
-
-"@id":"https://milaphysio.de"
-
-}
-
-}
-
-</script>
-
-<!-- ========================================================= -->
-
-<!-- WEBSITE -->
-
-<script type="application/ld+json">
-
-{
-
-"@context":"https://schema.org",
-
-"@type":"WebSite",
-
-"name":"Physiotherapie online mit Mila",
-
-"url":"https://milaphysio.de"
-
-"inLanguage":"de-DE"
-
-}
-
-</script>
-
-<!-- ========================================================= -->
-
-<!-- BREADCRUMB -->
-
-<script type="application/ld+json">
-
-{
-
-"@context":"https://schema.org",
-
-"@type":"BreadcrumbList",
-
-"itemListElement":[
-
-{
-
-"@type":"ListItem",
-
-"position":1,
-
-"name":"Startseite",
-
-"item":"https://milaphysio.de"
-
-},
-
-{
-
-"@type":"ListItem",
-
-"position":2,
-
-"name":"Nackenschmerzen"
-
-}
-
-]
-
-}
-
-</script>
-
-<!-- ========================================================= -->
-
-<!-- FAQ SCHEMA -->
-
-<script type="application/ld+json">
-
-{
-
-"@context":"https://schema.org",
-
-"@type":"FAQPage",
-
-"mainEntity":[
-
-{
-
-"@type":"Question",
-
-"name":"Warum entstehen Nackenschmerzen bei Büroarbeit?",
-
-"acceptedAnswer":{
-
-"@type":"Answer",
-
-"text":"Langes Sitzen, wenig Bewegung und eine ungünstige Haltung können Nackenschmerzen begünstigen."
-
-}
-
-},
-
-{
-
-"@type":"Question",
-
-"name":"Hilft die Doppelkinn-Übung?",
-
-"acceptedAnswer":{
-
-"@type":"Answer",
-
-"text":"Die Übung kann helfen, die Haltung zu verbessern und die tiefen Halsmuskeln zu aktivieren."
-
-}
-
-},
-
-{
-
-"@type":"Question",
-
-"name":"Wie oft sollte ich Pausen machen?",
-
-"acceptedAnswer":{
-
-"@type":"Answer",
-
-"text":"Empfohlen wird, mindestens einmal pro Stunde aufzustehen und sich kurz zu bewegen."
-
-}
-
-},
-
-{
-
-"@type":"Question",
-
-"name":"Wann sollte ich zur Physiotherapie gehen?",
-
-"acceptedAnswer":{
-
-"@type":"Answer",
-
-"text":"Wenn Beschwerden anhalten oder wiederkehren, kann eine physiotherapeutische Untersuchung sinnvoll sein."
-
-}
-
-},
-
-{
-
-"@type":"Question",
-
-"name":"Wann sollte ich einen Arzt aufsuchen?",
-
-"acceptedAnswer":{
-
-"@type":"Answer",
-
-"text":"Bei starken Schmerzen nach einem Unfall, Lähmungen, Taubheitsgefühlen oder anderen Warnzeichen sollte ärztliche Hilfe in Anspruch genommen werden."
-
-}
-
-}
-
-]
-
-}
-
-</script>
-
-<!-- ========================================================= -->
-<!-- ENDE PARTE 11 -->
-<!-- PARTE 12 = JAVASCRIPT + HTML ENDE -->
-<!-- ========================================================= -->
- <!-- ========================================================= -->
-<!-- ========================================================= -->
-<!-- INDEX.HTML - PARTE 12 DE 12 -->
-<!-- JAVASCRIPT EXTERNO -->
-<!-- ========================================================= -->
-
-<!--
-Todo o JavaScript foi movido para o arquivo script.js
-para manter o HTML limpo, organizado e facilitar
-a manutenção do projeto.
--->
-
-<script src="script.js" defer></script>
 
 </body>
-
 </html>
-
-<!-- ========================================================= -->
-<!-- FIM DO INDEX.HTML -->
-<!-- Physiotherapie online mit Mila -->
-<!-- Desenvolvido para GitHub + Hosting + SEO -->
-<!-- ========================================================= -->

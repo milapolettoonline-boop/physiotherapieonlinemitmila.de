@@ -2,35 +2,91 @@
 
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
+  <!-- =========================
+       HOMEPAGE
+  ========================== -->
   <url>
     <loc>https://milaphysio.de/</loc>
-    <lastmod>2026-07-21</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
   </url>
 
+  <!-- =========================
+       HAUPTSEITEN
+  ========================== -->
   <url>
     <loc>https://milaphysio.de/kontakt.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
   </url>
 
   <url>
+    <loc>https://milaphysio.de/nackenschmerzen-ratgeber.html</loc>
+  </url>
+
+  <url>
+    <loc>https://milaphysio.de/recommendations.html</loc>
+  </url>
+
+  <!-- =========================
+       RECHTLICHES
+  ========================== -->
+  <url>
     <loc>https://milaphysio.de/impressum.html</loc>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
   </url>
 
   <url>
     <loc>https://milaphysio.de/datenschutz.html</loc>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
   </url>
 
   <url>
-    <loc>https://milaphysio.de/danke.html</loc>
-    <changefreq>yearly</changefreq>
-    <priority>0.2</priority>
+    <loc>https://milaphysio.de/agb.html</loc>
+  </url>
+
+  <!-- =========================
+       E-BOOK
+  ========================== -->
+  <url>
+    <loc>https://milaphysio.de/ebook/</loc>
+  </url>
+
+  <!-- =========================
+       PRODUKTSEITEN
+  ========================== -->
+  <url>
+    <loc>https://milaphysio.de/beurer-em49.html</loc>
+  </url>
+
+  <url>
+    <loc>https://milaphysio.de/concept2-rowerg.html</loc>
+  </url>
+
+  <url>
+    <loc>https://milaphysio.de/devoko-schreibtisch.html</loc>
+  </url>
+
+  <url>
+    <loc>https://milaphysio.de/dh-fitlife-balance-ball.html</loc>
+  </url>
+
+  <url>
+    <loc>https://milaphysio.de/ergonomischer-chefsessel.html</loc>
+  </url>
+
+  <url>
+    <loc>https://milaphysio.de/lenovo-yoga7.html</loc>
+  </url>
+
+  <url>
+    <loc>https://milaphysio.de/mediflow-wasserkissen.html</loc>
+  </url>
+
+  <url>
+    <loc>https://milaphysio.de/novafon-power2.html</loc>
+  </url>
+
+  <url>
+    <loc>https://milaphysio.de/pro2-lymphdrainage.html</loc>
+  </url>
+
+  <url>
+    <loc>https://milaphysio.de/wellax-akupressurmatte.html</loc>
   </url>
 
 </urlset>
