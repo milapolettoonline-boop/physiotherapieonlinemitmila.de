@@ -1,1344 +1,392 @@
 /* =========================================================
-   MILAPHYSIO
-   E-BOOK — NACKENSCHMERZEN VERSTEHEN
-
-   FORMAT: 1080 × 1920 px
-   RATIO: 9:16
-   ========================================================= */
+   MILAPHYSIO E-BOOK
+   ebook.css
+   SEITE 1–31
+   MOBILE FIRST · RESPONSIVE · 9:16
+========================================================= */
 
 
 /* =========================================================
-   RESET
-   ========================================================= */
+   01 — VARIÁVEIS
+========================================================= */
 
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+:root {
+    --cream: #f7f0e6;
+    --cream-dark: #eee4d7;
+
+    --green: #104f45;
+    --green-dark: #173f38;
+
+    --gold: #cda347;
+    --gold-light: #e4c77d;
+
+    --text: #303a37;
+    --muted: #77706a;
+
+    --white: #ffffff;
+
+    --shadow:
+        0 12px 30px rgba(0, 0, 0, 0.10);
+
+    --page-width: 100%;
+    --page-padding: 7%;
 }
 
 
-html,
-body {
+/* =========================================================
+   02 — RESET
+========================================================= */
 
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    margin: 0;
+    padding: 0;
+    background: #d8d5cf;
+}
+
+body {
     margin: 0;
     padding: 0;
 
-    background: #d8d5ce;
+    background: #d8d5cf;
+
+    color: var(--text);
 
     font-family:
         Arial,
         Helvetica,
         sans-serif;
 
-    color: #222222;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
 }
 
-
-/* =========================================================
-   E-BOOK
-   ========================================================= */
-
-.ebook {
-
-    width: 100%;
-
-    display: flex;
-
-    flex-direction: column;
-
-    align-items: center;
-}
-
-
-/* =========================================================
-   ALL PAGES
-   ========================================================= */
-
-.page {
-
-    width: 1080px;
-
-    height: 1920px;
-
-    position: relative;
-
-    overflow: hidden;
-
-    margin: 30px auto;
-
-    page-break-after: always;
-}
-
-
-/* =========================================================
-   ==================== SEITE 1 =============================
-   ========================================================= */
-
-
-/* COVER */
-
-.cover {
-
-    background:
-        linear-gradient(
-            145deg,
-            #faf5ed 0%,
-            #f7f0e6 55%,
-            #f0e5d6 100%
-        );
-
-    overflow: hidden;
-}
-
-
-/* TOP LINE */
-
-.top-line {
-
-    position: absolute;
-
-    top: 0;
-    left: 0;
-
-    width: 330px;
-    height: 7px;
-
-    background: #c9a04a;
-}
-
-
-/* LOGO */
-
-.cover-header {
-
-    position: absolute;
-
-    top: 65px;
-    right: 70px;
-
-    z-index: 30;
-}
-
-
-.logo {
-
-    width: 205px;
-
+img {
+    display: block;
+    max-width: 100%;
     height: auto;
-
-    display: block;
 }
 
-
-/* COVER CONTENT */
-
-.cover-content {
-
-    position: absolute;
-
-    left: 105px;
-    top: 285px;
-
-    width: 760px;
-
-    z-index: 20;
-}
-
-
-/* EYEBROW */
-
-.eyebrow {
-
-    font-size: 19px;
-
-    letter-spacing: 5px;
-
-    color: #9a7838;
-
-    font-weight: 700;
-
-    margin-bottom: 36px;
-}
-
-
-/* TITLE */
-
-.cover-content h1 {
-
-    width: 760px;
-
-    font-size: 75px;
-
-    line-height: 0.98;
-
-    letter-spacing: -1px;
-
-    color: #123f36;
-
-    font-weight: 800;
-}
-
-
-.cover-content h1 span {
-
-    display: block;
-
-    color: #c9a04a;
-
-    margin-top: 5px;
-}
-
-
-/* GOLD LINE */
-
-.gold-line {
-
-    width: 185px;
-
-    height: 7px;
-
-    background: #c9a04a;
-
-    margin-top: 43px;
-
-    margin-bottom: 38px;
-}
-
-
-/* SUBTITLE */
-
-.cover-content h2 {
-
-    width: 640px;
-
-    font-size: 32px;
-
-    line-height: 1.38;
-
-    color: #242424;
-
-    font-weight: 600;
-}
-
-
-/* INTRO */
-
-.intro {
-
-    width: 610px;
-
-    margin-top: 28px;
-
-    font-size: 21px;
-
-    line-height: 1.55;
-
-    color: #444444;
-}
-
-
-/* MILA IMAGE */
-
-.mila-photo {
-
-    position: absolute;
-
-    right: 0;
-
-    top: 775px;
-
-    width: 555px;
-
-    height: 800px;
-
-    overflow: hidden;
-
-    border-radius:
-        290px
-        0
-        0
-        0;
-
-    z-index: 5;
-}
-
-
-.mila-photo::after {
-
-    content: "";
-
-    position: absolute;
-
-    inset: 0;
-
-    border:
-        2px solid
-        rgba(201, 160, 74, 0.55);
-
-    border-right: none;
-
-    border-bottom: none;
-
-    border-radius:
-        290px
-        0
-        0
-        0;
-
-    pointer-events: none;
-}
-
-
-.mila-photo img {
-
-    width: 100%;
-
-    height: 100%;
-
-    object-fit: cover;
-
-    object-position: center top;
-
-    display: block;
-}
-
-
-/* BENEFITS */
-
-.benefits {
-
-    position: absolute;
-
-    left: 95px;
-
-    top: 1120px;
-
-    width: 520px;
-
-    background: #123f36;
-
-    border-radius: 35px;
-
-    padding: 25px 35px;
-
-    z-index: 15;
-
-    box-shadow:
-        0 18px 40px
-        rgba(18, 63, 54, 0.15);
-}
-
-
-.benefit {
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 20px;
-
-    padding: 18px 0;
-
-    color: white;
-}
-
-
-.benefit + .benefit {
-
-    border-top:
-        1px solid
-        rgba(201, 160, 74, 0.65);
-}
-
-
-.benefit-number {
-
-    width: 58px;
-
-    height: 58px;
-
-    min-width: 58px;
-
-    border-radius: 50%;
-
-    background: #c9a04a;
-
-    color: #123f36;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    font-size: 17px;
-
-    font-weight: 800;
-}
-
-
-.benefit strong {
-
-    display: block;
-
-    font-size: 23px;
-
-    line-height: 1.2;
-}
-
-
-.benefit span {
-
-    display: block;
-
-    margin-top: 4px;
-
-    font-size: 18px;
-
-    color:
-        rgba(255,255,255,0.9);
-}
-
-
-/* COVER FOOTER */
-
-.cover-footer {
-
-    position: absolute;
-
-    left: 0;
-    bottom: 0;
-
-    width: 100%;
-
-    height: 205px;
-
-    background: #123f36;
-
-    padding:
-        38px
-        105px;
-
-    color: white;
-
-    z-index: 20;
-}
-
-
-.footer-line {
-
-    width: 95px;
-
-    height: 5px;
-
-    background: #c9a04a;
-
-    margin-bottom: 18px;
-}
-
-
-.cover-footer p {
-
-    font-size: 29px;
-
-    line-height: 1.25;
-
-    color: #c9a04a;
-
-    font-weight: 400;
-}
-
-
-.cover-footer p strong {
-
-    font-weight: 700;
-}
-
-
-.cover-footer span {
-
-    display: block;
-
-    margin-top: 15px;
-
-    font-size: 16px;
-
-    letter-spacing: 1.8px;
-
-    color: white;
-}
-
-
-.gold-decoration {
-
-    position: absolute;
-
-    right: -80px;
-
-    bottom: 215px;
-
-    width: 340px;
-
-    height: 18px;
-
-    background: #c9a04a;
-
-    transform: rotate(-7deg);
-
-    z-index: 25;
+h1,
+h2,
+h3,
+h4,
+p,
+ol,
+ul {
+    margin-top: 0;
 }
 
 
 /* =========================================================
-   ==================== SEITE 2 =============================
-   ========================================================= */
-
-
-/* PAGE BACKGROUND */
-
-.introduction {
-
-    background: #f7f0e6;
-
-    overflow: hidden;
-}
-
-
-/* TOP GOLD LINE */
-
-.intro-top-line {
-
-    position: absolute;
-
-    top: 0;
-
-    left: 0;
-
-    width: 280px;
-
-    height: 7px;
-
-    background: #c9a04a;
-}
-
-
-/* LOGO */
-
-.intro-header {
-
-    position: absolute;
-
-    top: 65px;
-
-    right: 70px;
-
-    z-index: 20;
-}
-
-
-.intro-logo {
-
-    width: 170px;
-
-    height: auto;
-
-    display: block;
-}
-
-
-/* SECTION LABEL */
-
-.section-label {
-
-    position: absolute;
-
-    top: 250px;
-
-    left: 100px;
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 18px;
-
-    color: #9a7838;
-
-    font-size: 19px;
-
-    font-weight: 700;
-
-    letter-spacing: 4px;
-}
-
-
-.section-label span {
-
-    width: 48px;
-
-    height: 48px;
-
-    border-radius: 50%;
-
-    background: #c9a04a;
-
-    color: #123f36;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    font-size: 16px;
-
-    letter-spacing: 0;
-}
-
-
-/* MAIN HEADING */
-
-.intro-heading {
-
-    position: absolute;
-
-    left: 100px;
-
-    top: 345px;
-
-    width: 700px;
-
-    z-index: 10;
-}
-
-
-.intro-heading h2 {
-
-    font-size: 66px;
-
-    line-height: 1.0;
-
-    color: #123f36;
-
-    font-weight: 800;
-
-    letter-spacing: -1px;
-
-    white-space: nowrap;
-}
-
-
-.intro-heading h3 {
-
-    margin-top: 8px;
-
-    font-size: 66px;
-
-    line-height: 1.0;
-
-    color: #c9a04a;
-
-    font-weight: 800;
-
-    letter-spacing: -1px;
-
-    white-space: nowrap;
-}
-
-
-.intro-heading-line {
-
-    width: 150px;
-
-    height: 6px;
-
-    background: #c9a04a;
-
-    margin-top: 38px;
-}
-
-
-/* TEXT */
-
-.intro-text {
-
-    position: absolute;
-
-    left: 100px;
-
-    top: 650px;
-
-    width: 485px;
-
-    z-index: 10;
-}
-
-
-.intro-text p {
-
-    font-size: 22px;
-
-    line-height: 1.55;
-
-    color: #3e3e3e;
-
-    margin-bottom: 28px;
-}
-
-
-.intro-text .intro-lead {
-
-    font-size: 25px;
-
-    line-height: 1.45;
-
-    color: #222222;
-
-    font-weight: 700;
-}
-
-
-/* IMAGE */
-
-.intro-image {
-
-    position: absolute;
-
-    right: 0;
-
-    top: 650px;
-
-    width: 470px;
-
-    height: 720px;
-
-    overflow: hidden;
-
-    border-radius:
-        235px
-        0
-        0
-        0;
-
-    z-index: 5;
-}
-
-
-.intro-image::after {
-
-    content: "";
-
-    position: absolute;
-
-    inset: 0;
-
-    border:
-        2px solid
-        rgba(201,160,74,0.5);
-
-    border-right: none;
-
-    border-bottom: none;
-
-    border-radius:
-        235px
-        0
-        0
-        0;
-
-    pointer-events: none;
-}
-
-
-.intro-image img {
-
-    width: 100%;
-
-    height: 100%;
-
-    object-fit: cover;
-
-    object-position: center center;
-
-    display: block;
-}
-
-
-/* HIGHLIGHT */
-
-.intro-highlight {
-
-    position: absolute;
-
-    left: 100px;
-
-    top: 1325px;
-
-    width: 470px;
-
-    min-height: 145px;
-
-    background: #123f36;
-
-    border-radius: 30px;
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 25px;
-
-    padding: 25px 30px;
-
-    z-index: 15;
-
-    box-shadow:
-        0 15px 35px
-        rgba(18,63,54,0.13);
-}
-
-
-.highlight-icon {
-
-    width: 62px;
-
-    height: 62px;
-
-    min-width: 62px;
-
-    border-radius: 50%;
-
-    background: #c9a04a;
-
-    color: #123f36;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    font-size: 27px;
-}
-
-
-.intro-highlight strong {
-
-    display: block;
-
-    color: white;
-
-    font-size: 25px;
-
-    line-height: 1.25;
-}
-
-
-.intro-highlight span {
-
-    display: block;
-
-    margin-top: 5px;
-
-    color: #c9a04a;
-
-    font-size: 25px;
-
-    font-weight: 700;
-}
-
-
-/* BOTTOM QUOTE */
-
-.intro-bottom {
-
-    position: absolute;
-
-    left: 100px;
-
-    bottom: 120px;
-
-    z-index: 10;
-}
-
-
-.intro-bottom-line {
-
-    width: 100px;
-
-    height: 5px;
-
-    background: #c9a04a;
-
-    margin-bottom: 22px;
-}
-
-
-.intro-bottom p {
-
-    font-size: 28px;
-
-    line-height: 1.3;
-
-    color: #123f36;
-
-    font-weight: 700;
-}
-
-
-.intro-bottom p:last-child {
-
-    color: #c9a04a;
-
-    font-weight: 600;
-}
-
-
-/* DECORATIVE GOLD CURVE */
-
-.intro-gold-curve {
-
-    position: absolute;
-
-    right: -100px;
-
-    bottom: 55px;
-
-    width: 420px;
-
-    height: 18px;
-
-    background: #c9a04a;
-
-    transform: rotate(-8deg);
-
-    z-index: 20;
-}
-
-
-/* =========================================================
-   RESPONSIVE PREVIEW
-   ========================================================= */
-
-@media screen and (min-width: 1301px) {
-
-    .page {
-
-        transform: none;
-
-        box-shadow:
-            0 15px 50px
-            rgba(0,0,0,0.18);
-    }
-}
-
-
-@media screen and (max-width: 1300px) {
-
-    .page {
-
-        transform:
-            scale(0.65);
-
-        transform-origin:
-            top center;
-
-        margin-top: 20px;
-
-        margin-bottom: -650px;
-    }
-}
-
-
-@media screen and (max-width: 900px) {
-
-    .page {
-
-        transform:
-            scale(0.50);
-
-        transform-origin:
-            top center;
-
-        margin-top: 15px;
-
-        margin-bottom: -950px;
-    }
-}
-
-
-@media screen and (max-width: 700px) {
-
-    .page {
-
-        transform:
-            scale(0.45);
-
-        transform-origin:
-            top center;
-
-        margin-top: 10px;
-
-        margin-bottom: -1050px;
-    }
-}
-
-
-@media screen and (max-width: 500px) {
-
-    .page {
-
-        transform:
-            scale(0.40);
-
-        transform-origin:
-            top center;
-
-        margin-top: 5px;
-
-        margin-bottom: -1130px;
-    }
-}
-
-
-/* =========================================================
-   PRINT / PDF
-   ========================================================= */
-
-@page {
-
-    size: 1080px 1920px;
-
-    margin: 0;
-}
-
-
-@media print {
-
-    html,
-    body {
-
-        background: white;
-
-        margin: 0;
-
-        padding: 0;
-    }
-
-
-    .ebook {
-
-        display: block;
-
-        width: 1080px;
-    }
-
-
-    .page {
-
-        width: 1080px;
-
-        height: 1920px;
-
-        margin: 0;
-
-        transform: none;
-
-        box-shadow: none;
-
-        page-break-after: always;
-    }
-}
-
-/* =========================================================
-   SEITE 3 — INHALTSVERZEICHNIS
-   PREMIUM VERSION
-   9:16
+   03 — E-BOOK
 ========================================================= */
 
-.contents-page {
-    position: relative;
-
-    width: 1080px;
-    height: 1920px;
-
-    min-height: 1920px;
-    max-height: 1920px;
-
-    box-sizing: border-box;
-
-    overflow: hidden;
-
-    padding: 85px 75px 65px;
-
-    background: #f7f0e6;
-
-    color: #173f38;
+.ebook {
+    width: 100%;
+    margin: 0 auto;
 }
 
 
-/* ---------- GOLD TOP LINE ---------- */
+/* =========================================================
+   04 — PÁGINA
+   PADRÃO 9:16
+========================================================= */
 
-.contents-top-line {
+.page {
+    position: relative;
+
+    width: var(--page-width);
+
+    aspect-ratio: 9 / 16;
+
+    overflow: hidden;
+
+    padding:
+        var(--page-padding)
+        var(--page-padding)
+        5%;
+
+    background: var(--cream);
+
+    color: var(--text);
+
+    page-break-after: always;
+    break-after: page;
+}
+
+
+/* =========================================================
+   05 — LINHA DOURADA SUPERIOR
+========================================================= */
+
+.page::before {
+    content: "";
+
     position: absolute;
 
     top: 0;
     left: 0;
 
-    width: 205px;
-    height: 8px;
+    width: 19%;
+    height: 0.42%;
 
-    background: #cda347;
+    min-height: 3px;
+
+    background: var(--gold);
 }
 
 
-/* ---------- HEADER ---------- */
+/* =========================================================
+   06 — HEADER
+========================================================= */
 
-.contents-header {
+.page-header {
     position: relative;
 
     width: 100%;
-    height: 120px;
+
+    min-height: 7%;
 
     display: flex;
 
     align-items: flex-start;
     justify-content: space-between;
+
+    margin-bottom: 3%;
 }
 
+.page-label,
+.section-number {
+    display: inline-flex;
 
-.contents-label {
-    margin-top: 20px;
+    align-items: center;
 
-    padding: 12px 25px;
+    min-height: 2.5rem;
 
-    border-radius: 0 18px 18px 0;
+    padding:
+        0.55rem
+        1rem;
 
-    background: #104f45;
+    border-radius:
+        0
+        0.75rem
+        0.75rem
+        0;
 
-    color: #ffffff;
+    background: var(--green);
 
-    font-family: Arial, sans-serif;
+    color: var(--white);
 
-    font-size: 18px;
-    font-weight: 700;
-
-    letter-spacing: 2px;
-}
-
-
-.contents-header .contents-logo {
-    display: block !important;
-
-    width: 155px !important;
-    height: auto !important;
-
-    max-width: 155px !important;
-    max-height: 105px !important;
-
-    object-fit: contain;
-
-    margin: 0 !important;
-}
-
-
-/* ---------- TITLE ---------- */
-
-.contents-title {
-    position: relative;
-
-    width: 650px;
-
-    margin-top: 30px;
-}
-
-
-.contents-title h2,
-.contents-title h3 {
-    margin: 0;
-
-    font-family: Arial, Helvetica, sans-serif;
+    font-size:
+        clamp(0.6rem, 1.5vw, 1rem);
 
     font-weight: 800;
 
-    line-height: 0.92;
+    letter-spacing: 0.12em;
 
-    letter-spacing: -2px;
+    line-height: 1;
+
+    white-space: nowrap;
+}
+
+.page-logo {
+    display: block;
+
+    width: 15%;
+
+    max-width: 155px;
+
+    height: auto;
+
+    object-fit: contain;
+
+    margin-left: auto;
 }
 
 
-.contents-title h2 {
-    font-size: 72px;
+/* =========================================================
+   07 — TIPOGRAFIA
+========================================================= */
 
-    color: #104f45;
+.page h1,
+.page h2,
+.page h3,
+.page h4 {
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
 }
 
+.page h1 {
+    color: var(--green);
 
-.contents-title h3 {
-    font-size: 72px;
+    font-size:
+        clamp(2rem, 6vw, 4.5rem);
 
-    color: #cda347;
+    font-weight: 800;
+
+    line-height: 0.95;
+
+    letter-spacing: -0.04em;
 }
 
+.page h2 {
+    max-width: 90%;
 
-.contents-title-line {
-    width: 200px;
-    height: 5px;
+    margin-bottom: 2%;
 
-    margin-top: 30px;
+    color: var(--green);
 
-    background: #cda347;
+    font-size:
+        clamp(1.8rem, 5.4vw, 4.5rem);
+
+    font-weight: 800;
+
+    line-height: 0.96;
+
+    letter-spacing: -0.045em;
 }
 
+.page h2 em {
+    color: var(--gold);
 
-.contents-title p {
-    width: 600px;
+    font-style: normal;
+}
 
-    margin: 28px 0 0;
+.page h3 {
+    margin-top: 3%;
+    margin-bottom: 2%;
 
-    font-family: Arial, Helvetica, sans-serif;
+    color: var(--green);
 
-    font-size: 24px;
+    font-size:
+        clamp(0.8rem, 1.8vw, 1.3rem);
+
+    font-weight: 800;
+
+    letter-spacing: 0.08em;
+
+    line-height: 1.15;
+}
+
+.page h4 {
+    margin-bottom: 2%;
+
+    color: var(--green);
+
+    font-size:
+        clamp(0.75rem, 1.7vw, 1.2rem);
+
+    line-height: 1.15;
+}
+
+.page p {
+    margin-bottom: 3%;
+
+    color: var(--text);
+
+    font-size:
+        clamp(0.7rem, 1.7vw, 1.2rem);
+
+    line-height: 1.45;
+}
+
+.page .lead {
+    max-width: 88%;
+
+    margin-bottom: 3%;
+
+    font-size:
+        clamp(0.85rem, 2vw, 1.4rem);
 
     line-height: 1.4;
 
     font-weight: 500;
-
-    color: #303a37;
 }
 
 
-/* ---------- LAYOUT ---------- */
+/* =========================================================
+   08 — LINHAS DOURADAS
+========================================================= */
 
-.contents-layout {
-    position: relative;
+.gold-line {
+    width: 18%;
 
-    display: grid;
+    height: 4px;
 
-    grid-template-columns: 570px 355px;
+    margin:
+        2.5%
+        0
+        3.5%;
 
-    column-gap: 35px;
-
-    align-items: start;
-
-    margin-top: 55px;
+    background: var(--gold);
 }
 
 
-/* ---------- LIST ---------- */
+/* =========================================================
+   09 — FOOTER
+========================================================= */
 
-.contents-list {
-    width: 570px;
-}
+.page-footer {
+    position: absolute;
 
-
-.contents-item {
-    display: grid;
-
-    grid-template-columns: 62px 45px 1fr;
-
-    align-items: center;
-
-    min-height: 82px;
-
-    padding: 8px 0;
-
-    border-bottom: 1px solid rgba(205, 163, 71, 0.65);
-}
-
-
-.contents-item:last-child {
-    border-bottom: none;
-}
-
-
-/* ---------- NUMBERS ---------- */
-
-.contents-number {
-    width: 53px;
-    height: 53px;
+    left: 7%;
+    right: 7%;
+    bottom: 4%;
 
     display: flex;
 
-    align-items: center;
-    justify-content: center;
+    align-items: flex-end;
+    justify-content: space-between;
 
-    border-radius: 50%;
+    padding-top: 2.5%;
 
-    background: #cda347;
+    border-top:
+        1px solid
+        rgba(205, 163, 71, 0.55);
 
-    color: #ffffff;
+    color: var(--muted);
 
-    font-family: Arial, Helvetica, sans-serif;
+    font-size:
+        clamp(0.5rem, 1.1vw, 0.8rem);
 
-    font-size: 17px;
+    line-height: 1.2;
+}
+
+.page-footer b {
+    color: var(--green);
 
     font-weight: 800;
 }
 
 
-/* ---------- ICONS ---------- */
+/* =========================================================
+   10 — REGRA GERAL DAS FOTOS
+   TODAS AS FOTOS SÃO 9:16
+========================================================= */
 
-.contents-icon {
-    color: #104f45;
-
-    font-size: 24px;
-
-    text-align: center;
-}
-
-
-/* ---------- TEXT ---------- */
-
-.contents-text {
-    padding-left: 8px;
-}
-
-
-.contents-text strong {
+.hero-photo,
+.exercise-photo,
+.rounded-photo,
+.portrait {
     display: block;
 
-    font-family: Arial, Helvetica, sans-serif;
+    aspect-ratio: 9 / 16;
 
-    font-size: 23px;
+    height: auto;
 
-    line-height: 1.2;
+    border:
+        2px solid
+        var(--gold);
 
-    font-weight: 700;
-
-    color: #104f45;
-}
-
-
-/* ---------- PHOTO ---------- */
-
-.contents-photo {
-    width: 355px;
-    height: 620px;
-
-    overflow: hidden;
-
-    border-radius: 180px 180px 0 0;
-
-    border: 3px solid #cda347;
-
-    box-sizing: border-box;
-
-    background: #e9dfd2;
-}
-
-
-.contents-photo img {
-    display: block !important;
-
-    width: 100% !important;
-    height: 100% !important;
-
-    max-width: none !important;
-    max-height: none !important;
-
-    margin: 0 !important;
+    background: var(--cream-dark);
 
     object-fit: cover;
 
@@ -1346,43 +394,369 @@ body {
 }
 
 
-/* ---------- PRAXIS TIPP ---------- */
+/* =========================================================
+   11 — HERO PHOTO
+========================================================= */
 
-.contents-tip {
+.hero-photo {
+    width: 42%;
+
+    margin:
+        3%
+        auto
+        4%;
+}
+
+
+/* =========================================================
+   12 — EXERCISE PHOTO
+   IMPORTANTE:
+   A FOTO FICA DENTRO DE .exercise-photo-wrap
+========================================================= */
+
+.exercise-photo {
+    width: 100%;
+
+    margin: 0;
+
+    border-radius: 4%;
+}
+
+
+/* =========================================================
+   13 — FOTO ARREDONDADA
+========================================================= */
+
+.rounded-photo {
+    width: 42%;
+
+    margin: 0 auto;
+
+    border-radius:
+        14%
+        14%
+        0
+        0;
+}
+
+
+/* =========================================================
+   14 — RETRATO
+========================================================= */
+
+.portrait {
+    width: 38%;
+
+    margin:
+        3%
+        auto
+        4%;
+
+    border-radius: 50%;
+}
+
+
+/* =========================================================
+   15 — CAPA
+========================================================= */
+
+.cover {
+    position: relative;
+
+    padding-top: 6%;
+}
+
+.cover .page-logo {
+    width: 17%;
+}
+
+.cover-copy {
+    position: relative;
+
+    z-index: 2;
+
+    width: 100%;
+
+    margin-top: 2%;
+}
+
+.eyebrow {
+    margin-bottom: 2% !important;
+
+    color: var(--gold) !important;
+
+    font-size:
+        clamp(0.6rem, 1.4vw, 1rem) !important;
+
+    font-weight: 800;
+
+    letter-spacing: 0.15em;
+}
+
+.cover h1 {
+    max-width: 78%;
+
+    font-size:
+        clamp(2.2rem, 6vw, 5rem);
+}
+
+.cover h1 span {
+    color: var(--gold);
+}
+
+.cover-copy h2 {
+    max-width: 70%;
+
+    margin-bottom: 2%;
+
+    color: var(--green);
+
+    font-size:
+        clamp(0.9rem, 2vw, 1.5rem);
+
+    line-height: 1.3;
+
+    letter-spacing: 0;
+}
+
+.cover-copy > p:last-child {
+    max-width: 60%;
+
+    font-size:
+        clamp(0.7rem, 1.5vw, 1.1rem);
+}
+
+
+/* =========================================================
+   16 — FOTO DA CAPA
+========================================================= */
+
+.cover-photo {
     position: absolute;
 
-    left: 75px;
-    bottom: 185px;
+    top: 38%;
+    left: 7%;
 
-    width: 680px;
-    min-height: 150px;
+    width: 86%;
 
-    box-sizing: border-box;
+    aspect-ratio: 9 / 16;
+
+    height: auto;
+
+    max-height: 39%;
+
+    overflow: hidden;
+
+    border:
+        2px solid
+        var(--gold);
+
+    border-radius:
+        7%
+        7%
+        0
+        0;
+
+    background: var(--cream-dark);
+}
+
+.cover-photo img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+
+/* =========================================================
+   17 — BENEFÍCIOS
+========================================================= */
+
+.benefits {
+    position: absolute;
+
+    left: 7%;
+    right: 7%;
+    bottom: 11%;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 3%;
+}
+
+.benefits > div {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8%;
+
+    padding: 5%;
+
+    border-radius: 1rem;
+
+    background:
+        rgba(247, 240, 230, 0.96);
+
+    box-shadow: var(--shadow);
+}
+
+.benefits b {
+    color: var(--gold);
+
+    font-size:
+        clamp(0.8rem, 1.7vw, 1.25rem);
+}
+
+.benefits span {
+    color: var(--green);
+
+    font-size:
+        clamp(0.5rem, 1.2vw, 0.85rem);
+
+    font-weight: 700;
+
+    line-height: 1.2;
+}
+
+
+/* =========================================================
+   18 — SPLIT
+========================================================= */
+
+.split {
+    display: grid;
+
+    grid-template-columns: 1fr;
+
+    gap: 4%;
+
+    align-items: start;
+}
+
+
+/* =========================================================
+   19 — PRAXIS TIP
+========================================================= */
+
+.tip {
+    width: 100%;
+
+    margin-top: 3%;
+
+    padding:
+        3.5%
+        4%;
+
+    border-radius: 1.2rem;
+
+    background: var(--green);
+
+    color: var(--white);
+
+    box-shadow: var(--shadow);
+
+    font-size:
+        clamp(0.6rem, 1.35vw, 1rem);
+
+    line-height: 1.4;
+}
+
+.tip b {
+    display: block;
+
+    margin-bottom: 1.5%;
+
+    color: var(--gold);
+
+    font-size: 0.85em;
+
+    letter-spacing: 0.1em;
+}
+
+
+/* =========================================================
+   20 — SEITE 3
+   INHALTSVERZEICHNIS
+   PADRÃO VISUAL PRESERVADO
+========================================================= */
+
+.contents-page {
+    position: relative;
+}
+
+.contents-page h2 {
+    margin-top: 2%;
+}
+
+.contents-page > p {
+    max-width: 62%;
+
+    margin-bottom: 4%;
+}
+
+.contents-grid {
+    display: grid;
+
+    grid-template-columns: 1fr;
+
+    gap: 4%;
+}
+
+.contents-grid ol {
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+
+    counter-reset: contents;
+}
+
+.contents-grid li {
+    position: relative;
 
     display: flex;
 
     align-items: center;
 
-    gap: 25px;
+    min-height: 7%;
 
-    padding: 28px 35px;
+    padding:
+        2.5%
+        0
+        2.5%
+        12%;
 
-    border-radius: 30px;
+    border-bottom:
+        1px solid
+        rgba(205, 163, 71, 0.55);
 
-    background: #104f45;
+    color: var(--green);
 
-    color: #ffffff;
+    font-size:
+        clamp(0.7rem, 1.55vw, 1.1rem);
 
-    box-shadow:
-        0 12px 30px rgba(0, 0, 0, 0.10);
+    font-weight: 700;
+
+    line-height: 1.2;
 }
 
+.contents-grid li::before {
+    counter-increment: contents;
 
-.tip-icon {
-    width: 58px;
-    height: 58px;
+    content:
+        counter(contents, decimal-leading-zero);
 
-    flex: 0 0 58px;
+    position: absolute;
+
+    left: 0;
+
+    width: 9%;
+
+    aspect-ratio: 1;
 
     display: flex;
 
@@ -1391,129 +765,1806 @@ body {
 
     border-radius: 50%;
 
-    background: #cda347;
+    background: var(--gold);
 
-    font-size: 27px;
+    color: var(--white);
+
+    font-size: 0.8em;
+
+    font-weight: 800;
 }
 
+.contents-grid > img {
+    width: 100%;
 
-.contents-tip strong {
-    display: block;
+    aspect-ratio: 9 / 16;
 
-    margin-bottom: 7px;
+    height: auto;
 
-    font-family: Arial, Helvetica, sans-serif;
+    object-fit: cover;
 
-    font-size: 18px;
+    border:
+        2px solid
+        var(--gold);
 
-    letter-spacing: 2px;
-
-    color: #cda347;
-}
-
-
-.contents-tip p {
-    margin: 0;
-
-    font-family: Arial, Helvetica, sans-serif;
-
-    font-size: 20px;
-
-    line-height: 1.35;
-
-    color: #ffffff;
-}
-
-
-/* ---------- FOOTER ---------- */
-
-.contents-footer {
-    position: absolute;
-
-    left: 75px;
-    right: 75px;
-
-    bottom: 55px;
-
-    display: flex;
-
-    align-items: flex-end;
-
-    justify-content: space-between;
-}
-
-
-.contents-footer-line {
-    position: absolute;
-
-    top: -25px;
-    left: 0;
-
-    width: 200px;
-    height: 4px;
-
-    background: #cda347;
-}
-
-
-.contents-footer-person strong {
-    display: block;
-
-    font-family: Arial, Helvetica, sans-serif;
-
-    font-size: 17px;
-
-    letter-spacing: 2px;
-
-    color: #104f45;
-}
-
-
-.contents-footer-person span {
-    display: block;
-
-    margin-top: 5px;
-
-    font-family: Arial, Helvetica, sans-serif;
-
-    font-size: 14px;
-
-    letter-spacing: 1px;
-
-    color: #77706a;
-}
-
-
-.contents-footer-right {
-    font-family: Arial, Helvetica, sans-serif;
-
-    font-size: 18px;
-
-    font-weight: 700;
-
-    color: #104f45;
+    border-radius:
+        18%
+        18%
+        0
+        0;
 }
 
 
 /* =========================================================
-   RESPONSIVE
+   21 — CARDS
+========================================================= */
+
+.cards {
+    display: grid;
+
+    gap: 2.5%;
+
+    margin-top: 3%;
+}
+
+.cards article {
+    padding: 4%;
+
+    border:
+        1px solid
+        rgba(205, 163, 71, 0.5);
+
+    border-radius: 1rem;
+
+    background:
+        rgba(255, 255, 255, 0.45);
+}
+
+.cards article > b {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 2rem;
+    height: 2rem;
+
+    margin-bottom: 3%;
+
+    border-radius: 50%;
+
+    background: var(--gold);
+
+    color: var(--white);
+
+    font-size: 0.75rem;
+}
+
+.cards article p {
+    margin-bottom: 0;
+
+    font-size:
+        clamp(0.6rem, 1.25vw, 0.9rem);
+}
+
+.cards.four,
+.cards.six,
+.cards.eight {
+    grid-template-columns:
+        repeat(2, 1fr);
+}
+
+.cards.three {
+    grid-template-columns:
+        repeat(3, 1fr);
+}
+
+
+/* =========================================================
+   22 — INFO GRID
+========================================================= */
+
+.info-grid {
+    display: grid;
+
+    gap: 3%;
+
+    margin-top: 3%;
+}
+
+.info-grid.three {
+    grid-template-columns:
+        repeat(3, 1fr);
+}
+
+.info-grid article {
+    padding: 4%;
+
+    border-left:
+        3px solid
+        var(--gold);
+
+    background:
+        rgba(255, 255, 255, 0.35);
+}
+
+.info-grid p {
+    margin-bottom: 0;
+
+    font-size:
+        clamp(0.6rem, 1.2vw, 0.9rem);
+}
+
+
+/* =========================================================
+   23 — NUMBER LIST
+========================================================= */
+
+.number-list {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 2.5%;
+}
+
+.number-list article {
+    position: relative;
+
+    padding:
+        4%
+        4%
+        4%
+        14%;
+
+    border-bottom:
+        1px solid
+        rgba(205, 163, 71, 0.5);
+}
+
+.number-list article > b {
+    position: absolute;
+
+    left: 0;
+    top: 4%;
+
+    color: var(--gold);
+
+    font-size:
+        clamp(0.8rem, 1.5vw, 1.1rem);
+}
+
+.number-list h3 {
+    margin-top: 0;
+
+    margin-bottom: 2%;
+
+    font-size:
+        clamp(0.7rem, 1.4vw, 1rem);
+
+    letter-spacing: 0;
+}
+
+.number-list p {
+    margin-bottom: 0;
+
+    font-size:
+        clamp(0.58rem, 1.15vw, 0.85rem);
+}
+
+
+/* =========================================================
+   24 — CHECKLIST
+========================================================= */
+
+.checklist,
+.daily-check {
+    display: grid;
+
+    gap: 2%;
+
+    margin-top: 3%;
+}
+
+.checklist label,
+.daily-check label {
+    display: block;
+
+    padding:
+        3%
+        4%;
+
+    border-radius: 0.8rem;
+
+    background:
+        rgba(16, 79, 69, 0.08);
+
+    color: var(--green);
+
+    font-size:
+        clamp(0.65rem, 1.45vw, 1rem);
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   25 — TIMELINE
+========================================================= */
+
+.timeline {
+    display: grid;
+
+    gap: 2.5%;
+
+    margin-top: 3%;
+}
+
+.timeline article {
+    display: grid;
+
+    grid-template-columns:
+        25%
+        1fr;
+
+    gap: 4%;
+
+    align-items: center;
+
+    padding: 3%;
+
+    border-left:
+        4px solid
+        var(--gold);
+
+    border-radius: 0.8rem;
+
+    background:
+        rgba(255, 255, 255, 0.5);
+}
+
+.timeline b {
+    color: var(--gold);
+
+    font-size:
+        clamp(0.65rem, 1.35vw, 0.95rem);
+}
+
+.timeline span {
+    color: var(--green);
+
+    font-size:
+        clamp(0.65rem, 1.3vw, 0.95rem);
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   26 — ÜBUNGEN
+   FOTO + QR CODE
+   PADRÃO ÚNICO
+========================================================= */
+
+
+
+/* =========================================================
+   27 — CONTAINER DA FOTO
+========================================================= */
+
+
+
+
+/* =========================================================
+   28 — FOTO DOS EXERCÍCIOS
+   SEMPRE 9:16
+========================================================= */
+
+
+/* =========================================================
+   29 — QR CODE
+========================================================= */
+
+.qr-box {
+    width: 25%;
+
+    flex: 0 0 25%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 4%;
+
+    background: var(--white);
+
+    border:
+        2px solid
+        var(--gold);
+
+    border-radius: 16px;
+
+    box-shadow:
+        0 8px 22px
+        rgba(0, 0, 0, 0.08);
+}
+
+.qr-box span {
+    display: block;
+
+    margin-bottom: 10%;
+
+    color: var(--green);
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size:
+        clamp(9px, 1.4vw, 16px);
+
+    font-weight: 800;
+
+    letter-spacing: 1.2px;
+
+    line-height: 1.1;
+
+    text-align: center;
+}
+
+.qr-box img {
+    display: block;
+
+    width: 100%;
+
+    height: auto;
+
+    max-width: 150px;
+
+    margin: 0;
+
+    object-fit: contain;
+}
+
+
+/* =========================================================
+   30 — BENEFIT GRID DAS ÜBUNGEN
+========================================================= */
+
+.benefit-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 3%;
+
+    margin:
+        3%
+        0
+        4%;
+}
+
+.benefit-grid article {
+    padding: 4%;
+
+    border:
+        1px solid
+        rgba(205, 163, 71, 0.5);
+
+    border-radius: 1rem;
+
+    background:
+        rgba(255, 255, 255, 0.45);
+}
+
+.benefit-grid article > b {
+    color: var(--gold);
+
+    font-size:
+        clamp(0.7rem, 1.3vw, 1rem);
+
+    font-weight: 800;
+}
+
+.benefit-grid h4 {
+    margin-top: 4%;
+
+    margin-bottom: 3%;
+
+    color: var(--green);
+
+    font-size:
+        clamp(0.65rem, 1.3vw, 1rem);
+}
+
+.benefit-grid p {
+    margin-bottom: 0;
+
+    font-size:
+        clamp(0.55rem, 1.05vw, 0.8rem);
+
+    line-height: 1.35;
+}
+
+
+/* =========================================================
+   31 — ÜBUNG SCHRITTE
+========================================================= */
+
+.steps {
+    margin:
+        2%
+        0
+        3%;
+
+    padding-left: 7%;
+}
+
+.steps li {
+    margin-bottom: 2.5%;
+
+    color: var(--text);
+
+    font-size:
+        clamp(0.6rem, 1.3vw, 0.95rem);
+
+    line-height: 1.35;
+}
+
+
+/* =========================================================
+   32 — DOSIERUNG
+========================================================= */
+
+.dosage {
+    width: 100%;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 3%;
+
+    margin:
+        3%
+        0;
+
+    padding:
+        3%
+        4%;
+
+    border:
+        1px solid
+        rgba(205, 163, 71, 0.55);
+
+    border-radius: 1rem;
+
+    background:
+        rgba(255, 255, 255, 0.55);
+}
+
+.dosage b {
+    color: var(--gold);
+
+    font-size:
+        clamp(0.75rem, 1.5vw, 1.1rem);
+}
+
+.dosage span {
+    color: var(--green);
+
+    font-size:
+        clamp(0.55rem, 1.15vw, 0.85rem);
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   33 — HINWEIS ÜBUNG
+========================================================= */
+
+.exercise-note {
+    margin:
+        3%
+        0;
+
+    padding:
+        3%
+        4%;
+
+    border-left:
+        4px solid
+        var(--gold);
+
+    border-radius: 0.8rem;
+
+    background:
+        rgba(205, 163, 71, 0.10);
+}
+
+.exercise-note strong {
+    display: block;
+
+    margin-bottom: 1.5%;
+
+    color: var(--green);
+
+    font-size:
+        clamp(0.6rem, 1.2vw, 0.9rem);
+
+    letter-spacing: 0.08em;
+}
+
+.exercise-note p {
+    margin-bottom: 0;
+
+    font-size:
+        clamp(0.55rem, 1.1vw, 0.8rem);
+
+    line-height: 1.35;
+}
+
+
+/* =========================================================
+   34 — PLAN
+========================================================= */
+
+.plan-box {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 2.5%;
+
+    margin-top: 3%;
+}
+
+.plan-box > div {
+    padding: 4%;
+
+    border:
+        1px solid
+        rgba(205, 163, 71, 0.5);
+
+    border-radius: 1rem;
+
+    background:
+        rgba(255, 255, 255, 0.5);
+}
+
+.plan-box b {
+    display: block;
+
+    margin-bottom: 2%;
+
+    color: var(--gold);
+
+    font-size:
+        clamp(0.8rem, 1.5vw, 1.1rem);
+}
+
+.plan-box span {
+    display: block;
+
+    color: var(--green);
+
+    font-size:
+        clamp(0.6rem, 1.2vw, 0.9rem);
+
+    line-height: 1.3;
+}
+
+
+/* =========================================================
+   35 — THREE COLUMNS
+========================================================= */
+
+.three-columns {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 3%;
+
+    margin-top: 3%;
+}
+
+.three-columns article {
+    padding: 5%;
+
+    border-top:
+        4px solid
+        var(--gold);
+
+    border-radius: 1rem;
+
+    background:
+        rgba(255, 255, 255, 0.5);
+}
+
+.three-columns b {
+    color: var(--gold);
+}
+
+.three-columns h4 {
+    margin-top: 8%;
+}
+
+.three-columns p {
+    margin-bottom: 0;
+
+    font-size:
+        clamp(0.55rem, 1.1vw, 0.8rem);
+}
+
+
+/* =========================================================
+   36 — WARNING
+========================================================= */
+
+.warning-box {
+    margin-top: 3%;
+
+    padding: 5%;
+
+    border-left:
+        5px solid
+        var(--gold);
+
+    border-radius: 1rem;
+
+    background:
+        rgba(205, 163, 71, 0.10);
+}
+
+.warning-box h3 {
+    margin-top: 0;
+}
+
+.warning-box ul {
+    margin: 0;
+
+    padding-left: 6%;
+}
+
+.warning-box li {
+    margin-bottom: 2%;
+
+    font-size:
+        clamp(0.6rem, 1.25vw, 0.9rem);
+
+    line-height: 1.35;
+}
+
+
+/* =========================================================
+   37 — MYTHEN
+========================================================= */
+
+.myths {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 3%;
+}
+
+.myths article {
+    padding: 5%;
+
+    border-top:
+        4px solid
+        var(--gold);
+
+    border-radius: 1rem;
+
+    background:
+        rgba(255, 255, 255, 0.45);
+}
+
+.myths b {
+    color: var(--gold);
+
+    font-size:
+        clamp(0.55rem, 1vw, 0.75rem);
+
+    letter-spacing: 0.1em;
+}
+
+.myths h3 {
+    margin-top: 4%;
+
+    font-size:
+        clamp(0.7rem, 1.35vw, 1rem);
+
+    letter-spacing: 0;
+}
+
+.myths p {
+    margin-bottom: 0;
+
+    font-size:
+        clamp(0.55rem, 1.1vw, 0.8rem);
+}
+
+
+/* =========================================================
+   38 — FAQ
+========================================================= */
+
+.faq {
+    display: grid;
+
+    gap: 1.5%;
+
+    margin-top: 3%;
+}
+
+.faq details {
+    padding:
+        3%
+        4%;
+
+    border-bottom:
+        1px solid
+        rgba(205, 163, 71, 0.55);
+
+    background:
+        rgba(255, 255, 255, 0.35);
+}
+
+.faq summary {
+    cursor: pointer;
+
+    color: var(--green);
+
+    font-size:
+        clamp(0.65rem, 1.35vw, 1rem);
+
+    font-weight: 800;
+}
+
+.faq p {
+    margin:
+        3%
+        0
+        0;
+
+    font-size:
+        clamp(0.58rem, 1.1vw, 0.8rem);
+}
+
+
+/* =========================================================
+   39 — TABELA
+========================================================= */
+
+.progress {
+    width: 100%;
+
+    margin-top: 3%;
+
+    border-collapse: collapse;
+
+    font-size:
+        clamp(0.55rem, 1.1vw, 0.8rem);
+}
+
+.progress th {
+    padding: 3%;
+
+    background: var(--green);
+
+    color: var(--white);
+
+    text-align: left;
+}
+
+.progress td {
+    padding: 3%;
+
+    border-bottom:
+        1px solid
+        rgba(205, 163, 71, 0.45);
+}
+
+
+/* =========================================================
+   40 — QUOTE
+========================================================= */
+
+.quote {
+    margin:
+        5%
+        0;
+
+    padding: 6%;
+
+    border-left:
+        6px solid
+        var(--gold);
+
+    color: var(--green);
+
+    font-size:
+        clamp(1rem, 2.2vw, 1.6rem);
+
+    font-weight: 700;
+
+    font-style: italic;
+
+    line-height: 1.35;
+}
+
+.small-note {
+    color: var(--muted) !important;
+
+    font-size:
+        clamp(0.55rem, 1vw, 0.75rem) !important;
+}
+
+
+/* =========================================================
+   41 — ABOUT
+========================================================= */
+
+.about > p {
+    max-width: 82%;
+}
+
+
+/* =========================================================
+   42 — CONTACT
+========================================================= */
+
+.contact-box {
+    margin-top: 4%;
+
+    padding: 6%;
+
+    border-radius: 1.2rem;
+
+    background: var(--green);
+
+    color: var(--white);
+
+    box-shadow: var(--shadow);
+}
+
+.contact-box h3 {
+    margin-top: 0;
+
+    color: var(--gold);
+}
+
+.contact-box p {
+    color: var(--white);
+}
+
+.contact-box b {
+    color: var(--gold);
+}
+
+
+/* =========================================================
+   43 — FINAL CTA
+========================================================= */
+
+.final-cta {
+    display: grid;
+
+    grid-template-columns:
+        1fr
+        24%;
+
+    gap: 5%;
+
+    align-items: center;
+
+    margin-top: 4%;
+
+    padding: 5%;
+
+    border-radius: 1.2rem;
+
+    background: var(--green);
+
+    color: var(--white);
+
+    box-shadow: var(--shadow);
+}
+
+.final-cta h3 {
+    margin-top: 0;
+
+    color: var(--gold);
+}
+
+.final-cta p {
+    color: var(--white);
+
+    font-size:
+        clamp(0.6rem, 1.2vw, 0.85rem);
+}
+
+.final-cta img {
+    width: 100%;
+
+    aspect-ratio: 1 / 1;
+
+    height: auto;
+
+    object-fit: contain;
+
+    padding: 5%;
+
+    background: var(--white);
+
+    border-radius: 0.6rem;
+}
+
+.closing {
+    max-width: 75%;
+
+    margin-top: 4%;
+
+    color: var(--green) !important;
+
+    font-size:
+        clamp(0.75rem, 1.6vw, 1.15rem) !important;
+
+    font-weight: 500;
+}
+
+.signature {
+    color: var(--gold) !important;
+
+    font-size:
+        clamp(0.8rem, 1.7vw, 1.2rem) !important;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   44 — MOBILE
 ========================================================= */
 
 @media screen and (max-width: 700px) {
 
-    .contents-page {
+    html,
+    body {
+        background: var(--cream);
+    }
+
+    .ebook {
+        width: 100%;
+    }
+
+    .page {
         width: 100%;
 
-        height: auto;
+        aspect-ratio: 9 / 16;
 
         min-height: 0;
-        max-height: none;
-
-        aspect-ratio: 9 / 16;
 
         padding: 7%;
 
         overflow: hidden;
+    }
+
+    .page h2 {
+        max-width: 90%;
+    }
+
+    .page p {
+        font-size: 3vw;
+    }
+
+    .page .lead {
+        font-size: 3.3vw;
+    }
+
+    .page-logo {
+        width: 15%;
+    }
+
+
+    /* -----------------------------------------
+       ÜBUNG FOTO + QR
+    ----------------------------------------- */
+
+    .exercise-media {
+        width: 100%;
+
+        gap: 4%;
+
+        margin:
+            4%
+            0
+            5%;
+    }
+
+    .exercise-photo-wrap {
+        width: 64%;
+
+        flex: 0 0 64%;
+    }
+
+    .exercise-media .exercise-photo {
+        width: 100%;
+
+        aspect-ratio: 9 / 16;
+
+        height: auto;
+    }
+
+    .qr-box {
+        width: 28%;
+
+        flex: 0 0 28%;
+
+        padding: 3%;
+
+        border-radius: 12px;
+    }
+
+    .qr-box span {
+        margin-bottom: 8%;
+
+        font-size: 9px;
+
+        letter-spacing: 1px;
+    }
+
+    .qr-box img {
+        width: 100%;
+
+        max-width: 100%;
+    }
+
+
+    /* -----------------------------------------
+       BENEFITS
+    ----------------------------------------- */
+
+    .benefit-grid {
+        grid-template-columns: 1fr;
+
+        gap: 2%;
+    }
+
+    .benefit-grid article {
+        padding: 3%;
+    }
+
+
+    /* -----------------------------------------
+       GENERAL GRIDS
+    ----------------------------------------- */
+
+    .cards.four,
+    .cards.six,
+    .cards.eight,
+    .cards.three,
+    .info-grid.three,
+    .three-columns,
+    .myths {
+        grid-template-columns: 1fr 1fr;
+    }
+
+
+    .final-cta {
+        grid-template-columns:
+            1fr
+            24%;
+    }
+}
+
+
+/* =========================================================
+   45 — TELAS MUITO PEQUENAS
+========================================================= */
+
+@media screen and (max-width: 420px) {
+
+    .page {
+        padding: 6%;
+    }
+
+    .page h2 {
+        font-size: 7vw;
+    }
+
+    .page p {
+        font-size: 2.7vw;
+    }
+
+    .page .lead {
+        font-size: 3vw;
+    }
+
+    .exercise-media {
+        gap: 3%;
+    }
+
+    .exercise-photo-wrap {
+        width: 65%;
+
+        flex-basis: 65%;
+    }
+
+    .qr-box {
+        width: 28%;
+
+        flex-basis: 28%;
+
+        padding: 2.5%;
+    }
+
+    .qr-box span {
+        font-size: 7px;
+
+        letter-spacing: 0.7px;
+    }
+
+    .tip {
+        padding: 3%;
+    }
+}
+
+
+/* =========================================================
+   46 — DESKTOP
+========================================================= */
+
+@media screen and (min-width: 701px) {
+
+    .ebook {
+        width:
+            min(100%, 1080px);
+    }
+
+    .split {
+        grid-template-columns:
+            1fr
+            42%;
+    }
+
+    .contents-grid {
+        grid-template-columns:
+            58%
+            36%;
+    }
+
+    /* -----------------------------------------
+       ÜBUNG FOTO + QR
+    ----------------------------------------- */
+
+    .exercise-media {
+        width: 100%;
+
+        gap: 5%;
+    }
+
+    .exercise-photo-wrap {
+        width: 62%;
+
+        flex-basis: 62%;
+    }
+
+    .exercise-media .exercise-photo {
+        width: 100%;
+
+        aspect-ratio: 9 / 16;
+
+        height: auto;
+    }
+
+    .qr-box {
+        width: 25%;
+
+        flex-basis: 25%;
+    }
+
+
+    /* -----------------------------------------
+       OUTROS ELEMENTOS
+    ----------------------------------------- */
+
+    .hero-photo {
+        width: 42%;
+    }
+
+    .rounded-photo {
+        width: 42%;
+    }
+
+    .portrait {
+        width: 38%;
+    }
+}
+
+
+/* =========================================================
+   47 — PRINT / PDF
+   1080 × 1920
+========================================================= */
+
+@media print {
+
+    @page {
+        size: 1080px 1920px;
+
+        margin: 0;
+    }
+
+    html,
+    body {
+        width: 1080px;
+
+        margin: 0;
+        padding: 0;
+
+        background: var(--cream);
+    }
+
+    .ebook {
+        width: 1080px;
+
+        margin: 0;
+    }
+
+    .page {
+        width: 1080px;
+        height: 1920px;
+
+        min-height: 1920px;
+        max-height: 1920px;
+
+        aspect-ratio: auto;
+
+        padding:
+            135px
+            76px
+            96px;
+
+        overflow: hidden;
+
+        page-break-after: always;
+        break-after: page;
+
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    .page:last-child {
+        page-break-after: auto;
+        break-after: auto;
+    }
+
+
+    /* -----------------------------------------
+       LINHA SUPERIOR
+    ----------------------------------------- */
+
+    .page::before {
+        width: 205px;
+
+        height: 8px;
+    }
+
+
+    /* -----------------------------------------
+       HEADER
+    ----------------------------------------- */
+
+    .page-header {
+        min-height: 120px;
+
+        margin-bottom: 40px;
+    }
+
+    .page-label,
+    .section-number {
+        min-height: 50px;
+
+        padding:
+            14px
+            24px;
+
+        font-size: 18px;
+    }
+
+    .page-logo {
+        width: 155px;
+
+        max-width: 155px;
+    }
+
+
+    /* -----------------------------------------
+       TIPOGRAFIA
+    ----------------------------------------- */
+
+    .page h1 {
+        font-size: 72px;
+    }
+
+    .page h2 {
+        font-size: 68px;
+    }
+
+    .page h3 {
+        font-size: 20px;
+    }
+
+    .page h4 {
+        font-size: 19px;
+    }
+
+    .page p {
+        font-size: 21px;
+    }
+
+    .page .lead {
+        font-size: 25px;
+    }
+
+    .gold-line {
+        width: 200px;
+
+        height: 5px;
+
+        margin:
+            28px
+            0
+            35px;
+    }
+
+
+    /* -----------------------------------------
+       FOOTER
+    ----------------------------------------- */
+
+    .page-footer {
+        left: 76px;
+        right: 76px;
+
+        bottom: 55px;
+
+        font-size: 15px;
+    }
+
+
+    /* -----------------------------------------
+       FOTOS — TODAS 9:16
+    ----------------------------------------- */
+
+    .hero-photo {
+        width: 420px;
+
+        height: auto;
+
+        aspect-ratio: 9 / 16;
+
+        max-width: 420px;
+    }
+
+    .rounded-photo {
+        width: 420px;
+
+        height: auto;
+
+        aspect-ratio: 9 / 16;
+
+        max-width: 420px;
+    }
+
+    .portrait {
+        width: 380px;
+
+        height: auto;
+
+        aspect-ratio: 9 / 16;
+
+        max-width: 380px;
+    }
+
+
+    /* -----------------------------------------
+       CAPA
+    ----------------------------------------- */
+
+    .cover-photo {
+        top: 760px;
+
+        left: 76px;
+
+        width: 928px;
+
+        aspect-ratio: 9 / 16;
+
+        height: auto;
+
+        max-height: 730px;
+    }
+
+    .cover-photo img {
+        width: 100%;
+        height: 100%;
+
+        object-fit: cover;
+    }
+
+
+    /* -----------------------------------------
+       BENEFÍCIOS CAPA
+    ----------------------------------------- */
+
+    .benefits {
+        left: 76px;
+        right: 76px;
+
+        bottom: 210px;
+    }
+
+    .benefits span {
+        font-size: 14px;
+    }
+
+    .benefits b {
+        font-size: 18px;
+    }
+
+
+    /* -----------------------------------------
+       INHALTSVERZEICHNIS
+    ----------------------------------------- */
+
+    .contents-grid li {
+        font-size: 22px;
+    }
+
+    .contents-grid > img {
+        width: 355px;
+
+        aspect-ratio: 9 / 16;
+
+        height: auto;
+
+        object-fit: cover;
+    }
+
+
+    /* -----------------------------------------
+       TIP
+    ----------------------------------------- */
+
+    .tip {
+        font-size: 19px;
+    }
+
+
+    /* -----------------------------------------
+       CARDS
+    ----------------------------------------- */
+
+    .cards article p {
+        font-size: 16px;
+    }
+
+    .number-list p {
+        font-size: 15px;
+    }
+
+
+    /* -----------------------------------------
+       ÜBUNGEN
+       FOTO + QR JUNTOS
+    ----------------------------------------- */
+
+    .exercise-media {
+        width: 100%;
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: center;
+
+        gap: 45px;
+
+        margin:
+            40px
+            0
+            45px;
+    }
+
+    .exercise-photo-wrap {
+        width: 400px;
+
+        flex: 0 0 400px;
+    }
+
+    .exercise-media .exercise-photo {
+        width: 400px;
+
+        height: auto;
+
+        aspect-ratio: 9 / 16;
+
+        max-width: 400px;
+
+        object-fit: cover;
+    }
+
+    .qr-box {
+        position: static;
+
+        width: 170px;
+
+        flex: 0 0 170px;
+
+        padding: 18px;
+
+        margin: 0;
+    }
+
+    .qr-box span {
+        font-size: 10px;
+
+        margin-bottom: 15px;
+    }
+
+    .qr-box img {
+        width: 130px;
+
+        max-width: 130px;
+
+        height: auto;
+    }
+
+
+    /* -----------------------------------------
+       BENEFIT GRID
+    ----------------------------------------- */
+
+    .benefit-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+
+    /* -----------------------------------------
+       STEPS
+    ----------------------------------------- */
+
+    .steps li {
+        font-size: 18px;
+    }
+
+
+    /* -----------------------------------------
+       FINAL CTA
+    ----------------------------------------- */
+
+    .final-cta {
+        grid-template-columns:
+            1fr
+            220px;
+    }
+}
+
+
+/* =========================================================
+   48 — SEGURANÇA DE IMPRESSÃO
+========================================================= */
+
+@media print {
+
+    img {
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+
+    .page,
+    .cards article,
+    .info-grid article,
+    .number-list article,
+    .tip,
+    .warning-box,
+    .contact-box,
+    .final-cta,
+    .exercise-media,
+    .exercise-photo-wrap,
+    .qr-box {
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+}
+
+
+/* =========================================================
+   49 — ACESSIBILIDADE
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition: none !important;
+        animation: none !important;
+    }
+}
+/* =========================================================
+   CORREÇÃO — ÜBUNGEN
+   FOTO 9:16 + QR AO LADO
+   SEM ESTOURAR A PÁGINA
+========================================================= */
+
+.exercise-media {
+    width: 100%;
+
+    height: 34%;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 5%;
+
+    margin: 3% 0 4%;
+
+    overflow: hidden;
+}
+
+
+/* FOTO */
+
+.exercise-photo-wrap {
+    height: 100%;
+
+    width: auto;
+
+    flex: 0 0 auto;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+}
+
+.exercise-media .exercise-photo {
+    display: block;
+
+    height: 100%;
+
+    width: auto;
+
+    aspect-ratio: 9 / 16;
+
+    max-width: 100%;
+
+    object-fit: cover;
+
+    object-position: center;
+
+    margin: 0;
+
+    border: 2px solid #cda347;
+
+    border-radius: 4%;
+}
+
+
+/* QR */
+
+.exercise-media .qr-box {
+    width: 19%;
+
+    max-width: 150px;
+
+    flex: 0 0 19%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 2%;
+
+    background: #ffffff;
+
+    border: 2px solid #cda347;
+
+    border-radius: 14px;
+
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.exercise-media .qr-box span {
+    display: block;
+
+    margin-bottom: 8%;
+
+    color: #104f45;
+
+    font-size: clamp(8px, 1.1vw, 13px);
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+
+    text-align: center;
+}
+
+.exercise-media .qr-box img {
+    display: block;
+
+    width: 100%;
+
+    max-width: 120px;
+
+    height: auto;
+
+    margin: 0;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media screen and (max-width: 700px) {
+
+    .exercise-media {
+        height: 34%;
+
+        gap: 4%;
+    }
+
+    .exercise-photo-wrap {
+        height: 100%;
+    }
+
+    .exercise-media .exercise-photo {
+        height: 100%;
+
+        width: auto;
+
+        aspect-ratio: 9 / 16;
+    }
+
+    .exercise-media .qr-box {
+        width: 20%;
+
+        flex-basis: 20%;
+
+        padding: 2%;
+    }
+
+    .exercise-media .qr-box span {
+        font-size: 7px;
+
+        letter-spacing: 0.6px;
     }
 
 }
@@ -1525,19 +2576,55 @@ body {
 
 @media print {
 
-    .contents-page {
+    .exercise-media {
+        height: 650px;
 
-        width: 1080px;
-        height: 1920px;
+        display: flex;
 
-        min-height: 1920px;
-        max-height: 1920px;
+        align-items: center;
 
-        page-break-after: always;
+        justify-content: center;
 
-        break-after: page;
+        gap: 45px;
+
+        margin: 35px 0 40px;
 
         overflow: hidden;
     }
 
+    .exercise-photo-wrap {
+        height: 650px;
+
+        width: auto;
+
+        flex: 0 0 auto;
+    }
+
+    .exercise-media .exercise-photo {
+        height: 650px;
+
+        width: auto;
+
+        aspect-ratio: 9 / 16;
+
+        max-width: none;
+    }
+
+    .exercise-media .qr-box {
+        width: 145px;
+
+        flex: 0 0 145px;
+
+        padding: 15px;
+    }
+
+    .exercise-media .qr-box img {
+        width: 115px;
+
+        max-width: 115px;
+    }
+
+    .exercise-media .qr-box span {
+        font-size: 10px;
+    }
 }

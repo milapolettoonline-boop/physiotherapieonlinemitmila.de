@@ -1,0 +1,45 @@
+MILAPHYSIO E-BOOK — QR-CODE ZUORDNUNG
+
+ÜBUNGSSEITEN
+Seite 10 — Übung 1 Doppelkinn / Nackenstabilisation
+    qr/qrcode_nackenstabi.svg
+
+Seite 11 — Übung 2 Schulterkreisen
+    qr/qrcode_schulterkreisen.svg
+
+Seite 12 — Übung 3 Seitliche Nackendehnung
+    qr/qrcode_nackendehnungseitlich.svg
+
+Seite 13 — Übung 4 Brustmuskeldehnung
+    qr/qrcode_brustdehnung_anderwand.svg
+
+Seite 14 — Übung 5 Schulterblattaktivierung
+    qr/qrcode_schulterblatt.svg
+
+Seite 15 — Übung 6 Mobilisation Brustwirbelsäule / Katze-Kuh
+    qr/qrcode_katze-kuh.svg
+
+KONTAKT / CTA
+Seite 29 — E-Mail
+    qr/qrcode_email-ebook.svg
+
+Seite 30 — Termin online buchen
+    qr/qrcod_calendly.svg
+
+Seite 31 — Website / MILAPHYSIO
+    qr/qrcode_milaphysio.svg
+
+OPTIONALE QR-CODES FÜR ERWEITERUNGEN
+    qr/qrcode_whatsapp.svg
+    qr/qrcode_insta.svg
+    qr/qrcode_akupressurmatte.svg
+    qr/qrcode_dehnung_schulter-anderwand.svg
+    qr/qrcode_3_schulter_youtube.svg
+    qr/qrcode_ghg_pendel.svg
+
+WICHTIG
+Die sechs Übungs-QR-Codes ersetzen die bisherigen Platzhalter
+uebung-1-qr.png bis uebung-6-qr.png im ebook.html.
+
+Die Kontakt-QR-Codes werden nur dort eingebaut, wo sie sinnvoll
+sind, damit die Seiten nicht überladen werden.
