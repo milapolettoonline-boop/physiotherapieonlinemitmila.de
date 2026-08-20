@@ -3416,6 +3416,39 @@ SEITE 31 — ABSCHLUSS
     </footer>
    </section>
   </main>
- </body>
+ 
+<script>
+/* =========================================================
+   PRINT / PDF — FAQ
+   Abre temporariamente todas as respostas para o PDF.
+   No navegador, o FAQ continua interativo.
+========================================================= */
+(function () {
+    const faqDetails = document.querySelectorAll('.faq details');
+
+    function openFaqForPrint() {
+        faqDetails.forEach((detail) => {
+            detail.dataset.wasOpen = detail.open ? 'true' : 'false';
+            detail.open = true;
+        });
+    }
+
+    function restoreFaqAfterPrint() {
+        faqDetails.forEach((detail) => {
+            if (detail.dataset.wasOpen === 'true') {
+                detail.open = true;
+            } else {
+                detail.open = false;
+            }
+            delete detail.dataset.wasOpen;
+        });
+    }
+
+    window.addEventListener('beforeprint', openFaqForPrint);
+    window.addEventListener('afterprint', restoreFaqAfterPrint);
+})();
+</script>
+
+</body>
 </html>
 
