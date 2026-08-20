@@ -95,27 +95,27 @@ ul {
 
 /* =========================================================
    04 — PÁGINA
-   PADRÃO 9:16
+   MOBILE FIRST — RESPONSIVA
 ========================================================= */
 
 .page {
     position: relative;
 
-    width: var(--page-width);
+    width: 100%;
+    min-height: 0;
+    height: auto;
 
-    aspect-ratio: 9 / 16;
-
-    overflow: hidden;
-
-    padding:
-        var(--page-padding)
-        var(--page-padding)
-        5%;
+    padding: 7%;
 
     background: var(--cream);
-
     color: var(--text);
 
+    /*
+     * A página cresce conforme o conteúdo.
+     * NÃO usar aspect-ratio.
+     * NÃO usar height fixa.
+     */
+    
     page-break-after: always;
     break-after: page;
 }
@@ -455,75 +455,175 @@ ul {
     border-radius: 50%;
 }
 
-
 /* =========================================================
    15 — CAPA
+   MOBILE FIRST — RESPONSIVA
 ========================================================= */
 
 .cover {
+
     position: relative;
 
-    padding-top: 6%;
+    width: 100%;
+
+    min-height: 100vh;
+
+    box-sizing: border-box;
+
+    padding:
+        6%
+        6%
+        5%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    overflow: hidden;
 }
+
+
+/* ---------------------------------------------------------
+   LOGO DA CAPA
+--------------------------------------------------------- */
 
 .cover .page-logo {
+
     width: 17%;
+
+    height: auto;
+
+    max-width: 140px;
 }
 
+
+/* ---------------------------------------------------------
+   CONTEÚDO PRINCIPAL
+--------------------------------------------------------- */
+
+.cover-content {
+
+    width: 100%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 4%;
+
+    margin-top: 5%;
+}
+
+
+/* ---------------------------------------------------------
+   TEXTO DA CAPA
+--------------------------------------------------------- */
+
 .cover-copy {
+
     position: relative;
 
     z-index: 2;
 
     width: 100%;
 
-    margin-top: 2%;
+    margin: 0;
+
+    padding: 0;
 }
 
-.eyebrow {
-    margin-bottom: 2% !important;
 
-    color: var(--gold) !important;
+.cover-copy .eyebrow {
+
+    margin:
+        0
+        0
+        3%;
+
+    color: var(--gold);
 
     font-size:
-        clamp(0.6rem, 1.4vw, 1rem) !important;
+        clamp(0.65rem, 2.8vw, 1rem);
 
     font-weight: 800;
 
-    letter-spacing: 0.15em;
+    letter-spacing: 0.12em;
+
+    line-height: 1.2;
 }
+
 
 .cover h1 {
-    max-width: 78%;
+
+    width: 100%;
+
+    max-width: 100%;
+
+    margin: 0;
 
     font-size:
-        clamp(2.2rem, 6vw, 5rem);
+        clamp(2rem, 9vw, 4.8rem);
+
+    line-height: 0.95;
+
+    letter-spacing: -0.02em;
 }
 
+
 .cover h1 span {
+
     color: var(--gold);
 }
 
-.cover-copy h2 {
-    max-width: 70%;
 
-    margin-bottom: 2%;
+.cover-copy .gold-line {
+
+    width: 80px;
+
+    height: 3px;
+
+    margin:
+        5%
+        0;
+
+    background: var(--gold);
+}
+
+
+.cover-copy h2 {
+
+    width: 100%;
+
+    max-width: 100%;
+
+    margin:
+        0
+        0
+        4%;
 
     color: var(--green);
 
     font-size:
-        clamp(0.9rem, 2vw, 1.5rem);
+        clamp(0.95rem, 4vw, 1.5rem);
 
-    line-height: 1.3;
+    line-height: 1.25;
 
     letter-spacing: 0;
 }
 
-.cover-copy > p:last-child {
-    max-width: 60%;
+
+.cover-copy .cover-description {
+
+    width: 100%;
+
+    max-width: 100%;
+
+    margin: 0;
 
     font-size:
-        clamp(0.7rem, 1.5vw, 1.1rem);
+        clamp(0.75rem, 3vw, 1rem);
+
+    line-height: 1.45;
 }
 
 
@@ -532,39 +632,64 @@ ul {
 ========================================================= */
 
 .cover-photo {
-    position: absolute;
 
-    top: 38%;
-    left: 7%;
+    /* IMPORTANTE:
+       anula o antigo position:absolute */
 
-    width: 86%;
+    position: relative;
 
-    aspect-ratio: 9 / 16;
+    top: auto;
+    left: auto;
+
+    width: 100%;
 
     height: auto;
 
-    max-height: 39%;
+    max-height: none;
 
-    overflow: hidden;
+    aspect-ratio: auto;
+
+    overflow: visible;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    margin: 0;
+
+    padding: 0;
+
+    background: transparent;
+
+    border: 0;
+
+    border-radius: 0;
+}
+
+
+.cover-photo img {
+
+    display: block;
+
+    width: min(58%, 240px);
+
+    height: auto;
+
+    aspect-ratio: 9 / 16;
+
+    object-fit: cover;
+
+    object-position: center;
+
+    margin: 0 auto;
 
     border:
         2px solid
         var(--gold);
 
-    border-radius:
-        7%
-        7%
-        0
-        0;
-
-    background: var(--cream-dark);
-}
-
-.cover-photo img {
-    width: 100%;
-    height: 100%;
-
-    object-fit: cover;
+    border-radius: 12px;
 }
 
 
@@ -572,12 +697,25 @@ ul {
    17 — BENEFÍCIOS
 ========================================================= */
 
-.benefits {
-    position: absolute;
+.cover .benefits {
 
-    left: 7%;
-    right: 7%;
-    bottom: 11%;
+    /* IMPORTANTE:
+       anula o antigo position:absolute */
+
+    position: relative;
+
+    left: auto;
+    right: auto;
+    bottom: auto;
+
+    width: 100%;
+
+    margin:
+        5%
+        0
+        0;
+
+    padding: 0;
 
     display: grid;
 
@@ -585,43 +723,292 @@ ul {
         repeat(3, 1fr);
 
     gap: 3%;
+
+    box-sizing: border-box;
 }
 
-.benefits > div {
+
+.cover .benefit-item {
+
+    min-width: 0;
+
+    min-height: 65px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    gap: 6px;
+
+    padding:
+        8px
+        4px;
+
+    box-sizing: border-box;
+
+    border:
+        1px solid
+        rgba(207, 163, 58, 0.35);
+
+    border-radius: 12px;
+
+    background:
+        rgba(255, 255, 255, 0.45);
+}
+
+
+.cover .benefit-item b {
+
     display: flex;
 
     align-items: center;
 
-    gap: 8%;
+    justify-content: center;
 
-    padding: 5%;
+    width: 30px;
 
-    border-radius: 1rem;
+    height: 30px;
 
-    background:
-        rgba(247, 240, 230, 0.96);
+    flex-shrink: 0;
 
-    box-shadow: var(--shadow);
+    border-radius: 50%;
+
+    background: var(--gold);
+
+    color: white;
+
+    font-size: 0.7rem;
+
+    line-height: 1;
 }
 
-.benefits b {
-    color: var(--gold);
 
-    font-size:
-        clamp(0.8rem, 1.7vw, 1.25rem);
-}
+.cover .benefit-item span {
 
-.benefits span {
     color: var(--green);
 
     font-size:
-        clamp(0.5rem, 1.2vw, 0.85rem);
+        clamp(0.55rem, 2.4vw, 0.78rem);
 
     font-weight: 700;
 
     line-height: 1.2;
+
+    text-align: center;
 }
 
+
+/* =========================================================
+   FOOTER DA CAPA
+========================================================= */
+
+.cover .page-footer {
+
+    position: relative;
+
+    left: auto;
+    right: auto;
+    bottom: auto;
+
+    width: 100%;
+
+    margin-top: 5%;
+
+    padding-top: 3%;
+
+    border-top:
+        1px solid
+        rgba(207, 163, 58, 0.45);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 15px;
+
+    font-size:
+        clamp(0.58rem, 2.4vw, 0.8rem);
+
+    box-sizing: border-box;
+}
+
+
+.cover .page-footer b {
+
+    color: var(--green);
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   MOBILE PEQUENO
+========================================================= */
+
+@media screen and (max-width: 420px) {
+
+    .cover {
+
+        min-height: 100vh;
+
+        padding:
+            6%
+            5%
+            4%;
+    }
+
+
+    .cover-content {
+
+        gap: 3%;
+    }
+
+
+    .cover h1 {
+
+        font-size: 9vw;
+    }
+
+
+    .cover-copy h2 {
+
+        font-size: 4vw;
+
+        line-height: 1.2;
+    }
+
+
+    .cover-copy .cover-description {
+
+        font-size: 3vw;
+
+        line-height: 1.4;
+    }
+
+
+    .cover-photo img {
+
+        width: 45%;
+
+        max-width: 190px;
+
+        aspect-ratio: 9 / 16;
+    }
+
+
+    .cover .benefits {
+
+        gap: 2%;
+    }
+
+
+    .cover .benefit-item {
+
+        min-height: 58px;
+
+        padding:
+            6px
+            2px;
+    }
+
+
+    .cover .benefit-item b {
+
+        width: 26px;
+
+        height: 26px;
+
+        font-size: 0.62rem;
+    }
+
+
+    .cover .benefit-item span {
+
+        font-size: 2.4vw;
+    }
+
+
+    .cover .page-footer {
+
+        font-size: 2.4vw;
+    }
+}
+
+
+/* =========================================================
+   TABLET / DESKTOP
+========================================================= */
+
+@media screen and (min-width: 701px) {
+
+    .cover {
+
+        min-height: 100vh;
+
+        padding:
+            5%
+            6%
+            4%;
+    }
+
+
+    .cover-content {
+
+        display: grid;
+
+        grid-template-columns:
+            1fr
+            38%;
+
+        gap: 6%;
+
+        align-items: center;
+    }
+
+
+    .cover-copy {
+
+        grid-column: 1;
+    }
+
+
+    .cover-photo {
+
+        grid-column: 2;
+
+        grid-row: 1;
+
+        align-self: center;
+    }
+
+
+    .cover-photo img {
+
+        width: 100%;
+
+        max-width: 360px;
+    }
+
+
+    .cover .benefits {
+
+        margin-top: 4%;
+    }
+
+
+    .cover .benefit-item {
+
+        min-height: 75px;
+    }
+}
 
 /* =========================================================
    18 — SPLIT
@@ -1044,22 +1431,51 @@ ul {
 /* =========================================================
    26 — ÜBUNGEN
    FOTO + QR CODE
-   PADRÃO ÚNICO
+   PADRÃO ÚNICO · FOTO 9:16
 ========================================================= */
 
+.exercise-media {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4%;
+    margin: 4% 0 5%;
+    overflow: visible;
+}
 
 
 /* =========================================================
    27 — CONTAINER DA FOTO
 ========================================================= */
 
-
+.exercise-photo-wrap {
+    width: 62%;
+    flex: 0 0 62%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 0;
+}
 
 
 /* =========================================================
    28 — FOTO DOS EXERCÍCIOS
    SEMPRE 9:16
 ========================================================= */
+
+.exercise-media .exercise-photo {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 9 / 16;
+    max-width: 100%;
+    object-fit: cover;
+    object-position: center;
+    margin: 0;
+    border: 2px solid var(--gold);
+    border-radius: 4%;
+}
 
 
 /* =========================================================
@@ -1752,17 +2168,7 @@ ul {
         width: 100%;
     }
 
-    .page {
-        width: 100%;
-
-        aspect-ratio: 9 / 16;
-
-        min-height: 0;
-
-        padding: 7%;
-
-        overflow: hidden;
-    }
+  
 
     .page h2 {
         max-width: 90%;
@@ -1875,55 +2281,194 @@ ul {
 
 /* =========================================================
    45 — TELAS MUITO PEQUENAS
+   MOBILE FIRST — RESPONSIVO
 ========================================================= */
 
 @media screen and (max-width: 420px) {
 
+    /* -----------------------------------------------------
+       PÁGINA
+    ----------------------------------------------------- */
+
     .page {
+        width: 100%;
+        min-height: 0;
+        height: auto;
+
         padding: 6%;
+
+        /*
+         * A página cresce conforme o conteúdo.
+         * Não usar aspect-ratio ou altura fixa.
+         */
+        overflow: visible;
+
+        box-sizing: border-box;
     }
+
+
+    /* -----------------------------------------------------
+       TÍTULOS
+    ----------------------------------------------------- */
 
     .page h2 {
         font-size: 7vw;
+        line-height: 1.05;
+        margin-bottom: 3%;
     }
+
+
+    .page h3 {
+        line-height: 1.2;
+    }
+
+
+    /* -----------------------------------------------------
+       TEXTOS
+    ----------------------------------------------------- */
 
     .page p {
         font-size: 2.7vw;
+        line-height: 1.45;
     }
+
 
     .page .lead {
         font-size: 3vw;
+        line-height: 1.45;
     }
 
+
+    .page .small-note {
+        font-size: 2.5vw;
+        line-height: 1.4;
+    }
+
+
+    /* -----------------------------------------------------
+       IMAGENS
+    ----------------------------------------------------- */
+
+    .page img {
+        max-width: 100%;
+        height: auto;
+    }
+
+
+    .hero-photo,
+    .exercise-photo,
+    .rounded-photo,
+    .portrait {
+        max-width: 100%;
+        height: auto;
+    }
+
+
+    /* -----------------------------------------------------
+       EXERCÍCIOS
+    ----------------------------------------------------- */
+
     .exercise-media {
+        display: flex;
+        flex-wrap: wrap;
         gap: 3%;
     }
 
+
     .exercise-photo-wrap {
         width: 65%;
-
         flex-basis: 65%;
+        max-width: 100%;
     }
+
+
+    /* -----------------------------------------------------
+       QR CODE
+    ----------------------------------------------------- */
 
     .qr-box {
         width: 28%;
-
         flex-basis: 28%;
+        max-width: 100%;
 
         padding: 2.5%;
+        box-sizing: border-box;
     }
+
+
+    .qr-box img {
+        max-width: 100%;
+        height: auto;
+    }
+
 
     .qr-box span {
         font-size: 7px;
-
+        line-height: 1.2;
         letter-spacing: 0.7px;
     }
 
-    .tip {
-        padding: 3%;
-    }
-}
 
+    /* -----------------------------------------------------
+       TIP / HINWEIS
+    ----------------------------------------------------- */
+
+    .tip {
+        width: 100%;
+        padding: 3%;
+        box-sizing: border-box;
+    }
+
+
+    .tip p {
+        margin-bottom: 0;
+    }
+
+
+    /* -----------------------------------------------------
+       GRIDS
+       Evita elementos ultrapassando a largura
+    ----------------------------------------------------- */
+
+    .info-grid,
+    .benefits,
+    .pricing-grid,
+    .conditions-grid,
+    .services-grid,
+    .process-grid,
+    .approach-grid,
+    .why-grid,
+    .about-grid,
+    .footer-grid,
+    .product-hero-grid {
+        max-width: 100%;
+    }
+
+
+    /* -----------------------------------------------------
+       TABELAS
+    ----------------------------------------------------- */
+
+    table {
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+
+    /* -----------------------------------------------------
+       ELEMENTOS INTERATIVOS
+    ----------------------------------------------------- */
+
+    button,
+    input,
+    textarea,
+    select {
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+}
 
 /* =========================================================
    46 — DESKTOP
@@ -1978,24 +2523,51 @@ ul {
         flex-basis: 25%;
     }
 
-
     /* -----------------------------------------
        OUTROS ELEMENTOS
+       RESPONSIVO — TELAS MUITO PEQUENAS
     ----------------------------------------- */
 
     .hero-photo {
-        width: 42%;
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        display: block;
+        box-sizing: border-box;
     }
+
 
     .rounded-photo {
-        width: 42%;
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        display: block;
+        box-sizing: border-box;
     }
+
 
     .portrait {
-        width: 38%;
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        display: block;
+        box-sizing: border-box;
     }
-}
 
+
+    /*
+     * As fotos continuam preservando
+     * sua proporção 9:16.
+     * A página permanece responsiva.
+     */
+
+    .hero-photo,
+    .rounded-photo,
+    .portrait {
+        object-fit: contain;
+    }
+
+}
 
 /* =========================================================
    47 — PRINT / PDF
@@ -2397,6 +2969,30 @@ ul {
 
 
 /* =========================================================
+   48B — SEGURANÇA DAS FOTOS 9:16
+   ÚLTIMA REGRA · SEM ALTURA FORÇADA
+========================================================= */
+
+.exercise-media .exercise-photo {
+    width: min(100%, 400px);
+    height: auto;
+    aspect-ratio: 9 / 16;
+    max-width: 100%;
+    object-fit: cover;
+}
+
+@media screen and (max-width: 700px) {
+
+    .exercise-media .exercise-photo {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        aspect-ratio: 9 / 16;
+    }
+}
+
+
+/* =========================================================
    49 — ACESSIBILIDADE
 ========================================================= */
 
@@ -2411,220 +3007,407 @@ ul {
     }
 }
 /* =========================================================
-   CORREÇÃO — ÜBUNGEN
-   FOTO 9:16 + QR AO LADO
-   SEM ESTOURAR A PÁGINA
+   COVER — ORGANIZAÇÃO FINAL
+   RESPONSIVE / MOBILE FIRST
 ========================================================= */
 
-.exercise-media {
-    width: 100%;
-
-    height: 34%;
+.cover {
+    min-height: 100svh;
+    box-sizing: border-box;
 
     display: flex;
+    flex-direction: column;
 
-    align-items: center;
-    justify-content: center;
+    justify-content: space-between;
 
-    gap: 5%;
-
-    margin: 3% 0 4%;
+    padding: 7% 7% 5%;
 
     overflow: hidden;
 }
 
 
-/* FOTO */
+/* ---------------------------------------------------------
+   CONTEÚDO PRINCIPAL DA CAPA
+--------------------------------------------------------- */
 
-.exercise-photo-wrap {
-    height: 100%;
+.cover-content {
 
-    width: auto;
+    display: grid;
 
-    flex: 0 0 auto;
+    grid-template-columns: 1fr;
 
-    display: flex;
+    gap: 5%;
 
     align-items: center;
+
+    flex: 1;
+}
+
+
+/* ---------------------------------------------------------
+   TEXTO
+--------------------------------------------------------- */
+
+.cover-copy {
+
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+
     justify-content: center;
 }
 
-.exercise-media .exercise-photo {
+
+.cover-copy .eyebrow {
+
+    margin: 0 0 4%;
+
+    font-size: clamp(0.65rem, 2.8vw, 1rem);
+
+    letter-spacing: 0.12em;
+
+    line-height: 1.2;
+}
+
+
+.cover-copy h1 {
+
+    margin: 0;
+
+    font-size: clamp(2rem, 8vw, 4.8rem);
+
+    line-height: 0.95;
+
+    letter-spacing: -0.02em;
+}
+
+
+.cover-copy h1 span {
+
+    color: #cfa33a;
+}
+
+
+.cover-copy .gold-line {
+
+    width: 90px;
+
+    height: 3px;
+
+    margin: 5% 0;
+
+    background: #cfa33a;
+}
+
+
+.cover-copy h2 {
+
+    margin: 0 0 4%;
+
+    font-size: clamp(1rem, 4vw, 1.6rem);
+
+    line-height: 1.25;
+}
+
+
+.cover-copy .cover-description {
+
+    margin: 0;
+
+    font-size: clamp(0.78rem, 3vw, 1.05rem);
+
+    line-height: 1.5;
+
+    max-width: 42rem;
+}
+
+
+/* ---------------------------------------------------------
+   FOTO DA CAPA
+--------------------------------------------------------- */
+
+.cover-photo {
+
+    width: 100%;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+}
+
+
+.cover-photo img {
+
     display: block;
 
-    height: 100%;
-
-    width: auto;
+    width: min(72%, 320px);
 
     aspect-ratio: 9 / 16;
 
-    max-width: 100%;
+    height: auto;
 
     object-fit: cover;
 
     object-position: center;
 
-    margin: 0;
+    border-radius: 14px;
 
-    border: 2px solid #cda347;
+    border: 2px solid #cfa33a;
 
-    border-radius: 4%;
+    margin: 0 auto;
 }
 
 
-/* QR */
+/* ---------------------------------------------------------
+   BENEFÍCIOS
+--------------------------------------------------------- */
 
-.exercise-media .qr-box {
-    width: 19%;
+.cover .benefits {
 
-    max-width: 150px;
+    width: 100%;
 
-    flex: 0 0 19%;
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 3%;
+
+    margin-top: 6%;
+}
+
+
+.cover .benefit-item {
 
     display: flex;
 
     flex-direction: column;
 
     align-items: center;
+
     justify-content: center;
 
-    padding: 2%;
-
-    background: #ffffff;
-
-    border: 2px solid #cda347;
-
-    border-radius: 14px;
-
-    box-shadow:
-        0 8px 20px rgba(0, 0, 0, 0.08);
-}
-
-.exercise-media .qr-box span {
-    display: block;
-
-    margin-bottom: 8%;
-
-    color: #104f45;
-
-    font-size: clamp(8px, 1.1vw, 13px);
-
-    font-weight: 800;
-
-    letter-spacing: 1px;
-
     text-align: center;
+
+    padding: 4% 2%;
+
+    min-height: 70px;
+
+    box-sizing: border-box;
 }
 
-.exercise-media .qr-box img {
-    display: block;
+
+.cover .benefit-item b {
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 38px;
+    height: 38px;
+
+    margin-bottom: 8px;
+
+    border: 2px solid #cfa33a;
+
+    border-radius: 50%;
+
+    color: #cfa33a;
+
+    font-size: 0.85rem;
+}
+
+
+.cover .benefit-item span {
+
+    font-size: clamp(0.62rem, 2.4vw, 0.9rem);
+
+    line-height: 1.25;
+
+    font-weight: 600;
+}
+
+
+/* ---------------------------------------------------------
+   FOOTER DA CAPA
+--------------------------------------------------------- */
+
+.cover .page-footer {
 
     width: 100%;
 
-    max-width: 120px;
+    margin-top: 5%;
 
-    height: auto;
+    padding-top: 3%;
 
-    margin: 0;
+    border-top: 1px solid rgba(207, 163, 58, 0.45);
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 15px;
+
+    font-size: clamp(0.62rem, 2.4vw, 0.85rem);
+}
+
+
+.cover .page-footer b {
+
+    color: #185f63;
+
+    white-space: nowrap;
 }
 
 
 /* =========================================================
-   MOBILE
+   MOBILE — CAPA
 ========================================================= */
 
 @media screen and (max-width: 700px) {
 
-    .exercise-media {
-        height: 34%;
+    .cover {
+
+        min-height: 100svh;
+
+        padding: 7% 6% 5%;
+    }
+
+
+    .cover-content {
+
+        grid-template-columns: 1fr;
 
         gap: 4%;
     }
 
-    .exercise-photo-wrap {
-        height: 100%;
+
+    .cover-copy h1 {
+
+        font-size: clamp(2rem, 9vw, 3.4rem);
     }
 
-    .exercise-media .exercise-photo {
-        height: 100%;
 
-        width: auto;
+    .cover-copy h2 {
+
+        font-size: clamp(0.95rem, 4.2vw, 1.25rem);
+    }
+
+
+    .cover-copy .cover-description {
+
+        font-size: clamp(0.75rem, 3.2vw, 0.95rem);
+    }
+
+
+    .cover-photo img {
+
+        width: min(52%, 230px);
 
         aspect-ratio: 9 / 16;
+
+        max-height: 42svh;
     }
 
-    .exercise-media .qr-box {
-        width: 20%;
 
-        flex-basis: 20%;
+    .cover .benefits {
 
-        padding: 2%;
+        gap: 2%;
+        margin-top: 4%;
     }
 
-    .exercise-media .qr-box span {
-        font-size: 7px;
 
-        letter-spacing: 0.6px;
+    .cover .benefit-item {
+
+        padding: 3% 1%;
     }
 
+
+    .cover .benefit-item b {
+
+        width: 32px;
+        height: 32px;
+
+        font-size: 0.7rem;
+    }
+
+
+    .cover .benefit-item span {
+
+        font-size: clamp(0.55rem, 2.5vw, 0.75rem);
+    }
+
+
+    .cover .page-footer {
+
+        margin-top: 4%;
+
+        font-size: clamp(0.55rem, 2.5vw, 0.75rem);
+    }
 }
 
 
 /* =========================================================
-   PRINT / PDF
+   TELAS MUITO PEQUENAS
 ========================================================= */
 
-@media print {
+@media screen and (max-width: 420px) {
 
-    .exercise-media {
-        height: 650px;
+    .cover {
 
-        display: flex;
+        min-height: 100svh;
 
-        align-items: center;
-
-        justify-content: center;
-
-        gap: 45px;
-
-        margin: 35px 0 40px;
-
-        overflow: hidden;
+        padding: 6% 5% 4%;
     }
 
-    .exercise-photo-wrap {
-        height: 650px;
 
-        width: auto;
+    .cover-copy h1 {
 
-        flex: 0 0 auto;
+        font-size: 9vw;
     }
 
-    .exercise-media .exercise-photo {
-        height: 650px;
 
-        width: auto;
+    .cover-copy h2 {
 
-        aspect-ratio: 9 / 16;
-
-        max-width: none;
+        font-size: 4vw;
     }
 
-    .exercise-media .qr-box {
-        width: 145px;
 
-        flex: 0 0 145px;
+    .cover-copy .cover-description {
 
-        padding: 15px;
+        font-size: 3vw;
     }
 
-    .exercise-media .qr-box img {
-        width: 115px;
 
-        max-width: 115px;
+    .cover-photo img {
+
+        width: 48%;
+
+        max-height: 36svh;
     }
 
-    .exercise-media .qr-box span {
-        font-size: 10px;
+
+    .cover .benefit-item b {
+
+        width: 29px;
+        height: 29px;
+
+        margin-bottom: 5px;
+    }
+
+
+    .cover .benefit-item span {
+
+        font-size: 2.5vw;
+    }
+
+
+    .cover .page-footer {
+
+        font-size: 2.5vw;
     }
 }
