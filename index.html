@@ -502,20 +502,14 @@
         }
 
 
-        .hero-image {
-            width: min(100%, 540px);
-
-            aspect-ratio: 0.82;
-
-            object-fit: cover;
-
-            object-position: center top;
-
-            border-radius:
-                46% 46% 32px 32px;
-
-            box-shadow: var(--shadow);
-        }
+   .hero-image {
+    width: min(100%, 540px);
+    height: auto;
+    display: block;
+    object-fit: contain;
+    border-radius: 32px;
+    box-shadow: var(--shadow);
+}
 
 
         .hero-card {
@@ -1379,9 +1373,13 @@
             }
 
 
-            .hero-image {
-                aspect-ratio: 0.78;
-            }
+           .hero-image {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    aspect-ratio: auto;
+    object-fit: contain;
+}
 
 
             .hero-card {
