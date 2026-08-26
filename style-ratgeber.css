@@ -2397,3 +2397,64 @@ footer a:hover {
 
 
 }
+/* =========================================================
+   YOGA GUIDE – DOWNLOAD CTA
+   ========================================================= */
+
+.yoga-download-section {
+    background: #f7f3eb;
+    padding: 80px 20px;
+}
+
+.yoga-download-content {
+    max-width: 720px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.yoga-download-label {
+    display: block;
+    margin-bottom: 14px;
+    font-size: 16px;
+    color: #1c4a3a;
+}
+
+.yoga-download-content h2 {
+    margin: 0 auto 22px;
+    font-size: 36px;
+    line-height: 1.25;
+    color: #111;
+}
+
+.yoga-download-content p {
+    font-size: 17px;
+    line-height: 1.7;
+    color: #333;
+}
+
+.btn-yoga-download {
+    display: block;
+    width: 100%;
+    margin-top: 30px;
+    padding: 18px 25px;
+    background: #c9a342;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 17px;
+    border-radius: 40px;
+    box-shadow: 0 8px 20px rgba(201, 163, 66, 0.22);
+    transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.btn-yoga-download:hover {
+    background: #b48e2f;
+    transform: translateY(-2px);
+}
+
+.yoga-pdf-note {
+    margin-top: 12px;
+    font-size: 14px !important;
+    color: #555 !important;
+}
