@@ -1,0 +1,1451 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Online Physiotherapie in Deutschland | MILAPHYSIO</title>
+
+    <meta name="description"
+        content="Online Physiotherapie mit Mila in ganz Deutschland. Persönliche physiotherapeutische Betreuung per Video, individuelle Therapiepläne und Übungen. Für Privatversicherte und Selbstzahler.">
+
+    <meta name="keywords"
+        content="Online Physiotherapie, Physiotherapie online, Online Physiotherapie Deutschland, Online Physiotherapeut, Physiotherapie per Video, Telephysiotherapie, Online Physio, Online Physiotherapie Beratung, Physiotherapie online buchen, Online Physiotherapie Kosten">
+
+    <meta name="author" content="Camila Poletto">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://milaphysio.de/online-physiotherapie">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://milaphysio.de/online-physiotherapie">
+    <meta property="og:title" content="Online Physiotherapie in Deutschland | MILAPHYSIO">
+    <meta property="og:description"
+        content="Persönliche Online Physiotherapie mit Mila – individuell, professionell und bequem von zu Hause.">
+    <meta property="og:image" content="https://milaphysio.de/online-physiotherapie/images/mila_pc.webp">
+    <meta property="og:locale" content="de_DE">
+    <meta property="og:site_name" content="MILAPHYSIO">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MCE6NQPKFB"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-MCE6NQPKFB');
+    </script>
+
+    <style>
+        :root {
+            --teal: #155d60;
+            --teal-dark: #10494b;
+            --gold: #c89435;
+            --gold-dark: #a87520;
+            --cream: #f7f3eb;
+            --cream-2: #fbf9f4;
+            --white: #ffffff;
+            --text: #355d70;
+            --text-dark: #123f4a;
+            --muted: #6b7d87;
+            --border: #d7e1e2;
+            --shadow: 0 18px 45px rgba(16, 73, 75, .10);
+            --radius: 28px;
+            --max-width: 1180px;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            font-family: "Poppins", sans-serif;
+            color: var(--text);
+            background: var(--cream-2);
+            line-height: 1.7;
+        }
+
+        a {
+            color: inherit;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        .op-container {
+            width: min(var(--max-width), calc(100% - 48px));
+            margin: 0 auto;
+        }
+
+        /* HEADER */
+        .op-header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, .94);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(215, 225, 226, .8);
+        }
+
+        .op-nav {
+            min-height: 82px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
+        }
+
+        .op-logo img {
+            width: 190px;
+            height: auto;
+        }
+
+        .op-links {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .op-links a {
+            text-decoration: none;
+            font-size: .88rem;
+            font-weight: 500;
+            color: var(--text-dark);
+        }
+
+        .op-links a:hover {
+            color: var(--gold-dark);
+        }
+
+        .op-header-cta,
+        .op-button {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 48px;
+            padding: 12px 24px;
+            border-radius: 999px;
+            text-decoration: none;
+            font-weight: 700;
+            border: 0;
+            cursor: pointer;
+            transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+        }
+
+        .op-header-cta,
+        .op-button-primary {
+            background: var(--teal);
+            color: var(--white);
+            box-shadow: 0 10px 25px rgba(21, 93, 96, .18);
+        }
+
+        .op-header-cta:hover,
+        .op-button-primary:hover {
+            background: var(--teal-dark);
+            transform: translateY(-2px);
+        }
+
+        .op-button-secondary {
+            background: var(--white);
+            color: var(--teal-dark);
+            border: 1px solid var(--border);
+        }
+
+        .op-button-secondary:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow);
+        }
+
+        /* HERO */
+        .op-hero {
+            padding: 0 0 70px;
+            background: var(--cream);
+        }
+
+        .op-hero-image {
+            width: 100%;
+            height: auto;
+            border-radius: 0 0 var(--radius) var(--radius);
+            box-shadow: var(--shadow);
+        }
+
+        .op-hero-content {
+            max-width: 900px;
+            margin: 55px auto 0;
+            text-align: center;
+        }
+
+        .op-eyebrow {
+            display: inline-block;
+            margin-bottom: 14px;
+            color: var(--gold-dark);
+            font-size: .76rem;
+            font-weight: 800;
+            letter-spacing: .18em;
+            text-transform: uppercase;
+        }
+
+        h1,
+        h2,
+        h3 {
+            color: var(--text-dark);
+            line-height: 1.15;
+        }
+
+        h1 {
+            font-size: clamp(2.2rem, 5vw, 4.2rem);
+            margin: 0 0 22px;
+            letter-spacing: -.03em;
+        }
+
+        h1 span,
+        h2 span {
+            color: var(--gold-dark);
+        }
+
+        .op-lead {
+            max-width: 760px;
+            margin: 0 auto 30px;
+            font-size: clamp(1.02rem, 2vw, 1.2rem);
+        }
+
+        .op-actions {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 14px;
+        }
+
+        /* PRIVAT BOX */
+        .op-private {
+            margin-top: 42px;
+            padding: 25px 28px;
+            background: var(--white);
+            border: 1px solid rgba(200, 148, 53, .45);
+            border-left: 5px solid var(--gold);
+            border-radius: 18px;
+            text-align: left;
+            box-shadow: 0 12px 30px rgba(16, 73, 75, .06);
+        }
+
+        .op-private strong {
+            display: block;
+            color: var(--text-dark);
+            font-size: 1.05rem;
+            margin-bottom: 6px;
+        }
+
+        .op-private p {
+            margin: 0;
+        }
+
+        /* GENERAL SECTIONS */
+        .op-section {
+            padding: 90px 0;
+        }
+
+        .op-section-soft {
+            background: var(--cream);
+        }
+
+        .op-section-heading {
+            max-width: 780px;
+            margin: 0 auto 50px;
+            text-align: center;
+        }
+
+        .op-section-heading h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin: 0 0 15px;
+        }
+
+        .op-section-heading p {
+            margin: 0;
+            color: var(--muted);
+        }
+
+        /* WHAT IS */
+        .op-two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 55px;
+            align-items: center;
+        }
+
+        .op-text h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin: 0 0 20px;
+        }
+
+        .op-text p {
+            margin: 0 0 17px;
+        }
+
+        .op-check-list {
+            list-style: none;
+            padding: 0;
+            margin: 25px 0 0;
+        }
+
+        .op-check-list li {
+            position: relative;
+            padding-left: 31px;
+            margin-bottom: 13px;
+        }
+
+        .op-check-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: var(--gold-dark);
+            font-weight: 800;
+        }
+
+        .op-portrait {
+            width: auto;
+            max-width: 100%;
+            height: 620px;
+            margin: auto;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            border: 1px solid rgba(200, 148, 53, .35);
+            object-fit: contain;
+            object-position: center;
+        }
+
+        /* STEPS */
+        .op-steps {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 18px;
+        }
+
+        .op-step {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 22px;
+            padding: 28px 22px;
+            box-shadow: 0 12px 30px rgba(16, 73, 75, .05);
+        }
+
+        .op-step-number {
+            display: inline-flex;
+            width: 42px;
+            height: 42px;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 18px;
+            border-radius: 50%;
+            background: rgba(200, 148, 53, .13);
+            color: var(--gold-dark);
+            font-weight: 800;
+        }
+
+        .op-step h3 {
+            font-size: 1.05rem;
+            margin: 0 0 9px;
+        }
+
+        .op-step p {
+            margin: 0;
+            font-size: .91rem;
+        }
+
+        /* SUITABLE */
+        .op-card-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+
+        .op-card {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 22px;
+            padding: 30px;
+        }
+
+        .op-card h3 {
+            margin: 0 0 12px;
+            font-size: 1.15rem;
+        }
+
+        .op-card p {
+            margin: 0;
+        }
+
+        .op-icon {
+            color: var(--gold-dark);
+            font-size: 1.5rem;
+            margin-bottom: 13px;
+        }
+
+        /* NOT SUITABLE */
+        .op-not-suitable {
+            max-width: 900px;
+            margin: 0 auto;
+            background: var(--white);
+            border-radius: 24px;
+            padding: 35px;
+            border: 1px solid var(--border);
+        }
+
+        .op-not-suitable h3 {
+            margin-top: 0;
+        }
+
+        /* EQUIPMENT */
+        .op-equipment {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+        }
+
+        .op-equipment-item {
+            padding: 25px;
+            text-align: center;
+            background: var(--white);
+            border-radius: 20px;
+            border: 1px solid var(--border);
+        }
+
+        .op-equipment-item strong {
+            display: block;
+            color: var(--text-dark);
+            margin-bottom: 5px;
+        }
+
+        /* PRIVATE */
+        .op-private-section {
+            background: var(--teal);
+            color: var(--white);
+        }
+
+        .op-private-section h2,
+        .op-private-section h3 {
+            color: var(--white);
+        }
+
+        .op-private-section p {
+            color: rgba(255, 255, 255, .88);
+        }
+
+        .op-private-panel {
+            max-width: 950px;
+            margin: 0 auto;
+            padding: 42px;
+            border: 1px solid rgba(255, 255, 255, .18);
+            border-radius: 28px;
+            background: rgba(255, 255, 255, .07);
+        }
+
+        .op-private-panel ol {
+            margin: 25px 0;
+            padding-left: 23px;
+        }
+
+        .op-private-panel li {
+            margin-bottom: 9px;
+        }
+
+        .op-disclaimer {
+            margin-top: 25px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, .2);
+            font-size: .88rem;
+            color: rgba(255, 255, 255, .76);
+        }
+
+        /* PRICES */
+        .op-price-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            align-items: stretch;
+        }
+
+        .op-price-card {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 26px;
+            padding: 31px 27px 27px;
+            box-shadow: 0 12px 30px rgba(16, 73, 75, .06);
+        }
+
+        .op-price-card.featured {
+            border: 2px solid var(--gold);
+            transform: translateY(-8px);
+        }
+
+        .op-badge {
+            position: absolute;
+            top: -13px;
+            left: 25px;
+            padding: 5px 13px;
+            border-radius: 999px;
+            background: var(--gold);
+            color: var(--white);
+            font-size: .7rem;
+            font-weight: 800;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+        }
+
+        .op-price-label {
+            color: var(--gold-dark);
+            font-size: .73rem;
+            font-weight: 800;
+            letter-spacing: .14em;
+            text-transform: uppercase;
+        }
+
+        .op-price-card h3 {
+            margin: 8px 0 7px;
+        }
+
+        .op-price {
+            color: var(--teal);
+            font-size: 2.55rem;
+            font-weight: 800;
+            line-height: 1;
+            margin: 10px 0 4px;
+        }
+
+        .op-price-note {
+            color: var(--muted);
+            font-size: .82rem;
+            margin-bottom: 20px;
+        }
+
+        .op-price-card ul {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 27px;
+        }
+
+        .op-price-card li {
+            position: relative;
+            padding-left: 22px;
+            margin-bottom: 10px;
+            font-size: .88rem;
+        }
+
+        .op-price-card li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--gold-dark);
+            font-weight: 800;
+        }
+
+        .op-price-card .op-button {
+            margin-top: auto;
+            width: 100%;
+        }
+
+        .op-care {
+            grid-column: 1 / -1;
+            max-width: 380px;
+            width: 100%;
+            margin: 8px auto 0;
+        }
+
+        .op-payment-note {
+            text-align: center;
+            margin: 30px auto 0;
+            max-width: 760px;
+            color: var(--muted);
+            font-size: .9rem;
+        }
+
+        /* FAQ */
+        .op-faq {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .op-faq details {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            margin-bottom: 12px;
+            overflow: hidden;
+        }
+
+        .op-faq summary {
+            cursor: pointer;
+            padding: 20px 24px;
+            color: var(--text-dark);
+            font-weight: 700;
+        }
+
+        .op-faq details p {
+            padding: 0 24px 22px;
+            margin: 0;
+        }
+
+        /* CTA */
+        .op-final {
+            padding: 90px 0;
+            background: var(--cream);
+            text-align: center;
+        }
+
+        .op-final h2 {
+            max-width: 800px;
+            margin: 0 auto 17px;
+            font-size: clamp(2rem, 4vw, 3.2rem);
+        }
+
+        .op-final p {
+            max-width: 700px;
+            margin: 0 auto 28px;
+        }
+
+        .op-contact {
+            margin-top: 20px;
+            font-size: .9rem;
+        }
+
+        .op-contact a {
+            color: var(--teal);
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        /* FOOTER */
+        .op-footer {
+            padding: 35px 0;
+            background: var(--teal-dark);
+            color: rgba(255, 255, 255, .78);
+            font-size: .82rem;
+        }
+
+        .op-footer-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .op-footer a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .op-footer-links {
+            display: flex;
+            gap: 18px;
+            flex-wrap: wrap;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 1050px) {
+            .op-links {
+                display: none;
+            }
+
+            .op-steps {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .op-equipment {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 850px) {
+            .op-two-col,
+            .op-card-grid,
+            .op-price-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .op-price-card.featured {
+                transform: none;
+            }
+
+            .op-care {
+                grid-column: auto;
+                max-width: none;
+            }
+
+            .op-portrait {
+                width: auto;
+                max-width: 100%;
+                height: 560px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .op-container {
+                width: min(100% - 30px, var(--max-width));
+            }
+
+            .op-nav {
+                min-height: 72px;
+            }
+
+            .op-logo img {
+                width: 150px;
+            }
+
+            .op-header-cta {
+                min-height: 42px;
+                padding: 9px 15px;
+                font-size: .76rem;
+            }
+
+            .op-hero {
+                padding-bottom: 50px;
+            }
+
+            .op-hero-image {
+                border-radius: 0 0 20px 20px;
+            }
+
+            .op-hero-content {
+                margin-top: 40px;
+            }
+
+            .op-section,
+            .op-final {
+                padding: 65px 0;
+            }
+
+            .op-steps,
+            .op-equipment {
+                grid-template-columns: 1fr;
+            }
+
+            .op-private-panel,
+            .op-not-suitable {
+                padding: 27px 22px;
+            }
+
+            .op-price {
+                font-size: 2.3rem;
+            }
+
+            .op-footer-inner {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    </style>
+
+    <!-- Schema.org -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "MedicalBusiness",
+      "name": "Physiotherapie Online mit Mila",
+      "url": "https://milaphysio.de/online-physiotherapie",
+      "logo": "https://milaphysio.de/logo/Mila-Logo.webp",
+      "image": "https://milaphysio.de/online-physiotherapie/images/mila_pc.webp",
+      "description": "Online Physiotherapie für Erwachsene in Deutschland mit persönlicher physiotherapeutischer Betreuung per Video.",
+      "email": "mailto:milapoletto.online@gmail.com",
+      "telephone": "+49 174 2585160",
+      "areaServed": "DE",
+      "founder": {
+        "@type": "Person",
+        "name": "Camila Poletto",
+        "jobTitle": "Physiotherapeutin"
+      }
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Was ist Online Physiotherapie?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Online Physiotherapie ist physiotherapeutische Betreuung per Video. Befund, Bewegungsanalyse, Beratung, Anleitung und die gemeinsame Planung der Übungen finden online statt."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Für wen ist Online Physiotherapie geeignet?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Online Physiotherapie kann für viele orthopädische Beschwerden, Bewegungsprobleme, Rehabilitationsziele und zur individuellen Übungsbegleitung geeignet sein."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Kann ich Online Physiotherapie auch als Selbstzahler nutzen?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja. MILAPHYSIO bietet die Online Physiotherapie sowohl für Privatversicherte als auch für Selbstzahler an."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Übernimmt meine private Krankenversicherung die Kosten?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Eine Kostenübernahme hängt vom individuellen Tarif und den Bedingungen der privaten Krankenversicherung ab. Bitte klären Sie die Erstattung vor Beginn der Behandlung direkt mit Ihrer Versicherung."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Wie funktioniert die Buchung?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sie wählen das passende Angebot, bezahlen sicher online über Stripe und vereinbaren anschließend Ihren persönlichen Online-Termin."
+          }
+        }
+      ]
+    }
+    </script>
+</head>
+
+<body>
+
+    <header class="op-header">
+        <div class="op-container op-nav">
+
+            <a href="../index.html" class="op-logo" aria-label="MILAPHYSIO Startseite">
+                <img src="../logo/Mila-Logo.webp"
+                    alt="MILAPHYSIO – Physiotherapie Online mit Mila"
+                    width="190"
+                    height="70">
+            </a>
+
+            <nav aria-label="Hauptnavigation">
+                <ul class="op-links">
+                    <li><a href="#was-ist-online-physiotherapie">Was ist das?</a></li>
+                    <li><a href="#so-funktioniert-es">So funktioniert es</a></li>
+                    <li><a href="#fuer-wen">Für wen?</a></li>
+                    <li><a href="#preise">Preise</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                </ul>
+            </nav>
+
+            <a href="#preise" class="op-header-cta">
+                Termin vereinbaren
+            </a>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- HERO -->
+        <section class="op-hero">
+            <div class="op-container">
+
+                <img class="op-hero-image"
+                    src="images/mila_pc.webp"
+                    alt="Mila bei einer Online Physiotherapie per Video"
+                    width="1600"
+                    height="900"
+                    fetchpriority="high">
+
+                <div class="op-hero-content">
+                    <span class="op-eyebrow">Online Physiotherapie in Deutschland</span>
+
+                    <h1>
+                        Physiotherapie online –
+                        <span>persönlich begleitet.</span>
+                    </h1>
+
+                    <p class="op-lead">
+                        Individuelle physiotherapeutische Betreuung per Video –
+                        bequem von zu Hause, mit persönlicher Anleitung,
+                        Bewegungsanalyse und einem Therapieplan, der zu Ihnen passt.
+                    </p>
+
+                    <div class="op-actions">
+                        <a href="#preise" class="op-button op-button-primary">
+                            Angebot auswählen
+                        </a>
+
+                        <a href="#so-funktioniert-es" class="op-button op-button-secondary">
+                            Wie funktioniert MILAPHYSIO?
+                        </a>
+                    </div>
+
+                    <div class="op-private">
+                        <strong>Privat versichert oder Selbstzahler?</strong>
+                        <p>
+                            MILAPHYSIO ist für Privatversicherte mit Verordnung
+                            und für Selbstzahler geöffnet. Ob Ihre private Krankenversicherung
+                            die Kosten übernimmt, hängt von Ihrem individuellen Tarif ab.
+                            Bitte klären Sie die Erstattung vor Beginn direkt mit Ihrer Versicherung.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- WAS IST ONLINE PHYSIOTHERAPIE -->
+        <section class="op-section" id="was-ist-online-physiotherapie">
+            <div class="op-container">
+
+                <div class="op-two-col">
+
+                    <div class="op-text">
+                        <span class="op-eyebrow">Was bedeutet das?</span>
+
+                        <h2>
+                            Was ist <span>Online Physiotherapie?</span>
+                        </h2>
+
+                        <p>
+                            Online Physiotherapie ist physiotherapeutische Betreuung
+                            über eine sichere Videoverbindung. Sie bleiben zu Hause und
+                            arbeiten trotzdem persönlich mit einer Physiotherapeutin zusammen.
+                        </p>
+
+                        <p>
+                            Bei MILAPHYSIO geht es nicht um einen allgemeinen
+                            Übungskatalog. Ihre Beschwerden, Bewegungen und persönlichen Ziele
+                            stehen im Mittelpunkt.
+                        </p>
+
+                        <ul class="op-check-list">
+                            <li>Persönliche Anamnese und physiotherapeutischer Befund</li>
+                            <li>Individuelle Bewegungsanalyse per Video</li>
+                            <li>Gezielte Übungen und verständliche Anleitung</li>
+                            <li>Individueller Therapie- und Trainingsplan</li>
+                            <li>PDF- und Videoübungen für zu Hause</li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <img class="op-portrait"
+                            src="images/mila-pc2.webp"
+                            alt="Mila bei der persönlichen Online Physiotherapie"
+                            width="900"
+                            height="1600"
+                            loading="lazy">
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- SO FUNKTIONIERT MILAPHYSIO -->
+        <section class="op-section op-section-soft" id="so-funktioniert-es">
+            <div class="op-container">
+
+                <div class="op-section-heading">
+                    <span class="op-eyebrow">Einfach und persönlich</span>
+                    <h2>So funktioniert <span>MILAPHYSIO</span></h2>
+                    <p>
+                        Von der Auswahl Ihres Angebots bis zur individuellen
+                        physiotherapeutischen Begleitung.
+                    </p>
+                </div>
+
+                <div class="op-steps">
+
+                    <article class="op-step">
+                        <span class="op-step-number">01</span>
+                        <h3>Angebot auswählen</h3>
+                        <p>
+                            Wählen Sie das Betreuungsangebot, das zu Ihrem Ziel und
+                            Ihrem gewünschten Umfang passt.
+                        </p>
+                    </article>
+
+                    <article class="op-step">
+                        <span class="op-step-number">02</span>
+                        <h3>Online bezahlen</h3>
+                        <p>
+                            Die Zahlung erfolgt sicher über Stripe.
+                        </p>
+                    </article>
+
+                    <article class="op-step">
+                        <span class="op-step-number">03</span>
+                        <h3>Termin vereinbaren</h3>
+                        <p>
+                            Nach dem Kauf vereinbaren Sie Ihren persönlichen
+                            Online-Termin.
+                        </p>
+                    </article>
+
+                    <article class="op-step">
+                        <span class="op-step-number">04</span>
+                        <h3>Befund & Analyse</h3>
+                        <p>
+                            Anamnese, physiotherapeutischer Befund und
+                            Bewegungsanalyse bilden die Grundlage.
+                        </p>
+                    </article>
+
+                    <article class="op-step">
+                        <span class="op-step-number">05</span>
+                        <h3>Therapie & Begleitung</h3>
+                        <p>
+                            Sie erhalten individuelle Übungen, einen Plan und –
+                            je nach Angebot – weitere persönliche Betreuung.
+                        </p>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- FÜR WEN -->
+        <section class="op-section" id="fuer-wen">
+            <div class="op-container">
+
+                <div class="op-section-heading">
+                    <span class="op-eyebrow">Ist Online Physiotherapie etwas für Sie?</span>
+                    <h2>Für wen kann <span>Online Physio</span> sinnvoll sein?</h2>
+                    <p>
+                        Online Physiotherapie kann eine praktische Möglichkeit sein,
+                        wenn die Beschwerden und das Therapieziel für die digitale
+                        Betreuung geeignet sind.
+                    </p>
+                </div>
+
+                <div class="op-card-grid">
+
+                    <article class="op-card">
+                        <div class="op-icon">01</div>
+                        <h3>Orthopädische Beschwerden</h3>
+                        <p>
+                            Zum Beispiel bei Rücken-, Nacken-, Schulter-, Knie-
+                            oder Hüftbeschwerden – sofern eine Online-Betreuung
+                            im individuellen Fall geeignet ist.
+                        </p>
+                    </article>
+
+                    <article class="op-card">
+                        <div class="op-icon">02</div>
+                        <h3>Rehabilitation & Bewegung</h3>
+                        <p>
+                            Individuelle Übungsprogramme und Begleitung bei
+                            bestimmten Rehabilitationszielen können online
+                            strukturiert werden.
+                        </p>
+                    </article>
+
+                    <article class="op-card">
+                        <div class="op-icon">03</div>
+                        <h3>Menschen mit wenig Zeit</h3>
+                        <p>
+                            Keine Anfahrt zur Praxis: Die physiotherapeutische
+                            Betreuung findet dort statt, wo Sie trainieren und
+                            Ihren Alltag gestalten.
+                        </p>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- NICHT GEEIGNET -->
+        <section class="op-section op-section-soft">
+            <div class="op-container">
+
+                <div class="op-section-heading">
+                    <span class="op-eyebrow">Wichtig</span>
+                    <h2>Wann ist Online Physiotherapie <span>nicht geeignet?</span></h2>
+                </div>
+
+                <div class="op-not-suitable">
+                    <h3>Online ist nicht für jede Situation die richtige Lösung.</h3>
+
+                    <p>
+                        Bei akuten medizinischen Notfällen, schweren Verletzungen,
+                        plötzlich auftretenden starken Beschwerden oder wenn eine
+                        körperliche Untersuchung vor Ort erforderlich ist, sollte
+                        eine geeignete medizinische Versorgung vor Ort erfolgen.
+                    </p>
+
+                    <p>
+                        Wenn während der Online-Anamnese oder Bewegungsanalyse
+                        deutlich wird, dass eine Behandlung vor Ort sinnvoller ist,
+                        besprechen wir das gemeinsam.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- WAS BRAUCHEN SIE -->
+        <section class="op-section">
+            <div class="op-container">
+
+                <div class="op-section-heading">
+                    <span class="op-eyebrow">Technik</span>
+                    <h2>Was brauchen Sie für die <span>Online Physiotherapie?</span></h2>
+                    <p>
+                        Der Einstieg ist unkompliziert. Sie benötigen keine besondere
+                        medizinische Ausstattung.
+                    </p>
+                </div>
+
+                <div class="op-equipment">
+
+                    <div class="op-equipment-item">
+                        <strong>Smartphone</strong>
+                        oder Tablet
+                    </div>
+
+                    <div class="op-equipment-item">
+                        <strong>Stabile Internetverbindung</strong>
+                        für das Videogespräch
+                    </div>
+
+                    <div class="op-equipment-item">
+                        <strong>Etwas Platz</strong>
+                        für Bewegungsübungen
+                    </div>
+
+                    <div class="op-equipment-item">
+                        <strong>Bequeme Kleidung</strong>
+                        in der Sie sich gut bewegen können
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- PRIVATVERSICHERT -->
+        <section class="op-section op-private-section">
+            <div class="op-container">
+
+                <div class="op-private-panel">
+
+                    <span class="op-eyebrow" style="color:#d9b56c;">
+                        Für Privatversicherte
+                    </span>
+
+                    <h2>
+                        Privat versichert? Das sollten Sie wissen.
+                    </h2>
+
+                    <p>
+                        Eine Kostenübernahme durch die private Krankenversicherung
+                        kann je nach Tarif und Vertragsbedingungen möglich sein.
+                        Die Entscheidung über die Erstattung trifft Ihre Versicherung.
+                    </p>
+
+                    <ol>
+                        <li>
+                            Prüfen Sie vor Beginn der Behandlung, ob Ihr Tarif
+                            physiotherapeutische Leistungen im Rahmen der
+                            Online-Behandlung übernimmt.
+                        </li>
+                        <li>
+                            Fragen Sie Ihre Versicherung gegebenenfalls,
+                            welche Unterlagen oder Voraussetzungen benötigt werden.
+                        </li>
+                        <li>
+                            Sie erhalten Ihre Zahlungs- bzw. Behandlungsunterlagen
+                            entsprechend der vereinbarten Leistung und können diese
+                            bei Ihrer Versicherung einreichen.
+                        </li>
+                    </ol>
+
+                    <div class="op-disclaimer">
+                        <strong>Hinweis:</strong>
+                        Eine Erstattung kann nicht garantiert werden.
+                        Bitte klären Sie die Kostenübernahme vor dem Kauf bzw.
+                        vor Beginn der Behandlung direkt mit Ihrer privaten
+                        Krankenversicherung.
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- PREISE -->
+        <section class="op-section op-section-soft" id="preise">
+            <div class="op-container">
+
+                <div class="op-section-heading">
+                    <span class="op-eyebrow">Online Physiotherapie Kosten</span>
+                    <h2>Ihr passendes <span>Betreuungsangebot</span></h2>
+                    <p>
+                        Wählen Sie den Umfang, der zu Ihrem aktuellen Bedarf passt.
+                        Die Zahlung erfolgt sicher über Stripe.
+                    </p>
+                </div>
+
+                <div class="op-price-grid">
+
+                    <!-- STARTER -->
+                    <article class="op-price-card">
+                        <span class="op-price-label">Einstieg</span>
+                        <h3>Starter</h3>
+
+                        <div class="op-price">339 €</div>
+                        <div class="op-price-note">einmalig</div>
+
+                        <ul>
+                            <li>Erstanalyse (60 Min.)</li>
+                            <li>3 Online-Termine à 40 Min.</li>
+                            <li>Individueller Therapieplan</li>
+                            <li>Persönlicher Übungsplan</li>
+                            <li>PDF + Videoübungen</li>
+                        </ul>
+
+                        <a href="https://buy.stripe.com/9B6cN7cwB3b73traU46Zy00"
+                           class="op-button op-button-primary">
+                            Starter wählen
+                        </a>
+                    </article>
+
+
+                    <!-- BESTSELLER -->
+                    <article class="op-price-card featured">
+                        <span class="op-badge">Bestseller</span>
+                        <span class="op-price-label">Beliebteste Wahl</span>
+                        <h3>Bestseller</h3>
+
+                        <div class="op-price">469 €</div>
+                        <div class="op-price-note">einmalig</div>
+
+                        <ul>
+                            <li>Erstanalyse (60 Min.)</li>
+                            <li>5 Online-Termine à 40 Min.</li>
+                            <li>Individueller Therapieplan</li>
+                            <li>Regelmäßige Anpassungen</li>
+                            <li>PDF + Videoübungen</li>
+                            <li>WhatsApp-Support</li>
+                        </ul>
+
+                        <a href="https://buy.stripe.com/6oUbJ3eEJcLHd418LW6Zy01"
+                           class="op-button op-button-primary">
+                            Bestseller wählen
+                        </a>
+                    </article>
+
+
+                    <!-- PREMIUM -->
+                    <article class="op-price-card">
+                        <span class="op-price-label">Intensive Betreuung</span>
+                        <h3>Premium</h3>
+
+                        <div class="op-price">669 €</div>
+                        <div class="op-price-note">einmalig</div>
+
+                        <ul>
+                            <li>Erstanalyse (60 Min.)</li>
+                            <li>8 Online-Termine à 40 Min.</li>
+                            <li>Laufende Betreuung</li>
+                            <li>Individueller Therapieplan</li>
+                            <li>PDF + Videoübungen</li>
+                            <li>WhatsApp-Support</li>
+                            <li>Abschlussanalyse</li>
+                        </ul>
+
+                        <a href="https://buy.stripe.com/dRmdRb549273e85aU46Zy02"
+                           class="op-button op-button-primary">
+                            Premium wählen
+                        </a>
+                    </article>
+
+
+                    <!-- MILA CARE -->
+                    <article class="op-price-card op-care">
+                        <span class="op-price-label">Für ehemalige Patienten</span>
+                        <h3>Mila Care</h3>
+
+                        <div class="op-price">149 €</div>
+                        <div class="op-price-note">pro Monat</div>
+
+                        <ul>
+                            <li>2 Online-Termine pro Monat</li>
+                            <li>40 Minuten pro Termin</li>
+                            <li>Anpassung des Trainingsplans</li>
+                            <li>WhatsApp-Betreuung</li>
+                            <li>Für ehemalige Patienten</li>
+                        </ul>
+
+                        <a href="https://buy.stripe.com/9B66oJ7ch3b7aVT6DO6Zy03"
+                           class="op-button op-button-primary">
+                            Mila Care abonnieren
+                        </a>
+                    </article>
+
+                </div>
+
+                <p class="op-payment-note">
+                    Nach dem Kauf vereinbaren Sie Ihren persönlichen Online-Termin.
+                    Bei Fragen zu Terminen oder zum Ablauf können Sie mich gerne
+                    per WhatsApp oder E-Mail kontaktieren.
+                </p>
+
+            </div>
+        </section>
+
+
+        <!-- FAQ -->
+        <section class="op-section" id="faq">
+            <div class="op-container">
+
+                <div class="op-section-heading">
+                    <span class="op-eyebrow">Häufige Fragen</span>
+                    <h2>FAQ zur <span>Online Physiotherapie</span></h2>
+                </div>
+
+                <div class="op-faq">
+
+                    <details>
+                        <summary>Was ist Online Physiotherapie?</summary>
+                        <p>
+                            Online Physiotherapie ist physiotherapeutische Betreuung
+                            per Video. Anamnese, Befund, Bewegungsanalyse, Beratung,
+                            Anleitung und die gemeinsame Planung Ihrer Übungen können
+                            online stattfinden.
+                        </p>
+                    </details>
+
+                    <details>
+                        <summary>Kann ich Online Physiotherapie als Selbstzahler buchen?</summary>
+                        <p>
+                            Ja. MILAPHYSIO bietet die Online Physiotherapie sowohl
+                            für Privatversicherte als auch für Selbstzahler an.
+                        </p>
+                    </details>
+
+                    <details>
+                        <summary>Kann meine private Krankenversicherung die Kosten übernehmen?</summary>
+                        <p>
+                            Das hängt von Ihrem individuellen Tarif und den Bedingungen
+                            Ihrer privaten Krankenversicherung ab. Bitte klären Sie
+                            die mögliche Kostenübernahme vor Beginn der Behandlung
+                            direkt mit Ihrer Versicherung.
+                        </p>
+                    </details>
+
+                    <details>
+                        <summary>Wie funktioniert die Buchung?</summary>
+                        <p>
+                            Sie wählen zunächst Ihr passendes Angebot und bezahlen
+                            sicher über Stripe. Nach dem Kauf vereinbaren Sie Ihren
+                            persönlichen Online-Termin.
+                        </p>
+                    </details>
+
+                    <details>
+                        <summary>Was passiert bei meinem ersten Termin?</summary>
+                        <p>
+                            Der erste Termin dient der Anamnese und dem
+                            physiotherapeutischen Befund. Je nach Beschwerde und
+                            Fragestellung wird außerdem eine Bewegungsanalyse
+                            durchgeführt. Auf dieser Grundlage wird die weitere
+                            Betreuung individuell geplant.
+                        </p>
+                    </details>
+
+                    <details>
+                        <summary>Was bekomme ich nach der Online Physiotherapie?</summary>
+                        <p>
+                            Je nach gewähltem Angebot erhalten Sie individuelle
+                            Übungen, einen Therapie- bzw. Trainingsplan sowie
+                            PDF- und Videoübungen zur Umsetzung zu Hause.
+                        </p>
+                    </details>
+
+                    <details>
+                        <summary>Ich habe Fragen zu Terminen. Was kann ich tun?</summary>
+                        <p>
+                            Wenn Sie vor dem Kauf Fragen zu Terminen, Ablauf oder
+                            Angebot haben, können Sie MILAPHYSIO direkt per WhatsApp
+                            oder E-Mail kontaktieren.
+                        </p>
+                    </details>
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- FINAL CTA -->
+        <section class="op-final">
+            <div class="op-container">
+
+                <span class="op-eyebrow">Bereit für den nächsten Schritt?</span>
+
+                <h2>
+                    Ihre Physiotherapie –
+                    <span>persönlich online.</span>
+                </h2>
+
+                <p>
+                    Wählen Sie Ihr passendes Angebot und starten Sie Ihre
+                    individuelle physiotherapeutische Betreuung mit MILAPHYSIO.
+                </p>
+
+                <div class="op-actions">
+                    <a href="#preise" class="op-button op-button-primary">
+                        Angebot auswählen
+                    </a>
+                </div>
+
+                <div class="op-contact">
+                    Fragen vor dem Kauf?
+                    <a href="https://wa.me/491742585160" target="_blank" rel="noopener noreferrer">
+                        WhatsApp
+                    </a>
+                    ·
+                    <a href="mailto:milapoletto.online@gmail.com">
+                        E-Mail
+                    </a>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+
+    <footer class="op-footer">
+        <div class="op-container op-footer-inner">
+
+            <div>
+                © 2026 MILAPHYSIO · Physiotherapie Online mit Mila
+            </div>
+
+            <div class="op-footer-links">
+                <a href="../impressum.html">Impressum</a>
+                <a href="../datenschutz.html">Datenschutz</a>
+                <a href="../kontakt.html">Kontakt</a>
+                <a href="../index.html">Startseite</a>
+            </div>
+
+        </div>
+    </footer>
+
+</body>
+</html>
