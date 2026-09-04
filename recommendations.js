@@ -3,17 +3,27 @@ document.addEventListener("DOMContentLoaded", () => {
     const grid = document.getElementById("products-grid");
     const categoriesContainer = document.querySelector(".categories .container");
 
-    if (!grid || !categoriesContainer) return;
+    if (!grid || !categoriesContainer) {
+        console.error("Empfehlungen: Container nicht gefunden.");
+        return;
+    }
+
+    // Prüfen, ob products.js korrekt geladen wurde
+    if (typeof products === "undefined" || !Array.isArray(products)) {
+        console.error("Empfehlungen: products.js wurde nicht korrekt geladen.");
+        return;
+    }
 
 
     /* =========================
-       CATEGORIEN ERSTELLEN
+       KATEGORIEN ERSTELLEN
        ========================= */
 
     const categories = [
         "Alle",
         ...new Set(products.map(product => product.category))
     ];
+
 
     categoriesContainer.innerHTML = categories.map(category => {
 
@@ -47,11 +57,24 @@ document.addEventListener("DOMContentLoaded", () => {
                 );
 
 
+        if (filteredProducts.length === 0) {
+
+            grid.innerHTML = `
+                <p class="no-products">
+                    Keine Produkte in dieser Kategorie gefunden.
+                </p>
+            `;
+
+            return;
+        }
+
+
         filteredProducts.forEach(product => {
 
             const card = document.createElement("article");
 
             card.className = "product-card";
+
 
             card.innerHTML = `
 
@@ -82,11 +105,6 @@ document.addEventListener("DOMContentLoaded", () => {
                     </p>
 
 
-                    <div class="product-price">
-                        ${product.price}
-                    </div>
-
-
                     <div class="product-buttons">
 
                         <a
@@ -114,6 +132,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             `;
 
+
             grid.appendChild(card);
 
         });
@@ -131,9 +150,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (!button) return;
 
+
         document
             .querySelectorAll(".category-button")
-            .forEach(item => item.classList.remove("active"));
+            .forEach(item => {
+
+                item.classList.remove("active");
+
+            });
 
 
         button.classList.add("active");
