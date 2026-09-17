@@ -687,6 +687,13 @@ h1 {
     line-height: 1;
 }
 
+.pricing-note {
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: var(--muted);
+    text-align: center;
+}
+
 /* =========================================================
    CTA
    ========================================================= */

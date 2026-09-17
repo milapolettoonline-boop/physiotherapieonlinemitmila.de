@@ -81,22 +81,21 @@
     <style>
 
         :root {
-            --teal: #185F63;
-            --teal-dark: #10494D;
-            --teal-soft: #246D71;
+            --teal: #155d60;
+            --teal-dark: #10494b;
+            --teal-soft: #1e6b6d;
 
-            --gold: #B98935;
+            --gold: #c89435;
             --gold-light: #D2A95A;
 
-            --cream: #F7F3EB;
-            --cream-dark: #EFE9DE;
+            --cream: #f7f3eb;
 
             --white: #FFFFFF;
 
-            --text: #4E6470;
-            --text-dark: #164D52;
+            --text: #355d70;
+            --text-dark: #123f4a;
 
-            --border: #D8E1E2;
+            --border: #d7e1e2;
 
             --radius: 28px;
 
@@ -251,6 +250,21 @@
 
         .button-secondary:hover {
             background: rgba(24, 95, 99, 0.05);
+        }
+
+
+        .button-gold {
+            color: white;
+            background: var(--gold);
+
+            box-shadow:
+                0 14px 30px
+                rgba(200, 148, 53, 0.20);
+        }
+
+
+        .button-gold:hover {
+            background: #b8823a;
         }
 
 
@@ -934,6 +948,55 @@
         }
 
 
+        .pricing-tables {
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 50px;
+
+            margin-bottom: 40px;
+        }
+
+
+        .pricing-table {
+            display: flex;
+
+            flex-direction: column;
+        }
+
+
+        .pricing-table h3 {
+            color: var(--teal-dark);
+
+            font-family:
+                "Playfair Display",
+                Georgia,
+                serif;
+
+            font-size: 1.8rem;
+
+            margin-bottom: 30px;
+
+            text-align: center;
+
+            padding-bottom: 20px;
+
+            border-bottom:
+                2px solid var(--gold);
+        }
+
+
+        .pricing-table-cards {
+            display: grid;
+
+            grid-template-columns: 1fr;
+
+            gap: 22px;
+        }
+
+
         .price-card {
             padding: 38px;
 
@@ -1322,6 +1385,13 @@
             }
 
 
+            .pricing-tables {
+                grid-template-columns: 1fr;
+
+                gap: 40px;
+            }
+
+
             .footer-grid {
                 grid-template-columns:
                     1fr 1fr;
@@ -1547,7 +1617,7 @@
                 "@type": "WebSite",
                 "@id": "https://milaphysio.de/#website",
                 "url": "https://milaphysio.de/",
-                "name": "Physo Online mit Mila",
+                "name": "Physio Online mit Mila",
                 "publisher": {
                     "@id": "https://milaphysio.de/#business"
                 },
@@ -1622,13 +1692,9 @@
     <a href="#beschwerden">
         Beschwerden
     </a>
-
+ <a href="hausbesuch/">Hausbesuch</a>
     <a href="#ueber-mich">
         Über mich
-    </a>
-
-    <a href="#preise">
-        Preise
     </a>
 
     <a href="nackenschmerzen-ratgeber.html">
@@ -1668,7 +1734,7 @@
 </button>
 
 </div>
- 
+
        <!-- =====================================================
      MOBILE NAVIGATION
 ====================================================== -->
@@ -1691,13 +1757,9 @@
     <a href="#beschwerden">
         Beschwerden
     </a>
-
+ <a href="hausbesuch/">Hausbesuch</a>
     <a href="#ueber-mich">
         Über mich
-    </a>
-
-    <a href="#preise">
-        Preise
     </a>
 
     <a href="nackenschmerzen-ratgeber.html">
@@ -1762,20 +1824,26 @@
 
       <a
     href="#preise"
-    class="button button-primary">
+    class="button button-gold">
 
     Angebot auswählen
 
 </a>
 
                 <a
-                    href="#leistungen"
-                    class="button button-secondary">
+                    href="online-physiotherapie/"
+                    class="button button-gold">
 
-                    Leistungen entdecken
+                    Online-Physiotherapie
 
                 </a>
+   <a
+        href="hausbesuch/"
+        class="button button-gold">
 
+        Hausbesuch
+
+    </a>
             </div>
 
 
@@ -2349,21 +2417,21 @@
             </div>
 
 
-            <div class="guide-side">
+            <a href="https://tally.so/r/PdQakd" class="guide-side" target="_blank" rel="noopener noreferrer">
 
                 <div>
 
                     <strong>
-                        Nackenschmerzen
+                        Jetzt Nacken-Check machen
                     </strong>
 
                     <span>
-                        Ursachen · Übungen · Büroalltag
+                        Beschwerden einschätzen und passende nächste Schritte entdecken
                     </span>
 
                 </div>
 
-            </div>
+            </a>
 
 
         </div>
@@ -2768,17 +2836,14 @@
 
     <div class="home-container">
 
-
         <div class="pricing-header">
 
             <span class="eyebrow">
-                Online-Physiotherapie · Preise
+                Angebote · Preise
             </span>
 
             <h2 class="section-title">
-                Online-Physiotherapie,
-                transparent und passend zu
-                Ihrer Betreuung.
+                Angebot auswählen
             </h2>
 
             <p class="section-text">
@@ -2789,258 +2854,595 @@
 
         </div>
 
+        <!-- ===============================================
+             PRICING TABLES: ONLINE-PHYSIOTHERAPIE & HAUSBESUCH
+        ================================================== -->
 
-        <div class="pricing-grid">
+        <div class="pricing-tables">
 
+            <!-- ===============================================
+                 TABELLE 1: ONLINE-PHYSIOTHERAPIE
+            ================================================== -->
 
-           <!-- ================================
-     STARTER
-================================= -->
+            <div class="pricing-table">
 
-<article class="price-card">
+                <h3>Online-Physiotherapie</h3>
 
-    <p class="price-label">
-        Einstieg
-    </p>
+                <div class="pricing-table-cards">
 
-    <h3>
-        Starter
-    </h3>
+                    <!-- ================================
+                         STARTER
+                    ================================= -->
 
-    <p class="price">
-        339 €
-    </p>
+                    <article class="price-card">
 
-    <p class="duration">
-        einmalig
-    </p>
+                        <p class="price-label">
+                            Einstieg
+                        </p>
 
-    <ul class="price-list">
+                        <h3>
+                            Starter
+                        </h3>
 
-        <li>
-            Erstanalyse (60–75 Min.)
-        </li>
+                        <p class="price">
+                            339 €
+                        </p>
 
-        <li>
-            3 Online-Termine à 40 Min.
-        </li>
+                        <p class="duration">
+                            einmalig
+                        </p>
 
-        <li>
-            Individueller Therapieplan
-        </li>
+                        <ul class="price-list">
 
-        <li>
-            Persönlicher Übungsplan
-        </li>
+                            <li>
+                                Erstanalyse (60 Min.)
+                            </li>
 
-        <li>
-            PDF + Videoübungen
-        </li>
+                            <li>
+                                3 Termine à 40 Min.
+                            </li>
 
-    </ul>
+                            <li>
+                                Therapieplan
+                            </li>
 
-    <a
-        href="https://buy.stripe.com/9B6cN7cwB3b73traU46Zy00"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="button button-primary">
+                            <li>
+                                Übungsplan
+                            </li>
 
-        Starter buchen
+                            <li>
+                                PDF + Videos
+                            </li>
 
-    </a>
+                        </ul>
 
-</article>
+                        <a
+                            href="https://buy.stripe.com/9B6cN7cwB3b73traU46Zy00"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="button button-primary">
 
-    <!-- ================================
-     BESTSELLER
-================================= -->
+                            Starter buchen
 
-<article
-    class="price-card featured">
+                        </a>
 
-    <p class="price-label">
-        Beliebteste Wahl
-    </p>
+                    </article>
 
-    <h3>
-        Bestseller
-    </h3>
+                    <!-- ================================
+                         BESTSELLER
+                    ================================= -->
 
-    <p class="price">
-        469 €
-    </p>
+                    <article class="price-card featured">
 
-    <p class="duration">
-        einmalig
-    </p>
+                        <p class="price-label">
+                            Beliebteste Wahl
+                        </p>
 
-    <ul class="price-list">
+                        <h3>
+                            Bestseller
+                        </h3>
 
-        <li>
-            Erstanalyse (60–75 Min.)
-        </li>
+                        <p class="price">
+                            469 €
+                        </p>
 
-        <li>
-            5 Online-Termine à 40 Min.
-        </li>
+                        <p class="duration">
+                            einmalig
+                        </p>
 
-        <li>
-            Individueller Therapieplan
-        </li>
+                        <ul class="price-list">
 
-        <li>
-            Regelmäßige Anpassungen
-        </li>
+                            <li>
+                                Erstanalyse (60 Min.)
+                            </li>
 
-        <li>
-            PDF + Videoübungen
-        </li>
+                            <li>
+                                5 Termine à 40 Min.
+                            </li>
 
-        <li>
-            WhatsApp-Support
-        </li>
+                            <li>
+                                Therapieplan
+                            </li>
 
-    </ul>
+                            <li>
+                                Anpassungen
+                            </li>
 
-   <a
-    href="https://buy.stripe.com/6oUbJ3eEJcLHd418LW6Zy01"
-    target="_blank"
-    rel="noopener noreferrer"
-    class="button button-primary">
+                            <li>
+                                PDF + Videos
+                            </li>
 
-    Bestseller buchen
+                            <li>
+                                WhatsApp
+                            </li>
 
-</a>
+                        </ul>
 
-</article>       
-           
-<!-- ================================
-     PREMIUM
-================================= -->
+                        <a
+                            href="https://buy.stripe.com/6oUbJ3eEJcLHd418LW6Zy01"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="button button-primary">
 
-<article class="price-card">
+                            Bestseller buchen
 
-    <p class="price-label">
-        Intensive Betreuung
-    </p>
+                        </a>
 
-    <h3>
-        Premium
-    </h3>
+                    </article>
 
-    <p class="price">
-        669 €
-    </p>
+                    <!-- ================================
+                         PREMIUM
+                    ================================= -->
 
-    <p class="duration">
-        einmalig
-    </p>
+                    <article class="price-card">
 
-    <ul class="price-list">
+                        <p class="price-label">
+                            Intensive Betreuung
+                        </p>
 
-        <li>
-            Erstanalyse (60–75 Min.)
-        </li>
+                        <h3>
+                            Premium
+                        </h3>
 
-        <li>
-            8 Online-Termine à 40 Min.
-        </li>
+                        <p class="price">
+                            669 €
+                        </p>
 
-        <li>
-            Laufende Betreuung
-        </li>
+                        <p class="duration">
+                            einmalig
+                        </p>
 
-        <li>
-            Individueller Therapieplan
-        </li>
+                        <ul class="price-list">
 
-        <li>
-            PDF + Videoübungen
-        </li>
+                            <li>
+                                Erstanalyse (60 Min.)
+                            </li>
 
-        <li>
-            WhatsApp-Support
-        </li>
+                            <li>
+                                8 Termine à 40 Min.
+                            </li>
 
-        <li>
-            Abschlussanalyse
-        </li>
+                            <li>
+                                Betreuung
+                            </li>
 
-    </ul>
+                            <li>
+                                Therapieplan
+                            </li>
 
-    <a
-        href="https://buy.stripe.com/dRmdRb549273e85aU46Zy02"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="button button-primary">
+                            <li>
+                                PDF + Videos
+                            </li>
 
-        Premium buchen
+                            <li>
+                                WhatsApp
+                            </li>
 
-    </a>
+                            <li>
+                                Abschlussanalyse
+                            </li>
 
-</article>
+                        </ul>
 
-            <!-- ================================
-                 MILA CARE
-            ================================= -->
+                        <a
+                            href="https://buy.stripe.com/dRmdRb549273e85aU46Zy02"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="button button-primary">
 
-            <article class="price-card">
+                            Premium buchen
 
-                <p class="price-label">
-                    Für ehemalige Patienten
-                </p>
+                        </a>
 
-                <h3>
-                    Mila Care
-                </h3>
+                    </article>
 
-                <p class="price">
-                    149 €
-                </p>
+                    <!-- ================================
+                         MILA CARE
+                    ================================= -->
 
-                <p class="duration">
-                    pro Monat
-                </p>
+                    <article class="price-card">
 
-                <ul class="price-list">
+                        <p class="price-label">
+                            Für ehemalige Patienten
+                        </p>
 
-                    <li>
-                        2 Online-Termine pro Monat
-                    </li>
+                        <h3>
+                            Mila Care
+                        </h3>
 
-                    <li>
-                        40 Minuten pro Termin
-                    </li>
+                        <p class="price">
+                            149 €
+                        </p>
 
-                    <li>
-                        Anpassung des Trainingsplans
-                    </li>
+                        <p class="duration">
+                            pro Monat
+                        </p>
 
-                    <li>
-                        WhatsApp-Betreuung
-                    </li>
+                        <ul class="price-list">
 
-                    <li>
-                        Für ehemalige Patienten
-                    </li>
+                            <li>
+                                2 Termine/Monat
+                            </li>
 
-                </ul>
+                            <li>
+                                40 Minuten pro Termin
+                            </li>
 
-   <a
-    href="https://buy.stripe.com/9B66oJ7ch3b7aVT6DO6Zy03"
-    target="_blank"
-    rel="noopener noreferrer"
-    class="button button-primary">
+                            <li>
+                                Trainingsplan-Anpassung
+                            </li>
 
-    Mila Care starten
+                            <li>
+                                WhatsApp
+                            </li>
 
-</a>
+                            <li>
+                                Für Patienten
+                            </li>
 
-            </article>
+                        </ul>
 
+                        <a
+                            href="https://buy.stripe.com/9B66oJ7ch3b7aVT6DO6Zy03"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="button button-primary">
+
+                            Mila Care starten
+
+                        </a>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+            <!-- ===============================================
+                 TABELLE 2: HAUSBESUCH
+            ================================================== -->
+
+            <div class="pricing-table">
+
+                <h3>Hausbesuch</h3>
+
+                <div class="pricing-table-cards">
+
+                    <!-- ================================
+                         KG 30
+                    ================================= -->
+
+                    <article class="price-card">
+
+                        <p class="price-label">
+                            Krankengymnastik
+                        </p>
+
+                        <h3>
+                            KG 30
+                        </h3>
+
+                        <p class="price">
+                            60 €
+                        </p>
+
+                        <p class="duration">
+                            pro Termin
+                        </p>
+
+                        <ul class="price-list">
+
+                            <li>
+                                30 Min. Krankengymnastik
+                            </li>
+
+                        </ul>
+
+                        <a
+                            href="hausbesuch/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="button button-primary">
+
+                            Buchen
+
+                        </a>
+
+                    </article>
+
+                    <!-- ================================
+                         KG + MLD 30
+                    ================================= -->
+
+                    <article class="price-card">
+
+                        <p class="price-label">
+                            Kombination
+                        </p>
+
+                        <h3>
+                            KG + MLD 30
+                        </h3>
+
+                        <p class="price">
+                            115 €
+                        </p>
+
+                        <p class="duration">
+                            pro Termin
+                        </p>
+
+                        <ul class="price-list">
+
+                            <li>
+                                30 Min. MLD
+                            </li>
+
+                            <li>
+                                20 Min. KG
+                            </li>
+
+                        </ul>
+
+                        <a
+                            href="hausbesuch/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="button button-primary">
+
+                            Buchen
+
+                        </a>
+
+                    </article>
+
+                    <!-- ================================
+                         KG + MLD 45
+                    ================================= -->
+
+                    <article class="price-card">
+
+                        <p class="price-label">
+                            Kombination
+                        </p>
+
+                        <h3>
+                            KG + MLD 45
+                        </h3>
+
+                        <p class="price">
+                            135 €
+                        </p>
+
+                        <p class="duration">
+                            pro Termin
+                        </p>
+
+                        <ul class="price-list">
+
+                            <li>
+                                45 Min. MLD
+                            </li>
+
+                            <li>
+                                20 Min. KG
+                            </li>
+
+                        </ul>
+
+                        <a
+                            href="hausbesuch/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="button button-primary">
+
+                            Buchen
+
+                        </a>
+
+                    </article>
+
+                    <!-- ================================
+                         KG + MLD 60
+                    ================================= -->
+
+                    <article class="price-card">
+
+                        <p class="price-label">
+                            Kombination
+                        </p>
+
+                        <h3>
+                            KG + MLD 60
+                        </h3>
+
+                        <p class="price">
+                            155 €
+                        </p>
+
+                        <p class="duration">
+                            pro Termin
+                        </p>
+
+                        <ul class="price-list">
+
+                            <li>
+                                60 Min. MLD
+                            </li>
+
+                            <li>
+                                20 Min. KG
+                            </li>
+
+                        </ul>
+
+                        <a
+                            href="hausbesuch/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="button button-primary">
+
+                            Buchen
+
+                        </a>
+
+                    </article>
+
+                    <!-- ================================
+                         MLD 30
+                    ================================= -->
+
+                    <article class="price-card">
+
+                        <p class="price-label">
+                            Manuelle Lymphdrainage
+                        </p>
+
+                        <h3>
+                            MLD 30
+                        </h3>
+
+                        <p class="price">
+                            70 €
+                        </p>
+
+                        <p class="duration">
+                            pro Termin
+                        </p>
+
+                        <ul class="price-list">
+
+                            <li>
+                                30 Min. MLD
+                            </li>
+
+                        </ul>
+
+                        <a
+                            href="hausbesuch/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="button button-primary">
+
+                            Buchen
+
+                        </a>
+
+                    </article>
+
+                    <!-- ================================
+                         MLD 45
+                    ================================= -->
+
+                    <article class="price-card">
+
+                        <p class="price-label">
+                            Manuelle Lymphdrainage
+                        </p>
+
+                        <h3>
+                            MLD 45
+                        </h3>
+
+                        <p class="price">
+                            90 €
+                        </p>
+
+                        <p class="duration">
+                            pro Termin
+                        </p>
+
+                        <ul class="price-list">
+
+                            <li>
+                                45 Min. MLD
+                            </li>
+
+                        </ul>
+
+                        <a
+                            href="hausbesuch/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="button button-primary">
+
+                            Buchen
+
+                        </a>
+
+                    </article>
+
+                    <!-- ================================
+                         MLD 60
+                    ================================= -->
+
+                    <article class="price-card">
+
+                        <p class="price-label">
+                            Manuelle Lymphdrainage
+                        </p>
+
+                        <h3>
+                            MLD 60
+                        </h3>
+
+                        <p class="price">
+                            110 €
+                        </p>
+
+                        <p class="duration">
+                            pro Termin
+                        </p>
+
+                        <ul class="price-list">
+
+                            <li>
+                                60 Min. MLD
+                            </li>
+
+                        </ul>
+
+                        <a
+                            href="hausbesuch/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="button button-primary">
+
+                            Buchen
+
+                        </a>
+
+                    </article>
+
+                </div>
+
+            </div>
 
         </div>
 
+        <!-- ===============================================
+             KENNENLERNEN MIT MILA
+        ================================================== -->
 
         <article class="pricing-kennenlernen">
 
@@ -3073,21 +3475,6 @@
             </a>
 
         </article>
-
-
-       <p class="pricing-note">
-
-     Sicher über Stripe bezahlen und Online-Termine
-    direkt über Calendly vereinbaren.
-
-</p>
-
-        <p class="pricing-note">
-
-         Online-Termin buchen
-
-        </p>
-
 
     </div>
 
