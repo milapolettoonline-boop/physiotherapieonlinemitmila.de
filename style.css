@@ -214,74 +214,143 @@ header:not(.home-header) nav {
    ========================================================= */
 
 .hero {
+
     position: relative;
+
     background: var(--cream);
+
     overflow: hidden;
+
     padding: 150px 0 70px;
+
 }
 
 .hero-grid {
+
     display: grid;
+
     grid-template-columns: 1fr;
+
     align-items: center;
+
     min-height: 720px;
+
 }
 
 .hero-content {
+
     text-align: center;
+
     max-width: 980px;
+
     margin-inline: auto;
+
     position: relative;
+
     z-index: 2;
+
 }
 
 .hero-kicker,
 .section-eyebrow,
 .eyebrow {
+
     display: block;
+
     color: var(--gold);
+
     font-size: .86rem;
+
     font-weight: 700;
+
     letter-spacing: .18em;
+
     text-transform: uppercase;
+
     margin-bottom: 18px;
+
 }
 
 .hero-title,
 h1 {
+
     color: var(--teal-dark);
+
     font-family: Georgia, "Times New Roman", serif;
+
     font-weight: 700;
+
     letter-spacing: -.045em;
+
 }
 
 .hero-title {
+
     font-size: clamp(3.5rem, 7vw, 6.7rem);
+
     line-height: .92;
+
     margin: 0 auto 30px;
+
     max-width: 950px;
+
 }
 
-.hero-title .gold,
-.hero-title span {
-    color: var(--gold);
+/* =========================================================
+   HOMEPAGE HERO — TITLE
+   Apenas o título principal da Home fica verde escuro.
+   ========================================================= */
+
+section.hero#start h1.hero-title,
+section.hero#start h1.hero-title span {
+
+    color: var(--teal-dark);
+
+}
+
+/* =========================================================
+   HOMEPAGE HERO — BUTTONS
+   Apenas os botões dentro do Hero da Home ficam dourados.
+   ========================================================= */
+
+section.hero#start .hero-buttons .button {
+
+    background: var(--gold);
+
+    color: #ffffff;
+
+    border-color: var(--gold);
+
 }
 
 .hero-description {
+
     max-width: 850px;
+
     margin: 0 auto 34px;
+
     color: var(--text);
+
     font-size: 1.18rem;
+
     line-height: 1.65;
+
 }
 
 .hero-buttons {
+
     display: flex;
+
     justify-content: center;
+
     align-items: center;
+
     flex-wrap: wrap;
+
     gap: 14px;
+
     margin-bottom: 36px;
+
 }
 
 .button,
