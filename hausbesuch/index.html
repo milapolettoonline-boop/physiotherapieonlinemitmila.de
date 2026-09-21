@@ -1488,7 +1488,7 @@
         const WEBHOOK_URL = "https://n8n.milaphysio.de/webhook/hausbesuch-pre-booking";
         const ONLINE_URL = "../online-physiotherapie/";
 
-        let selectedCalendlyUrl = null;
+        let selectedButton = null;
 
         // Initialize: Add event listeners to all Calendly buttons
         document.addEventListener("DOMContentLoaded", function () {
@@ -1496,7 +1496,9 @@
             calendlyLinks.forEach(link => {
                 link.addEventListener('click', function (e) {
                     e.preventDefault();
-                    selectedCalendlyUrl = this.getAttribute('data-calendly-url');
+                    // Store reference to the selected button for each new click
+                    selectedButton = this;
+                    console.log('Hausbesuch Paket ausgewählt:', this.getAttribute('data-package'));
                     openHausbesuchModal();
                 });
             });
@@ -1506,8 +1508,15 @@
         function openHausbesuchModal() {
             const modal = document.getElementById('hausbesuchModal');
             if (modal) {
+                // Ensure form is reset before opening
+                resetForm();
                 modal.classList.add('active');
-                document.getElementById('addressInput').focus();
+                setTimeout(() => {
+                    const addressInput = document.getElementById('addressInput');
+                    if (addressInput) {
+                        addressInput.focus();
+                    }
+                }, 100);
             }
         }
 
@@ -1518,7 +1527,6 @@
                 modal.classList.remove('active');
                 resetForm();
             }
-            selectedCalendlyUrl = null;
         }
 
         // Reset form
@@ -1530,6 +1538,10 @@
             const messageDiv = document.getElementById('hausbesuchMessage');
             if (messageDiv) {
                 messageDiv.innerHTML = '';
+            }
+            const submitBtn = document.getElementById('submitBtn');
+            if (submitBtn) {
+                submitBtn.disabled = false;
             }
         }
 
@@ -1577,11 +1589,26 @@
                 // Check response
                 if (data.allowed === true) {
                     // Address approved - redirect to Calendly
-                    showMessage('Adresse genehmigt! Sie werden zu Calendly weitergeleitet...', 'success', messageDiv);
-                    setTimeout(() => {
-                        closeHausbesuchModal();
-                        window.open(selectedCalendlyUrl, '_blank');
-                    }, 1500);
+                    console.log('Hausbesuch erlaubt');
+
+                    // Get Calendly URL directly from the selected button
+                    const calendlyUrl = selectedButton ? selectedButton.dataset.calendlyUrl : null;
+                    console.log('Calendly URL:', calendlyUrl);
+
+                    // Validate Calendly URL
+                    if (calendlyUrl && calendlyUrl.startsWith('https://calendly.com/')) {
+                        showMessage('Adresse genehmigt! Sie werden zu Calendly weitergeleitet...', 'success', messageDiv);
+                        setTimeout(() => {
+                            closeHausbesuchModal();
+                            window.open(calendlyUrl, '_blank', 'noopener,noreferrer');
+                            // Clear selectedButton after opening (allows new selections)
+                            selectedButton = null;
+                        }, 1500);
+                    } else {
+                        console.error('Invalid Calendly URL:', calendlyUrl);
+                        showMessage('Fehler beim Öffnen von Calendly. Bitte versuchen Sie es später erneut.', 'error', messageDiv);
+                        submitBtn.disabled = false;
+                    }
                 } else if (data.allowed === false && data.online_alternative === true) {
                     // Address outside area - show alternative
                     showAlternativeOnline(messageDiv, submitBtn);
