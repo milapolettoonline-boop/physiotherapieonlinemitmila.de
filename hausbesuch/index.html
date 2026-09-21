@@ -711,6 +711,188 @@
                 width: 100%;
             }
         }
+
+        /* HAUSBESUCH ADDRESS VALIDATION MODAL */
+        .hausbesuch-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 2000;
+            background: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .hausbesuch-modal.active {
+            display: flex;
+        }
+
+        .hausbesuch-modal-content {
+            background: white;
+            border-radius: var(--radius);
+            padding: 40px;
+            max-width: 500px;
+            width: 100%;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .hausbesuch-modal-content h3 {
+            margin-top: 0;
+            color: var(--teal-dark);
+            font-size: 1.4rem;
+        }
+
+        .hausbesuch-modal-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .hausbesuch-modal-form input,
+        .hausbesuch-modal-form textarea {
+            padding: 12px;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 1rem;
+            color: var(--text);
+        }
+
+        .hausbesuch-modal-form input:focus,
+        .hausbesuch-modal-form textarea:focus {
+            outline: none;
+            border-color: var(--teal);
+            background: rgba(21, 93, 96, 0.05);
+        }
+
+        .hausbesuch-modal-form textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        .hausbesuch-modal-buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .hausbesuch-modal-buttons button {
+            flex: 1;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-size: 0.95rem;
+        }
+
+        .hausbesuch-modal-submit {
+            background: var(--teal);
+            color: white;
+        }
+
+        .hausbesuch-modal-submit:hover {
+            background: var(--teal-dark);
+            transform: translateY(-2px);
+        }
+
+        .hausbesuch-modal-submit:disabled {
+            background: var(--muted);
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .hausbesuch-modal-cancel {
+            background: var(--cream);
+            color: var(--text-dark);
+        }
+
+        .hausbesuch-modal-cancel:hover {
+            background: var(--border);
+        }
+
+        .hausbesuch-modal-message {
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .hausbesuch-modal-message.success {
+            background: rgba(21, 93, 96, 0.1);
+            color: var(--teal-dark);
+            border-left: 4px solid var(--teal);
+        }
+
+        .hausbesuch-modal-message.error {
+            background: rgba(200, 148, 53, 0.1);
+            color: var(--text-dark);
+            border-left: 4px solid var(--gold);
+        }
+
+        .hausbesuch-modal-message.loading {
+            background: rgba(107, 125, 135, 0.1);
+            color: var(--text);
+            border-left: 4px solid var(--muted);
+        }
+
+        .hausbesuch-modal-loading-spinner {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            border: 2px solid rgba(21, 93, 96, 0.2);
+            border-top-color: var(--teal);
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+            margin-right: 8px;
+            vertical-align: middle;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .hausbesuch-modal-alternative {
+            margin-top: 20px;
+            padding: 20px;
+            background: var(--cream);
+            border-radius: 8px;
+        }
+
+        .hausbesuch-modal-alternative h4 {
+            margin-top: 0;
+            color: var(--teal);
+            font-size: 1.1rem;
+        }
+
+        .hausbesuch-modal-alternative p {
+            margin: 10px 0;
+            font-size: 0.95rem;
+            color: var(--text);
+        }
+
+        .hausbesuch-modal-alternative a {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 20px;
+            background: var(--teal);
+            color: white;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.2s ease;
+        }
+
+        .hausbesuch-modal-alternative a:hover {
+            background: var(--teal-dark);
+            transform: translateY(-2px);
+        }
     </style>
 </head>
 
@@ -882,7 +1064,7 @@
                             <li>Persönliche Betreuung</li>
                         </ul>
 
-                        <a href="https://calendly.com/milapoletto-online/hausbesuch-kg-30-min" target="_blank" rel="noopener noreferrer" class="op-button op-button-primary">
+                        <a href="https://calendly.com/milapoletto-online/hausbesuch-kg-30-min" target="_blank" rel="noopener noreferrer" class="op-button op-button-primary" data-calendly-url="https://calendly.com/milapoletto-online/hausbesuch-kg-30-min" data-package="KG">
                             Termin buchen
                         </a>
                     </article>
@@ -902,7 +1084,7 @@
                             <li>Hausbesuchspauschale enthalten</li>
                         </ul>
 
-                        <a href="https://calendly.com/milapoletto-online/hausbesuch-kg-mld-30-min" target="_blank" rel="noopener noreferrer" class="op-button op-button-primary">
+                        <a href="https://calendly.com/milapoletto-online/hausbesuch-kg-mld-30-min" target="_blank" rel="noopener noreferrer" class="op-button op-button-primary" data-calendly-url="https://calendly.com/milapoletto-online/hausbesuch-kg-mld-30-min" data-package="KG+MLD30">
                             Termin buchen
                         </a>
                     </article>
@@ -922,7 +1104,7 @@
                             <li>Hausbesuchspauschale enthalten</li>
                         </ul>
 
-                        <a href="https://calendly.com/milapoletto-online/hausbesuch-kg-mld-45-min" target="_blank" rel="noopener noreferrer" class="op-button op-button-primary">
+                        <a href="https://calendly.com/milapoletto-online/hausbesuch-kg-mld-45-min" target="_blank" rel="noopener noreferrer" class="op-button op-button-primary" data-calendly-url="https://calendly.com/milapoletto-online/hausbesuch-kg-mld-45-min" data-package="KG+MLD45">
                             Termin buchen
                         </a>
                     </article>
@@ -942,7 +1124,7 @@
                             <li>Hausbesuchspauschale enthalten</li>
                         </ul>
 
-                        <a href="https://calendly.com/milapoletto-online/hausbesuch-kg-mld-60-min" target="_blank" rel="noopener noreferrer" class="op-button op-button-primary">
+                        <a href="https://calendly.com/milapoletto-online/hausbesuch-kg-mld-60-min" target="_blank" rel="noopener noreferrer" class="op-button op-button-primary" data-calendly-url="https://calendly.com/milapoletto-online/hausbesuch-kg-mld-60-min" data-package="KG+MLD60">
                             Termin buchen
                         </a>
                     </article>
@@ -962,7 +1144,7 @@
                             <li>Spezialisierte Therapie</li>
                         </ul>
 
-                        <a href="https://calendly.com/milapoletto-online/hausbesuch-mld-30-min" target="_blank" rel="noopener noreferrer" class="op-button op-button-primary">
+                        <a href="https://calendly.com/milapoletto-online/hausbesuch-mld-30-min" target="_blank" rel="noopener noreferrer" class="op-button op-button-primary" data-calendly-url="https://calendly.com/milapoletto-online/hausbesuch-mld-30-min" data-package="MLD30">
                             Termin buchen
                         </a>
                     </article>
@@ -982,7 +1164,7 @@
                             <li>Spezialisierte Therapie</li>
                         </ul>
 
-                        <a href="https://calendly.com/milapoletto-online/hausbesuch-mld-45-min" target="_blank" rel="noopener noreferrer" class="op-button op-button-primary">
+                        <a href="https://calendly.com/milapoletto-online/hausbesuch-mld-45-min" target="_blank" rel="noopener noreferrer" class="op-button op-button-primary" data-calendly-url="https://calendly.com/milapoletto-online/hausbesuch-mld-45-min" data-package="MLD45">
                             Termin buchen
                         </a>
                     </article>
@@ -1002,7 +1184,7 @@
                             <li>Spezialisierte Therapie</li>
                         </ul>
 
-                        <a href="https://calendly.com/milapoletto-online/hausbesuch-mld-60-min" target="_blank" rel="noopener noreferrer" class="op-button op-button-primary">
+                        <a href="https://calendly.com/milapoletto-online/hausbesuch-mld-60-min" target="_blank" rel="noopener noreferrer" class="op-button op-button-primary" data-calendly-url="https://calendly.com/milapoletto-online/hausbesuch-mld-60-min" data-package="MLD60">
                             Termin buchen
                         </a>
                     </article>
@@ -1237,6 +1419,47 @@
             </div>
         </section>
 
+        <!-- HAUSBESUCH ADDRESS VALIDATION MODAL -->
+        <div id="hausbesuchModal" class="hausbesuch-modal">
+            <div class="hausbesuch-modal-content">
+                <h3>Hausbesuch-Verfügbarkeit prüfen</h3>
+                <p>Bitte geben Sie Ihre Adresse ein, damit wir prüfen können, ob wir Ihnen einen Hausbesuch anbieten können.</p>
+
+                <form id="hausbesuchAddressForm" class="hausbesuch-modal-form" onsubmit="validateAndRedirect(event)">
+                    <input
+                        type="text"
+                        id="addressInput"
+                        placeholder="Straße und Hausnummer"
+                        required
+                        maxlength="100"
+                    >
+                    <input
+                        type="text"
+                        id="cityInput"
+                        placeholder="Postleitzahl und Stadt"
+                        required
+                        maxlength="100"
+                    >
+                    <textarea
+                        id="addressNotes"
+                        placeholder="Zusätzliche Angaben (optional)"
+                        maxlength="200"
+                    ></textarea>
+
+                    <div id="hausbesuchMessage"></div>
+
+                    <div class="hausbesuch-modal-buttons">
+                        <button type="button" class="hausbesuch-modal-cancel" onclick="closeHausbesuchModal()">
+                            Abbrechen
+                        </button>
+                        <button type="submit" class="hausbesuch-modal-submit" id="submitBtn">
+                            Adresse überprüfen
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
     </main>
 
 
@@ -1258,6 +1481,159 @@
 
         </div>
     </footer>
+
+    <!-- HAUSBESUCH ADDRESS VALIDATION SCRIPT -->
+    <script>
+        // Configuration
+        const WEBHOOK_URL = "https://n8n.milaphysio.de/webhook/hausbesuch-pre-booking";
+        const ONLINE_URL = "../online-physiotherapie/";
+
+        let selectedCalendlyUrl = null;
+
+        // Initialize: Add event listeners to all Calendly buttons
+        document.addEventListener("DOMContentLoaded", function () {
+            const calendlyLinks = document.querySelectorAll('a[data-calendly-url]');
+            calendlyLinks.forEach(link => {
+                link.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    selectedCalendlyUrl = this.getAttribute('data-calendly-url');
+                    openHausbesuchModal();
+                });
+            });
+        });
+
+        // Open modal
+        function openHausbesuchModal() {
+            const modal = document.getElementById('hausbesuchModal');
+            if (modal) {
+                modal.classList.add('active');
+                document.getElementById('addressInput').focus();
+            }
+        }
+
+        // Close modal
+        function closeHausbesuchModal() {
+            const modal = document.getElementById('hausbesuchModal');
+            if (modal) {
+                modal.classList.remove('active');
+                resetForm();
+            }
+            selectedCalendlyUrl = null;
+        }
+
+        // Reset form
+        function resetForm() {
+            const form = document.getElementById('hausbesuchAddressForm');
+            if (form) {
+                form.reset();
+            }
+            const messageDiv = document.getElementById('hausbesuchMessage');
+            if (messageDiv) {
+                messageDiv.innerHTML = '';
+            }
+        }
+
+        // Validate and submit
+        async function validateAndRedirect(e) {
+            e.preventDefault();
+
+            const address = document.getElementById('addressInput').value.trim();
+            const city = document.getElementById('cityInput').value.trim();
+            const notes = document.getElementById('addressNotes').value.trim();
+            const messageDiv = document.getElementById('hausbesuchMessage');
+            const submitBtn = document.getElementById('submitBtn');
+
+            // Validate inputs
+            if (!address || !city) {
+                showMessage('Bitte füllen Sie alle erforderlichen Felder aus.', 'error', messageDiv);
+                return;
+            }
+
+            // Show loading message
+            showMessage('Adresse wird überprüft...', 'loading', messageDiv);
+            submitBtn.disabled = true;
+
+            try {
+                // Prepare address for webhook
+                const fullAddress = `${address}, ${city}${notes ? ', ' + notes : ''}`;
+
+                // Send to webhook
+                const response = await fetch(WEBHOOK_URL, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        address: fullAddress
+                    })
+                });
+
+                if (!response.ok) {
+                    throw new Error(`Webhook error: ${response.status}`);
+                }
+
+                const data = await response.json();
+
+                // Check response
+                if (data.allowed === true) {
+                    // Address approved - redirect to Calendly
+                    showMessage('Adresse genehmigt! Sie werden zu Calendly weitergeleitet...', 'success', messageDiv);
+                    setTimeout(() => {
+                        closeHausbesuchModal();
+                        window.open(selectedCalendlyUrl, '_blank');
+                    }, 1500);
+                } else if (data.allowed === false && data.online_alternative === true) {
+                    // Address outside area - show alternative
+                    showAlternativeOnline(messageDiv, submitBtn);
+                } else {
+                    // Unknown response
+                    showMessage('Es gab ein Problem bei der Überprüfung. Bitte kontaktieren Sie uns direkt.', 'error', messageDiv);
+                    submitBtn.disabled = false;
+                }
+            } catch (error) {
+                console.error('Validation error:', error);
+                showMessage('Fehler bei der Adressüberprüfung. Bitte versuchen Sie es später erneut oder kontaktieren Sie uns direkt.', 'error', messageDiv);
+                submitBtn.disabled = false;
+            }
+        }
+
+        // Show message
+        function showMessage(text, type, container) {
+            if (!container) return;
+
+            let html = '';
+            if (type === 'loading') {
+                html = `<div class="hausbesuch-modal-message ${type}"><span class="hausbesuch-modal-loading-spinner"></span>${text}</div>`;
+            } else {
+                html = `<div class="hausbesuch-modal-message ${type}">${text}</div>`;
+            }
+            container.innerHTML = html;
+        }
+
+        // Show alternative
+        function showAlternativeOnline(messageDiv, submitBtn) {
+            const html = `
+                <div class="hausbesuch-modal-message error">
+                    Leider liegt Ihre Adresse außerhalb unseres Hausbesuchsgebiets.
+                </div>
+                <div class="hausbesuch-modal-alternative">
+                    <h4>Online-Physiotherapie als Alternative</h4>
+                    <p>Gute Nachricht: Wir bieten auch <strong>Online-Physiotherapie</strong> an, die je nach Beschwerdebild eine gute Alternative sein kann.</p>
+                    <a href="${ONLINE_URL}">Zu Online-Physiotherapie</a>
+                </div>
+            `;
+            messageDiv.innerHTML = html;
+            submitBtn.disabled = false;
+        }
+
+        // Close modal when clicking outside
+        document.addEventListener('click', function (e) {
+            const modal = document.getElementById('hausbesuchModal');
+            if (modal && e.target === modal) {
+                closeHausbesuchModal();
+            }
+        });
+    </script>
 
 </body>
 
