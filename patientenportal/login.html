@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Patientenportal - Anmelden | Mila Physio</title>
+    <link rel="stylesheet" href="style_patientenportal.css">
+</head>
+<body>
+    <!-- Login Container -->
+    <div class="login-container">
+        <div class="login-card">
+            <!-- Logo & Header -->
+            <div class="login-header">
+                <a href="../index.html" class="login-logo-link">
+                    <img src="Images/mila-logo.webp" alt="Mila Physio" class="login-logo-img">
+                </a>
+                <h1 class="login-title">Willkommen im Patientenportal</h1>
+                <p class="login-subtitle">Verwalten Sie Ihre Termine und Übungen</p>
+                <!-- DEMO MARKER -->
+                <div class="demo-badge">DEMO MODUS</div>
+            </div>
+
+            <!-- Login Form -->
+            <form id="loginForm" class="login-form">
+                <div class="form-group">
+                    <label for="email">E-Mail</label>
+                    <input type="email" id="email" name="email" placeholder="anna.demo@example.com" value="anna.demo@example.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Passwort</label>
+                    <input type="password" id="password" name="password" placeholder="••••••••" value="demo" required>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-login">
+                    Anmelden
+                </button>
+            </form>
+
+            <!-- Info Message -->
+            <div class="login-info">
+                <p><strong>Demo-Credentials:</strong></p>
+                <p>E-Mail: anna.demo@example.com</p>
+                <p>Passwort: demo</p>
+            </div>
+
+            <!-- Links -->
+            <div class="login-links">
+                <a href="#" class="link-secondary">Passwort vergessen?</a>
+                <span class="divider">•</span>
+                <a href="../index.html" class="link-secondary">Zurück zu Mila Physio</a>
+            </div>
+
+            <!-- Security Note -->
+            <div class="security-note">
+                <p>⚠️ Demo-Portal - Keine echten Daten. Für Entwicklungszwecke nur.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script_patientenportal.js"></script>
+    <script>
+        // DEMO ONLY – später durch sichere API ersetzen
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            // Demo-Authentifizierung (NICHT für Produktion)
+            if (email === 'anna.demo@example.com' && password === 'demo') {
+                loginPatient(email);
+            } else {
+                alert('Demo-Login: Bitte verwenden Sie die Demo-Credentials');
+            }
+        });
+    </script>
+</body>
+</html>

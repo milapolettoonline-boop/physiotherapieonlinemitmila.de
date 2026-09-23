@@ -247,6 +247,34 @@ section {
     box-shadow: 0 15px 35px rgba(199,162,75,.25);
 }
 
+.btn-portal {
+    display: inline-block;
+    background: transparent;
+    color: var(--gold-dark);
+    padding: 14px 28px;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: .35s;
+    border: 1.5px solid var(--gold);
+    margin-right: 12px;
+}
+
+.btn-portal:hover {
+    background: var(--gold);
+    color: #fff;
+    box-shadow: 0 10px 25px rgba(199,162,75,.30);
+}
+
+.portal-nav-link {
+    font-weight: 600;
+    color: var(--gold-dark);
+    transition: color .35s;
+}
+
+.portal-nav-link:hover {
+    color: var(--gold);
+}
+
 
 /*=========================================================
   HEADER - MOBILE FIRST

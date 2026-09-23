@@ -133,6 +133,18 @@
             color: var(--gold-dark);
         }
 
+        .op-portal-link {
+            text-decoration: none;
+            font-size: .88rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            transition: color .2s ease;
+        }
+
+        .op-portal-link:hover {
+            color: var(--gold-dark);
+        }
+
         .op-header-cta,
         .op-button {
             display: inline-flex;
@@ -647,6 +659,36 @@
             margin: 0 auto 28px;
         }
 
+        .op-portal-section {
+            padding: 60px 0;
+            background: var(--cream-2);
+        }
+
+        .op-portal-card {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 48px;
+            text-align: center;
+            box-shadow: var(--shadow);
+        }
+
+        .op-portal-card .op-eyebrow {
+            color: var(--teal);
+        }
+
+        .op-portal-card h2 {
+            margin: 12px 0 16px;
+            color: var(--text-dark);
+            font-size: 2rem;
+        }
+
+        .op-portal-card p {
+            margin: 0 0 28px;
+            color: var(--text);
+            font-size: 1rem;
+        }
+
         .op-back-home {
             padding: 0 0 48px;
             background: var(--cream);
@@ -877,6 +919,10 @@
                     <li><a href="#faq">FAQ</a></li>
                 </ul>
             </nav>
+
+            <a href="../patientenportal/login.html" class="op-portal-link">
+                🔐 Patientenportal
+            </a>
 
             <a href="#preise" class="op-header-cta">
                 Termin vereinbaren
@@ -1474,6 +1520,23 @@
                     </a>
                 </div>
 
+            </div>
+        </section>
+
+        <!-- PATIENT PORTAL CTA -->
+        <section class="op-portal-section">
+            <div class="op-container">
+                <div class="op-portal-card">
+                    <span class="op-eyebrow">Für Patienten</span>
+                    <h2>Bereits in Behandlung?</h2>
+                    <p>
+                        Deine Übungen, Termine und persönlichen Informationen
+                        findest du in deinem Patientenportal.
+                    </p>
+                    <a href="../patientenportal/login.html" class="op-button op-button-secondary">
+                        Patientenportal öffnen
+                    </a>
+                </div>
             </div>
         </section>
 

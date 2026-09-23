@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mein Profil | Patientenportal Mila Physio</title>
+    <link rel="stylesheet" href="style_patientenportal.css">
+</head>
+<body>
+    <!-- Header / Navigation -->
+    <header class="portal-header">
+        <div class="header-container">
+            <a href="../index.html" class="header-logo-link">
+                <img src="Images/mila-logo.webp" alt="Mila Physio" class="logo-img">
+            </a>
+
+            <nav class="header-nav">
+                <a href="index.html" class="nav-link">Dashboard</a>
+                <a href="termine.html" class="nav-link">Meine Termine</a>
+                <a href="uebungen.html" class="nav-link">Meine Übungen</a>
+                <a href="profil.html" class="nav-link active">Mein Profil</a>
+            </nav>
+
+            <div class="header-actions">
+                <button class="btn-profile" id="profileBtn" title="Profil">👤</button>
+                <button class="btn-logout" id="logoutBtn" title="Abmelden">↪️</button>
+            </div>
+
+            <button class="btn-menu" id="menuBtn">☰</button>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <nav class="mobile-menu" id="mobileMenu">
+        <a href="index.html" class="mobile-nav-link">Dashboard</a>
+        <a href="termine.html" class="mobile-nav-link">Meine Termine</a>
+        <a href="uebungen.html" class="mobile-nav-link">Meine Übungen</a>
+        <a href="profil.html" class="mobile-nav-link active">Mein Profil</a>
+        <hr>
+        <button class="mobile-nav-logout" id="mobileLogoutBtn">Abmelden</button>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="portal-main">
+        <!-- Page Header -->
+        <section class="section-page-header">
+            <h1 class="page-title">Mein Profil</h1>
+            <p class="page-subtitle">Verwalten Sie Ihre Patientendaten</p>
+        </section>
+
+        <!-- Profile Information -->
+        <section class="section-profile">
+            <div class="profile-avatar">
+                <div class="avatar-circle">👤</div>
+            </div>
+
+            <div class="profile-info">
+                <h2 class="profile-name" id="profileName">Anna Muster</h2>
+                <p class="profile-subtitle" id="profileTherapyType">Hausbesuch</p>
+            </div>
+        </section>
+
+        <!-- Profile Details -->
+        <section class="section-profile-details">
+            <h2 class="section-title">Persönliche Daten</h2>
+
+            <div class="profile-card">
+                <div class="profile-field">
+                    <label class="field-label">Vorname</label>
+                    <div class="field-value" id="firstName">Anna</div>
+                </div>
+
+                <div class="profile-field">
+                    <label class="field-label">Nachname</label>
+                    <div class="field-value" id="lastName">Muster</div>
+                </div>
+
+                <div class="profile-field">
+                    <label class="field-label">E-Mail</label>
+                    <div class="field-value" id="email">anna.demo@example.com</div>
+                </div>
+
+                <div class="profile-field">
+                    <label class="field-label">Telefon</label>
+                    <div class="field-value" id="phone">0123456789</div>
+                </div>
+
+                <div class="profile-field">
+                    <label class="field-label">Therapie-Typ</label>
+                    <div class="field-value" id="therapyType">Hausbesuch</div>
+                </div>
+
+                <div class="profile-field">
+                    <label class="field-label">Mitglied seit</label>
+                    <div class="field-value">15. Januar 2026</div>
+                </div>
+            </div>
+
+            <div class="profile-actions">
+                <button class="btn btn-secondary" onclick="editProfile()">Profil bearbeiten</button>
+                <button class="btn btn-secondary" onclick="changePassword()">Passwort ändern</button>
+            </div>
+        </section>
+
+        <!-- Privacy & Security -->
+        <section class="section-privacy">
+            <h2 class="section-title">Datenschutz & Sicherheit</h2>
+
+            <div class="privacy-card">
+                <h3>Datenschutzerklärung</h3>
+                <p>Wir respektieren Ihre Privatsphäre und halten alle Ihre medizinischen Daten vertraulich. Lesen Sie unsere vollständige Datenschutzerklärung:</p>
+                <button class="btn btn-secondary" style="margin-top: 1rem;">Datenschutzerklärung anzeigen</button>
+            </div>
+
+            <div class="privacy-card">
+                <h3>Aktive Sitzungen</h3>
+                <p>Sie sind derzeit mit einem Gerät angemeldet.</p>
+                <div class="session-info">
+                    <p><strong>Gerät:</strong> Browser</p>
+                    <p><strong>Standort:</strong> Deutschland</p>
+                    <p><strong>Letzter Zugriff:</strong> Heute</p>
+                </div>
+            </div>
+
+            <div class="privacy-card">
+                <h3>Benachrichtigungen</h3>
+                <p>Passen Sie Ihre Benachrichtigungseinstellungen an:</p>
+                <div class="notification-settings">
+                    <div class="setting-item">
+                        <input type="checkbox" id="emailNotif" checked>
+                        <label for="emailNotif">E-Mail-Benachrichtigungen</label>
+                    </div>
+                    <div class="setting-item">
+                        <input type="checkbox" id="appointmentReminder" checked>
+                        <label for="appointmentReminder">Termin-Erinnerungen</label>
+                    </div>
+                    <div class="setting-item">
+                        <input type="checkbox" id="newsletterNotif">
+                        <label for="newsletterNotif">Newsletter</label>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Logout Section -->
+        <section class="section-logout">
+            <h2 class="section-title">Abmelden</h2>
+            <div class="logout-card">
+                <p>Sie können sich jederzeit von Ihrem Konto abmelden.</p>
+                <button class="btn btn-danger" id="logoutBtnMain">Abmelden</button>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="portal-footer">
+        <div class="footer-content">
+            <p>&copy; 2026 Mila Physio. Patientenportal.</p>
+            <div class="footer-links">
+                <a href="#">Datenschutz</a>
+                <a href="#">Impressum</a>
+                <a href="#">Kontakt</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script_patientenportal.js"></script>
+    <script>
+        // DEMO ONLY – später durch sichere API ersetzen
+        document.addEventListener('DOMContentLoaded', function() {
+            protectPatientPage();
+            loadProfileData();
+            setupMobileMenu();
+        });
+
+        function setupMobileMenu() {
+            const menuBtn = document.getElementById('menuBtn');
+            const mobileMenu = document.getElementById('mobileMenu');
+            const mobileLogoutBtn = document.getElementById('mobileLogoutBtn');
+
+            menuBtn.addEventListener('click', function() {
+                mobileMenu.classList.toggle('active');
+            });
+
+            mobileLogoutBtn.addEventListener('click', logoutPatient);
+
+            document.querySelectorAll('.mobile-nav-link').forEach(link => {
+                link.addEventListener('click', function() {
+                    mobileMenu.classList.remove('active');
+                });
+            });
+        }
+
+        function loadProfileData() {
+            // DEMO ONLY – später durch sichere API ersetzen
+            const demoPatient = {
+                id: 'patient_001',
+                firstName: 'Anna',
+                lastName: 'Muster',
+                email: 'anna.demo@example.com',
+                phone: '0123456789',
+                therapyType: 'Hausbesuch'
+            };
+
+            document.getElementById('profileName').textContent = demoPatient.firstName + ' ' + demoPatient.lastName;
+            document.getElementById('profileTherapyType').textContent = demoPatient.therapyType;
+            document.getElementById('firstName').textContent = demoPatient.firstName;
+            document.getElementById('lastName').textContent = demoPatient.lastName;
+            document.getElementById('email').textContent = demoPatient.email;
+            document.getElementById('phone').textContent = demoPatient.phone;
+            document.getElementById('therapyType').textContent = demoPatient.therapyType;
+        }
+
+        function editProfile() {
+            alert('Profil-Bearbeitung würde hier implementiert werden.');
+        }
+
+        function changePassword() {
+            alert('Passwort-Änderung würde hier implementiert werden.');
+        }
+
+        // Event listeners
+        document.getElementById('profileBtn').addEventListener('click', function() {
+            // Already on profile page
+        });
+
+        document.getElementById('logoutBtn').addEventListener('click', logoutPatient);
+        document.getElementById('logoutBtnMain').addEventListener('click', logoutPatient);
+    </script>
+</body>
+</html>

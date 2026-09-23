@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meine Termine | Patientenportal Mila Physio</title>
+    <link rel="stylesheet" href="style_patientenportal.css">
+</head>
+<body>
+    <!-- Header / Navigation -->
+    <header class="portal-header">
+        <div class="header-container">
+            <a href="../index.html" class="header-logo-link">
+                <img src="Images/mila-logo.webp" alt="Mila Physio" class="logo-img">
+            </a>
+
+            <nav class="header-nav">
+                <a href="index.html" class="nav-link">Dashboard</a>
+                <a href="termine.html" class="nav-link active">Meine Termine</a>
+                <a href="uebungen.html" class="nav-link">Meine Übungen</a>
+                <a href="profil.html" class="nav-link">Mein Profil</a>
+            </nav>
+
+            <div class="header-actions">
+                <button class="btn-profile" id="profileBtn" title="Profil">👤</button>
+                <button class="btn-logout" id="logoutBtn" title="Abmelden">↪️</button>
+            </div>
+
+            <button class="btn-menu" id="menuBtn">☰</button>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <nav class="mobile-menu" id="mobileMenu">
+        <a href="index.html" class="mobile-nav-link">Dashboard</a>
+        <a href="termine.html" class="mobile-nav-link active">Meine Termine</a>
+        <a href="uebungen.html" class="mobile-nav-link">Meine Übungen</a>
+        <a href="profil.html" class="mobile-nav-link">Mein Profil</a>
+        <hr>
+        <button class="mobile-nav-logout" id="mobileLogoutBtn">Abmelden</button>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="portal-main">
+        <!-- Page Header -->
+        <section class="section-page-header">
+            <h1 class="page-title">Meine Termine</h1>
+            <p class="page-subtitle">Verwalten Sie Ihre Termine und buchen Sie neue Slots</p>
+        </section>
+
+        <!-- Next Appointment Section -->
+        <section class="section-appointments">
+            <h2 class="section-title">Nächster Termin</h2>
+            <div class="appointment-card appointment-next" id="nextAppointmentSection">
+                <!-- Loaded by JavaScript -->
+            </div>
+        </section>
+
+        <!-- Upcoming Appointments -->
+        <section class="section-appointments">
+            <h2 class="section-title">Kommende Termine</h2>
+            <div class="appointments-list" id="upcomingAppointments">
+                <!-- Loaded by JavaScript -->
+            </div>
+        </section>
+
+        <!-- Past Appointments -->
+        <section class="section-appointments">
+            <h2 class="section-title">Vergangene Termine</h2>
+            <div class="appointments-list" id="pastAppointments">
+                <!-- Loaded by JavaScript -->
+            </div>
+        </section>
+
+        <!-- Actions Section -->
+        <section class="section-actions">
+            <h2 class="section-title">Weitere Aktionen</h2>
+            <div class="grid-2">
+                <button class="action-card" onclick="openNewAppointmentModal()">
+                    <div class="action-icon">📅</div>
+                    <h3>Neuen Termin buchen</h3>
+                    <p>Verfügbare Slots anzeigen</p>
+                </button>
+                <div class="action-card" style="pointer-events: none; opacity: 0.6;">
+                    <div class="action-icon">🔔</div>
+                    <h3>Benachrichtigungen</h3>
+                    <p>Benachrichtigungen werden später mit dem Patientenportal und dem Benachrichtigungssystem verbunden.</p>
+                </div>
+            </div>
+        </section>
+        <!-- New Appointment Modal -->
+        <div class="modal" id="newAppointmentModal">
+            <div class="modal-content">
+                <button class="modal-close" onclick="closeModal('newAppointmentModal')">&times;</button>
+                <div class="modal-header">
+                    <h2 class="modal-title">Neuen Termin Buchen</h2>
+                </div>
+                <div class="modal-body">
+                    <p>Wählen Sie die Art der Physiotherapie, die Sie buchen möchten:</p>
+                    <div class="modal-choices">
+                        <button class="modal-choice" onclick="handleNewAppointmentChoice('online')">
+                            <span class="modal-choice-icon">💻</span>
+                            <h3>Online-Physiotherapie</h3>
+                            <p>Angebote und Preise ansehen</p>
+                        </button>
+                        <button class="modal-choice" onclick="handleNewAppointmentChoice('hausbesuch')">
+                            <span class="modal-choice-icon">🏠</span>
+                            <h3>Hausbesuch</h3>
+                            <p>Hausbesuch-Angebote ansehen</p>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="portal-footer">
+        <div class="footer-content">
+            <p>&copy; 2026 Mila Physio. Patientenportal.</p>
+            <div class="footer-links">
+                <a href="#">Datenschutz</a>
+                <a href="#">Impressum</a>
+                <a href="#">Kontakt</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script_patientenportal.js"></script>
+    <script>
+        // DEMO ONLY – später durch sichere API ersetzen
+        document.addEventListener('DOMContentLoaded', function() {
+            protectPatientPage();
+            loadAppointmentsPage();
+            setupMobileMenu();
+            setupModalListeners();
+        });
+
+        function setupMobileMenu() {
+            const menuBtn = document.getElementById('menuBtn');
+            const mobileMenu = document.getElementById('mobileMenu');
+            const mobileLogoutBtn = document.getElementById('mobileLogoutBtn');
+
+            menuBtn.addEventListener('click', function() {
+                mobileMenu.classList.toggle('active');
+            });
+
+            mobileLogoutBtn.addEventListener('click', logoutPatient);
+
+            document.querySelectorAll('.mobile-nav-link').forEach(link => {
+                link.addEventListener('click', function() {
+                    mobileMenu.classList.remove('active');
+                });
+            });
+        }
+
+        function loadAppointmentsPage() {
+            // DEMO ONLY – später durch sichere API ersetzen
+            // Use global demoAppointments from script_patientenportal.js
+            // Add isPast flag for filtering
+            const appointmentsWithPastFlag = demoAppointments.map(app => ({
+                ...app,
+                isPast: new Date(app.date + 'T' + app.time) < new Date()
+            }));
+
+            // Separate upcoming and past
+            const upcoming = appointmentsWithPastFlag.filter(a => !a.isPast);
+            const past = appointmentsWithPastFlag.filter(a => a.isPast);
+
+            // Next appointment
+            if (upcoming.length > 0) {
+                const nextApp = upcoming[0];
+                const appointmentDate = new Date(nextApp.date + 'T' + nextApp.time);
+                const dateFormatter = new Intl.DateTimeFormat('de-DE', {
+                    weekday: 'long',
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric',
+                    hour: '2-digit',
+                    minute: '2-digit'
+                });
+
+                const nextSection = document.getElementById('nextAppointmentSection');
+
+                // Generate action buttons based on appointment type
+                let actionsHTML = `<button class="btn btn-secondary" onclick="handleRescheduleClick('${nextApp.id}')">Termin verschieben</button>`;
+
+                // Show "Online-Termin beitreten" button only for online appointments
+                if (nextApp.type === 'Online-Physiotherapie') {
+                    actionsHTML += `<button class="btn btn-primary" onclick="handleJoinMeetingClick('${nextApp.id}')">Online-Termin beitreten</button>`;
+                }
+
+                nextSection.innerHTML = `
+                    <div class="appointment-status">${nextApp.status}</div>
+                    <div class="appointment-details">
+                        <div class="appointment-info">
+                            <span class="info-label">Datum & Zeit</span>
+                            <span class="info-value">${dateFormatter.format(appointmentDate)}</span>
+                        </div>
+                        <div class="appointment-info">
+                            <span class="info-label">Typ</span>
+                            <span class="info-value">${nextApp.type}</span>
+                        </div>
+                        <div class="appointment-info">
+                            <span class="info-label">Therapeut</span>
+                            <span class="info-value">${nextApp.therapist}</span>
+                        </div>
+                        ${nextApp.location ? `<div class="appointment-info">
+                            <span class="info-label">Ort</span>
+                            <span class="info-value">${nextApp.location}</span>
+                        </div>` : ''}
+                    </div>
+                    <div class="appointment-actions">
+                        ${actionsHTML}
+                    </div>
+                `;
+            }
+
+            // Upcoming appointments list
+            const upcomingList = document.getElementById('upcomingAppointments');
+            upcomingList.innerHTML = upcoming.map(app => {
+                const appDate = new Date(app.date + 'T' + app.time);
+                const dateStr = new Intl.DateTimeFormat('de-DE', {
+                    weekday: 'short',
+                    year: 'numeric',
+                    month: 'short',
+                    day: 'numeric'
+                }).format(appDate);
+
+                return `
+                    <div class="appointment-item">
+                        <div class="appointment-item-time">
+                            <div class="time-box">
+                                <span class="time">${app.time}</span>
+                            </div>
+                        </div>
+                        <div class="appointment-item-content">
+                            <h3 class="appointment-item-title">${app.type}</h3>
+                            <p class="appointment-item-detail"><strong>📅</strong> ${dateStr}</p>
+                            <p class="appointment-item-detail"><strong>👤</strong> ${app.therapist}</p>
+                            <p class="appointment-item-detail"><strong>⏱️</strong> ${app.duration}</p>
+                        </div>
+                        <div class="appointment-item-actions">
+                            <button class="btn btn-small btn-secondary">Info</button>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+
+            // Past appointments list
+            const pastList = document.getElementById('pastAppointments');
+            pastList.innerHTML = past.map(app => {
+                const appDate = new Date(app.date + 'T' + app.time);
+                const dateStr = new Intl.DateTimeFormat('de-DE', {
+                    weekday: 'short',
+                    year: 'numeric',
+                    month: 'short',
+                    day: 'numeric'
+                }).format(appDate);
+
+                return `
+                    <div class="appointment-item past">
+                        <div class="appointment-item-time">
+                            <div class="time-box past">
+                                <span class="time">${app.time}</span>
+                            </div>
+                        </div>
+                        <div class="appointment-item-content">
+                            <h3 class="appointment-item-title">${app.type}</h3>
+                            <p class="appointment-item-detail"><strong>📅</strong> ${dateStr}</p>
+                            <p class="appointment-item-detail"><strong>👤</strong> ${app.therapist}</p>
+                        </div>
+                        <div class="appointment-item-actions">
+                            <button class="btn btn-small btn-secondary">Notizen</button>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        // Event listeners
+        document.getElementById('profileBtn').addEventListener('click', function() {
+            window.location.href = 'profil.html';
+        });
+
+        document.getElementById('logoutBtn').addEventListener('click', logoutPatient);
+    </script>
+</body>
+</html>

@@ -125,6 +125,18 @@
             color: var(--gold-dark);
         }
 
+        .op-portal-link {
+            text-decoration: none;
+            font-size: .88rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            transition: color .2s ease;
+        }
+
+        .op-portal-link:hover {
+            color: var(--gold-dark);
+        }
+
         .op-header-cta,
         .op-button {
             display: inline-flex;
@@ -588,6 +600,36 @@
             color: rgba(255, 255, 255, .88);
         }
 
+        .op-portal-section {
+            padding: 60px 0;
+            background: var(--cream-2);
+        }
+
+        .op-portal-card {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 48px;
+            text-align: center;
+            box-shadow: var(--shadow);
+        }
+
+        .op-portal-card .op-eyebrow {
+            color: var(--teal);
+        }
+
+        .op-portal-card h2 {
+            margin: 12px 0 16px;
+            color: var(--text-dark);
+            font-size: 2rem;
+        }
+
+        .op-portal-card p {
+            margin: 0 0 28px;
+            color: var(--text);
+            font-size: 1rem;
+        }
+
         .op-final .op-eyebrow {
             color: rgba(255, 255, 255, .8);
         }
@@ -914,6 +956,10 @@
                     <li><a href="#faq">FAQ</a></li>
                 </ul>
             </nav>
+
+            <a href="../patientenportal/login.html" class="op-portal-link">
+                🔐 Patientenportal
+            </a>
 
             <a href="#preise" class="op-header-cta">
                 Termin buchen
@@ -1459,6 +1505,23 @@
                 </form>
             </div>
         </div>
+
+        <!-- PATIENT PORTAL CTA -->
+        <section class="op-portal-section">
+            <div class="op-container">
+                <div class="op-portal-card">
+                    <span class="op-eyebrow">Für Patienten</span>
+                    <h2>Bereits Patient bei Mila?</h2>
+                    <p>
+                        Greife auf deine Termine, Übungen und freigegebenen Dokumente
+                        in deinem Patientenportal zu.
+                    </p>
+                    <a href="../patientenportal/login.html" class="op-button op-button-secondary">
+                        Zum Patientenportal
+                    </a>
+                </div>
+            </div>
+        </section>
 
     </main>
 

@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | Patientenportal Mila Physio</title>
+    <link rel="stylesheet" href="style_patientenportal.css">
+</head>
+<body>
+    <!-- Header / Navigation -->
+    <header class="portal-header">
+        <div class="header-container">
+            <a href="../index.html" class="header-logo-link">
+                <img src="Images/mila-logo.webp" alt="Mila Physio" class="logo-img">
+            </a>
+
+            <nav class="header-nav">
+                <a href="index.html" class="nav-link active">Dashboard</a>
+                <a href="termine.html" class="nav-link">Meine Termine</a>
+                <a href="uebungen.html" class="nav-link">Meine Übungen</a>
+                <a href="profil.html" class="nav-link">Mein Profil</a>
+            </nav>
+
+            <div class="header-actions">
+                <button class="btn-profile" id="profileBtn" title="Profil">👤</button>
+                <button class="btn-logout" id="logoutBtn" title="Abmelden">↪️</button>
+            </div>
+
+            <button class="btn-menu" id="menuBtn">☰</button>
+        </div>
+    </header>
+
+    <!-- Mobile Menu (hidden by default) -->
+    <nav class="mobile-menu" id="mobileMenu">
+        <a href="index.html" class="mobile-nav-link active">Dashboard</a>
+        <a href="termine.html" class="mobile-nav-link">Meine Termine</a>
+        <a href="uebungen.html" class="mobile-nav-link">Meine Übungen</a>
+        <a href="profil.html" class="mobile-nav-link">Mein Profil</a>
+        <hr>
+        <button class="mobile-nav-logout" id="mobileLogoutBtn">Abmelden</button>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="portal-main">
+        <!-- Greeting Section -->
+        <section class="section-greeting">
+            <div class="greeting-card">
+                <h1 class="greeting-title">Hallo, <span id="patientFirstName">Anna</span> 👋</h1>
+                <p class="greeting-subtitle" id="greetingMessage">Schön, Sie wiederzusehen!</p>
+            </div>
+        </section>
+
+        <!-- Next Appointment Section -->
+        <section class="section-next-appointment">
+            <h2 class="section-title">Nächster Termin</h2>
+            <div class="appointment-card appointment-next" id="nextAppointmentCard">
+                <div class="appointment-status" id="appointmentStatus">Bestätigt</div>
+
+                <div class="appointment-details">
+                    <div class="appointment-info">
+                        <span class="info-label">Datum & Zeit</span>
+                        <span class="info-value" id="appointmentDateTime">Loading...</span>
+                    </div>
+                    <div class="appointment-info">
+                        <span class="info-label">Typ</span>
+                        <span class="info-value" id="appointmentType">Loading...</span>
+                    </div>
+                    <div class="appointment-info">
+                        <span class="info-label">Therapeut</span>
+                        <span class="info-value" id="appointmentTherapist">Loading...</span>
+                    </div>
+                </div>
+
+                <div class="appointment-actions">
+                    <button class="btn btn-secondary" onclick="handleRescheduleClick('app_001')">Termin verschieben</button>
+                    <button class="btn btn-primary" onclick="handleJoinMeetingClick('app_001')">Online-Termin beitreten</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Therapy Plan Section -->
+        <section class="section-therapy-plan">
+            <h2 class="section-title">Mein Therapieplan</h2>
+            <div class="grid-4">
+                <a href="termine.html" class="plan-card">
+                    <div class="plan-icon">📅</div>
+                    <h3>Termine</h3>
+                    <p>Alle Ihre geplanten Termine</p>
+                </a>
+                <a href="uebungen.html" class="plan-card">
+                    <div class="plan-icon">💪</div>
+                    <h3>Übungen</h3>
+                    <p>Ihr persönlicher Trainingsplan</p>
+                </a>
+                <a href="#" class="plan-card">
+                    <div class="plan-icon">📄</div>
+                    <h3>Dokumente</h3>
+                    <p>Befunde und Berichte</p>
+                </a>
+                <a href="profil.html" class="plan-card">
+                    <div class="plan-icon">👤</div>
+                    <h3>Profil</h3>
+                    <p>Ihre Patientendaten</p>
+                </a>
+            </div>
+        </section>
+
+        <!-- Recent Exercises Section -->
+        <section class="section-recent-exercises">
+            <div class="section-header">
+                <h2 class="section-title">Meine Übungen</h2>
+                <a href="uebungen.html" class="link-primary">Alle anzeigen →</a>
+            </div>
+
+            <div class="grid-3" id="recentExercisesGrid">
+                <!-- Exercises loaded by JavaScript -->
+            </div>
+        </section>
+
+        <!-- Latest News Section -->
+        <section class="section-latest-news">
+            <h2 class="section-title">Letzte Informationen</h2>
+            <div class="news-grid" id="newsGrid">
+                <!-- News items loaded by JavaScript -->
+            </div>
+        </section>
+        <!-- New Appointment Modal -->
+        <div class="modal" id="newAppointmentModal">
+            <div class="modal-content">
+                <button class="modal-close" onclick="closeModal('newAppointmentModal')">&times;</button>
+                <div class="modal-header">
+                    <h2 class="modal-title">Neuen Termin Buchen</h2>
+                </div>
+                <div class="modal-body">
+                    <p>Wählen Sie die Art der Physiotherapie, die Sie buchen möchten:</p>
+                    <div class="modal-choices">
+                        <button class="modal-choice" onclick="handleNewAppointmentChoice('online')">
+                            <span class="modal-choice-icon">💻</span>
+                            <h3>Online-Physiotherapie</h3>
+                            <p>Angebote und Preise ansehen</p>
+                        </button>
+                        <button class="modal-choice" onclick="handleNewAppointmentChoice('hausbesuch')">
+                            <span class="modal-choice-icon">🏠</span>
+                            <h3>Hausbesuch</h3>
+                            <p>Hausbesuch-Angebote ansehen</p>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="portal-footer">
+        <div class="footer-content">
+            <p>&copy; 2026 Mila Physio. Patientenportal.</p>
+            <div class="footer-links">
+                <a href="#">Datenschutz</a>
+                <a href="#">Impressum</a>
+                <a href="#">Kontakt</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script_patientenportal.js"></script>
+    <script>
+        // DEMO ONLY – später durch sichere API ersetzen
+        document.addEventListener('DOMContentLoaded', function() {
+            protectPatientPage();
+            loadPatient();
+            loadAppointments();
+            loadExercises();
+            setupMobileMenu();
+            setupModalListeners();
+        });
+
+        function setupMobileMenu() {
+            const menuBtn = document.getElementById('menuBtn');
+            const mobileMenu = document.getElementById('mobileMenu');
+            const mobileLogoutBtn = document.getElementById('mobileLogoutBtn');
+
+            menuBtn.addEventListener('click', function() {
+                mobileMenu.classList.toggle('active');
+            });
+
+            mobileLogoutBtn.addEventListener('click', logoutPatient);
+
+            document.querySelectorAll('.mobile-nav-link').forEach(link => {
+                link.addEventListener('click', function() {
+                    mobileMenu.classList.remove('active');
+                });
+            });
+        }
+
+        function loadPatient() {
+            // DEMO ONLY – später durch sichere API ersetzen
+            const demoPatient = {
+                id: 'patient_001',
+                firstName: 'Anna',
+                lastName: 'Muster',
+                email: 'anna.demo@example.com',
+                phone: '0123456789',
+                therapyType: 'Hausbesuch'
+            };
+
+            document.getElementById('patientFirstName').textContent = demoPatient.firstName;
+
+            const hour = new Date().getHours();
+            let greeting = 'Schön, Sie wiederzusehen!';
+            if (hour < 12) greeting = 'Guten Morgen! 🌅';
+            else if (hour < 18) greeting = 'Guten Nachmittag! 🌤️';
+            else greeting = 'Guten Abend! 🌙';
+            document.getElementById('greetingMessage').textContent = greeting;
+        }
+
+        function loadAppointments() {
+            // DEMO ONLY – später durch sichere API ersetzen
+            // Use global demoAppointments from script_patientenportal.js
+            if (demoAppointments && demoAppointments.length > 0) {
+                const nextAppointment = demoAppointments[0];
+                const appointmentDate = new Date(nextAppointment.date + 'T' + nextAppointment.time);
+                const dateFormatter = new Intl.DateTimeFormat('de-DE', {
+                    weekday: 'long',
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric',
+                    hour: '2-digit',
+                    minute: '2-digit'
+                });
+
+                document.getElementById('appointmentDateTime').textContent = dateFormatter.format(appointmentDate);
+                document.getElementById('appointmentType').textContent = nextAppointment.type;
+                document.getElementById('appointmentTherapist').textContent = nextAppointment.therapist;
+                document.getElementById('appointmentStatus').textContent = nextAppointment.status;
+            }
+        }
+
+        function loadExercises() {
+            // DEMO ONLY – später durch sichere API ersetzen
+            const demoExercises = [
+                {
+                    id: 'ex_001',
+                    name: 'Nackenrollen',
+                    category: 'Mobilität',
+                    description: 'Sanfte Rollbewegungen des Nackens',
+                    reps: '10 Wiederholungen',
+                    sets: '3 Sätze',
+                    frequency: '2x täglich'
+                },
+                {
+                    id: 'ex_002',
+                    name: 'Schulterblatt-Squeeze',
+                    category: 'Kräftigung',
+                    description: 'Zusammendrücken der Schulterblattern',
+                    reps: '15 Wiederholungen',
+                    sets: '3 Sätze',
+                    frequency: '1x täglich'
+                },
+                {
+                    id: 'ex_003',
+                    name: 'Seitliche Beuge',
+                    category: 'Dehnung',
+                    description: 'Dehnen der seitlichen Rückenmuskulatur',
+                    reps: '20 Sekunden',
+                    sets: '3 Sätze',
+                    frequency: '2x täglich'
+                }
+            ];
+
+            const grid = document.getElementById('recentExercisesGrid');
+            grid.innerHTML = demoExercises.slice(0, 3).map(exercise => `
+                <div class="exercise-card">
+                    <div class="exercise-header">
+                        <h3 class="exercise-name">${exercise.name}</h3>
+                        <span class="exercise-category">${exercise.category}</span>
+                    </div>
+                    <p class="exercise-description">${exercise.description}</p>
+                    <div class="exercise-details">
+                        <span>📊 ${exercise.reps}</span>
+                        <span>🔄 ${exercise.sets}</span>
+                    </div>
+                    <button class="btn btn-secondary" style="width: 100%; margin-top: 1rem;">Übung ansehen</button>
+                </div>
+            `).join('');
+        }
+
+        // Load news
+        const newsGrid = document.getElementById('newsGrid');
+        const demoNews = [
+            {
+                title: '✅ Neue Übungen verfügbar',
+                content: 'Wir haben 5 neue Übungen zu Ihrem Plan hinzugefügt.',
+                date: '23. Sept 2026'
+            },
+            {
+                title: '💡 Tipps für bessere Erholung',
+                content: 'Lesen Sie unsere neuesten Tipps zum Thema Erholung.',
+                date: '20. Sept 2026'
+            },
+            {
+                title: '📅 Herbstferienzeiten',
+                content: 'Beachten Sie unsere Öffnungszeiten während der Ferien.',
+                date: '18. Sept 2026'
+            }
+        ];
+
+        newsGrid.innerHTML = demoNews.map(news => `
+            <div class="news-item">
+                <h3 class="news-title">${news.title}</h3>
+                <p class="news-content">${news.content}</p>
+                <span class="news-date">${news.date}</span>
+            </div>
+        `).join('');
+
+        // Event listeners
+        document.getElementById('profileBtn').addEventListener('click', function() {
+            window.location.href = 'profil.html';
+        });
+
+        document.getElementById('logoutBtn').addEventListener('click', logoutPatient);
+    </script>
+</body>
+</html>

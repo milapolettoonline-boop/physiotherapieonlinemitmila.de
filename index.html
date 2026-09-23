@@ -329,6 +329,19 @@
         }
 
 
+        .portal-link {
+            color: var(--teal-dark);
+            font-size: 0.92rem;
+            font-weight: 600;
+            transition: color 0.2s ease;
+        }
+
+
+        .portal-link:hover {
+            color: var(--gold);
+        }
+
+
         .menu-button {
             display: none;
 
@@ -1194,6 +1207,71 @@
 
 
         /* =====================================================
+           PATIENT PORTAL CTA
+        ====================================================== */
+
+        .portal-cta {
+            padding:
+                100px 0;
+
+            background: var(--cream);
+
+            text-align: center;
+        }
+
+
+        .portal-cta .eyebrow {
+            color: var(--teal-dark);
+        }
+
+
+        .portal-cta h2 {
+            max-width: 850px;
+
+            margin:
+                0 auto 22px;
+
+            color: var(--text-dark);
+
+            font-family:
+                "Playfair Display",
+                Georgia,
+                serif;
+
+            font-size:
+                clamp(2rem, 5vw, 3.6rem);
+
+            line-height: 1.05;
+        }
+
+
+        .portal-cta p {
+            max-width: 720px;
+
+            margin:
+                0 auto 32px;
+
+            color: var(--text);
+
+            font-size: 1.05rem;
+        }
+
+
+        .portal-cta .button-secondary {
+            color: var(--teal);
+
+            border-color: var(--teal);
+        }
+
+
+        .portal-cta .button-secondary:hover {
+            background: rgba(21, 93, 96, 0.08);
+
+            border-color: var(--teal);
+        }
+
+
+        /* =====================================================
            FOOTER
         ====================================================== */
 
@@ -1713,6 +1791,12 @@
     </a>
 
     <a
+        href="patientenportal/login.html"
+        class="portal-link">
+        🔐 Patientenportal
+    </a>
+
+    <a
         href="kontakt.html"
         class="button button-primary">
         Kontakt
@@ -1774,6 +1858,10 @@
 
     <a href="recommendations.html">
         Empfehlungen
+    </a>
+
+    <a href="patientenportal/login.html" class="portal-link">
+        🔐 Patientenportal
     </a>
 
     <a href="kontakt.html">
@@ -3585,6 +3673,39 @@ für Orthopädie, Chirurgie, Schmerztherapie und Bewegung
 </section>
 
 <!-- =====================================================
+     PATIENT PORTAL CTA
+====================================================== -->
+
+<section class="portal-cta">
+
+    <div class="home-container">
+
+        <span class="eyebrow">
+            Für Patienten
+        </span>
+
+        <h2>
+            Bereits Patient bei Mila?
+        </h2>
+
+        <p>
+            Verwalten Sie Ihre Termine, Übungen und Dokumente
+            in Ihrem persönlichen Patientenportal.
+        </p>
+
+        <a
+            href="patientenportal/login.html"
+            class="button button-secondary">
+
+            Zum Patientenportal
+
+        </a>
+
+    </div>
+
+</section>
+
+<!-- =====================================================
      FOOTER
 ====================================================== -->
 
@@ -3657,6 +3778,23 @@ für Orthopädie, Chirurgie, Schmerztherapie und Bewegung
 
             <a href="kontakt.html">
                 Kontakt
+            </a>
+
+        </div>
+
+
+        <!-- =========================================
+             FÜR PATIENTEN
+        ========================================== -->
+
+        <div class="footer-column">
+
+            <h3>
+                Für Patienten
+            </h3>
+
+            <a href="patientenportal/login.html">
+                Patientenportal
             </a>
 
         </div>

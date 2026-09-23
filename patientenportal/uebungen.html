@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meine Übungen | Patientenportal Mila Physio</title>
+    <link rel="stylesheet" href="style_patientenportal.css">
+</head>
+<body>
+    <!-- Header / Navigation -->
+    <header class="portal-header">
+        <div class="header-container">
+            <a href="../index.html" class="header-logo-link">
+                <img src="Images/mila-logo.webp" alt="Mila Physio" class="logo-img">
+            </a>
+
+            <nav class="header-nav">
+                <a href="index.html" class="nav-link">Dashboard</a>
+                <a href="termine.html" class="nav-link">Meine Termine</a>
+                <a href="uebungen.html" class="nav-link active">Meine Übungen</a>
+                <a href="profil.html" class="nav-link">Mein Profil</a>
+            </nav>
+
+            <div class="header-actions">
+                <button class="btn-profile" id="profileBtn" title="Profil">👤</button>
+                <button class="btn-logout" id="logoutBtn" title="Abmelden">↪️</button>
+            </div>
+
+            <button class="btn-menu" id="menuBtn">☰</button>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <nav class="mobile-menu" id="mobileMenu">
+        <a href="index.html" class="mobile-nav-link">Dashboard</a>
+        <a href="termine.html" class="mobile-nav-link">Meine Termine</a>
+        <a href="uebungen.html" class="mobile-nav-link active">Meine Übungen</a>
+        <a href="profil.html" class="mobile-nav-link">Mein Profil</a>
+        <hr>
+        <button class="mobile-nav-logout" id="mobileLogoutBtn">Abmelden</button>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="portal-main">
+        <!-- Page Header -->
+        <section class="section-page-header">
+            <h1 class="page-title">Meine Übungen</h1>
+            <p class="page-subtitle">Dein persönlicher Übungsplan</p>
+        </section>
+
+        <!-- Filter Section -->
+        <section class="section-filters">
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">Alle</button>
+                <button class="filter-btn" data-filter="Mobilität">Mobilität</button>
+                <button class="filter-btn" data-filter="Kräftigung">Kräftigung</button>
+                <button class="filter-btn" data-filter="Dehnung">Dehnung</button>
+            </div>
+        </section>
+
+        <!-- Exercises Grid -->
+        <section class="section-exercises">
+            <div class="grid-3" id="exercisesGrid">
+                <!-- Loaded by JavaScript -->
+            </div>
+        </section>
+
+        <!-- Exercise Details Modal (hidden by default) -->
+        <div class="modal" id="exerciseModal">
+            <div class="modal-content">
+                <button class="modal-close" id="closeModal">&times;</button>
+                <div id="exerciseDetails"></div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="portal-footer">
+        <div class="footer-content">
+            <p>&copy; 2026 Mila Physio. Patientenportal.</p>
+            <div class="footer-links">
+                <a href="#">Datenschutz</a>
+                <a href="#">Impressum</a>
+                <a href="#">Kontakt</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script_patientenportal.js"></script>
+    <script>
+        // DEMO ONLY – später durch sichere API ersetzen
+        document.addEventListener('DOMContentLoaded', function() {
+            protectPatientPage();
+            loadExercisesPage();
+            setupMobileMenu();
+            setupFilters();
+        });
+
+        function setupMobileMenu() {
+            const menuBtn = document.getElementById('menuBtn');
+            const mobileMenu = document.getElementById('mobileMenu');
+            const mobileLogoutBtn = document.getElementById('mobileLogoutBtn');
+
+            menuBtn.addEventListener('click', function() {
+                mobileMenu.classList.toggle('active');
+            });
+
+            mobileLogoutBtn.addEventListener('click', logoutPatient);
+
+            document.querySelectorAll('.mobile-nav-link').forEach(link => {
+                link.addEventListener('click', function() {
+                    mobileMenu.classList.remove('active');
+                });
+            });
+        }
+
+        function setupFilters() {
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    const filter = this.getAttribute('data-filter');
+                    filterExercises(filter);
+                });
+            });
+        }
+
+        function filterExercises(category) {
+            const exercises = document.querySelectorAll('.exercise-card');
+            exercises.forEach(exercise => {
+                if (category === 'all' || exercise.getAttribute('data-category') === category) {
+                    exercise.style.display = 'block';
+                } else {
+                    exercise.style.display = 'none';
+                }
+            });
+        }
+
+        function loadExercisesPage() {
+            // DEMO ONLY – später durch sichere API ersetzen
+            const demoExercises = [
+                {
+                    id: 'ex_001',
+                    name: 'Nackenrollen',
+                    category: 'Mobilität',
+                    description: 'Sanfte Rollbewegungen des Nackens',
+                    reps: '10 Wiederholungen',
+                    sets: '3 Sätze',
+                    frequency: '2x täglich',
+                    instructions: 'Führen Sie langsame, kreisende Bewegungen mit dem Nacken durch. Beginnen Sie mit der rechten Seite, machen Sie 5 Rollbewegungen nach vorne und 5 nach hinten. Wiederholen Sie auf der linken Seite.',
+                    image: '🎯'
+                },
+                {
+                    id: 'ex_002',
+                    name: 'Schulterblatt-Squeeze',
+                    category: 'Kräftigung',
+                    description: 'Zusammendrücken der Schulterblattern',
+                    reps: '15 Wiederholungen',
+                    sets: '3 Sätze',
+                    frequency: '1x täglich',
+                    instructions: 'Sitzen Sie aufrecht. Ziehen Sie Ihre Schultern nach hinten und oben, halten Sie die Position für 2 Sekunden und entspannen Sie. Dies stärkt die Rückenmuskulatur.',
+                    image: '💪'
+                },
+                {
+                    id: 'ex_003',
+                    name: 'Seitliche Beuge',
+                    category: 'Dehnung',
+                    description: 'Dehnen der seitlichen Rückenmuskulatur',
+                    reps: '20 Sekunden',
+                    sets: '3 Sätze',
+                    frequency: '2x täglich',
+                    instructions: 'Stehen Sie aufrecht, Füße schulterbreit auseinander. Beugen Sie Ihren Körper langsam zur Seite, während Sie Ihren rechten Arm nach oben führen. Halten Sie diese Position und wechseln Sie die Seite.',
+                    image: '🧘'
+                },
+                {
+                    id: 'ex_004',
+                    name: 'Quadrizeps-Dehnung',
+                    category: 'Dehnung',
+                    description: 'Dehnen der vorderen Oberschenkelmuskulatur',
+                    reps: '30 Sekunden',
+                    sets: '2 Sätze',
+                    frequency: '1x täglich',
+                    instructions: 'Stehen Sie auf einem Bein. Ziehen Sie das andere Bein nach hinten zu Ihren Gesäßmuskeln. Halten Sie das Gleichgewicht und dehnhnen Sie leicht aus.',
+                    image: '🏃'
+                },
+                {
+                    id: 'ex_005',
+                    name: 'Planke',
+                    category: 'Kräftigung',
+                    description: 'Kernstabilisierungsübung',
+                    reps: '30-60 Sekunden',
+                    sets: '3 Sätze',
+                    frequency: '3x pro Woche',
+                    instructions: 'Legen Sie sich in eine Ellenbogens-Plank-Position. Halten Sie Ihren Körper gerade, von Kopf bis zu den Zehenspitzen. Halten Sie die Position und atmen Sie normal.',
+                    image: '⚡'
+                },
+                {
+                    id: 'ex_006',
+                    name: 'Gluteus-Maximus-Aktivierung',
+                    category: 'Kräftigung',
+                    description: 'Stärkung der Gesäßmuskulatur',
+                    reps: '20 Wiederholungen',
+                    sets: '3 Sätze',
+                    frequency: '2x täglich',
+                    instructions: 'Sitzen Sie aufrecht. Spannen Sie Ihre Gesäßmuskeln für 3 Sekunden an und entspannen Sie. Dies kann überall durchgeführt werden.',
+                    image: '🎯'
+                }
+            ];
+
+            const grid = document.getElementById('exercisesGrid');
+            grid.innerHTML = demoExercises.map(exercise => `
+                <div class="exercise-card" data-category="${exercise.category}">
+                    <div class="exercise-icon">${exercise.image}</div>
+                    <div class="exercise-header">
+                        <h3 class="exercise-name">${exercise.name}</h3>
+                        <span class="exercise-category">${exercise.category}</span>
+                    </div>
+                    <p class="exercise-description">${exercise.description}</p>
+                    <div class="exercise-details">
+                        <span>📊 ${exercise.reps}</span>
+                        <span>🔄 ${exercise.sets}</span>
+                    </div>
+                    <p class="exercise-frequency"><strong>Häufigkeit:</strong> ${exercise.frequency}</p>
+                    <button class="btn btn-secondary" style="width: 100%; margin-top: 1rem;" onclick="showExerciseDetails('${exercise.id}', '${exercise.name}', '${exercise.description}', '${exercise.instructions}', '${exercise.frequency}')">Übung ansehen</button>
+                </div>
+            `).join('');
+        }
+
+        function showExerciseDetails(id, name, description, instructions, frequency) {
+            const modal = document.getElementById('exerciseModal');
+            const detailsDiv = document.getElementById('exerciseDetails');
+
+            detailsDiv.innerHTML = `
+                <h2>${name}</h2>
+                <p class="modal-description">${description}</p>
+
+                <div class="modal-section">
+                    <h3>Anleitung</h3>
+                    <p>${instructions}</p>
+                </div>
+
+                <div class="modal-section">
+                    <h3>Häufigkeit</h3>
+                    <p>${frequency}</p>
+                </div>
+
+                <div class="modal-section">
+                    <h3>Tipps</h3>
+                    <ul>
+                        <li>Führen Sie alle Bewegungen langsam und kontrolliert durch</li>
+                        <li>Atmen Sie während der Übung normal</li>
+                        <li>Wenn Schmerz auftritt, stoppen Sie sofort</li>
+                        <li>Halten Sie sich an den vorgegebenen Zeitplan</li>
+                    </ul>
+                </div>
+            `;
+
+            modal.classList.add('active');
+        }
+
+        // Close modal
+        document.getElementById('closeModal').addEventListener('click', function() {
+            document.getElementById('exerciseModal').classList.remove('active');
+        });
+
+        document.getElementById('exerciseModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                this.classList.remove('active');
+            }
+        });
+
+        // Event listeners
+        document.getElementById('profileBtn').addEventListener('click', function() {
+            window.location.href = 'profil.html';
+        });
+
+        document.getElementById('logoutBtn').addEventListener('click', logoutPatient);
+    </script>
+</body>
+</html>
