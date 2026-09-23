@@ -88,6 +88,32 @@
                 </div>
             </div>
         </section>
+        <!-- Appointment Info Modal -->
+        <div class="modal" id="appointmentInfoModal">
+            <div class="modal-content">
+                <button class="modal-close" onclick="closeModal('appointmentInfoModal')">&times;</button>
+                <div class="modal-header">
+                    <h2 class="modal-title">Termin-Informationen</h2>
+                </div>
+                <div class="modal-body" id="appointmentInfoContent">
+                    <!-- Loaded by JavaScript -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Appointment Info Modal -->
+        <div class="modal" id="messageModal">
+            <div class="modal-content">
+                <button class="modal-close" onclick="closeModal('messageModal')">&times;</button>
+                <div class="modal-header">
+                    <h2 class="modal-title" id="messageModalTitle">Hinweis</h2>
+                </div>
+                <div class="modal-body" id="messageModalContent">
+                    <!-- Content loaded by JavaScript -->
+                </div>
+            </div>
+        </div>
+
         <!-- New Appointment Modal -->
         <div class="modal" id="newAppointmentModal">
             <div class="modal-content">
@@ -119,9 +145,9 @@
         <div class="footer-content">
             <p>&copy; 2026 Mila Physio. Patientenportal.</p>
             <div class="footer-links">
-                <a href="#">Datenschutz</a>
-                <a href="#">Impressum</a>
-                <a href="#">Kontakt</a>
+                <a href="../datenschutz.html">Datenschutz</a>
+                <a href="../impressum.html">Impressum</a>
+                <a href="../kontakt.html">Kontakt</a>
             </div>
         </div>
     </footer>
@@ -241,7 +267,7 @@
                             <p class="appointment-item-detail"><strong>⏱️</strong> ${app.duration}</p>
                         </div>
                         <div class="appointment-item-actions">
-                            <button class="btn btn-small btn-secondary">Info</button>
+                            <button class="btn btn-small btn-secondary" onclick="showAppointmentInfo('${app.id}')">Info</button>
                         </div>
                     </div>
                 `;

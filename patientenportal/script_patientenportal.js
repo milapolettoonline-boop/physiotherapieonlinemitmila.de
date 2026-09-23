@@ -597,6 +597,40 @@ function setupModalListeners() {
    SECURITY NOTES
    ============================================ */
 
+/**
+ * Show Appointment Info Modal
+ * Displays organizational information about an appointment
+ */
+function showAppointmentInfo(appointmentId) {
+    const appointment = demoAppointments.find(app => app.id === appointmentId);
+    if (!appointment) return;
+
+    const appointmentDate = new Date(appointment.date + 'T' + appointment.time);
+    const dateFormatter = new Intl.DateTimeFormat('de-DE', {
+        weekday: 'long',
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit'
+    });
+
+    const content = `
+        <div class="info-group">
+            <p><strong>Terminart:</strong> ${appointment.type}</p>
+            <p><strong>Datum:</strong> ${dateFormatter.format(appointmentDate)}</p>
+            <p><strong>Uhrzeit:</strong> ${appointment.time}</p>
+            <p><strong>Dauer:</strong> ${appointment.duration}</p>
+            <p><strong>Therapeut:</strong> ${appointment.therapist}</p>
+            ${appointment.location ? `<p><strong>Ort:</strong> ${appointment.location}</p>` : ''}
+            <p><strong>Status:</strong> ${appointment.status}</p>
+        </div>
+    `;
+
+    document.getElementById('appointmentInfoContent').innerHTML = content;
+    document.getElementById('appointmentInfoModal').classList.add('active');
+}
+
 /*
  * SECURITY IMPLEMENTATION (Future):
  *
