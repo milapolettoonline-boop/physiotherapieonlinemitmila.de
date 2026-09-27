@@ -137,103 +137,89 @@
             });
         }
 
-        function loadExercisesPage() {
-            // DEMO ONLY – später durch sichere API ersetzen
-            const demoExercises = [
-                {
-                    id: 'ex_001',
-                    name: 'Nackenrollen',
-                    category: 'Mobilität',
-                    description: 'Sanfte Rollbewegungen des Nackens',
-                    reps: '10 Wiederholungen',
-                    sets: '3 Sätze',
-                    frequency: '2x täglich',
-                    instructions: 'Führen Sie langsame, kreisende Bewegungen mit dem Nacken durch. Beginnen Sie mit der rechten Seite, machen Sie 5 Rollbewegungen nach vorne und 5 nach hinten. Wiederholen Sie auf der linken Seite.',
-                    image: '🎯'
-                },
-                {
-                    id: 'ex_002',
-                    name: 'Schulterblatt-Squeeze',
-                    category: 'Kräftigung',
-                    description: 'Zusammendrücken der Schulterblattern',
-                    reps: '15 Wiederholungen',
-                    sets: '3 Sätze',
-                    frequency: '1x täglich',
-                    instructions: 'Sitzen Sie aufrecht. Ziehen Sie Ihre Schultern nach hinten und oben, halten Sie die Position für 2 Sekunden und entspannen Sie. Dies stärkt die Rückenmuskulatur.',
-                    image: '💪'
-                },
-                {
-                    id: 'ex_003',
-                    name: 'Seitliche Beuge',
-                    category: 'Dehnung',
-                    description: 'Dehnen der seitlichen Rückenmuskulatur',
-                    reps: '20 Sekunden',
-                    sets: '3 Sätze',
-                    frequency: '2x täglich',
-                    instructions: 'Stehen Sie aufrecht, Füße schulterbreit auseinander. Beugen Sie Ihren Körper langsam zur Seite, während Sie Ihren rechten Arm nach oben führen. Halten Sie diese Position und wechseln Sie die Seite.',
-                    image: '🧘'
-                },
-                {
-                    id: 'ex_004',
-                    name: 'Quadrizeps-Dehnung',
-                    category: 'Dehnung',
-                    description: 'Dehnen der vorderen Oberschenkelmuskulatur',
-                    reps: '30 Sekunden',
-                    sets: '2 Sätze',
-                    frequency: '1x täglich',
-                    instructions: 'Stehen Sie auf einem Bein. Ziehen Sie das andere Bein nach hinten zu Ihren Gesäßmuskeln. Halten Sie das Gleichgewicht und dehnhnen Sie leicht aus.',
-                    image: '🏃'
-                },
-                {
-                    id: 'ex_005',
-                    name: 'Planke',
-                    category: 'Kräftigung',
-                    description: 'Kernstabilisierungsübung',
-                    reps: '30-60 Sekunden',
-                    sets: '3 Sätze',
-                    frequency: '3x pro Woche',
-                    instructions: 'Legen Sie sich in eine Ellenbogens-Plank-Position. Halten Sie Ihren Körper gerade, von Kopf bis zu den Zehenspitzen. Halten Sie die Position und atmen Sie normal.',
-                    image: '⚡'
-                },
-                {
-                    id: 'ex_006',
-                    name: 'Gluteus-Maximus-Aktivierung',
-                    category: 'Kräftigung',
-                    description: 'Stärkung der Gesäßmuskulatur',
-                    reps: '20 Wiederholungen',
-                    sets: '3 Sätze',
-                    frequency: '2x täglich',
-                    instructions: 'Sitzen Sie aufrecht. Spannen Sie Ihre Gesäßmuskeln für 3 Sekunden an und entspannen Sie. Dies kann überall durchgeführt werden.',
-                    image: '🎯'
-                }
-            ];
-
+        async function loadExercisesPage() {
+            // Load exercises from API
             const grid = document.getElementById('exercisesGrid');
-            grid.innerHTML = demoExercises.map(exercise => `
-                <div class="exercise-card" data-category="${exercise.category}">
-                    <div class="exercise-icon">${exercise.image}</div>
-                    <div class="exercise-header">
-                        <h3 class="exercise-name">${exercise.name}</h3>
-                        <span class="exercise-category">${exercise.category}</span>
-                    </div>
-                    <p class="exercise-description">${exercise.description}</p>
-                    <div class="exercise-details">
-                        <span>📊 ${exercise.reps}</span>
-                        <span>🔄 ${exercise.sets}</span>
-                    </div>
-                    <p class="exercise-frequency"><strong>Häufigkeit:</strong> ${exercise.frequency}</p>
-                    <button class="btn btn-secondary" style="width: 100%; margin-top: 1rem;" onclick="showExerciseDetails('${exercise.id}', '${exercise.name}', '${exercise.description}', '${exercise.instructions}', '${exercise.frequency}')">Übung ansehen</button>
-                </div>
-            `).join('');
+            grid.innerHTML = '<p style="text-align: center; padding: 2rem;">Übungen werden geladen...</p>';
+
+            try {
+                const response = await fetch('http://localhost:3000/api/exercises', {
+                    method: 'GET',
+                    headers: { 'Content-Type': 'application/json' },
+                    credentials: 'include'
+                });
+
+                if (response.status === 401) {
+                    window.location.href = 'login.html';
+                    return;
+                }
+
+                if (!response.ok) {
+                    throw new Error(`API Error: ${response.status}`);
+                }
+
+                const data = await response.json();
+                const exercises = data.data || [];
+
+                if (exercises.length === 0) {
+                    grid.innerHTML = '<p style="text-align: center; padding: 2rem; color: #666;">Derzeit sind keine Übungen für Sie hinterlegt.</p>';
+                    return;
+                }
+
+                const categoryIcons = {
+                    'Mobilität': '🧘', 'Kräftigung': '💪', 'Dehnung': '🧘',
+                    'Kardio': '🏃', 'Stabilität': '⚡', 'Andere': '🎯'
+                };
+
+                grid.innerHTML = exercises.map(exercise => {
+                    const escapedTitle = (exercise.title || '').replace(/'/g, "\\'").replace(/"/g, '&quot;');
+                    const escapedDesc = (exercise.description || '').replace(/'/g, "\\'");
+                    const escapedInstructions = (exercise.instructions || '').replace(/'/g, "\\'");
+                    const escapedFrequency = (exercise.frequency || '').replace(/'/g, "\\'");
+                    const icon = categoryIcons[exercise.category] || '🎯';
+
+                    return `
+                        <div class="exercise-card" data-category="${exercise.category || 'Andere'}">
+                            <div class="exercise-icon">${icon}</div>
+                            <div class="exercise-header">
+                                <h3 class="exercise-name">${exercise.title}</h3>
+                                <span class="exercise-category">${exercise.category || 'Andere'}</span>
+                            </div>
+                            <p class="exercise-description">${exercise.description || ''}</p>
+                            <div class="exercise-details">
+                                ${exercise.sets_or_reps ? `<span>📊 ${exercise.sets_or_reps}</span>` : ''}
+                            </div>
+                            ${exercise.frequency ? `<p class="exercise-frequency"><strong>Häufigkeit:</strong> ${exercise.frequency}</p>` : ''}
+                            <button class="btn btn-secondary" style="width: 100%; margin-top: 1rem;" onclick="showExerciseDetails('${exercise.id}', '${escapedTitle}', '${escapedDesc}', '${escapedInstructions}', '${escapedFrequency}'${exercise.video_url ? `, '${exercise.video_url.replace(/'/g, "\\'")}'` : ''})">Übung ansehen</button>
+                        </div>
+                    `;
+                }).join('');
+
+            } catch (error) {
+                console.error('Error loading exercises:', error);
+                grid.innerHTML = '<p style="text-align: center; padding: 2rem; color: #d32f2f;">Ein Fehler ist beim Laden der Übungen aufgetreten. Bitte versuchen Sie es später erneut.</p>';
+            }
         }
 
-        function showExerciseDetails(id, name, description, instructions, frequency) {
+        function showExerciseDetails(id, name, description, instructions, frequency, videoUrl) {
             const modal = document.getElementById('exerciseModal');
             const detailsDiv = document.getElementById('exerciseDetails');
+
+            let videoHtml = '';
+            if (videoUrl) {
+                videoHtml = `
+                    <div class="modal-section">
+                        <h3>Video</h3>
+                        <a href="${videoUrl}" target="_blank" class="btn btn-secondary" style="display: inline-block;">Video ansehen →</a>
+                    </div>
+                `;
+            }
 
             detailsDiv.innerHTML = `
                 <h2>${name}</h2>
                 <p class="modal-description">${description}</p>
+
+                ${videoHtml}
 
                 <div class="modal-section">
                     <h3>Anleitung</h3>

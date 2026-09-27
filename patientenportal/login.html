@@ -18,33 +18,27 @@
                 </a>
                 <h1 class="login-title">Willkommen im Patientenportal</h1>
                 <p class="login-subtitle">Verwalten Sie Ihre Termine und Übungen</p>
-                <!-- DEMO MARKER -->
-                <div class="demo-badge">DEMO MODUS</div>
             </div>
 
             <!-- Login Form -->
             <form id="loginForm" class="login-form">
                 <div class="form-group">
                     <label for="email">E-Mail</label>
-                    <input type="email" id="email" name="email" placeholder="anna.demo@example.com" value="anna.demo@example.com" required>
+                    <input type="email" id="email" name="email" placeholder="ihre.email@example.com" required>
                 </div>
 
                 <div class="form-group">
                     <label for="password">Passwort</label>
-                    <input type="password" id="password" name="password" placeholder="••••••••" value="demo" required>
+                    <input type="password" id="password" name="password" placeholder="••••••••" required>
                 </div>
 
-                <button type="submit" class="btn btn-primary btn-login">
+                <button type="submit" class="btn btn-primary btn-login" id="loginBtn">
                     Anmelden
                 </button>
             </form>
 
-            <!-- Info Message -->
-            <div class="login-info">
-                <p><strong>Demo-Credentials:</strong></p>
-                <p>E-Mail: anna.demo@example.com</p>
-                <p>Passwort: demo</p>
-            </div>
+            <!-- Error Message -->
+            <div class="login-error" id="errorMessage" style="display: none; color: #d32f2f; margin-top: 1rem; padding: 0.75rem; border-radius: 4px; background-color: #ffebee;"></div>
 
             <!-- Links -->
             <div class="login-links">
@@ -55,24 +49,37 @@
 
             <!-- Security Note -->
             <div class="security-note">
-                <p>⚠️ Demo-Portal - Keine echten Daten. Für Entwicklungszwecke nur.</p>
+                <p>🔒 Ihre Anmeldedaten sind sicher geschützt. Das Portal wird zu Ihrem Schutz regelmäßig überprüft.</p>
             </div>
         </div>
     </div>
 
     <script src="script_patientenportal.js"></script>
     <script>
-        // DEMO ONLY – später durch sichere API ersetzen
-        document.getElementById('loginForm').addEventListener('submit', function(e) {
+        // Real login via API
+        document.getElementById('loginForm').addEventListener('submit', async function(e) {
             e.preventDefault();
             const email = document.getElementById('email').value;
             const password = document.getElementById('password').value;
+            const loginBtn = document.getElementById('loginBtn');
+            const errorMessage = document.getElementById('errorMessage');
 
-            // Demo-Authentifizierung (NICHT für Produktion)
-            if (email === 'anna.demo@example.com' && password === 'demo') {
-                loginPatient(email);
-            } else {
-                alert('Demo-Login: Bitte verwenden Sie die Demo-Credentials');
+            // Clear previous errors
+            errorMessage.style.display = 'none';
+
+            // Disable button during login
+            loginBtn.disabled = true;
+            loginBtn.textContent = 'Wird angemeldet...';
+
+            // Call real login function
+            const success = await loginPatientReal(email, password);
+
+            if (!success) {
+                // Re-enable button on error
+                loginBtn.disabled = false;
+                loginBtn.textContent = 'Anmelden';
+                errorMessage.style.display = 'block';
+                errorMessage.textContent = 'Anmeldung fehlgeschlagen. Bitte überprüfen Sie Ihre E-Mail und Ihr Passwort.';
             }
         });
     </script>

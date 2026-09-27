@@ -109,24 +109,41 @@ let currentSession = {
  * Initialize Portal
  * Check authentication and load initial data
  */
-function initPortal() {
-    // DEMO ONLY – später durch sichere API ersetzen
+async function initPortal() {
     console.log('Portal initialized');
-    checkSession();
+    // Protect page - redirect to login if not authenticated
+    await protectPatientPage();
+    // Load patient data
+    await loadPatientDataForPage();
 }
 
 /**
  * Check Session Status
- * Verifies if user is logged in
+ * Verifies if user is logged in via backend API
  */
-function checkSession() {
-    // DEMO ONLY – später durch sichere API ersetzen
-    const sessionId = sessionStorage.getItem('mila_portal_session');
+async function checkSession() {
+    try {
+        const response = await fetch('http://localhost:3000/api/auth/me', {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            credentials: 'include'
+        });
 
-    if (sessionId) {
-        currentSession.isAuthenticated = true;
-        currentSession.patientId = sessionId;
-        currentSession.loginTime = sessionStorage.getItem('mila_portal_login_time');
+        if (response.ok) {
+            const data = await response.json();
+            currentSession.isAuthenticated = true;
+            currentSession.patientId = data.data.id;
+            return true;
+        } else {
+            currentSession.isAuthenticated = false;
+            return false;
+        }
+    } catch (error) {
+        console.error('Session check error:', error);
+        currentSession.isAuthenticated = false;
+        return false;
     }
 }
 
@@ -160,38 +177,82 @@ function loginPatient(email) {
 }
 
 /**
- * Logout Patient
- * Clears session and redirects to login
+ * Real Login Patient
+ * Authenticates patient via backend API
  */
-function logoutPatient() {
-    // DEMO ONLY – später durch sichere API ersetzen
+async function loginPatientReal(email, password) {
+    try {
+        const response = await fetch('http://localhost:3000/api/auth/login', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            credentials: 'include',
+            body: JSON.stringify({ email, password })
+        });
 
-    // Clear session storage
-    sessionStorage.removeItem('mila_portal_session');
-    sessionStorage.removeItem('mila_portal_login_time');
+        const data = await response.json();
 
-    // Clear in-memory session
-    currentSession = {
-        isAuthenticated: false,
-        patientId: null,
-        loginTime: null
-    };
+        if (!response.ok) {
+            const errorMessage = data.error || 'Login fehlgeschlagen';
+            alert(errorMessage);
+            return false;
+        }
 
-    // Redirect to login
-    window.location.href = 'login.html';
+        // Session cookie wird automatisch vom Backend gesetzt
+        // Frontend speichert KEINE tokens oder credentials
+        currentSession.isAuthenticated = true;
+        currentSession.patientId = data.data.id;
+        currentSession.loginTime = new Date().toISOString();
+
+        // Redirect to dashboard
+        window.location.href = 'index.html';
+        return true;
+    } catch (error) {
+        console.error('Login error:', error);
+        alert('Ein Fehler ist bei der Anmeldung aufgetreten. Bitte versuchen Sie es später erneut.');
+        return false;
+    }
+}
+
+/**
+ * Logout Patient
+ * Calls backend logout and clears session
+ */
+async function logoutPatient() {
+    try {
+        // Call backend logout endpoint
+        await fetch('http://localhost:3000/api/auth/logout', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            credentials: 'include'
+        });
+    } catch (error) {
+        console.error('Logout error:', error);
+    } finally {
+        // Clear in-memory session
+        currentSession = {
+            isAuthenticated: false,
+            patientId: null,
+            loginTime: null
+        };
+
+        // Redirect to login
+        window.location.href = 'login.html';
+    }
 }
 
 /**
  * Protect Patient Page
  * Redirect to login if not authenticated
  */
-function protectPatientPage() {
-    // DEMO ONLY – später durch sichere API ersetzen
-    // In production: Verify session with secure API
+async function protectPatientPage() {
+    // Verify session with backend API
+    const isAuthenticated = await checkSession();
 
-    checkSession();
-
-    if (!currentSession.isAuthenticated) {
+    if (!isAuthenticated) {
         // Only redirect if not on login page
         if (!window.location.pathname.includes('login.html')) {
             window.location.href = 'login.html';
@@ -204,54 +265,373 @@ function protectPatientPage() {
    ============================================ */
 
 /**
- * Load Patient Data
- * Retrieves patient information
+ * Load Patient Data For Page
+ * Main function to load data based on current page
  */
-function loadPatient() {
-    // DEMO ONLY – später durch sichere API ersetzen
-    // API Call would be:
-    // fetch('/api/patients/' + currentSession.patientId)
-    //     .then(response => response.json())
-    //     .then(data => { /* use data */ })
+async function loadPatientDataForPage() {
+    const path = window.location.pathname;
 
-    return demoPatient;
+    if (path.includes('index.html') || path.endsWith('/patientenportal/')) {
+        await loadDashboardData();
+    } else if (path.includes('termine.html')) {
+        await loadAppointmentsPageData();
+    } else if (path.includes('profil.html')) {
+        await loadProfilePageData();
+    }
+}
+
+/**
+ * Load Patient Data
+ * Retrieves patient information from API
+ */
+async function loadPatient() {
+    try {
+        const response = await fetch('http://localhost:3000/api/profile', {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            credentials: 'include'
+        });
+
+        if (response.ok) {
+            const data = await response.json();
+            return data.data;
+        } else if (response.status === 401) {
+            // Session expired
+            window.location.href = 'login.html';
+            return null;
+        } else {
+            console.error('Failed to load patient:', response.status);
+            return null;
+        }
+    } catch (error) {
+        console.error('Load patient error:', error);
+        return null;
+    }
 }
 
 /**
  * Load Appointments
- * Retrieves all patient appointments
+ * Retrieves all patient appointments from API
  */
-function loadAppointments() {
-    // DEMO ONLY – später durch sichere API ersetzen
-    // API Call would be:
-    // fetch('/api/appointments?patientId=' + currentSession.patientId)
-    //     .then(response => response.json())
-    //     .then(data => { /* use data */ })
+async function loadAppointments() {
+    try {
+        const response = await fetch('http://localhost:3000/api/appointments', {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            credentials: 'include'
+        });
 
-    return demoAppointments;
+        if (response.ok) {
+            const data = await response.json();
+            return data.data || [];
+        } else if (response.status === 401) {
+            // Session expired
+            window.location.href = 'login.html';
+            return [];
+        } else {
+            console.error('Failed to load appointments:', response.status);
+            return [];
+        }
+    } catch (error) {
+        console.error('Load appointments error:', error);
+        return [];
+    }
 }
 
 /**
  * Load Exercises
- * Retrieves patient exercise plan
+ * Retrieves patient exercise plan from API
  */
-function loadExercises() {
-    // DEMO ONLY – später durch sichere API ersetzen
-    // API Call would be:
-    // fetch('/api/exercises?patientId=' + currentSession.patientId)
-    //     .then(response => response.json())
-    //     .then(data => { /* use data */ })
+async function loadExercises() {
+    try {
+        const response = await fetch('http://localhost:3000/api/exercises', {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            credentials: 'include'
+        });
 
-    return demoExercises;
+        if (response.ok) {
+            const data = await response.json();
+            return data.data || [];
+        } else if (response.status === 401) {
+            window.location.href = 'login.html';
+            return [];
+        } else {
+            console.error('Failed to load exercises:', response.status);
+            return [];
+        }
+    } catch (error) {
+        console.error('Load exercises error:', error);
+        return [];
+    }
+}
+
+/**
+ * Update Patient Profile
+ * Sends profile updates to backend API
+ */
+async function updatePatientProfile(updates) {
+    try {
+        const response = await fetch('http://localhost:3000/api/profile', {
+            method: 'PATCH',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            credentials: 'include',
+            body: JSON.stringify(updates)
+        });
+
+        if (response.ok) {
+            const data = await response.json();
+            return { success: true, data: data.data };
+        } else if (response.status === 401) {
+            window.location.href = 'login.html';
+            return { success: false };
+        } else {
+            const data = await response.json();
+            return { success: false, error: data.error };
+        }
+    } catch (error) {
+        console.error('Update profile error:', error);
+        return { success: false, error: 'Ein Fehler ist aufgetreten' };
+    }
 }
 
 /**
  * Load Profile Data
- * Retrieves patient profile information
+ * Retrieves patient profile information from API
  */
-function loadProfile() {
-    // DEMO ONLY – später durch sichere API ersetzen
-    return demoPatient;
+async function loadProfile() {
+    try {
+        const response = await fetch('http://localhost:3000/api/profile', {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            credentials: 'include'
+        });
+
+        if (response.ok) {
+            const data = await response.json();
+            return data.data;
+        } else if (response.status === 401) {
+            window.location.href = 'login.html';
+            return null;
+        } else {
+            console.error('Failed to load profile:', response.status);
+            return null;
+        }
+    } catch (error) {
+        console.error('Load profile error:', error);
+        return null;
+    }
+}
+
+/**
+ * Load Dashboard Data
+ * Load patient info and next appointment for dashboard
+ */
+async function loadDashboardData() {
+    try {
+        const patient = await loadPatient();
+        if (patient) {
+            document.getElementById('patientFirstName').textContent = patient.first_name || 'Pacient';
+        }
+
+        const appointments = await loadAppointments();
+        if (appointments && appointments.length > 0) {
+            const nextApp = appointments[0];
+            document.getElementById('appointmentDateTime').textContent = formatDateTime(nextApp.start_at, '') || 'Loading...';
+            document.getElementById('appointmentType').textContent = nextApp.type || 'Termin';
+        }
+    } catch (error) {
+        console.error('Error loading dashboard data:', error);
+    }
+}
+
+/**
+ * Load Appointments Page Data
+ * Load all appointments for appointments page
+ */
+async function loadAppointmentsPageData() {
+    try {
+        const appointments = await loadAppointments();
+        if (appointments && appointments.length > 0) {
+            renderAppointments(appointments);
+        }
+    } catch (error) {
+        console.error('Error loading appointments:', error);
+    }
+}
+
+/**
+ * Render Appointments
+ * Display appointments in HTML
+ */
+function renderAppointments(appointments) {
+    const upcomingList = document.getElementById('upcomingAppointments');
+    const pastList = document.getElementById('pastAppointments');
+
+    if (!upcomingList || !pastList) return;
+
+    const now = new Date();
+    const upcoming = [];
+    const past = [];
+
+    appointments.forEach(app => {
+        if (new Date(app.start_at) > now) {
+            upcoming.push(app);
+        } else {
+            past.push(app);
+        }
+    });
+
+    // Render upcoming
+    if (upcoming.length > 0) {
+        upcomingList.innerHTML = upcoming.map(app => `
+            <div class="appointment-card">
+                <div class="appointment-status">${app.status || 'Bestätigt'}</div>
+                <div class="appointment-details">
+                    <div class="appointment-info">
+                        <span class="info-label">Datum & Zeit</span>
+                        <span class="info-value">${formatDate(app.start_at)}</span>
+                    </div>
+                    <div class="appointment-info">
+                        <span class="info-label">Typ</span>
+                        <span class="info-value">${app.type}</span>
+                    </div>
+                    <div class="appointment-info">
+                        <span class="info-label">Ort</span>
+                        <span class="info-value">${app.location || 'Online'}</span>
+                    </div>
+                </div>
+            </div>
+        `).join('');
+    } else {
+        upcomingList.innerHTML = '<p>Keine kommenden Termine.</p>';
+    }
+
+    // Render past
+    if (pastList) {
+        if (past.length > 0) {
+            pastList.innerHTML = past.map(app => `
+                <div class="appointment-card">
+                    <div class="appointment-status">Abgeschlossen</div>
+                    <div class="appointment-details">
+                        <div class="appointment-info">
+                            <span class="info-label">Datum</span>
+                            <span class="info-value">${formatDate(app.start_at)}</span>
+                        </div>
+                        <div class="appointment-info">
+                            <span class="info-label">Typ</span>
+                            <span class="info-value">${app.type}</span>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        } else {
+            pastList.innerHTML = '<p>Keine vergangenen Termine.</p>';
+        }
+    }
+}
+
+/**
+ * Load Profile Page Data
+ * Load patient profile for editing
+ */
+async function loadProfilePageData() {
+    try {
+        const patient = await loadProfile();
+        if (patient) {
+            document.getElementById('profileName').textContent =
+                (patient.first_name || '') + ' ' + (patient.last_name || '');
+            document.getElementById('firstName').textContent = patient.first_name || '-';
+            document.getElementById('lastName').textContent = patient.last_name || '-';
+            document.getElementById('email').textContent = patient.email;
+        }
+    } catch (error) {
+        console.error('Error loading profile:', error);
+    }
+}
+
+/**
+ * Edit Profile Handler
+ * Opens edit form for profile fields
+ */
+function editProfile() {
+    const firstNameDiv = document.getElementById('firstName');
+    const lastNameDiv = document.getElementById('lastName');
+
+    if (!firstNameDiv || !lastNameDiv) return;
+
+    const firstName = firstNameDiv.textContent;
+    const lastName = lastNameDiv.textContent;
+
+    const formHTML = `
+        <form id="editProfileForm" class="profile-edit-form">
+            <div class="form-group">
+                <label for="editFirstName">Vorname</label>
+                <input type="text" id="editFirstName" name="first_name" value="${firstName}" required>
+            </div>
+            <div class="form-group">
+                <label for="editLastName">Nachname</label>
+                <input type="text" id="editLastName" name="last_name" value="${lastName}" required>
+            </div>
+            <div class="form-actions">
+                <button type="submit" class="btn btn-primary">Speichern</button>
+                <button type="button" class="btn btn-secondary" onclick="cancelEditProfile()">Abbrechen</button>
+            </div>
+        </form>
+    `;
+
+    const profileCard = document.querySelector('.profile-card');
+    profileCard.innerHTML = formHTML;
+
+    document.getElementById('editProfileForm').addEventListener('submit', saveProfileChanges);
+}
+
+/**
+ * Save Profile Changes
+ * Submit profile updates to API
+ */
+async function saveProfileChanges(e) {
+    e.preventDefault();
+
+    const firstName = document.getElementById('editFirstName').value;
+    const lastName = document.getElementById('editLastName').value;
+
+    const result = await updatePatientProfile({
+        first_name: firstName,
+        last_name: lastName
+    });
+
+    if (result.success) {
+        alert('Profil aktualisiert!');
+        location.reload();
+    } else {
+        alert('Fehler beim Aktualisieren des Profils: ' + result.error);
+    }
+}
+
+/**
+ * Cancel Edit Profile
+ * Reload profile without saving
+ */
+function cancelEditProfile() {
+    location.reload();
+}
+
+/**
+ * Change Password Handler
+ */
+function changePassword() {
+    alert('Passwortänderung wird in einer zukünftigen Phase implementiert.');
 }
 
 /* ============================================
@@ -344,15 +724,25 @@ function formatDate(dateString) {
  * Formats date and time to German locale
  */
 function formatDateTime(dateString, timeString) {
-    const dateTime = new Date(dateString + 'T' + timeString);
-    return new Intl.DateTimeFormat('de-DE', {
-        weekday: 'long',
-        year: 'numeric',
-        month: 'long',
-        day: 'numeric',
-        hour: '2-digit',
-        minute: '2-digit'
-    }).format(dateTime);
+    try {
+        let dateTime;
+        if (timeString) {
+            dateTime = new Date(dateString + 'T' + timeString);
+        } else {
+            dateTime = new Date(dateString);
+        }
+
+        return new Intl.DateTimeFormat('de-DE', {
+            weekday: 'long',
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+            hour: '2-digit',
+            minute: '2-digit'
+        }).format(dateTime);
+    } catch (error) {
+        return dateString;
+    }
 }
 
 /**
@@ -630,6 +1020,39 @@ function showAppointmentInfo(appointmentId) {
     document.getElementById('appointmentInfoContent').innerHTML = content;
     document.getElementById('appointmentInfoModal').classList.add('active');
 }
+
+/* ============================================
+   PAGE INITIALIZATION
+   ============================================ */
+
+// Initialize portal when DOM is ready
+document.addEventListener('DOMContentLoaded', function() {
+    // Setup logout buttons
+    const logoutBtns = document.querySelectorAll('#logoutBtn, #mobileLogoutBtn, #logoutBtnMain');
+    logoutBtns.forEach(btn => {
+        btn.addEventListener('click', logoutPatient);
+    });
+
+    // Setup profile button
+    const profileBtn = document.getElementById('profileBtn');
+    if (profileBtn) {
+        profileBtn.addEventListener('click', function() {
+            window.location.href = 'profil.html';
+        });
+    }
+
+    // Setup menu button
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    if (menuBtn && mobileMenu) {
+        menuBtn.addEventListener('click', function() {
+            mobileMenu.classList.toggle('active');
+        });
+    }
+
+    // Initialize portal
+    initPortal();
+});
 
 /*
  * SECURITY IMPLEMENTATION (Future):
