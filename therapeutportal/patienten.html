@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patienten | Therapeut Portal Mila Physio</title>
+    <link rel="stylesheet" href="style_therapeutportal.css">
+</head>
+<body>
+    <!-- Header / Navigation -->
+    <header class="portal-header">
+        <div class="header-container">
+            <a href="../index.html" class="header-logo-link">
+                <img src="../logo/logo.svg" alt="Mila Physio" class="logo-img" onerror="this.alt='Mila Physio'">
+            </a>
+
+            <nav class="header-nav">
+                <a href="index.html" class="nav-link">Dashboard</a>
+                <a href="patienten.html" class="nav-link active">Patienten</a>
+                <a href="preisverwaltung.html" class="nav-link">Preise</a>
+            </nav>
+
+            <div class="header-actions">
+                <button class="btn-profile" id="profileBtn" title="Profil">👤</button>
+                <button class="btn-logout" id="logoutBtn" title="Abmelden">↪️</button>
+            </div>
+
+            <button class="btn-menu" id="menuBtn">☰</button>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <nav class="mobile-menu" id="mobileMenu">
+        <a href="index.html" class="mobile-nav-link">Dashboard</a>
+        <a href="patienten.html" class="mobile-nav-link active">Patienten</a>
+        <a href="preisverwaltung.html" class="mobile-nav-link">Preise</a>
+        <hr>
+        <button class="mobile-nav-logout" id="mobileLogoutBtn">Abmelden</button>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="portal-main">
+        <!-- Alerts Container -->
+        <div id="alertsContainer"></div>
+
+        <!-- Section Header -->
+        <section class="section-greeting">
+            <div class="greeting-card">
+                <h1 class="greeting-title">Meine Patienten 👥</h1>
+                <p class="greeting-subtitle">Verwalten Sie Ihre Patientendaten und Behandlungen</p>
+            </div>
+        </section>
+
+        <!-- Search & Filter -->
+        <section class="section-filters" style="margin-top: 2rem;">
+            <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                <input type="text" id="searchInput" placeholder="Nach Patient suchen..." style="padding: 0.75rem; border: 1px solid var(--border-color); border-radius: 4px; flex: 1; min-width: 200px;">
+                <button class="btn btn-primary" onclick="loadPatientList()">Aktualisieren</button>
+            </div>
+        </section>
+
+        <!-- Patient List -->
+        <section class="section-patients" style="margin-top: 2rem;">
+            <h2 class="section-title">Patientenliste</h2>
+            <div id="patientList" class="patient-list-container">
+                <!-- Loaded by JavaScript -->
+            </div>
+        </section>
+    </main>
+
+    <style>
+        .patient-list-container {
+            background-color: var(--bg-white);
+            border-radius: 8px;
+            padding: 1.5rem;
+        }
+
+        .patients-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .patients-table th,
+        .patients-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .patients-table th {
+            background-color: var(--bg-light);
+            font-weight: 600;
+        }
+
+        .patients-table tr:hover {
+            background-color: var(--bg-light);
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-light);
+        }
+
+        .empty-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .status-badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+        }
+
+        @media (max-width: 768px) {
+            .header-nav {
+                display: none;
+            }
+
+            .btn-menu {
+                display: block;
+            }
+
+            .mobile-menu.show {
+                display: flex;
+            }
+
+            .patients-table th,
+            .patients-table td {
+                padding: 0.75rem 0.5rem;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+
+    <script src="script_therapeutportal.js"></script>
+</body>
+</html>

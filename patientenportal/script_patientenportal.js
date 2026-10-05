@@ -123,7 +123,7 @@ async function initPortal() {
  */
 async function checkSession() {
     try {
-        const response = await fetch('http://localhost:3000/api/auth/me', {
+        const response = await fetch('https://api.milaphysio.de/api/auth/me', {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
@@ -182,7 +182,7 @@ function loginPatient(email) {
  */
 async function loginPatientReal(email, password) {
     try {
-        const response = await fetch('http://localhost:3000/api/auth/login', {
+        const response = await fetch('https://api.milaphysio.de/api/auth/login', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -222,7 +222,7 @@ async function loginPatientReal(email, password) {
 async function logoutPatient() {
     try {
         // Call backend logout endpoint
-        await fetch('http://localhost:3000/api/auth/logout', {
+        await fetch('https://api.milaphysio.de/api/auth/logout', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -286,7 +286,7 @@ async function loadPatientDataForPage() {
  */
 async function loadPatient() {
     try {
-        const response = await fetch('http://localhost:3000/api/profile', {
+        const response = await fetch('https://api.milaphysio.de/api/profile', {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
@@ -317,7 +317,7 @@ async function loadPatient() {
  */
 async function loadAppointments() {
     try {
-        const response = await fetch('http://localhost:3000/api/appointments', {
+        const response = await fetch('https://api.milaphysio.de/api/appointments', {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
@@ -348,7 +348,7 @@ async function loadAppointments() {
  */
 async function loadExercises() {
     try {
-        const response = await fetch('http://localhost:3000/api/exercises', {
+        const response = await fetch('https://api.milaphysio.de/api/exercises', {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
@@ -378,7 +378,7 @@ async function loadExercises() {
  */
 async function updatePatientProfile(updates) {
     try {
-        const response = await fetch('http://localhost:3000/api/profile', {
+        const response = await fetch('https://api.milaphysio.de/api/profile', {
             method: 'PATCH',
             headers: {
                 'Content-Type': 'application/json',
@@ -409,7 +409,7 @@ async function updatePatientProfile(updates) {
  */
 async function loadProfile() {
     try {
-        const response = await fetch('http://localhost:3000/api/profile', {
+        const response = await fetch('https://api.milaphysio.de/api/profile', {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',

@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patientenakte | Therapeut Portal Mila Physio</title>
+    <link rel="stylesheet" href="style_therapeutportal.css">
+</head>
+<body>
+    <!-- Header / Navigation -->
+    <header class="portal-header">
+        <div class="header-container">
+            <a href="../index.html" class="header-logo-link">
+                <img src="../logo/logo.svg" alt="Mila Physio" class="logo-img" onerror="this.alt='Mila Physio'">
+            </a>
+
+            <nav class="header-nav">
+                <a href="index.html" class="nav-link">Dashboard</a>
+                <a href="patienten.html" class="nav-link">Patienten</a>
+                <a href="preisverwaltung.html" class="nav-link">Preise</a>
+            </nav>
+
+            <div class="header-actions">
+                <button class="btn-profile" id="profileBtn" title="Profil">👤</button>
+                <button class="btn-logout" id="logoutBtn" title="Abmelden">↪️</button>
+            </div>
+
+            <button class="btn-menu" id="menuBtn">☰</button>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <nav class="mobile-menu" id="mobileMenu">
+        <a href="index.html" class="mobile-nav-link">Dashboard</a>
+        <a href="patienten.html" class="mobile-nav-link">Patienten</a>
+        <a href="preisverwaltung.html" class="mobile-nav-link">Preise</a>
+        <hr>
+        <button class="mobile-nav-logout" id="mobileLogoutBtn">Abmelden</button>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="portal-main">
+        <!-- Alerts Container -->
+        <div id="alertsContainer"></div>
+
+        <!-- Patient Header -->
+        <section class="section-patient-header" style="margin-bottom: 2rem;">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <div>
+                    <h1 class="greeting-title" id="patientName">Patient</h1>
+                    <a href="patienten.html" style="color: var(--primary-color); text-decoration: none;">← Zurück zu Patienten</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tab Navigation -->
+        <div class="tabs-container" style="margin-bottom: 2rem;">
+            <button class="tab-button active" onclick="switchTab('ubersicht')">Übersicht</button>
+            <button class="tab-button" onclick="switchTab('stammdaten')">Stammdaten</button>
+            <button class="tab-button" onclick="switchTab('termine')">Termine</button>
+            <button class="tab-button" onclick="switchTab('verordnungen')">Verordnungen</button>
+            <button class="tab-button" onclick="switchTab('dokumente')">Dokumente</button>
+            <button class="tab-button" onclick="switchTab('anamnese')">Anamnese</button>
+            <button class="tab-button" onclick="switchTab('befund')">Befund</button>
+            <button class="tab-button" onclick="switchTab('diagnose')">Diagnose</button>
+            <button class="tab-button" onclick="switchTab('ziele')">Ziele</button>
+            <button class="tab-button" onclick="switchTab('behandlung')">Behandlung</button>
+            <button class="tab-button" onclick="switchTab('ubungen')">Übungen</button>
+            <button class="tab-button" onclick="switchTab('voice')">Voice</button>
+            <button class="tab-button" onclick="switchTab('ai')">AI Review</button>
+            <button class="tab-button" onclick="switchTab('abrechnung')">Abrechnung</button>
+        </div>
+
+        <!-- Übersicht Tab -->
+        <div id="ubersicht" class="tab-content active" style="display: block;">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
+                <div class="card">
+                    <h3>📅 Nächste Termine</h3>
+                    <div id="upcomingAppointments">
+                        <p style="color: var(--text-light);">Wird geladen...</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <h3>📋 Verordnungen</h3>
+                    <div id="prescriptionsSummary">
+                        <p style="color: var(--text-light);">Wird geladen...</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <h3>💰 Rechnungen</h3>
+                    <div id="invoicesSummary">
+                        <p style="color: var(--text-light);">Wird geladen...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Stammdaten Tab -->
+        <div id="stammdaten" class="tab-content" style="display: none;">
+            <div class="card">
+                <h2>Stammdaten</h2>
+                <form id="masterDataForm" style="display: grid; gap: 1.5rem;">
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                        <div class="form-group">
+                            <label>Vorname</label>
+                            <input type="text" id="firstName" class="form-input" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Nachname</label>
+                            <input type="text" id="lastName" class="form-input" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>E-Mail</label>
+                        <input type="email" id="email" class="form-input" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Telefon</label>
+                        <input type="tel" id="phone" class="form-input">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Geburtsdatum</label>
+                        <input type="date" id="dateOfBirth" class="form-input">
+                    </div>
+
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                        <div class="form-group">
+                            <label>PLZ</label>
+                            <input type="text" id="postalCode" class="form-input">
+                        </div>
+                        <div class="form-group">
+                            <label>Ort</label>
+                            <input type="text" id="city" class="form-input">
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Speichern</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Termine Tab -->
+        <div id="termine" class="tab-content" style="display: none;">
+            <div class="card">
+                <h2>Termine</h2>
+                <button class="btn btn-primary" onclick="showNewAppointmentModal()" style="margin-bottom: 1rem;">+ Neuer Termin</button>
+                <div id="appointmentsList">
+                    <!-- Loaded by JavaScript -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Verordnungen Tab -->
+        <div id="verordnungen" class="tab-content" style="display: none;">
+            <div class="card">
+                <h2>Verordnungen</h2>
+                <div id="prescriptionsList">
+                    <!-- Loaded by JavaScript -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Dokumente Tab -->
+        <div id="dokumente" class="tab-content" style="display: none;">
+            <div class="card">
+                <h2>Dokumente</h2>
+                <div id="documentsList">
+                    <!-- Loaded by JavaScript -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Anamnese Tab -->
+        <div id="anamnese" class="tab-content" style="display: none;">
+            <div class="card">
+                <h2>Anamnese</h2>
+                <div id="anamnesisContent">
+                    <!-- Loaded by JavaScript -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Befund Tab -->
+        <div id="befund" class="tab-content" style="display: none;">
+            <div class="card">
+                <h2>Befund</h2>
+                <div id="findingsContent">
+                    <!-- Loaded by JavaScript -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Diagnose Tab -->
+        <div id="diagnose" class="tab-content" style="display: none;">
+            <div class="card">
+                <h2>Diagnose</h2>
+                <div id="diagnosisContent">
+                    <!-- Loaded by JavaScript -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Ziele Tab -->
+        <div id="ziele" class="tab-content" style="display: none;">
+            <div class="card">
+                <h2>Therapieziele</h2>
+                <div id="goalsContent">
+                    <!-- Loaded by JavaScript -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Behandlung Tab -->
+        <div id="behandlung" class="tab-content" style="display: none;">
+            <div class="card">
+                <h2>Behandlung / Verlauf</h2>
+                <div id="treatmentContent">
+                    <!-- Loaded by JavaScript -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Übungen Tab -->
+        <div id="ubungen" class="tab-content" style="display: none;">
+            <div class="card">
+                <h2>Übungen zuweisen</h2>
+                <button class="btn btn-primary" onclick="showNewExerciseModal()" style="margin-bottom: 1rem;">+ Neue Übung zuweisen</button>
+                <div id="exercisesList">
+                    <!-- Loaded by JavaScript -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Voice Tab -->
+        <div id="voice" class="tab-content" style="display: none;">
+            <div class="card">
+                <h2>Voice Drafts</h2>
+                <div id="voiceContent">
+                    <!-- Loaded by JavaScript -->
+                </div>
+            </div>
+        </div>
+
+        <!-- AI Review Tab -->
+        <div id="ai" class="tab-content" style="display: none;">
+            <div class="card">
+                <h2>AI Review</h2>
+                <div id="aiContent">
+                    <!-- Loaded by JavaScript -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Abrechnung Tab -->
+        <div id="abrechnung" class="tab-content" style="display: none;">
+            <div class="card">
+                <h2>Rechnungen</h2>
+                <div id="invoicesList">
+                    <!-- Loaded by JavaScript -->
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- New Appointment Modal -->
+    <div id="newAppointmentModal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close">×</span>
+            <h2>Neuer Termin</h2>
+            <form id="newAppointmentForm" style="display: grid; gap: 1rem;">
+                <div class="form-group">
+                    <label>Datum</label>
+                    <input type="date" id="appointmentDate" class="form-input" required>
+                </div>
+                <div class="form-group">
+                    <label>Uhrzeit</label>
+                    <input type="time" id="appointmentTime" class="form-input" required>
+                </div>
+                <div class="form-group">
+                    <label>Typ</label>
+                    <select id="appointmentType" class="form-input">
+                        <option>Physiotherapie</option>
+                        <option>Hausbesuch</option>
+                        <option>Online</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary">Erstellen</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- New Exercise Modal -->
+    <div id="newExerciseModal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close">×</span>
+            <h2>Neue Übung zuweisen</h2>
+            <form id="newExerciseForm" style="display: grid; gap: 1rem;">
+                <div class="form-group">
+                    <label>Übung Titel</label>
+                    <input type="text" id="exerciseTitle" class="form-input" required>
+                </div>
+                <div class="form-group">
+                    <label>Beschreibung</label>
+                    <textarea id="exerciseDescription" class="form-input" rows="3"></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Anweisungen</label>
+                    <textarea id="exerciseInstructions" class="form-input" rows="3"></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Kategorie</label>
+                    <input type="text" id="exerciseCategory" class="form-input">
+                </div>
+                <div class="form-group">
+                    <label>Sätze/Wiederholungen</label>
+                    <input type="text" id="exerciseSetsReps" class="form-input" placeholder="z.B. 3 × 10">
+                </div>
+                <div class="form-group">
+                    <label>Häufigkeit</label>
+                    <input type="text" id="exerciseFrequency" class="form-input" placeholder="z.B. täglich, 3× pro Woche">
+                </div>
+                <div class="form-group">
+                    <label>Dauer (Minuten)</label>
+                    <input type="number" id="exerciseDuration" class="form-input" min="1">
+                </div>
+                <button type="submit" class="btn btn-primary">Zuweisen</button>
+            </form>
+        </div>
+    </div>
+
+    <style>
+        .card {
+            background-color: var(--bg-white);
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: var(--shadow);
+            margin-bottom: 1.5rem;
+        }
+
+        .tabs-container {
+            display: flex;
+            gap: 0.5rem;
+            border-bottom: 2px solid var(--border-color);
+            overflow-x: auto;
+        }
+
+        .tab-button {
+            padding: 0.75rem 1.5rem;
+            border: none;
+            background: none;
+            cursor: pointer;
+            font-weight: 600;
+            color: var(--text-light);
+            border-bottom: 3px solid transparent;
+            margin-bottom: -2px;
+            transition: all 0.3s;
+        }
+
+        .tab-button.active {
+            color: var(--primary-color);
+            border-bottom-color: var(--primary-color);
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .form-group label {
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .form-input {
+            padding: 0.75rem;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(44, 95, 45, 0.1);
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+
+        .modal.show {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            background-color: var(--bg-white);
+            padding: 2rem;
+            border-radius: 8px;
+            width: 90%;
+            max-width: 500px;
+            position: relative;
+        }
+
+        .modal-close {
+            position: absolute;
+            right: 1rem;
+            top: 1rem;
+            font-size: 2rem;
+            cursor: pointer;
+            color: var(--text-light);
+        }
+
+        .appointments-table,
+        .invoices-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .appointments-table th,
+        .appointments-table td,
+        .invoices-table th,
+        .invoices-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .appointments-table th,
+        .invoices-table th {
+            background-color: var(--bg-light);
+            font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+            .header-nav {
+                display: none;
+            }
+
+            .btn-menu {
+                display: block;
+            }
+
+            .mobile-menu.show {
+                display: flex;
+            }
+
+            .tabs-container {
+                flex-wrap: wrap;
+            }
+
+            .modal-content {
+                width: 95%;
+            }
+        }
+    </style>
+
+    <script src="script_therapeutportal.js"></script>
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const patientId = params.get('id');
+
+        function switchTab(tabName) {
+            // Hide all tabs
+            document.querySelectorAll('.tab-content').forEach(tab => tab.style.display = 'none');
+            document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
+
+            // Show selected tab
+            document.getElementById(tabName).style.display = 'block';
+            event.target.classList.add('active');
+
+            // Load content for clinical tabs
+            if (tabName === 'dokumente') loadDocuments(patientId);
+            else if (tabName === 'anamnese') loadAnamnesis(patientId);
+            else if (tabName === 'befund') loadFindings(patientId);
+            else if (tabName === 'diagnose') loadDiagnosis(patientId);
+            else if (tabName === 'ziele') loadTherapyGoals(patientId);
+            else if (tabName === 'behandlung') loadTreatmentDocumentation(patientId);
+            else if (tabName === 'ubungen') loadExercises(patientId);
+            else if (tabName === 'voice') loadVoiceDrafts(patientId);
+            else if (tabName === 'ai') loadAIReview(patientId);
+        }
+
+        function showNewAppointmentModal() {
+            document.getElementById('newAppointmentModal').classList.add('show');
+        }
+
+        function showNewExerciseModal() {
+            document.getElementById('newExerciseModal').classList.add('show');
+        }
+
+        document.getElementById('newExerciseForm')?.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const params = new URLSearchParams(window.location.search);
+            const patientId = params.get('id');
+
+            const success = await createExercise(patientId, {
+                title: document.getElementById('exerciseTitle').value,
+                description: document.getElementById('exerciseDescription').value,
+                instructions: document.getElementById('exerciseInstructions').value,
+                category: document.getElementById('exerciseCategory').value,
+                sets_or_reps: document.getElementById('exerciseSetsReps').value,
+                frequency: document.getElementById('exerciseFrequency').value,
+                duration_minutes: parseInt(document.getElementById('exerciseDuration').value) || null
+            });
+
+            if (success) {
+                document.getElementById('newExerciseModal').classList.remove('show');
+                await loadExercises(patientId);
+            }
+        });
+
+        document.getElementById('newAppointmentForm')?.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const params = new URLSearchParams(window.location.search);
+            const patientId = params.get('id');
+            const date = document.getElementById('appointmentDate').value;
+            const time = document.getElementById('appointmentTime').value;
+            const type = document.getElementById('appointmentType').value;
+
+            const success = await createAppointment(patientId, {
+                start_time: `${date}T${time}`,
+                type
+            });
+
+            if (success) {
+                document.getElementById('newAppointmentModal').classList.remove('show');
+                location.reload();
+            }
+        });
+
+        document.getElementById('masterDataForm')?.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const params = new URLSearchParams(window.location.search);
+            const patientId = params.get('id');
+
+            const masterData = {
+                first_name: document.getElementById('firstName').value,
+                last_name: document.getElementById('lastName').value,
+                email: document.getElementById('email').value,
+                phone: document.getElementById('phone').value,
+                date_of_birth: document.getElementById('dateOfBirth').value,
+                postal_code: document.getElementById('postalCode').value,
+                city: document.getElementById('city').value
+            };
+
+            await saveMasterData(patientId, masterData);
+        });
+
+        // Initialize page on load
+        document.addEventListener('DOMContentLoaded', async () => {
+            protectTherapistPage();
+
+            if (patientId) {
+                await loadPatientDetail(patientId);
+                await loadMasterData(patientId);
+                await loadAppointments(patientId);
+                await loadPrescriptions(patientId);
+                await loadInvoices(patientId);
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | Therapeut Portal Mila Physio</title>
+    <link rel="stylesheet" href="style_therapeutportal.css">
+</head>
+<body>
+    <!-- Header / Navigation -->
+    <header class="portal-header">
+        <div class="header-container">
+            <a href="../index.html" class="header-logo-link">
+                <img src="../logo/logo.svg" alt="Mila Physio" class="logo-img" onerror="this.alt='Mila Physio'">
+            </a>
+
+            <nav class="header-nav">
+                <a href="index.html" class="nav-link active">Dashboard</a>
+                <a href="patienten.html" class="nav-link">Patienten</a>
+                <a href="preisverwaltung.html" class="nav-link">Preise</a>
+            </nav>
+
+            <div class="header-actions">
+                <button class="btn-profile" id="profileBtn" title="Profil">👤</button>
+                <button class="btn-logout" id="logoutBtn" title="Abmelden">↪️</button>
+            </div>
+
+            <button class="btn-menu" id="menuBtn">☰</button>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <nav class="mobile-menu" id="mobileMenu">
+        <a href="index.html" class="mobile-nav-link active">Dashboard</a>
+        <a href="patienten.html" class="mobile-nav-link">Patienten</a>
+        <a href="preisverwaltung.html" class="mobile-nav-link">Preise</a>
+        <hr>
+        <button class="mobile-nav-logout" id="mobileLogoutBtn">Abmelden</button>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="portal-main">
+        <!-- Alerts Container -->
+        <div id="alertsContainer"></div>
+
+        <!-- Greeting Section -->
+        <section class="section-greeting">
+            <div class="greeting-card">
+                <h1 class="greeting-title">Willkommen im Therapeut Portal 👋</h1>
+                <p class="greeting-subtitle">Verwalten Sie Ihre Patienten, Termine und Abrechnung</p>
+            </div>
+        </section>
+
+        <!-- Quick Actions -->
+        <section class="section-quick-actions" style="margin-top: 2rem;">
+            <h2 class="section-title">Schnellzugriff</h2>
+            <div class="quick-actions-grid">
+                <a href="patienten.html" class="action-card">
+                    <div class="action-icon">👥</div>
+                    <h3>Meine Patienten</h3>
+                    <p>Patientenliste anzeigen und verwalten</p>
+                    <span class="btn btn-primary btn-small">Öffnen →</span>
+                </a>
+
+                <a href="patienten.html" class="action-card" onclick="alert('Terminplanung kommt bald'); return false;">
+                    <div class="action-icon">📅</div>
+                    <h3>Termine</h3>
+                    <p>Übersicht der Patiententermine</p>
+                    <span class="btn btn-secondary btn-small">Anschauen →</span>
+                </a>
+
+                <a href="preisverwaltung.html" class="action-card">
+                    <div class="action-icon">💰</div>
+                    <h3>Preisverwaltung</h3>
+                    <p>Hausbesuch-Preise verwalten</p>
+                    <span class="btn btn-primary btn-small">Verwalten →</span>
+                </a>
+
+                <a href="patienten.html" class="action-card" onclick="alert('Abrechnung kommt bald'); return false;">
+                    <div class="action-icon">📋</div>
+                    <h3>Abrechnung</h3>
+                    <p>Rechnungen und Zahlungsübersicht</p>
+                    <span class="btn btn-secondary btn-small">Anschauen →</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- Dashboard Stats -->
+        <section class="section-stats" style="margin-top: 3rem;">
+            <h2 class="section-title">Ihre Statistiken</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-value" id="patientCount">-</div>
+                    <div class="stat-label">Patienten</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value" id="appointmentCount">-</div>
+                    <div class="stat-label">Nächste Termine</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value" id="invoiceCount">-</div>
+                    <div class="stat-label">Rechnungen</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value" id="openBalance">-</div>
+                    <div class="stat-label">Offene Forderungen</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Information Section -->
+        <section class="section-info" style="margin-top: 3rem; margin-bottom: 3rem;">
+            <div class="info-card">
+                <h2 style="margin-bottom: 1rem;">ℹ️ Willkommen im Therapeut Portal</h2>
+                <p style="margin-bottom: 1rem;">Dieses Portal ermöglicht es Ihnen, Ihre tägliche Arbeit effizient zu verwalten:</p>
+                <ul style="margin-left: 1.5rem; color: var(--text-light); line-height: 1.8;">
+                    <li>Patientenverwaltung und Stammdaten</li>
+                    <li>Terminplanung und -verwaltung</li>
+                    <li>Verordnungsmanagement</li>
+                    <li>Preisverwaltung für Hausbesuche</li>
+                    <li>Abrechnungsübersicht</li>
+                    <li>Dokumentation und Verwaltung</li>
+                </ul>
+                <p style="margin-top: 1rem; color: var(--text-light); font-size: 0.9rem;">
+                    Für weitere Unterstützung kontaktieren Sie bitte support@milaphysio.de oder 0174 2585 160.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <style>
+        .greeting-card {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-light) 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .greeting-title {
+            color: white;
+            margin-bottom: 0.5rem;
+        }
+
+        .greeting-subtitle {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.1rem;
+        }
+
+        .quick-actions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .action-card {
+            background-color: var(--bg-white);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1.5rem;
+            text-decoration: none;
+            color: inherit;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .action-card:hover {
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-4px);
+            border-color: var(--primary-color);
+        }
+
+        .action-icon {
+            font-size: 2.5rem;
+        }
+
+        .action-card h3 {
+            margin: 0;
+            color: var(--text-dark);
+            font-size: 1.2rem;
+        }
+
+        .action-card p {
+            margin: 0;
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .stat-card {
+            background-color: var(--bg-white);
+            border-radius: 8px;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: var(--shadow);
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .stat-value {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        .info-card {
+            background-color: var(--bg-white);
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            border-left: 4px solid var(--secondary-color);
+        }
+
+        .btn-small {
+            padding: 0.5rem 1rem;
+            font-size: 0.85rem;
+        }
+
+        @media (max-width: 768px) {
+            .header-nav {
+                display: none;
+            }
+
+            .btn-menu {
+                display: block;
+            }
+
+            .mobile-menu.show {
+                display: flex;
+            }
+
+            .quick-actions-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+
+    <script src="script_therapeutportal.js"></script>
+    <script>
+        // Load dashboard statistics
+        async function loadDashboardStats() {
+            try {
+                // Load patient count
+                const patientsResponse = await fetch('http://localhost:3000/api/therapist/patients', {
+                    method: 'GET',
+                    headers: { 'Content-Type': 'application/json' },
+                    credentials: 'include'
+                });
+                if (patientsResponse.ok) {
+                    const data = await patientsResponse.json();
+                    document.getElementById('patientCount').textContent = (data.data || []).length;
+                }
+            } catch (error) {
+                console.error('Load stats error:', error);
+            }
+        }
+
+        // Initialize dashboard
+        document.addEventListener('DOMContentLoaded', () => {
+            if (!window.location.pathname.includes('login.html')) {
+                loadDashboardStats();
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preisverwaltung | Therapeut Portal Mila Physio</title>
+    <link rel="stylesheet" href="style_therapeutportal.css">
+</head>
+<body>
+    <!-- Header / Navigation -->
+    <header class="portal-header">
+        <div class="header-container">
+            <a href="../index.html" class="header-logo-link">
+                <img src="../logo/logo.svg" alt="Mila Physio" class="logo-img" onerror="this.alt='Mila Physio'">
+            </a>
+
+            <nav class="header-nav">
+                <a href="index.html" class="nav-link">Dashboard</a>
+                <a href="preisverwaltung.html" class="nav-link active">Preisverwaltung</a>
+            </nav>
+
+            <div class="header-actions">
+                <button class="btn-profile" id="profileBtn" title="Profil">👤</button>
+                <button class="btn-logout" id="logoutBtn" title="Abmelden">↪️</button>
+            </div>
+
+            <button class="btn-menu" id="menuBtn">☰</button>
+        </div>
+    </header>
+
+    <!-- Mobile Menu (hidden by default) -->
+    <nav class="mobile-menu" id="mobileMenu">
+        <a href="index.html" class="mobile-nav-link">Dashboard</a>
+        <a href="preisverwaltung.html" class="mobile-nav-link active">Preisverwaltung</a>
+        <hr>
+        <button class="mobile-nav-logout" id="mobileLogoutBtn">Abmelden</button>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="portal-main">
+        <!-- Alerts Container -->
+        <div id="alertsContainer"></div>
+
+        <!-- Page Header -->
+        <section class="section-header" style="margin-bottom: 2rem;">
+            <h1 class="section-title">PREISE</h1>
+            <p style="color: var(--text-light); font-size: 0.95rem;">
+                Verwalten Sie Ihre aktuellen Hausbesuch-Preise. Neue Preisversionen werden automatisch aktiviert und alte Versionen archiviert.
+            </p>
+        </section>
+
+        <!-- Price Catalogue -->
+        <section class="section-catalogue">
+            <div id="priceCatalogue" class="price-catalogue">
+                <div class="loading">
+                    <div class="spinner"></div>
+                    <p>Wird geladen...</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Price History Modal -->
+    <div id="priceHistoryModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Preisverlauf</h2>
+                <button class="modal-close" onclick="closeModal('priceHistoryModal')">×</button>
+            </div>
+            <div id="priceHistoryTable">
+                <div class="loading">
+                    <div class="spinner"></div>
+                    <p>Wird geladen...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- New Price Version Modal -->
+    <div id="newVersionModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Neue Preisversion</h2>
+                <button class="modal-close" onclick="closeModal('newVersionModal')">×</button>
+            </div>
+            <form id="newVersionForm">
+                <input type="hidden" id="newVersionServiceCode">
+
+                <div class="form-group">
+                    <label class="form-label">Leistung</label>
+                    <div style="padding: 0.75rem; background-color: var(--bg-light); border-radius: 4px; font-weight: 600;">
+                        <span id="newVersionServiceName"></span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="newVersionPrice" class="form-label">Neuer Preis (€)</label>
+                    <input
+                        type="number"
+                        id="newVersionPrice"
+                        class="form-input"
+                        placeholder="z.B. 65.00"
+                        step="0.01"
+                        min="0.01"
+                        required
+                    >
+                    <div class="form-helper">Geben Sie den Preis in Euro ein (z.B. 65.00)</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="newVersionValidFrom" class="form-label">Gültig ab</label>
+                    <input
+                        type="date"
+                        id="newVersionValidFrom"
+                        class="form-input"
+                        required
+                    >
+                    <div class="form-helper">Das Gültig-bis-Datum der aktuellen Version wird automatisch auf den Tag davor gesetzt.</div>
+                </div>
+
+                <div class="form-actions">
+                    <button type="button" class="btn btn-cancel" onclick="closeModal('newVersionModal')">Abbrechen</button>
+                    <button type="submit" class="btn btn-primary">Speichern</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="script_therapeutportal.js"></script>
+</body>
+</html>
