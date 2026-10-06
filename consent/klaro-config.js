@@ -123,7 +123,7 @@ window.klaroConfig = {
 (function registerMetaPixelForKlaro() {
     if (document.querySelector('script[data-name="meta-pixel"]')) return;
 
-    var metaPixelId = '1652315169843706';
+    var metaPixelId = '2926372417718226';
     var blockedPixelScript = document.createElement('script');
     blockedPixelScript.type = 'text/plain';
     blockedPixelScript.setAttribute('data-type', 'application/javascript');
