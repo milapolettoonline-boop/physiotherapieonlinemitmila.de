@@ -25,14 +25,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MCE6NQPKFB"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-        gtag('config', 'G-MCE6NQPKFB');
-    </script>
+
 
     <style>
         :root {
@@ -936,6 +929,20 @@
             transform: translateY(-2px);
         }
     </style>
+<!-- Google Analytics remains inactive until the visitor grants Klaro consent. -->
+<script type="text/plain" data-type="application/javascript" data-name="google-analytics" data-src="https://www.googletagmanager.com/gtag/js?id=G-MCE6NQPKFB"></script>
+<script type="text/plain" data-type="application/javascript" data-name="google-analytics">
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag("js", new Date());
+    gtag("config", "G-MCE6NQPKFB");
+</script>
+<!-- Locally hosted Klaro! consent management -->
+<link rel="stylesheet" href="/consent/vendor/klaro.min.css">
+<link rel="stylesheet" href="/consent/consent.css">
+<script defer src="/consent/klaro-config.js"></script>
+<script defer data-config="klaroConfig" src="/consent/vendor/klaro.js"></script>
+<script defer src="/consent/consent-ui.js"></script>
 </head>
 
 <body>

@@ -12,6 +12,12 @@
 
 <link rel="stylesheet" href="style.css">
 
+<!-- Locally hosted Klaro! consent management -->
+<link rel="stylesheet" href="/consent/vendor/klaro.min.css">
+<link rel="stylesheet" href="/consent/consent.css">
+<script defer src="/consent/klaro-config.js"></script>
+<script defer data-config="klaroConfig" src="/consent/vendor/klaro.js"></script>
+<script defer src="/consent/consent-ui.js"></script>
 </head>
 
 
@@ -242,7 +248,7 @@ oder eine ausdrückliche Einwilligung vorliegt.
 
 
 
-<h2>12. Cookies</h2>
+<h2>12. Cookies und Einwilligungsverwaltung</h2>
 
 <p>
 Unsere Website kann Cookies verwenden.
@@ -255,6 +261,35 @@ blockiert werden.
 </p>
 
 
+
+<p>
+Wir verwenden Klaro! als lokal bereitgestellte Open-Source-Software, um Ihre
+Auswahl zu optionalen Diensten zu verwalten. Die Auswahl wird lokal im
+Browser-Speicher (localStorage) unter dem Eintrag "milaphysio-consent"
+gespeichert. Notwendige Funktionen sind immer aktiv; Statistik und Marketing
+sind standardmäßig deaktiviert.
+</p>
+
+<p>
+Google Analytics 4 (Mess-ID G-MCE6NQPKFB) wird nur auf den Seiten eingebunden,
+auf denen der Dienst vorhanden ist, und erst nach Ihrer Zustimmung zur
+Kategorie Statistik/Analytics geladen. Ohne diese Zustimmung wird kein
+Google-Analytics-Skript geladen. Eine bereits erteilte Auswahl können Sie
+jederzeit über den Link "Cookie-Einstellungen" auf der Website ändern oder
+widerrufen.
+</p>
+
+<p>
+Der Meta Pixel (ID 1652315169843706) wird der Kategorie Marketing zugeordnet
+und nur nach einer ausdruecklichen Marketing-Einwilligung ueber Klaro geladen.
+Es wird ausschliesslich das Ereignis PageView ohne eigene Event-Parameter
+uebermittelt; automatische Erfassung von Interaktionen und Formulardaten ist
+deaktiviert. Der PageView uebermittelt die besuchte Seitenadresse und den
+Referrer als ueblichen Seitenkontext an Meta. Bitte uebermitteln Sie keine
+Patientendaten oder Adressen in oeffentlichen URLs. Eine noscript-Variante wird
+nicht verwendet, da sich deren Bildanfrage nicht sicher an Klaro binden laesst.
+Die Eingaben des Hausbesuchs-Adressformulars werden nicht an Meta uebermittelt.
+</p>
 
 <h2>13. Ihre Rechte nach DSGVO</h2>
 
