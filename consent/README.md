@@ -6,7 +6,7 @@ The public static pages load the locally hosted Klaro! Open Source files in this
 
 - Necessary: local website functions and storage of the visitor's preference in `localStorage`.
 - Analytics: Google Analytics 4 (`G-MCE6NQPKFB`), present on seven pages. Its scripts stay inert until Klaro grants `google-analytics` consent.
-- Marketing: Meta Pixel (`2926372417718226`), centrally registered as an inert `text/plain` script with `data-name="meta-pixel"` before the locally loaded Klaro engine scans managed tags. Klaro activates it only when the Marketing service is accepted.
+- Marketing: Meta Pixel (`1652315169843706`), centrally registered as an inert `text/plain` script with `data-name="meta-pixel"` before the locally loaded Klaro engine scans managed tags. Klaro activates it only when the Marketing service is accepted.
 
 The Meta Pixel emits only `PageView`, without custom event parameters or advanced matching. Meta's automatic configuration is disabled to prevent automatic collection of page interactions and form data. A PageView still includes ordinary page context such as the visited URL and referrer; do not put patient details, addresses, symptoms, or other sensitive data in public URLs. No `noscript` pixel is included because its image request cannot be reliably gated by Klaro before a visitor has made a consent choice.
 
