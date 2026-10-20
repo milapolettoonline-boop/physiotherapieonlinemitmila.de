@@ -18,6 +18,7 @@ const products = [
     {
         id: 2,
         name: "Lenovo Yoga 7 2-in-1",
+        active: false,
         category: "Technik",
         image: "images/lenovo.webp",
         page: "lenovo-yoga7.html",

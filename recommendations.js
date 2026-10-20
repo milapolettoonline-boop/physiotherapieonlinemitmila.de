@@ -19,9 +19,11 @@ document.addEventListener("DOMContentLoaded", () => {
        KATEGORIEN ERSTELLEN
        ========================= */
 
+    const visibleProducts = products.filter(product => product.active !== false);
+
     const categories = [
         "Alle",
-        ...new Set(products.map(product => product.category))
+        ...new Set(visibleProducts.map(product => product.category))
     ];
 
 
@@ -51,9 +53,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const filteredProducts =
             selectedCategory === "Alle"
-                ? products
+                ? visibleProducts
                 : products.filter(
-                    product => product.category === selectedCategory
+                    product => product.active !== false && product.category === selectedCategory
                 );
 
 
