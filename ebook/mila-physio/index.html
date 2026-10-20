@@ -64,6 +64,20 @@
         .button:hover, .button:focus-visible { border-color: var(--teal-dark); background: var(--teal-dark); }
         .button-secondary { color: var(--teal); background: transparent; }
         .button-secondary:hover, .button-secondary:focus-visible { color: var(--white); }
+
+.button-amazon {
+    border-color: #c89435;
+    color: #1f1a12;
+    background: #c89435;
+}
+
+.button-amazon:hover,
+.button-amazon:focus-visible {
+    border-color: #a87825;
+    color: #fff;
+    background: #a87825;
+}
+
         .site-footer { padding: 22px 0; color: var(--muted); text-align: center; font-size: .88rem; }
         .site-footer p { margin: 0; }
         @media (max-width: 720px) {
@@ -101,10 +115,29 @@
                     <p class="notice">Ein Ratgeber kann eine individuelle physiotherapeutische Beurteilung oder notwendige medizinische Behandlung nicht ersetzen.</p>
                 </div>
             </article>
-            <nav class="return-links" aria-label="Zurück navigieren">
-                <a class="button" href="../index.html">Zurück zur Buchauswahl</a>
-                <a class="button button-secondary" href="https://milaphysio.de/">Zurück zur Homepage</a>
-            </nav>
+          
+
+<nav class="return-links" aria-label="Navigation und Bücher">
+    <a
+        class="button button-amazon"
+        href="https://www.amazon.de/stores/Camila-Poletto/author/B0HNHSWWSG/allbooks"
+        target="_blank"
+        rel="noopener noreferrer"
+    >
+        Alle Bücher bei Amazon ansehen
+    </a>
+
+    <a class="button" href="../index.html">
+        Zurück zur Buchauswahl
+    </a>
+
+    <a class="button button-secondary" href="https://milaphysio.de/">
+        Zurück zur Homepage
+    </a>
+</nav>
+
+
+         
         </section>
     </main>
     <footer class="site-footer"><div class="wrap"><p>MILAPHYSIO · Physiotherapie mit Mila</p></div></footer>
