@@ -42,7 +42,7 @@ html {
 
 
 body {
-    font-family: "Inter", sans-serif;
+    font-family: sans-serif;
     color: var(--text);
     background: var(--white);
     line-height: 1.6;
@@ -998,7 +998,7 @@ button {
 .about-signature span {
     display: block;
     color: var(--gold);
-    font-family: "Inter", sans-serif;
+    font-family: sans-serif;
     font-size: 0.78rem;
     font-weight: 600;
     margin-top: 4px;
