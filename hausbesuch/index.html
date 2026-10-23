@@ -1587,6 +1587,7 @@
                     // Store reference to the selected button for each new click
                     selectedButton = this;
                     console.log('Hausbesuch Paket ausgewählt:', this.getAttribute('data-package'));
+                    if (window.milaphysioTrack) window.milaphysioTrack('hausbesuch_package_select', { package: this.getAttribute('data-package') || 'unknown' });
                     openHausbesuchModal();
                 });
             });
@@ -1689,6 +1690,8 @@
                         showMessage('Adresse genehmigt! Sie werden zu Calendly weitergeleitet...', 'success', messageDiv);
                         setTimeout(() => {
                             closeHausbesuchModal();
+                            // Redirect started. This does not mean an appointment was booked.
+                            if (window.milaphysioTrack) window.milaphysioTrack('calendly_redirect', { package: selectedButton ? (selectedButton.getAttribute('data-package') || 'unknown') : 'unknown', service_type: 'hausbesuch' });
                             window.open(calendlyUrl, '_blank', 'noopener,noreferrer');
                             // Clear selectedButton after opening (allows new selections)
                             selectedButton = null;
