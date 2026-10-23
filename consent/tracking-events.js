@@ -47,7 +47,7 @@
 
     /* Affiliate and book-shop domains. Exact host or subdomain match only,
      * so "notamazon.de" and "amazonaws.com" are not classified as Amazon. */
-    var AFFILIATE_DOMAINS = ['amazon.de', 'amazon.com', 'amzn.to', 'amzn.eu', 'a.co'];
+    var AFFILIATE_DOMAINS = ['amazon.de', 'amazon.com', 'amzn.to', 'amzn.eu', 'a.co', 'link.amazon'];
 
     function affiliateDomain(hostname) {
         var host = hostname.toLowerCase().replace(/^www\./, '');
