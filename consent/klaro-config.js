@@ -79,7 +79,8 @@ window.klaroConfig = {
             required: false,
             default: false,
             optOut: false,
-            onlyOnce: true
+            onlyOnce: true,
+            cookies: [/^_ga/, '_gid', '_gat', /^_gcl_/]
         },
         {
             name: 'meta-pixel',
@@ -99,6 +100,7 @@ window.klaroConfig = {
                 window.localStorage.setItem(analyticsMarker, '1');
             } else if (window.localStorage.getItem(analyticsMarker) === '1') {
                 window.localStorage.removeItem(analyticsMarker);
+                window.localStorage.removeItem('_gcl_ls');
                 window.location.reload();
             }
             return;
@@ -119,11 +121,56 @@ window.klaroConfig = {
     }
 };
 
+/* Tracking scope per page.
+ *   full           - GA4 and Meta Pixel are registered (consent still required).
+ *   analytics-only - GA4 only. Used for pages whose URL reveals health topics,
+ *                    so no Meta PageView is sent for them.
+ *   none           - nothing is registered. Used for legal pages.
+ * Klaro still loads on every page so the visitor can review or change choices. */
+var MILAPHYSIO_GA4_ID = 'G-MCE6NQPKFB';
+var MILAPHYSIO_META_PIXEL_ID = '1652315169843706';
+
+window.milaphysioTrackingMode = (function getTrackingMode() {
+    var path = window.location.pathname;
+    if (/^\/(impressum|datenschutz|agb)\.html$/.test(path)) return 'none';
+    if (/^\/blog\//.test(path) || /^\/nackenschmerzen-ratgeber\.html$/.test(path)) return 'analytics-only';
+    return 'full';
+}());
+
+/* Register the blocked GA4 scripts once, centrally, so every covered page shares one setup. */
+(function registerGoogleAnalyticsForKlaro() {
+    if (window.milaphysioTrackingMode === 'none') return;
+    if (document.querySelector('script[data-name="google-analytics"]')) return;
+
+    var gtagLoader = document.createElement('script');
+    gtagLoader.type = 'text/plain';
+    gtagLoader.setAttribute('data-type', 'application/javascript');
+    gtagLoader.setAttribute('data-name', 'google-analytics');
+    gtagLoader.setAttribute('data-src', 'https://www.googletagmanager.com/gtag/js?id=' + MILAPHYSIO_GA4_ID);
+    document.head.appendChild(gtagLoader);
+
+    var gtagConfig = document.createElement('script');
+    gtagConfig.type = 'text/plain';
+    gtagConfig.setAttribute('data-type', 'application/javascript');
+    gtagConfig.setAttribute('data-name', 'google-analytics');
+    gtagConfig.textContent = [
+        'window.dataLayer = window.dataLayer || [];',
+        'function gtag() { dataLayer.push(arguments); }',
+        'gtag("js", new Date());',
+        'gtag("config", "' + MILAPHYSIO_GA4_ID + '", {',
+        '  allow_google_signals: false,',
+        '  allow_ad_personalization_signals: false',
+        '});'
+    ].join('\n');
+    document.head.appendChild(gtagConfig);
+}());
+
 /* Register the blocked Pixel script before Klaro starts scanning managed tags. */
 (function registerMetaPixelForKlaro() {
+    if (window.milaphysioTrackingMode !== 'full') return;
     if (document.querySelector('script[data-name="meta-pixel"]')) return;
 
-    var metaPixelId = '1652315169843706';
+    var metaPixelId = MILAPHYSIO_META_PIXEL_ID;
     var blockedPixelScript = document.createElement('script');
     blockedPixelScript.type = 'text/plain';
     blockedPixelScript.setAttribute('data-type', 'application/javascript');
