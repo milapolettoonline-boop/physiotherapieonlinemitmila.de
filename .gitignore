@@ -1,0 +1,2 @@
+# Backup copies created during manual edits. Keep them outside the repository.
+*.backup-*
