@@ -90,6 +90,10 @@
                 link_location: linkLocation(link)
             };
             if (pageType() === 'ebook') {
+                var bookTitle = link.getAttribute('data-book-title');
+                var bookLanguage = link.getAttribute('data-book-language');
+                if (bookTitle) amazonPayload.book_title = bookTitle;
+                if (bookLanguage) amazonPayload.book_language = bookLanguage;
                 track('ebook_buy_click', amazonPayload);
             } else {
                 track('affiliate_outbound_click', amazonPayload);

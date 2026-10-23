@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Physiotherapie-E-Book von Mila Physio: Schluss mit Nackenschmerzen im Büro.">
+    <title>Physiotherapie-E-Book | Mila Physio</title>
+    <style>
+        :root {
+            --teal: #155d60;
+            --teal-dark: #10494b;
+            --gold: #c89435;
+            --cream: #f7f3ec;
+            --white: #fff;
+            --ink: #263238;
+            --muted: #647174;
+            --line: #e8e2d8;
+            --serif: Georgia, "Times New Roman", serif;
+            --sans: Arial, Helvetica, sans-serif;
+        }
+        *, *::before, *::after { box-sizing: border-box; }
+        body { margin: 0; color: var(--ink); background: var(--cream); font: 16px/1.7 var(--sans); }
+        img { display: block; max-width: 100%; }
+        a { color: inherit; }
+        .wrap { width: min(1060px, calc(100% - 40px)); margin: 0 auto; }
+        .site-header { padding: 18px 0; background: var(--white); border-bottom: 1px solid var(--line); }
+        .brand { display: flex; justify-content: center; }
+        .brand img { width: min(190px, 48vw); height: 70px; object-fit: contain; }
+        .hero { padding: clamp(44px, 7vw, 80px) 0; }
+        .book-card {
+            display: grid;
+            grid-template-columns: minmax(250px, .8fr) minmax(0, 1.2fr);
+            align-items: center;
+            gap: clamp(28px, 6vw, 70px);
+            padding: clamp(24px, 5vw, 54px);
+            border: 1px solid var(--line);
+            border-radius: 20px;
+            background: var(--white);
+            box-shadow: 0 14px 36px rgba(24, 57, 58, .08);
+        }
+        .cover { display: flex; min-height: 380px; justify-content: center; align-items: center; padding: 12px; background: var(--cream); border-radius: 12px; }
+        .cover img { width: 100%; max-height: 500px; object-fit: contain; }
+        .eyebrow { margin: 0 0 10px; color: var(--gold); font-size: .78rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; }
+        h1, h2 { font-family: var(--serif); line-height: 1.2; }
+        h1 { margin: 0 0 18px; color: var(--teal-dark); font-size: clamp(2.2rem, 5vw, 3.4rem); font-weight: 500; }
+        .description { margin: 0 0 18px; color: var(--muted); }
+        .notice { margin: 0; padding: 16px 18px; border-left: 4px solid var(--gold); background: var(--cream); color: var(--ink); font-size: .94rem; }
+        .return-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 14px; margin-top: 32px; }
+        .button {
+            display: inline-flex;
+            min-height: 50px;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 22px;
+            border: 1px solid var(--teal);
+            border-radius: 999px;
+            color: var(--white);
+            background: var(--teal);
+            font-weight: 700;
+            text-align: center;
+            text-decoration: none;
+            transition: background-color .18s ease, border-color .18s ease;
+        }
+        .button:hover, .button:focus-visible { border-color: var(--teal-dark); background: var(--teal-dark); }
+        .button-secondary { color: var(--teal); background: transparent; }
+        .button-secondary:hover, .button-secondary:focus-visible { color: var(--white); }
+
+.button-amazon {
+    border-color: #c89435;
+    color: #1f1a12;
+    background: #c89435;
+}
+
+.button-amazon:hover,
+.button-amazon:focus-visible {
+    border-color: #a87825;
+    color: #fff;
+    background: #a87825;
+}
+
+        .site-footer { padding: 22px 0; color: var(--muted); text-align: center; font-size: .88rem; }
+        .site-footer p { margin: 0; }
+        @media (max-width: 720px) {
+            .book-card { grid-template-columns: 1fr; }
+            .cover { min-height: 0; }
+            .cover img { width: auto; max-width: 100%; max-height: 440px; }
+        }
+        @media (max-width: 500px) {
+            .wrap { width: min(100% - 32px, 1060px); }
+            .book-card { padding: 18px; }
+            .return-links { flex-direction: column; }
+            .return-links .button { width: 100%; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after { transition-duration: .01ms !important; }
+        }
+    </style>
+<!-- Locally hosted Klaro! consent management -->
+<link rel="stylesheet" href="/consent/vendor/klaro.min.css">
+<link rel="stylesheet" href="/consent/consent.css">
+<script defer src="/consent/klaro-config.js"></script>
+<script defer data-config="klaroConfig" src="/consent/vendor/klaro.js"></script>
+<script defer src="/consent/consent-ui.js"></script>
+<script defer src="/consent/tracking-events.js"></script>
+</head>
+<body>
+    <header class="site-header">
+        <div class="wrap brand">
+            <img src="../../logo/Mila-logo.webp" alt="MILAPHYSIO – Physiotherapie mit Mila" width="190" height="70">
+        </div>
+    </header>
+    <main class="wrap">
+        <section class="hero" aria-labelledby="page-title">
+            <article class="book-card">
+                <div class="cover">
+                    <img src="../images/Schluss mit Nackenschmerzen im Büro.webp" alt="Cover: Schluss mit Nackenschmerzen im Büro" width="1600" height="2400">
+                </div>
+                <div>
+                    <p class="eyebrow">Mila Physio · Physiotherapie-E-Book</p>
+                    <h1 id="page-title">Schluss mit Nackenschmerzen im Büro</h1>
+                    <p class="description">Das vorhandene Cover beschreibt einen 14-Tage-Plan für mehr Beweglichkeit und weniger Nackenschmerzen im Büro.</p>
+                    <p class="notice">Ein Ratgeber kann eine individuelle physiotherapeutische Beurteilung oder notwendige medizinische Behandlung nicht ersetzen.</p>
+                </div>
+            </article>
+          
+
+<nav class="return-links" aria-label="Navigation und Bücher">
+    <a
+        class="button button-amazon"
+        href="https://www.amazon.de/stores/Camila-Poletto/author/B0HNHSWWSG/allbooks"
+        target="_blank"
+        rel="noopener noreferrer"
+    >
+        Alle Bücher bei Amazon ansehen
+    </a>
+
+    <a class="button" href="../index.html">
+        Zurück zur Buchauswahl
+    </a>
+
+    <a class="button button-secondary" href="https://milaphysio.de/">
+        Zurück zur Homepage
+    </a>
+</nav>
+
+
+         
+        </section>
+    </main>
+    <footer class="site-footer"><div class="wrap"><p>MILAPHYSIO · Physiotherapie mit Mila</p></div></footer>
+</body>
+</html>
