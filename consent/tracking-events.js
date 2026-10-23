@@ -30,11 +30,32 @@
         return 'produkt';
     }
 
+    /* Stable page identifier from the path. "index.html" takes its directory name,
+     * so /ebook/index.html gives "ebook" and not "index". Root gives "home". */
     function pageSlug() {
-        var segments = window.location.pathname.split('/').filter(Boolean);
+        var segments = window.location.pathname.split('/').filter(Boolean).map(function (s) {
+            try { return decodeURIComponent(s); } catch (e) { return s; }
+        });
         if (!segments.length) return 'home';
-        var last = segments[segments.length - 1] || segments[segments.length - 2] || 'home';
-        return last.replace(/\.html$/, '');
+        var last = segments[segments.length - 1];
+        if (/\.html$/i.test(last)) {
+            if (last === 'index.html') return segments.length === 1 ? 'home' : segments[segments.length - 2];
+            return last.replace(/\.html$/i, '');
+        }
+        return last;
+    }
+
+    /* Affiliate and book-shop domains. Exact host or subdomain match only,
+     * so "notamazon.de" and "amazonaws.com" are not classified as Amazon. */
+    var AFFILIATE_DOMAINS = ['amazon.de', 'amazon.com', 'amzn.to', 'amzn.eu', 'a.co'];
+
+    function affiliateDomain(hostname) {
+        var host = hostname.toLowerCase().replace(/^www\./, '');
+        for (var i = 0; i < AFFILIATE_DOMAINS.length; i++) {
+            var domain = AFFILIATE_DOMAINS[i];
+            if (host === domain || host.slice(-(domain.length + 1)) === '.' + domain) return domain;
+        }
+        return null;
     }
 
     function linkLocation(link) {
@@ -80,12 +101,16 @@
             return;
         }
         if (absolute.hostname === 'calendly.com' || absolute.hostname === 'www.calendly.com') {
+            // Hausbesuch package buttons open the address form instead of Calendly.
+            // Their events are sent by the Hausbesuch page itself.
+            if (link.hasAttribute('data-package')) return;
             track('calendly_click', { page_type: pageType(), service_type: pageSlug() });
             return;
         }
-        if (/(^|\.)amazon\.(de|com)$/.test(absolute.hostname)) {
+        var domain = affiliateDomain(absolute.hostname);
+        if (domain) {
             var amazonPayload = {
-                link_domain: absolute.hostname.replace(/^www\./, ''),
+                link_domain: domain,
                 product_slug: pageSlug(),
                 link_location: linkLocation(link)
             };
