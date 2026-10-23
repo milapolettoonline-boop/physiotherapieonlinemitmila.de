@@ -16,12 +16,12 @@ window.klaroConfig = {
             privacyPolicyUrl: '/datenschutz.html',
             consentNotice: {
                 title: 'Datenschutzeinstellungen',
-                description: 'Google Analytics und der Meta Pixel werden nur mit Ihrer jeweiligen Zustimmung geladen. Sie koennen Ihre Auswahl jederzeit aendern oder widerrufen.',
+                description: 'Google Analytics wird nur mit Ihrer Zustimmung geladen. Sie koennen Ihre Auswahl jederzeit aendern oder widerrufen.',
                 learnMore: 'Einstellungen ansehen'
             },
             consentModal: {
                 title: 'Datenschutzeinstellungen',
-                description: 'Statistik und Marketing bleiben ausgeschaltet, bis Sie jeweils zustimmen. Weitere Informationen stehen in unserer Datenschutzerklaerung.',
+                description: 'Statistik bleibt ausgeschaltet, bis Sie zustimmen. Weitere Informationen stehen in unserer Datenschutzerklaerung.',
                 privacyPolicy: {
                     name: 'Datenschutzerklaerung',
                     text: 'Details finden Sie in unserer {privacyPolicy}.'
@@ -40,10 +40,6 @@ window.klaroConfig = {
                 analytics: {
                     title: 'Statistik/Analytics',
                     description: 'Google Analytics erstellt Nutzungsstatistiken und wird nur nach Zustimmung geladen.'
-                },
-                marketing: {
-                    title: 'Marketing',
-                    description: 'Der Meta Pixel sendet ausschliesslich PageView und wird nur nach Zustimmung geladen.'
                 }
             },
             services: {
@@ -54,10 +50,6 @@ window.klaroConfig = {
                 'google-analytics': {
                     title: 'Google Analytics (GA4)',
                     description: 'Erstellt Nutzungsstatistiken. Wird erst nach Ihrer Zustimmung geladen.'
-                },
-                'meta-pixel': {
-                    title: 'Meta Pixel',
-                    description: 'Misst Seitenaufrufe mit PageView. Es werden keine Formularwerte oder benutzerdefinierten Event-Parameter uebermittelt.'
                 }
             }
         }
@@ -81,16 +73,6 @@ window.klaroConfig = {
             optOut: false,
             onlyOnce: true,
             cookies: [/^_ga/, '_gid', '_gat', /^_gcl_/]
-        },
-        {
-            name: 'meta-pixel',
-            title: 'Meta Pixel',
-            purposes: ['marketing'],
-            required: false,
-            default: false,
-            optOut: false,
-            onlyOnce: true,
-            cookies: ['_fbp', '_fbc']
         }
     ],
     callback: function (consent, service) {
@@ -105,36 +87,19 @@ window.klaroConfig = {
             }
             return;
         }
-
-        if (service.name === 'meta-pixel') {
-            var metaMarker = 'milaphysio-meta-pixel-was-enabled';
-            if (consent) {
-                window.localStorage.setItem(metaMarker, '1');
-            } else if (window.localStorage.getItem(metaMarker) === '1') {
-                if (typeof window.fbq === 'function') {
-                    window.fbq('consent', 'revoke');
-                }
-                window.localStorage.removeItem(metaMarker);
-                window.location.reload();
-            }
-        }
     }
 };
 
 /* Tracking scope per page.
- *   full           - GA4 and Meta Pixel are registered (consent still required).
- *   analytics-only - GA4 only. Used for pages whose URL reveals health topics,
- *                    so no Meta PageView is sent for them.
- *   none           - nothing is registered. Used for legal pages.
+ *   analytics - GA4 is registered (consent still required).
+ *   none      - nothing is registered. Used for legal pages.
  * Klaro still loads on every page so the visitor can review or change choices. */
 var MILAPHYSIO_GA4_ID = 'G-MCE6NQPKFB';
-var MILAPHYSIO_META_PIXEL_ID = '1652315169843706';
 
 window.milaphysioTrackingMode = (function getTrackingMode() {
     var path = window.location.pathname;
     if (/^\/(impressum|datenschutz|agb)\.html$/.test(path)) return 'none';
-    if (/^\/blog\//.test(path) || /^\/nackenschmerzen-ratgeber\.html$/.test(path)) return 'analytics-only';
-    return 'full';
+    return 'analytics';
 }());
 
 /* Register the blocked GA4 scripts once, centrally, so every covered page shares one setup. */
@@ -165,25 +130,10 @@ window.milaphysioTrackingMode = (function getTrackingMode() {
     document.head.appendChild(gtagConfig);
 }());
 
-/* Register the blocked Pixel script before Klaro starts scanning managed tags. */
-(function registerMetaPixelForKlaro() {
-    if (window.milaphysioTrackingMode !== 'full') return;
-    if (document.querySelector('script[data-name="meta-pixel"]')) return;
-
-    var metaPixelId = MILAPHYSIO_META_PIXEL_ID;
-    var blockedPixelScript = document.createElement('script');
-    blockedPixelScript.type = 'text/plain';
-    blockedPixelScript.setAttribute('data-type', 'application/javascript');
-    blockedPixelScript.setAttribute('data-name', 'meta-pixel');
-    blockedPixelScript.textContent = [
-        '!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?',
-        'n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;',
-        'n.push=n;n.loaded=!0;n.version="2.0";n.queue=[];t=b.createElement(e);t.async=!0;',
-        't.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,',
-        '"script","https://connect.facebook.net/en_US/fbevents.js");',
-        'fbq("set","autoConfig",false,"' + metaPixelId + '");',
-        'fbq("init","' + metaPixelId + '");',
-        'fbq("track","PageView");'
-    ].join('\n');
-    document.head.appendChild(blockedPixelScript);
+/* The Meta Pixel was removed from the site. Clear the marker it left in localStorage
+ * and expire any _fbp/_fbc cookies that an earlier visit may have stored. */
+(function removeLegacyMetaPixelState() {
+    try { window.localStorage.removeItem('milaphysio-meta-pixel-was-enabled'); } catch (e) { /* storage unavailable */ }
+    document.cookie = '_fbp=; Max-Age=0; path=/';
+    document.cookie = '_fbc=; Max-Age=0; path=/';
 }());
