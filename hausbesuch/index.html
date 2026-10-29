@@ -167,6 +167,32 @@
             box-shadow: var(--shadow);
         }
 
+        .op-area-list {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 12px;
+            max-width: 960px;
+            margin: 28px auto 0;
+            padding: 0;
+        }
+
+        .op-area-list li {
+            padding: 12px 16px;
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            font-weight: 700;
+            text-align: center;
+            color: var(--teal-dark);
+        }
+
+        .op-area-hint {
+            max-width: 720px;
+            margin: 24px auto 0;
+            text-align: center;
+        }
+
         /* HERO */
         .op-hero {
             padding: 0 0 70px;
@@ -984,13 +1010,19 @@
                         </p>
 
                         <div class="op-area-note">
-                            <strong>Hausbesuche im Umkreis von ca. 10 km rund um Eisenberg.</strong>
-                            <p style="margin: 0; font-size: 0.9rem;">Ob Ihre Adresse im Hausbesuchsgebiet liegt, wird bei der Terminvereinbarung geprüft.</p>
+                            <strong>Hausbesuche im Umkreis von 13 km rund um Ramsen (67305).</strong>
+                            <p style="margin: 0; font-size: 0.9rem;">Ob Ihre genaue Adresse in meinem Einzugsgebiet liegt, klären wir gerne vor der Terminvereinbarung.</p>
                         </div>
 
                         <div class="op-actions">
                             <a href="#preise" class="op-button op-button-primary">
                                 Hausbesuch buchen
+                            </a>
+                            <a href="https://wa.me/491742585160" target="_blank" rel="noopener noreferrer" class="op-button op-button-primary">
+                                WhatsApp
+                            </a>
+                            <a href="#einzugsgebiet" class="op-button op-button-primary">
+                                Orte im Einzugsgebiet
                             </a>
                             <a href="../index.html" class="op-button op-button-secondary">
                                 ← Zurück zur Startseite
@@ -1073,7 +1105,7 @@
                 <div class="op-section-heading">
                     <span class="op-eyebrow">Hausbesuchsgebiet</span>
                     <h2>Ist ein Hausbesuch bei Ihnen <span>möglich?</span></h2>
-                    <p>Hausbesuche werden im Umkreis von ca. 10 km rund um Eisenberg angeboten.</p>
+                    <p>Hausbesuche werden im Umkreis von 13 km rund um Ramsen angeboten.</p>
                 </div>
 
                 <div class="op-info-box">
@@ -1084,6 +1116,53 @@
             </div>
         </section>
 
+
+        <!-- EINZUGSGEBIET -->
+        <section class="op-section" id="einzugsgebiet">
+            <div class="op-container">
+
+                <div class="op-section-heading">
+                    <span class="op-eyebrow">Einzugsgebiet</span>
+                    <h2>Mein Einzugsgebiet für Hausbesuche</h2>
+                    <p>Ich biete Physiotherapie und Lymphdrainage bei Ihnen zu Hause im Umkreis von 13 km rund um Ramsen an.</p>
+                </div>
+
+                <ul class="op-area-list">
+                    <li>Altleiningen</li>
+                    <li>Börrstadt</li>
+                    <li>Breunigweiler</li>
+                    <li>Carlsberg</li>
+                    <li>Dannenfels</li>
+                    <li>Dreisen</li>
+                    <li>Ebertsheim</li>
+                    <li>Eisenberg (Pfalz)</li>
+                    <li>Gonbach</li>
+                    <li>Göllheim</li>
+                    <li>Grünstadt</li>
+                    <li>Hettenleidelheim</li>
+                    <li>Herxheim am Berg</li>
+                    <li>Imsbach</li>
+                    <li>Kallstadt</li>
+                    <li>Kerzenheim</li>
+                    <li>Kirchheim an der Weinstraße</li>
+                    <li>Lohnsfeld</li>
+                    <li>Mehlingen</li>
+                    <li>Mertesheim</li>
+                    <li>Münchweiler an der Alsenz</li>
+                    <li>Neuhemsbach</li>
+                    <li>Neuleiningen</li>
+                    <li>Ottersheim</li>
+                    <li>Ramsen</li>
+                    <li>Sippersfeld</li>
+                    <li>Standenbühl</li>
+                    <li>Tiefenthal</li>
+                    <li>Wattenheim</li>
+                </ul>
+
+                <p class="op-area-hint">Ob Ihre genaue Adresse in meinem Einzugsgebiet liegt, klären wir gerne vor der Terminvereinbarung.</p>
+
+            </div>
+        </section>
 
         <!-- PREISE -->
         <section class="op-section" id="preise">
@@ -1361,7 +1440,7 @@
 
                     <details>
                         <summary>Wo bieten Sie Hausbesuche an?</summary>
-                        <p>Hausbesuche werden im Umkreis von ca. 10 km rund um Eisenberg angeboten. Die genaue Adresse wird bei der Terminvereinbarung geprüft.</p>
+                        <p>Hausbesuche werden im Umkreis von 13 km rund um Ramsen angeboten. Die genaue Adresse wird bei der Terminvereinbarung geprüft.</p>
                     </details>
 
                     <details>
@@ -1428,7 +1507,7 @@
 
                     <a class="op-contact-link" href="https://wa.me/491742585160" target="_blank" rel="noopener noreferrer">
                         <span class="op-contact-icon">💬</span>
-                        <span>WhatsApp</span>
+                        <span>Fragen? Kontaktieren Sie mich per WhatsApp</span>
                     </a>
 
                     <a class="op-contact-link" href="https://www.instagram.com/physiotherapie.online_mit.mila/" target="_blank" rel="noopener noreferrer">
