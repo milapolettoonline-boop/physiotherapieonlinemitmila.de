@@ -7,7 +7,7 @@
 
     <meta
         name="description"
-        content="Entdecke Bücher von Camila Poletto und physiotherapeutische Ratgeber von Mila Physio."
+        content="Kinderb&uuml;cher, Romane und Geschichten f&uuml;r Erwachsene sowie Physiotherapie-E-Books von Mila Physio entdecken."
     >
 
     <title>Bücher und E-Books | MILAPHYSIO</title>
@@ -124,7 +124,7 @@
 
         .choice-grid {
             display: grid;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
+            grid-template-columns: repeat(3, minmax(0, 1fr));
             align-items: stretch;
             gap: 28px;
         }
@@ -229,11 +229,6 @@
 
         /* Single homepage button */
 
-        .home {
-            padding: 0 0 60px;
-            text-align: center;
-        }
-
         .button-secondary {
             color: var(--teal);
             background: transparent;
@@ -299,8 +294,7 @@
                 height: 210px;
             }
 
-            .choice .button,
-            .home .button {
+            .choice .button {
                 width: 100%;
             }
         }
@@ -330,14 +324,12 @@
 
     <header class="site-header">
         <div class="wrap brand">
-            <a href="../index.html" aria-label="MILAPHYSIO Homepage">
-                <img
+            <img
                     src="../ebook/images/Mila-Physio E-Book-Logo.webp"
                     alt="MILAPHYSIO – Physiotherapie mit Mila"
                     width="150"
                     height="64"
                 >
-            </a>
         </div>
     </header>
 
@@ -367,7 +359,21 @@
         >
             <div class="wrap choice-grid">
 
-                <!-- Category 1: Camila Poletto Books -->
+                <!-- Category 1: Kinderbücher -->
+
+                <article class="choice">
+                    <div class="choice-image">
+                        <img src="images/kinderbücher.webp" alt="Kinderbücher, Gute-Nacht-Geschichten und Malbücher" width="1086" height="1448" loading="eager">
+                    </div>
+                    <p class="eyebrow">Für Kinder</p>
+                    <h2>KinderBücher</h2>
+                    <p class="choice-description">
+                        Entdecke Romane und Geschichten für Erwachsene, von Romance und Fantasy bis Thriller und Ghosting.
+                    </p>
+                    <a class="button" href="/ebook/kinderbuecher/">Kinderbücher entdecken</a>
+                </article>
+
+                <!-- Category 2: Camila Poletto Books -->
 
                 <article class="choice">
 
@@ -392,14 +398,14 @@
 
                     <a
                         class="button"
-                        href="camila-poletto/index.html"
+                        href="/ebook/camila-poletto/"
                     >
                         Bücher von Camila Poletto
                     </a>
 
                 </article>
 
-                <!-- Category 2: Mila Physio -->
+                <!-- Category 3: Mila Physio -->
 
                 <article class="choice">
 
@@ -425,7 +431,7 @@
 
                     <a
                         class="button"
-                        href="mila-physio/index.html"
+                        href="/ebook/mila-physio/"
                     >
                         Zum Physiotherapie-E-Book
                     </a>
@@ -434,21 +440,7 @@
 
             </div>
         </section>
-
-        <!-- One homepage button only -->
-
-        <section class="home" aria-label="Zur Homepage">
-            <div class="wrap">
-                <a
-                    class="button button-secondary"
-                    href="../index.html"
-                >
-                    Zurück zur Homepage
-                </a>
-            </div>
-        </section>
-
-    </main>
+</main>
 
     <footer class="site-footer">
         <div class="wrap">

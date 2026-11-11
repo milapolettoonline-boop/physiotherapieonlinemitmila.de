@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Kinderbücher, Gute-Nacht-Geschichten, Malbücher und Kinderkochbücher. Entdecke Lumi und weitere Geschichten für Kinder.">
+    <link rel="canonical" href="https://milaphysio.de/ebook/kinderbuecher/">
+    <meta property="og:title" content="Kinderbücher und Gute-Nacht-Geschichten | MILAPHYSIO">
+    <meta property="og:description" content="Entdecke Kinderbücher, Gute-Nacht-Geschichten, Malbücher und Kinderkochbücher.">
+    <meta property="og:url" content="https://milaphysio.de/ebook/kinderbuecher/">
+    <meta property="og:image" content="https://milaphysio.de/ebook/images/kinderb%C3%BCcher.webp">
+    <title>Kinderbücher und Gute-Nacht-Geschichten | MILAPHYSIO</title>
+    <style>
+        :root {
+            --ink: #263238;
+            --muted: #637174;
+            --teal: #155d60;
+            --teal-dark: #10494b;
+            --gold: #c89435;
+            --paper: #fffdf8;
+            --cream: #f7f3ec;
+            --line: #e8e2d8;
+            --serif: Georgia, "Times New Roman", serif;
+            --sans: Arial, Helvetica, sans-serif;
+        }
+        *, *::before, *::after { box-sizing: border-box; }
+        body { margin: 0; color: var(--ink); background: var(--paper); font: 16px/1.7 var(--sans); }
+        img { display: block; max-width: 100%; }
+        a { color: inherit; }
+        .wrap { width: min(1100px, calc(100% - 40px)); margin-inline: auto; }
+        .site-header { padding: 14px 0; background: #fff; border-bottom: 1px solid var(--line); }
+        .brand { display: flex; justify-content: center; }
+        .brand img { width: min(165px, 45vw); height: 66px; object-fit: contain; }
+        .hero { padding: clamp(34px, 6vw, 72px) 0 42px; text-align: center; background: linear-gradient(180deg, #f7f3ec 0%, #fffdf8 100%); }
+        .hero-art { width: min(100%, 430px); height: auto; max-height: 560px; margin: 0 auto 30px; border-radius: 24px; object-fit: contain; box-shadow: 0 16px 42px rgba(38, 50, 56, .12); }
+        .eyebrow { margin: 0 0 10px; color: var(--gold); font-size: .78rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; }
+        h1, h2, h3 { font-family: var(--serif); line-height: 1.2; }
+        h1 { max-width: 760px; margin: 0 auto 14px; color: var(--teal-dark); font-size: clamp(2.2rem, 5vw, 3.5rem); font-weight: 500; text-wrap: balance; }
+        .intro { max-width: 690px; margin: 0 auto; color: var(--muted); font-size: 1.05rem; }
+        .book-section { padding: clamp(34px, 6vw, 68px) 0; }
+        .book-card { display: grid; grid-template-columns: minmax(230px, .78fr) minmax(0, 1.22fr); align-items: center; gap: clamp(28px, 6vw, 68px); padding: clamp(22px, 5vw, 52px); border: 1px solid var(--line); border-radius: 22px; background: #fff; box-shadow: 0 14px 38px rgba(24, 57, 58, .07); }
+        .cover { min-height: 330px; display: grid; place-items: center; padding: 20px; border-radius: 16px; background: #f7f3ec; }
+        .cover img { width: auto; max-width: 100%; max-height: 460px; object-fit: contain; border-radius: 8px; }
+        .book-copy h2 { margin: 0 0 12px; color: var(--teal-dark); font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 500; }
+        .subtitle { margin: 0 0 18px; color: var(--teal); font-family: var(--serif); font-size: 1.22rem; }
+        .book-copy p { color: var(--muted); }
+        .button { display: inline-flex; min-height: 50px; align-items: center; justify-content: center; margin: 8px 8px 0 0; padding: 12px 22px; border: 1px solid var(--teal); border-radius: 999px; color: #fff; background: var(--teal); font: 700 .95rem/1.4 var(--sans); text-align: center; text-decoration: none; transition: background .18s ease, border-color .18s ease; }
+        .button:hover, .button:focus-visible { border-color: var(--teal-dark); background: var(--teal-dark); }
+        .button:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
+        .button-amazon { border-color: var(--gold); color: #211b12; background: var(--gold); }
+        .button-amazon:hover, .button-amazon:focus-visible { border-color: #a87825; color: #fff; background: #a87825; }
+        .categories { padding: 30px 0 56px; text-align: center; }
+        .categories p { margin: 0 0 14px; color: var(--muted); }
+        .site-footer { padding: 20px 0; border-top: 1px solid var(--line); color: var(--muted); background: #fff; text-align: center; font-size: .88rem; }
+        .site-footer p { margin: 0; }
+        @media (max-width: 700px) {
+            .wrap { width: min(100% - 32px, 1100px); }
+            .hero-art { max-height: 460px; border-radius: 16px; }
+            .book-card { grid-template-columns: 1fr; gap: 24px; }
+            .cover { min-height: 0; }
+            .cover img { max-height: 400px; }
+        }
+        @media (max-width: 430px) {
+            .button { width: 100%; margin-right: 0; }
+        }
+        @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; } }
+    </style>
+    <link rel="stylesheet" href="/consent/vendor/klaro.min.css">
+    <link rel="stylesheet" href="/consent/consent.css">
+    <script defer src="/consent/klaro-config.js"></script>
+    <script defer data-config="klaroConfig" src="/consent/vendor/klaro.js"></script>
+    <script defer src="/consent/consent-ui.js"></script>
+    <script defer src="/consent/tracking-events.js"></script>
+</head>
+<body>
+    <header class="site-header">
+        <div class="wrap brand"><img src="../images/Mila-Physio E-Book-Logo.webp" alt="MILAPHYSIO" width="150" height="64"></div>
+    </header>
+    <main>
+        <section class="hero" aria-labelledby="page-title">
+            <div class="wrap">
+                <img class="hero-art" src="../images/kinderbücher.webp" alt="Kinderbücher, Gute-Nacht-Geschichten, Malbücher und Kinderkochbücher" width="1086" height="1448" fetchpriority="high">
+                <p class="eyebrow">Geschichten für kleine Leserinnen und Leser</p>
+                <h1 id="page-title">KinderBücher</h1>
+                <p class="intro">Entdecke Kinderbücher, Gute-Nacht-Geschichten, Malbücher und Kinderkochbücher – für gemeinsame Vorlesezeit, Fantasie und kreative Momente.</p>
+            </div>
+        </section>
+        <section class="book-section" aria-labelledby="lumi-title">
+            <div class="wrap">
+                <article class="book-card">
+                    <div class="cover"><img src="../images/Lumi.webp" alt="Cover des Kinderbuchs Lumi und das Geheimnis des goldenen Sterns" width="1600" height="2843" loading="lazy"></div>
+                    <div class="book-copy">
+                        <p class="eyebrow">Gute-Nacht-Geschichte · ab 3 Jahren</p>
+                        <h2 id="lumi-title">Lumi – Eine zauberhafte Gute-Nacht-Geschichte mit Ausmalbildern</h2>
+                        <p class="subtitle">Lumi und das Geheimnis des goldenen Sterns</p>
+                        <p>Tief im Zauberwald lebt das kleine Einhorn Lumi. Als ein Stern sein goldenes Licht verliert und den Weg nach Hause nicht mehr findet, verspricht Lumi, ihm zu helfen. Auf dem Weg zum Mondteich begegnet Lumi einem kleinen Hasen und einer weisen Eule. Gemeinsam erleben sie eine Geschichte über Freundschaft, Mut und Freundlichkeit.</p>
+                        <p>Eine liebevoll illustrierte Gute-Nacht-Geschichte für Kinder von 3 bis 7 Jahren – zum gemeinsamen Vorlesen, Träumen und Ausmalen.</p>
+                        <a class="button button-amazon" href="https://link.amazon/B02LerZRu" target="_blank" rel="sponsored noopener noreferrer">Lumi bei Amazon ansehen</a>
+                        <a class="button" href="../books/camila-poletto/lumi-und-das-geheimnis-des-goldenen-sterns/">Alle Informationen zu Lumi</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+        <nav class="categories" aria-label="Bücherbereiche">
+            <div class="wrap"><p>Weitere Bücherbereiche entdecken</p><a class="button" href="/ebook/">Zur Buchauswahl</a></div>
+        </nav>
+    </main>
+    <footer class="site-footer"><div class="wrap"><p>MILAPHYSIO · Kinderbücher</p></div></footer>
+</body>
+</html>
