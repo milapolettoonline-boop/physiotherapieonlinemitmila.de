@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Entdecke Nicornia, das kleine Einhorn! Eine zauberhaft illustrierte Gute-Nacht-Geschichte ab 3 Jahren über Freundschaft, Mut und Magie – mit Ausmalbildern.">
+    <meta name="description" content="Entdecke liebevoll gestaltete Kinderbücher voller Fantasie, Abenteuer und besonderer Geschichten.">
     <link rel="canonical" href="https://milaphysio.de/ebook/kinderbuecher/">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Nicornia – Gute-Nacht-Geschichte ab 3 Jahren mit Ausmalbildern">
-    <meta property="og:description" content="Entdecke Nicornia, das kleine Einhorn! Eine zauberhaft illustrierte Gute-Nacht-Geschichte ab 3 Jahren über Freundschaft, Mut und Magie – mit Ausmalbildern.">
+    <meta property="og:title" content="Kinderbücher zum Vorlesen | MILAPHYSIO">
+    <meta property="og:description" content="Entdecke liebevoll gestaltete Kinderbücher voller Fantasie, Abenteuer und besonderer Geschichten.">
     <meta property="og:url" content="https://milaphysio.de/ebook/kinderbuecher/">
     <meta property="og:image" content="https://milaphysio.de/ebook/images/Nicornia.webp">
-    <title>Nicornia – Gute-Nacht-Geschichte ab 3 Jahren mit Ausmalbildern</title>
+    <title>Kinderbücher zum Vorlesen | MILAPHYSIO</title>
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -21,16 +21,26 @@
           "description": "Eine zauberhafte Gute-Nacht-Geschichte über Freundschaft, Mut und Freundlichkeit – mit Ausmalbildern.",
           "inLanguage": "de",
           "image": "https://milaphysio.de/ebook/images/Nicornia.webp",
-          "url": "https://milaphysio.de/ebook/kinderbuecher/",
+          "url": "https://milaphysio.de/ebook/kinderbuecher/nicornia/",
           "audience": {"@type": "PeopleAudience", "suggestedMinAge": 3}
         },
         {
           "@type": "Book",
           "name": "Olli und seine Freunde: Auf der Suche nach seiner verlorenen Familie",
+          "description": "Ein farbenfrohes Kinderbuch über Freundschaft, Familie und Zusammenhalt.",
           "inLanguage": "de",
           "image": "https://milaphysio.de/ebook/images/Olli%20und%20seine%20Freunde.webp",
           "url": "https://milaphysio.de/ebook/kinderbuecher/olli-und-seine-freunde/",
           "audience": {"@type": "PeopleAudience", "suggestedMinAge": 3}
+        },
+        {
+          "@type": "Book",
+          "name": "Das perfekte Geschenk für Pferdemädchen",
+          "description": "365 Ideen für bildschirmfreien Pferdespaß.",
+          "inLanguage": "de",
+          "image": "https://milaphysio.de/ebook/images/pferlinna.webp",
+          "url": "https://milaphysio.de/ebook/books/camila-poletto/pferllina/",
+          "audience": {"@type": "PeopleAudience", "suggestedMinAge": 8, "suggestedMaxAge": 12}
         },
         {
           "@type": "BreadcrumbList",
@@ -71,12 +81,13 @@
         .intro { max-width: 690px; margin: 0 auto; color: var(--muted); font-size: 1.05rem; }
         .book-section { padding: clamp(28px, 5vw, 56px) 0; }
         .book-card { display: grid; grid-template-columns: minmax(230px, .78fr) minmax(0, 1.22fr); align-items: center; gap: clamp(28px, 6vw, 68px); padding: clamp(22px, 5vw, 52px); border: 1px solid var(--line); border-radius: 22px; background: #fff; box-shadow: 0 14px 38px rgba(24, 57, 58, .07); }
-        .cover { min-height: 330px; display: grid; place-items: center; padding: 20px; border-radius: 16px; background: #f7f3ec; }
-        .cover-nicornia { background: #f3eff9; }
-        .cover img { width: auto; max-width: 100%; max-height: 460px; object-fit: contain; border-radius: 8px; }
-        .book-copy h2 { margin: 0 0 12px; color: var(--teal-dark); font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 500; }
-        .subtitle { margin: 0 0 18px; color: var(--teal); font-family: var(--serif); font-size: 1.22rem; }
-        .book-copy p, .book-copy li, .details p { color: var(--muted); }
+        .cover { height: 390px; min-height: 0; display: grid; place-items: center; padding: 20px; border-radius: 16px; background: #f7f3ec; }
+        .cover img { width: 100%; height: 100%; max-width: 100%; max-height: none; object-fit: contain; border-radius: 8px; }
+        .book-copy { display: flex; min-height: 250px; flex-direction: column; align-items: flex-start; }
+        .book-copy h2 { min-height: 2.4em; margin: 0 0 12px; color: var(--teal-dark); font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 500; }
+        .subtitle { min-height: 2.9em; margin: 0 0 18px; color: var(--teal); font-family: var(--serif); font-size: 1.22rem; }
+        .book-copy .button { margin-top: auto; }
+        .book-copy p:not(.subtitle), .book-copy li, .details p { color: var(--muted); }
         .book-copy h3, .details h2 { color: var(--teal-dark); font-family: var(--serif); }
         .book-copy ul { padding-left: 1.2em; }
         .button { display: inline-flex; min-height: 50px; align-items: center; justify-content: center; margin: 8px 8px 0 0; padding: 12px 22px; border: 1px solid var(--teal); border-radius: 999px; color: #fff; background: var(--teal); font: 700 .95rem/1.4 var(--sans); text-align: center; text-decoration: none; transition: background .18s ease, border-color .18s ease; }
@@ -96,8 +107,9 @@
             .wrap { width: min(100% - 32px, 1100px); }
             .hero-art { max-height: 460px; border-radius: 16px; }
             .book-card { grid-template-columns: 1fr; gap: 24px; }
-            .cover { min-height: 0; }
-            .cover img { max-height: 400px; }
+            .cover { height: 350px; min-height: 0; }
+            .book-copy { min-height: 0; }
+            .book-copy h2, .subtitle { min-height: 0; }
             .details { width: min(100% - 32px, 760px); }
         }
         @media (max-width: 430px) { .button { width: 100%; margin-right: 0; } }
@@ -117,33 +129,20 @@
     <main>
         <section class="hero" aria-labelledby="page-title">
             <div class="wrap">
-                <img class="hero-art" src="../images/kinderbücher.webp" alt="Kinderbücher zum Vorlesen: Olli und seine Freunde sowie Nicornia, das kleine Einhorn" width="1086" height="1448" fetchpriority="high">
+                <img class="hero-art" src="../images/kinderbücher.webp" alt="Autorinnenporträt von Camila Poletto in einem Kinderbuchzimmer" width="1086" height="1448" fetchpriority="high">
                 <p class="eyebrow">Geschichten für kleine Leserinnen und Leser</p>
-                <h1 id="page-title">Nicornia und Olli: Kinderbücher zum Vorlesen</h1>
-                <p class="intro">Entdecke Nicornia, das kleine Einhorn, und Olli, den kleinen Oktopus – zwei liebevoll illustrierte Geschichten für gemeinsame Vorlesezeit und große Fantasie.</p>
+                <h1 id="page-title">Kinderbücher</h1>
+                <p class="intro">Entdecke liebevoll gestaltete Kinderbücher voller Fantasie, Abenteuer und besonderer Geschichten.</p>
             </div>
         </section>
         <section class="book-section" aria-labelledby="nicornia-title">
             <div class="wrap">
                 <article class="book-card">
-                    <div class="cover cover-nicornia"><img src="../images/Nicornia.webp" alt="Nicornia – Das kleine Einhorn auf der Suche nach dem Sternenlicht – illustriertes Kinderbuch" width="1333" height="2000" fetchpriority="high"></div>
+                    <div class="cover"><img src="../images/Nicornia.webp" alt="Nicornia – Das kleine Einhorn auf der Suche nach dem Sternenlicht – illustriertes Kinderbuch" width="1333" height="2000" loading="lazy"></div>
                     <div class="book-copy">
-                        <p class="eyebrow">Gute-Nacht-Geschichte · Vorlesebuch · ab 3 Jahren</p>
                         <h2 id="nicornia-title">Nicornia – Das kleine Einhorn auf der Suche nach dem Sternenlicht</h2>
                         <p class="subtitle">Eine zauberhafte Gute-Nacht-Geschichte über Freundschaft, Mut und Freundlichkeit – mit Ausmalbildern.</p>
-                        <p>Tauche ein in eine zauberhafte Welt voller funkelnder Sterne, geheimnisvoller Wälder und kleiner Wunder! Eines Abends entdeckt das kleine Einhorn Nicornia einen traurigen Stern, der sein goldenes Licht verloren hat und den Weg nach Hause nicht mehr findet.</p>
-                        <p>Entschlossen macht sich Nicornia mit ihrer lilafarbenen Mähne und dem goldenen Horn auf die Suche nach dem verlorenen Sternenlicht. Mit einem kleinen Hasen und einer weisen Eule entdeckt sie, dass Freundschaft, Hilfsbereitschaft und Mut selbst die dunkelsten Wege heller machen.</p>
-                        <h3>Eine Vorlesegeschichte ab 3 Jahren</h3>
-                        <ul>
-                            <li>Eine liebevoll illustrierte Gute-Nacht-Geschichte und magisches Einhorn-Abenteuer</li>
-                            <li>Eine kindgerechte Geschichte über Freundschaft, Zusammenhalt, Mut und Freundlichkeit</li>
-                            <li>Zusätzliche Ausmalbilder für kreativen Malspaß</li>
-                            <li>Zum gemeinsamen Vorlesen vor dem Schlafengehen</li>
-                        </ul>
-                        <p>Für Mädchen und Jungen ab 3 Jahren, die Einhörner, Märchen und magische Geschichten lieben – auch als Geschenk zum Geburtstag, zu Weihnachten oder einfach als besondere Überraschung.</p>
-                        <p>Macht es euch gemeinsam gemütlich und entdeckt mit Nicornia eine magische Welt voller Fantasie!</p>
-                        <a class="button button-amazon" href="https://link.amazon/B02DiaVi6" target="_blank" rel="sponsored noopener noreferrer" data-book-title="Nicornia – Das kleine Einhorn auf der Suche nach dem Sternenlicht" data-book-language="de">Jetzt bei Amazon kaufen</a>
-                        <p class="affiliate-note">Als Amazon-Partnerin verdiene ich an qualifizierten Verkäufen.</p>
+                        <a class="button" href="nicornia/">ALLE INFORMATIONEN ZUM BUCH</a>
                     </div>
                 </article>
             </div>
@@ -153,12 +152,21 @@
                 <article class="book-card">
                     <div class="cover"><img src="../images/Olli und seine Freunde.webp" alt="Cover des illustrierten Kinderbuchs Olli und seine Freunde: Auf der Suche nach seiner verlorenen Familie" width="1024" height="1536" loading="lazy"></div>
                     <div class="book-copy">
-                        <p class="eyebrow">Vorlesegeschichte · ab 3 Jahren</p>
                         <h2 id="olli-title">Olli und seine Freunde: Auf der Suche nach seiner verlorenen Familie</h2>
-                        <p class="subtitle">Ein farbenfrohes Kinderbuch über Freundschaft, Familie und Zusammenhalt</p>
-                        <p>Der kleine Oktopus Olli vermisst seine Familie und macht sich auf die Suche nach ihr. Unterwegs begegnet er vier besonderen Freunden, die ihn auf seinem Abenteuer durch die faszinierende Unterwasserwelt begleiten.</p>
-                        <p>Eine liebevoll illustrierte Vorlesegeschichte ab 3 Jahren – zum gemeinsamen Lesen, Entdecken und Träumen.</p>
-                        <a class="button" href="olli-und-seine-freunde/" data-book-info="olli" onclick="if (window.milaphysioTrack) window.milaphysioTrack('book_info_click', {page_type:'ebook', book_title:'Olli und seine Freunde', link_location:'content'});">Alle Informationen zu Olli</a>
+                        <p class="subtitle">Ein farbenfrohes Kinderbuch über Freundschaft, Familie und Zusammenhalt.</p>
+                        <a class="button" href="olli-und-seine-freunde/" data-book-info="olli" onclick="if (window.milaphysioTrack) window.milaphysioTrack('book_info_click', {page_type:'ebook', book_title:'Olli und seine Freunde', link_location:'content'});">ALLE INFORMATIONEN ZUM BUCH</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+        <section class="book-section" aria-labelledby="pferllina-title">
+            <div class="wrap">
+                <article class="book-card">
+                    <div class="cover"><img src="../images/pferlinna.webp" alt="Buchcover: Das perfekte Geschenk für Pferdemädchen – 365 Pferdespaß ohne Bildschirm" width="1545" height="1999" loading="lazy"></div>
+                    <div class="book-copy">
+                        <h2 id="pferllina-title">Das perfekte Geschenk für Pferdemädchen</h2>
+                        <p class="subtitle">365 Ideen für bildschirmfreien Pferdespaß.</p>
+                        <a class="button" href="/ebook/books/camila-poletto/pferllina/">ALLE INFORMATIONEN ZUM BUCH</a>
                     </div>
                 </article>
             </div>

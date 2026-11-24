@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="index, follow">
+    <meta name="description" content="Eine liebevoll illustrierte Gute-Nacht-Geschichte ab 3 Jahre und Vorlesegeschichte über Oktopus Olli, Freundschaft und Familie. Entdeckt sein Unterwasserabenteuer gemeinsam.">
+    <link rel="canonical" href="https://milaphysio.de/ebook/kinderbuecher/olli-und-seine-freunde/">
+    <meta property="og:type" content="book">
+    <meta property="og:title" content="Gute-Nacht-Geschichte ab 3 Jahre | Olli und seine Freunde">
+    <meta property="og:description" content="Begleitet Oktopus Olli auf der Suche nach seiner Familie. Ein farbenfrohes, illustriertes Kinderbuch über Freundschaft und Zusammenhalt.">
+    <meta property="og:url" content="https://milaphysio.de/ebook/kinderbuecher/olli-und-seine-freunde/">
+    <meta property="og:image" content="https://milaphysio.de/ebook/images/Olli%20und%20seine%20Freunde.webp">
+    <title>Gute-Nacht-Geschichte ab 3 Jahre | Olli und seine Freunde</title>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Book",
+      "name": "Olli und seine Freunde: Auf der Suche nach seiner verlorenen Familie",
+      "author": {"@type": "Person", "name": "Camila Poletto"},
+      "inLanguage": "de",
+      "numberOfPages": 169,
+      "bookFormat": "https://schema.org/Paperback",
+      "image": "https://milaphysio.de/ebook/images/Olli%20und%20seine%20Freunde.webp",
+      "url": "https://milaphysio.de/ebook/kinderbuecher/olli-und-seine-freunde/",
+      "audience": {"@type": "PeopleAudience", "suggestedMinAge": 3}
+    }
+    </script>
+    <style>
+        :root { --teal:#155d60; --teal-dark:#10494b; --gold:#c89435; --cream:#f7f3ec; --white:#fff; --ink:#263238; --muted:#647174; --line:#e8e2d8; --serif:Georgia,"Times New Roman",serif; --sans:Arial,Helvetica,sans-serif; }
+        *,*::before,*::after { box-sizing:border-box; }
+        body { margin:0; color:var(--ink); background:var(--cream); font:16px/1.7 var(--sans); }
+        img { display:block; max-width:100%; } a { color:inherit; }
+        .wrap { width:min(1060px,calc(100% - 40px)); margin:0 auto; }
+        .site-header { padding:18px 0; background:var(--white); border-bottom:1px solid var(--line); }
+        .brand { display:flex; justify-content:center; } .brand img { width:min(190px,48vw); height:70px; object-fit:contain; }
+        .hero { padding:clamp(38px,7vw,76px) 0 38px; }
+        .book { display:grid; grid-template-columns:minmax(250px,.8fr) minmax(0,1.2fr); align-items:center; gap:clamp(28px,6vw,70px); padding:clamp(22px,5vw,54px); border:1px solid var(--line); border-radius:20px; background:var(--white); box-shadow:0 14px 36px rgba(24,57,58,.08); }
+        .cover { display:flex; justify-content:center; align-items:center; min-height:340px; padding:14px; background:var(--cream); border-radius:14px; }
+        .cover img { width:auto; max-width:100%; max-height:520px; object-fit:contain; border-radius:8px; }
+        .eyebrow { margin:0 0 10px; color:var(--gold); font-size:.78rem; font-weight:700; letter-spacing:.14em; text-transform:uppercase; }
+        h1,h2 { font-family:var(--serif); line-height:1.2; } h1 { margin:0 0 14px; color:var(--teal-dark); font-size:clamp(2rem,4.6vw,3.1rem); font-weight:500; text-wrap:balance; }
+        .subtitle { margin:0 0 18px; color:var(--teal); font:1.15rem/1.45 var(--serif); }
+        .description { margin:0 0 18px; color:var(--muted); }
+        h2 { margin:36px 0 12px; color:var(--teal-dark); font-size:1.55rem; }
+        .button { display:inline-flex; min-height:54px; align-items:center; justify-content:center; margin-top:10px; padding:13px 24px; border:2px solid #f2cf6b; border-radius:999px; color:#fff; background:linear-gradient(135deg,#5a2d8c,#7d4fb8); box-shadow:0 10px 26px rgba(90,45,140,.28); font-weight:800; text-align:center; text-decoration:none; }
+        .button:focus-visible { outline:3px solid var(--gold); outline-offset:3px; }
+        .affiliate-note { max-width:430px; margin:9px 0 0; color:var(--ink); font-size:.9rem; }
+        .details { padding:0 0 56px; } .content-inner { max-width:760px; margin:0 auto; }
+        .content-inner p,.content-inner li { color:var(--ink); } .content-inner ul { padding-left:1.2em; } .content-inner li { margin-bottom:9px; }
+        .facts { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px 24px; margin:18px 0; padding:20px 24px; border:1px solid var(--line); border-radius:14px; background:#fff; }
+        .facts p { margin:0; } .closing { margin-top:42px; padding:clamp(22px,4vw,38px); border:1px solid var(--line); border-radius:20px; background:#fff; text-align:center; }
+        .closing h2 { margin-top:0; } .closing p { color:var(--muted); }
+        .return-links { display:flex; justify-content:center; margin:26px 0 38px; }
+        .return-links a { display:inline-flex; min-height:46px; align-items:center; padding:10px 20px; border:1px solid var(--teal); border-radius:999px; color:var(--teal); font-weight:700; text-decoration:none; }
+        .site-footer { padding:22px 0; color:var(--muted); background:#fff; text-align:center; font-size:.88rem; } .site-footer p { margin:0; }
+        @media(max-width:720px) { .book { grid-template-columns:1fr; } .cover { min-height:0; } .cover img { max-height:440px; } .content-inner { width:min(100%,760px); } }
+        @media(max-width:500px) { .wrap { width:min(100% - 32px,1060px); } .book { padding:18px; } .facts { grid-template-columns:1fr; padding:16px; } .button { width:100%; } }
+        @media(prefers-reduced-motion:reduce) { *,*::before,*::after { scroll-behavior:auto!important; transition:none!important; } }
+    </style>
+    <link rel="stylesheet" href="/consent/vendor/klaro.min.css">
+    <link rel="stylesheet" href="/consent/consent.css">
+    <script defer src="/consent/klaro-config.js"></script>
+    <script defer data-config="klaroConfig" src="/consent/vendor/klaro.js"></script>
+    <script defer src="/consent/consent-ui.js"></script>
+    <script defer src="/consent/tracking-events.js"></script>
+</head>
+<body>
+    <header class="site-header"><div class="wrap brand"><a href="/ebook/kinderbuecher/" aria-label="Zur Kinderbücher-Übersicht"><img src="/ebook/images/Mila-Physio E-Book-Logo.webp" alt="MILAPHYSIO" width="190" height="70"></a></div></header>
+    <main class="wrap">
+        <section class="hero" aria-labelledby="page-title">
+            <article class="book">
+                <div class="cover"><img src="/ebook/images/Olli und seine Freunde.webp" alt="Farbig illustriertes Cover von Olli und seine Freunde: Der kleine Oktopus Olli und seine Freunde auf der Suche nach seiner Familie" width="1024" height="1536" fetchpriority="high"></div>
+                <div>
+                    <p class="eyebrow">Illustriertes Kinderbuch · ab 3 Jahren</p>
+                    <h1 id="page-title">Olli und seine Freunde: Auf der Suche nach seiner verlorenen Familie</h1>
+                    <p class="subtitle">Eine liebevoll illustrierte Vorlesegeschichte über Freundschaft, Familie und Zusammenhalt.</p>
+                    <p class="description">Der kleine Oktopus Olli vermisst seine Familie und macht sich auf die Suche nach ihr. Vier besondere Freunde begleiten ihn auf seinem Abenteuer durch die faszinierende Unterwasserwelt.</p>
+                    <a class="button" href="https://link.amazon/B0bAaRuLy" target="_blank" rel="sponsored noopener noreferrer" data-book-title="Olli und seine Freunde: Auf der Suche nach seiner verlorenen Familie" data-book-language="de">Olli jetzt bei Amazon entdecken</a>
+                    <p class="affiliate-note">Als Amazon-Partnerin verdiene ich an qualifizierten Verkäufen.</p>
+                </div>
+            </article>
+            <nav class="return-links" aria-label="Navigation"><a href="/ebook/kinderbuecher/">Zurück zu den Kinderbüchern</a></nav>
+        </section>
+        <section class="details" aria-label="Informationen zum Kinderbuch"><div class="content-inner">
+            <h2>Eine Gute-Nacht-Geschichte ab 3 Jahre und zum Vorlesen</h2>
+            <p>Olli vermisst seine Familie. Entschlossen macht sich der kleine Oktopus auf die Suche. Auf seiner Reise durch die farbenfrohe Unterwasserwelt trifft er vier besondere Freunde. Sie stehen ihm zur Seite, während sie gemeinsam neue Orte entdecken und spannende Abenteuer erleben.</p>
+            <p>Diese Oktopus Geschichte für Kinder erzählt warmherzig von Freundschaft, Mut und dem Gefühl, zusammenzugehören. Als illustriertes Kinderbuch lädt sie dazu ein, beim Vorlesen jede Seite gemeinsam anzuschauen und die Unterwasserwelt zu entdecken. Die Geschichte eignet sich als Gute Nacht Geschichte zum Vorlesen, ist aber ebenso für gemütliche Vorlesemomente zu jeder Tageszeit gedacht.</p>
+            <h2>Ein Kinderbuch über Freundschaft und Familie</h2>
+            <p>Auf seinem Weg lernt Olli, dass Freunde einander helfen und man gemeinsam auch schwierige Wege schaffen kann. Die farbenfrohen Bilder und liebevollen Zeichnungen machen das Abenteuer anschaulich und bieten Gesprächsanlässe für Kinder und Familien.</p>
+            <h2>Das erwartet euch in Ollis Abenteuer</h2>
+            <ul><li>Eine liebevoll gestaltete Geschichte über Freundschaft, Familie und Zusammenhalt</li><li>169 Seiten, vollständig farbig illustriert</li><li>Zahlreiche liebevolle Zeichnungen und dekorativ gestaltete Seiten</li><li>Ideal zum gemeinsamen Vorlesen und Entdecken</li><li>Für Kinder ab 3 Jahren und ihre Familien</li></ul>
+            <h2>Details zum Buch</h2>
+            <div class="facts"><p><strong>Titel:</strong> Olli und seine Freunde: Auf der Suche nach seiner verlorenen Familie</p><p><strong>Autorin:</strong> Camila Poletto</p><p><strong>Format:</strong> Taschenbuch</p><p><strong>Umfang:</strong> 169 Seiten</p><p><strong>Sprache:</strong> Deutsch</p><p><strong>Zielgruppe:</strong> Kinder ab 3 Jahren und ihre Familien</p></div>
+            <div class="closing"><h2>Entdeckt Ollis Unterwasserabenteuer</h2><p>Eine farbenfrohe Vorlesegeschichte, die zum gemeinsamen Lesen und Entdecken einlädt.</p><a class="button" href="https://link.amazon/B0bAaRuLy" target="_blank" rel="sponsored noopener noreferrer" data-book-title="Olli und seine Freunde: Auf der Suche nach seiner verlorenen Familie" data-book-language="de">Olli jetzt bei Amazon entdecken</a><p class="affiliate-note">Als Amazon-Partnerin verdiene ich an qualifizierten Verkäufen.</p></div>
+        </div></section>
+    </main>
+    <footer class="site-footer"><div class="wrap"><p>MILAPHYSIO · Kinderbücher</p></div></footer>
+</body>
+</html>
