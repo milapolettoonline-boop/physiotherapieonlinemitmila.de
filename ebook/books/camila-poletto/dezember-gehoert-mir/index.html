@@ -44,8 +44,12 @@
         .subtitle { margin:16px 0 22px; color:#826331; font:400 clamp(1.2rem,2.6vw,1.65rem)/1.35 var(--serif); }
         .description { margin:0 0 16px; color:var(--muted); }
         .button { display:inline-flex; min-height:56px; min-width:min(320px,100%); align-items:center; justify-content:center; margin-top:8px; padding:14px 24px; border:1px solid var(--gold); color:#171511; background:var(--gold); font-weight:700; text-align:center; text-decoration:none; transition:background-color .18s ease,border-color .18s ease; }
+        .button-row { display:flex; flex-wrap:wrap; gap:12px; margin-top:8px; }
+        .button-row .button { margin-top:0; }
         .button:hover,.button:focus-visible { border-color:var(--gold-light); background:var(--gold-light); }
         .button:focus-visible { outline:3px solid var(--ink); outline-offset:3px; }
+        .button-secondary { border-color:var(--ink); color:var(--ink); background:transparent; }
+        .button-secondary:hover,.button-secondary:focus-visible { border-color:var(--ink); color:var(--paper); background:var(--ink); }
         .details { padding:clamp(42px,7vw,82px) 0; }
         .content { max-width:780px; margin-inline:auto; }
         h2 { margin:0 0 18px; font-size:clamp(1.8rem,4vw,2.5rem); }
@@ -56,7 +60,7 @@
         .site-footer { padding:24px 0; color:#ddd4c5; background:var(--ink); text-align:center; font-size:.88rem; }
         .site-footer p { margin:0; }
         @media(max-width:720px) { .book { grid-template-columns:1fr; } .cover img { width:min(78%,380px); } }
-        @media(max-width:500px) { .wrap { width:min(100% - 32px,1100px); } .book { padding:16px; } .cover { padding:12px; } .button { width:100%; } }
+        @media(max-width:500px) { .wrap { width:min(100% - 32px,1100px); } .book { padding:16px; } .cover { padding:12px; } .button-row,.button { width:100%; } }
         @media(prefers-reduced-motion:reduce) { *,*::before,*::after { scroll-behavior:auto!important; transition:none!important; } }
     </style>
     <link rel="stylesheet" href="/consent/vendor/klaro.min.css">
@@ -78,7 +82,7 @@
                     <p class="subtitle">Der Weihnachtskalender für Frauen – Deine kleine Auszeit im Dezember.</p>
                     <p class="description">Die Weihnachtszeit ist wunderschön, aber oft auch stressig. Zwischen Geschenken, Terminen und Verpflichtungen vergessen wir manchmal uns selbst.</p>
                     <p class="description">Dieser besondere Weihnachtskalender lädt dich dazu ein, innezuhalten, durchzuatmen und dir jeden Tag einen kleinen Moment nur für dich zu schenken. Ein Weihnachtskalender 2026 für Frauen, die sich im Dezember Zeit für sich nehmen möchten.</p>
-                    <a class="button" href="https://link.amazon/B03HgWvHB" target="_blank" rel="sponsored noopener noreferrer" data-book-title="Dezember gehört mir! – Der Weihnachtskalender für Frauen" data-book-language="de" data-track-event="amazon_click">JETZT BEI AMAZON ENTDECKEN</a>
+                    <div class="button-row"><a class="button" href="https://www.amazon.de/weihnachtskalender-2026-f%C3%BCr-frauen/s?k=weihnachtskalender+2026+f%C3%BCr+frauen&amp;rh=p_78%3AB0HRVJ7TBB" target="_blank" rel="sponsored noopener noreferrer" data-book-title="Dezember gehört mir! – Der Weihnachtskalender für Frauen" data-book-language="de" data-track-event="amazon_click">JETZT BEI AMAZON KAUFEN</a><a class="button button-secondary" href="https://www.amazon.de/review/create-review/?ie=UTF8&amp;channel=glance-detail&amp;asin=B0HRVJ7TBB" target="_blank" rel="noopener noreferrer">⭐ Rezension schreiben</a></div>
                 </div>
             </div>
         </section>
